@@ -1,4 +1,4 @@
-import { corsHeaders } from '@supabase/supabase-js/cors'
+import { corsHeaders } from '../_shared/cors.ts'
 
 const SYSTEM_PROMPT = `You are Tactivision.ai — an elite football tactical opposition analyst agent.
 
