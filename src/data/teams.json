@@ -1,0 +1,116 @@
+[
+  {
+    "id": "man_city",
+    "name": "Manchester City",
+    "league": "Premier League",
+    "manager": "Pep Guardiola",
+    "formation": "4-3-3 / 3-2-4-1",
+    "style": "Possession-based, positional play",
+    "season": "2024-25",
+    "key_players": [
+      { "name": "Erling Haaland", "position": "ST", "number": 9, "strengths": ["Aerial duels", "Finishing", "Movement in box"], "weaknesses": ["Link-up play under pressure", "Defensive contribution"] },
+      { "name": "Kevin De Bruyne", "position": "CM/AM", "number": 17, "strengths": ["Through balls", "Long-range passing", "Set pieces"], "weaknesses": ["Injury prone", "Defensive transitions"] },
+      { "name": "Rodri", "position": "CDM", "number": 16, "strengths": ["Ball retention", "Pressing resistance", "Positional discipline"], "weaknesses": ["Pace in recovery", "Susceptible to quick counters"] },
+      { "name": "Phil Foden", "position": "LW/AM", "number": 47, "strengths": ["Dribbling", "Half-space movement", "Finishing"], "weaknesses": ["Physical duels", "Consistency in big matches"] },
+      { "name": "Josko Gvardiol", "position": "LB/CB", "number": 24, "strengths": ["Ball carrying", "Overlapping runs", "Aerial presence"], "weaknesses": ["Positioning in 1v1 defending"] }
+    ],
+    "tactical_patterns": {
+      "build_up": "Short passing from back, GK involved in build-up. FBs invert into midfield zones. Single pivot (Rodri) drops between CBs.",
+      "attacking": "Overloads in half-spaces. Width from inverted wingers and overlapping FBs. Late runners into box. High sustained possession.",
+      "defensive": "High press triggered by opponent GK or CB receiving ball. Counter-press immediately on loss. Compact midfield block when settled.",
+      "set_pieces": "Dangerous from corners (near post flicks). De Bruyne delivery from free kicks. Haaland primary aerial target.",
+      "transitions": "Quick vertical passes on turnover. Haaland stretches defensive line. Vulnerable to fast breaks when FBs are high."
+    },
+    "strengths": [
+      "Elite possession control (65%+ average)",
+      "Tactical flexibility — multiple formations mid-game",
+      "Individual quality across all positions",
+      "Set piece threat",
+      "Squad depth"
+    ],
+    "weaknesses": [
+      "Vulnerable to pace on counter-attacks",
+      "Over-reliance on Rodri for midfield control",
+      "High defensive line exploitable with long balls",
+      "Can struggle against deep compact blocks",
+      "Fatigue in congested fixture periods"
+    ],
+    "recent_form": ["W", "W", "D", "W", "L", "W", "W", "W", "D", "W"]
+  },
+  {
+    "id": "real_madrid",
+    "name": "Real Madrid",
+    "league": "La Liga",
+    "manager": "Carlo Ancelotti",
+    "formation": "4-3-1-2 / 4-4-2",
+    "style": "Direct, transitional, star-driven",
+    "season": "2024-25",
+    "key_players": [
+      { "name": "Kylian Mbappé", "position": "LW/ST", "number": 9, "strengths": ["Pace", "1v1 finishing", "Runs behind defence"], "weaknesses": ["Defensive effort", "Pressing consistency"] },
+      { "name": "Vinícius Jr", "position": "LW", "number": 7, "strengths": ["Dribbling", "Pace", "Big-game mentality"], "weaknesses": ["Decision-making in final third", "Temperament"] },
+      { "name": "Jude Bellingham", "position": "AM/CM", "number": 5, "strengths": ["Box-to-box runs", "Aerial ability", "Goal threat from midfield"], "weaknesses": ["Positional discipline", "Workrate fluctuation"] },
+      { "name": "Federico Valverde", "position": "CM/RW", "number": 8, "strengths": ["Engine", "Long-range shooting", "Defensive coverage"], "weaknesses": ["Final ball quality"] },
+      { "name": "Antonio Rüdiger", "position": "CB", "number": 22, "strengths": ["Aggressive defending", "Pace for a CB", "Leadership"], "weaknesses": ["Rash challenges", "Positioning on crosses"] }
+    ],
+    "tactical_patterns": {
+      "build_up": "Patient build-up through midfield. Kroos-style ball progression from deep. FBs provide width.",
+      "attacking": "Devastating transitions with Mbappé and Vinícius. Bellingham late arrivals in box. Crosses from wide areas.",
+      "defensive": "Mid-block with compact shape. Rely on individual brilliance to recover. Press selectively on triggers.",
+      "set_pieces": "Strong aerial threat from corners (Rüdiger, Bellingham). Direct free kicks from Mbappé.",
+      "transitions": "Elite counter-attacking speed. 3-4 seconds goal-to-goal. Mbappé-Vinícius combination lethal on break."
+    },
+    "strengths": [
+      "Devastating pace on transitions",
+      "Individual match-winners",
+      "Champions League pedigree and mentality",
+      "Tactical adaptability under Ancelotti",
+      "Strong aerial presence"
+    ],
+    "weaknesses": [
+      "Defensive structure without the ball",
+      "Over-reliance on individual moments",
+      "Midfield can be overrun by pressing teams",
+      "Right-back area vulnerable",
+      "Inconsistent pressing"
+    ],
+    "recent_form": ["W", "W", "W", "D", "W", "L", "W", "W", "W", "W"]
+  },
+  {
+    "id": "liverpool",
+    "name": "Liverpool",
+    "league": "Premier League",
+    "manager": "Arne Slot",
+    "formation": "4-2-3-1 / 4-3-3",
+    "style": "High-intensity pressing, vertical transitions",
+    "season": "2024-25",
+    "key_players": [
+      { "name": "Mohamed Salah", "position": "RW", "number": 11, "strengths": ["Cutting inside", "Finishing", "Consistency"], "weaknesses": ["Defensive tracking back", "Predictability of movement"] },
+      { "name": "Virgil van Dijk", "position": "CB", "number": 4, "strengths": ["Aerial dominance", "Long passing", "Leadership"], "weaknesses": ["Pace against elite forwards", "Recovery speed"] },
+      { "name": "Alexis Mac Allister", "position": "CM", "number": 10, "strengths": ["Ball progression", "Press resistance", "Vision"], "weaknesses": ["Physical duels", "Defensive positioning"] },
+      { "name": "Ryan Gravenberch", "position": "CDM", "number": 38, "strengths": ["Ball carrying", "Interceptions", "Tactical intelligence"], "weaknesses": ["Concentration lapses", "Long-range passing"] },
+      { "name": "Trent Alexander-Arnold", "position": "RB", "number": 66, "strengths": ["Crossing", "Playmaking from deep", "Set pieces"], "weaknesses": ["1v1 defending", "Positional awareness defensively"] }
+    ],
+    "tactical_patterns": {
+      "build_up": "GK distribution to FBs. TAA inverting as playmaker. Quick vertical progression through midfield.",
+      "attacking": "Salah cutting inside from right. Robertson overlaps on left. Third-man runs from midfield. Direct passing into channels.",
+      "defensive": "Aggressive high press in opponent's half. Gegenpressing on loss. Compact mid-block when press is beaten.",
+      "set_pieces": "TAA delivery from corners and free kicks. Van Dijk primary aerial target. Near-post routines.",
+      "transitions": "Fast vertical play on turnovers. Salah stretches play. Midfield runners support quickly."
+    },
+    "strengths": [
+      "Elite pressing intensity",
+      "Strong set-piece delivery and threat",
+      "Tactical organization under Slot",
+      "Individual quality in attack",
+      "Midfield balance and energy"
+    ],
+    "weaknesses": [
+      "TAA defensive vulnerability",
+      "High line exploitable with pace",
+      "Squad depth in certain positions",
+      "Can be disrupted by physical midfields",
+      "Transition defending when press is broken"
+    ],
+    "recent_form": ["W", "W", "W", "W", "D", "W", "W", "L", "W", "W"]
+  }
+]

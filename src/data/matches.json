@@ -1,0 +1,68 @@
+[
+  {
+    "id": "match_001",
+    "home_team": "man_city",
+    "away_team": "liverpool",
+    "date": "2025-02-23",
+    "competition": "Premier League",
+    "score": "1-1",
+    "possession": { "home": 62, "away": 38 },
+    "shots": { "home": 18, "away": 11 },
+    "shots_on_target": { "home": 6, "away": 5 },
+    "xg": { "home": 1.8, "away": 1.4 },
+    "corners": { "home": 8, "away": 4 },
+    "fouls": { "home": 10, "away": 14 },
+    "key_events": [
+      "Haaland goal 34' (header from De Bruyne cross)",
+      "Salah equalizer 67' (cut inside, curled finish)",
+      "Liverpool high press forced 3 turnovers in City half",
+      "City dominated possession but struggled to break Liverpool block",
+      "TAA switched to inverted role in 2nd half"
+    ],
+    "tactical_notes": "Liverpool sat deeper than usual, absorbing City's possession and hitting on transitions. Slot adjusted to a 4-4-2 mid-block in the second half. City struggled with width against Liverpool's compact shape."
+  },
+  {
+    "id": "match_002",
+    "home_team": "real_madrid",
+    "away_team": "man_city",
+    "date": "2025-03-11",
+    "competition": "Champions League",
+    "score": "3-2",
+    "possession": { "home": 42, "away": 58 },
+    "shots": { "home": 14, "away": 19 },
+    "shots_on_target": { "home": 7, "away": 8 },
+    "xg": { "home": 2.1, "away": 2.5 },
+    "corners": { "home": 3, "away": 9 },
+    "fouls": { "home": 16, "away": 8 },
+    "key_events": [
+      "Mbappé brace on counter-attacks (23', 71')",
+      "Bellingham header from corner (55')",
+      "Haaland goal 38' (penalty)",
+      "Foden goal 82' (long range)",
+      "Madrid lethal on 3 counter-attacks despite low possession"
+    ],
+    "tactical_notes": "Classic Ancelotti game management. Madrid conceded possession intentionally and waited for transition moments. Mbappé and Vinícius exploited City's high defensive line repeatedly. City's inverted FBs left gaps in wide areas."
+  },
+  {
+    "id": "match_003",
+    "home_team": "liverpool",
+    "away_team": "real_madrid",
+    "date": "2025-03-05",
+    "competition": "Champions League",
+    "score": "2-0",
+    "possession": { "home": 55, "away": 45 },
+    "shots": { "home": 16, "away": 9 },
+    "shots_on_target": { "home": 7, "away": 3 },
+    "xg": { "home": 2.3, "away": 0.8 },
+    "corners": { "home": 7, "away": 3 },
+    "fouls": { "home": 11, "away": 15 },
+    "key_events": [
+      "Liverpool's high press suffocated Madrid build-up",
+      "Salah goal 28' (pressing turnover, quick combination)",
+      "Gravenberch goal 61' (interception and run)",
+      "Madrid couldn't establish transition game",
+      "Vinícius isolated throughout"
+    ],
+    "tactical_notes": "Liverpool's pressing was the decisive factor. Slot's team pressed Madrid's double pivot relentlessly, preventing any meaningful build-up. Madrid's transition game was neutralized by Liverpool's recovery speed. TAA controlled tempo from the right."
+  }
+]
