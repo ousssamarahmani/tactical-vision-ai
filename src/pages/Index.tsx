@@ -10,15 +10,18 @@ import { Send, RotateCcw, Zap, Shield, Target } from 'lucide-react';
 import teamsData from '@/data/teams.json';
 
 const QUICK_PROMPTS = [
-  { label: 'Full Report', icon: Target, prompt: 'Generate a complete opposition analysis report for this team.' },
-  { label: 'Weaknesses', icon: Shield, prompt: 'What are the key tactical weaknesses we can exploit against this team?' },
-  { label: 'Counter Strategy', icon: Zap, prompt: 'Recommend a tactical game plan to beat this team, including formation, pressing triggers, and key matchups.' },
+  { label: 'Full Report', icon: Target, prompt: 'Generate a complete opposition analysis report for this team.', heatmap: true },
+  { label: 'Weaknesses', icon: Shield, prompt: 'What are the key tactical weaknesses we can exploit against this team?', heatmap: true },
+  { label: 'Counter Strategy', icon: Zap, prompt: 'Recommend a tactical game plan to beat this team, including formation, pressing triggers, and key matchups.', heatmap: false },
 ];
 
 export default function Index() {
   const [selectedTeam, setSelectedTeam] = useState<string>('');
   const [input, setInput] = useState('');
+  const [showHeatmaps, setShowHeatmaps] = useState(false);
   const { messages, status, error, analyze, reset } = useOppositionAnalyst();
+
+  const currentTeam = teamsData.find(t => t.id === selectedTeam);
 
   const handleSubmit = () => {
     if (!input.trim()) return;
@@ -26,8 +29,9 @@ export default function Index() {
     setInput('');
   };
 
-  const handleQuickPrompt = (prompt: string) => {
+  const handleQuickPrompt = (prompt: string, heatmap: boolean) => {
     if (!selectedTeam) return;
+    setShowHeatmaps(heatmap);
     analyze(prompt, selectedTeam);
   };
 
@@ -126,14 +130,14 @@ export default function Index() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
-                {QUICK_PROMPTS.map(({ label, icon: Icon, prompt }) => (
+                {QUICK_PROMPTS.map(({ label, icon: Icon, prompt, heatmap }) => (
                   <Button
                     key={label}
                     variant="outline"
                     size="sm"
                     className="w-full justify-start gap-2 text-xs"
                     disabled={!selectedTeam || isLoading}
-                    onClick={() => handleQuickPrompt(prompt)}
+                    onClick={() => handleQuickPrompt(prompt, heatmap)}
                   >
                     <Icon className="h-3.5 w-3.5" />
                     {label}
@@ -159,7 +163,12 @@ export default function Index() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="flex-1 overflow-y-auto">
-                <AnalysisReport messages={messages} />
+                <AnalysisReport
+                  messages={messages}
+                  selectedTeamId={selectedTeam}
+                  teamData={currentTeam as any}
+                  showHeatmaps={showHeatmaps && status === 'completed'}
+                />
               </CardContent>
             </Card>
 

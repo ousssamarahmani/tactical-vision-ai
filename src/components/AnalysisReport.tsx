@@ -1,8 +1,8 @@
 import { Card, CardContent } from '@/components/ui/card';
+import { PitchHeatmap } from '@/components/PitchHeatmap';
 import type { Msg } from '@/lib/stream-chat';
 
 function renderMarkdown(text: string) {
-  // Simple markdown rendering
   const lines = text.split('\n');
   const elements: JSX.Element[] = [];
 
@@ -40,7 +40,6 @@ function renderMarkdown(text: string) {
 }
 
 function renderInline(text: string) {
-  // Bold
   const parts = text.split(/(\*\*[^*]+\*\*)/g);
   return parts.map((part, i) => {
     if (part.startsWith('**') && part.endsWith('**')) {
@@ -50,7 +49,26 @@ function renderInline(text: string) {
   });
 }
 
-export function AnalysisReport({ messages }: { messages: Msg[] }) {
+interface AnalysisReportProps {
+  messages: Msg[];
+  selectedTeamId?: string;
+  teamData?: {
+    id: string;
+    name: string;
+    formation: string;
+    tactical_patterns: {
+      build_up: string;
+      attacking: string;
+      defensive: string;
+      transitions: string;
+    };
+    strengths: string[];
+    weaknesses: string[];
+  };
+  showHeatmaps?: boolean;
+}
+
+export function AnalysisReport({ messages, selectedTeamId, teamData, showHeatmaps }: AnalysisReportProps) {
   const assistantMessages = messages.filter(m => m.role === 'assistant');
   
   if (assistantMessages.length === 0) {
@@ -84,6 +102,22 @@ export function AnalysisReport({ messages }: { messages: Msg[] }) {
           )}
         </div>
       ))}
+
+      {/* Heatmaps after analysis */}
+      {showHeatmaps && teamData && assistantMessages.length > 0 && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+          <Card className="border-border/50 bg-card/80 backdrop-blur-sm">
+            <CardContent className="p-4">
+              <PitchHeatmap teamId={teamData.id} mode="attacking" teamData={teamData} />
+            </CardContent>
+          </Card>
+          <Card className="border-border/50 bg-card/80 backdrop-blur-sm">
+            <CardContent className="p-4">
+              <PitchHeatmap teamId={teamData.id} mode="defensive" teamData={teamData} />
+            </CardContent>
+          </Card>
+        </div>
+      )}
     </div>
   );
 }
