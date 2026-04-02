@@ -10,9 +10,9 @@ import { Send, RotateCcw, Zap, Shield, Target } from 'lucide-react';
 import teamsData from '@/data/teams.json';
 
 const QUICK_PROMPTS = [
-  { label: 'Full Report', icon: Target, prompt: 'Generate a complete opposition analysis report for this team.' },
-  { label: 'Weaknesses', icon: Shield, prompt: 'What are the key tactical weaknesses we can exploit against this team?' },
-  { label: 'Counter Strategy', icon: Zap, prompt: 'Recommend a tactical game plan to beat this team, including formation, pressing triggers, and key matchups.' },
+  { label: 'Full Report', icon: Target, prompt: 'Generate a complete opposition analysis report for this team.', heatmap: true },
+  { label: 'Weaknesses', icon: Shield, prompt: 'What are the key tactical weaknesses we can exploit against this team?', heatmap: true },
+  { label: 'Counter Strategy', icon: Zap, prompt: 'Recommend a tactical game plan to beat this team, including formation, pressing triggers, and key matchups.', heatmap: false },
 ];
 
 export default function Index() {
