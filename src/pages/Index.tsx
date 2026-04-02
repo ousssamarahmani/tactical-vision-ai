@@ -18,7 +18,10 @@ const QUICK_PROMPTS = [
 export default function Index() {
   const [selectedTeam, setSelectedTeam] = useState<string>('');
   const [input, setInput] = useState('');
+  const [showHeatmaps, setShowHeatmaps] = useState(false);
   const { messages, status, error, analyze, reset } = useOppositionAnalyst();
+
+  const currentTeam = teamsData.find(t => t.id === selectedTeam);
 
   const handleSubmit = () => {
     if (!input.trim()) return;
