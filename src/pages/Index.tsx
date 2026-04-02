@@ -130,14 +130,14 @@ export default function Index() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
-                {QUICK_PROMPTS.map(({ label, icon: Icon, prompt }) => (
+                {QUICK_PROMPTS.map(({ label, icon: Icon, prompt, heatmap }) => (
                   <Button
                     key={label}
                     variant="outline"
                     size="sm"
                     className="w-full justify-start gap-2 text-xs"
                     disabled={!selectedTeam || isLoading}
-                    onClick={() => handleQuickPrompt(prompt)}
+                    onClick={() => handleQuickPrompt(prompt, heatmap)}
                   >
                     <Icon className="h-3.5 w-3.5" />
                     {label}
