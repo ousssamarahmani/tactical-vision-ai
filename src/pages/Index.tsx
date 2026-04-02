@@ -29,8 +29,9 @@ export default function Index() {
     setInput('');
   };
 
-  const handleQuickPrompt = (prompt: string) => {
+  const handleQuickPrompt = (prompt: string, heatmap: boolean) => {
     if (!selectedTeam) return;
+    setShowHeatmaps(heatmap);
     analyze(prompt, selectedTeam);
   };
 
