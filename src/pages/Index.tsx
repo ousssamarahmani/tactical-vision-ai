@@ -163,7 +163,12 @@ export default function Index() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="flex-1 overflow-y-auto">
-                <AnalysisReport messages={messages} />
+                <AnalysisReport
+                  messages={messages}
+                  selectedTeamId={selectedTeam}
+                  teamData={currentTeam as any}
+                  showHeatmaps={showHeatmaps && status === 'completed'}
+                />
               </CardContent>
             </Card>
 
