@@ -3,10 +3,12 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { StatusIndicator } from '@/components/StatusIndicator';
 import { AnalysisReport } from '@/components/AnalysisReport';
+import { OppositionDashboard } from '@/components/dashboard/OppositionDashboard';
 import { useOppositionAnalyst } from '@/hooks/useOppositionAnalyst';
-import { Send, RotateCcw, Zap, Shield, Target } from 'lucide-react';
+import { Send, RotateCcw, Zap, Shield, Target, LayoutDashboard, MessageSquare } from 'lucide-react';
 import teamsData from '@/data/teams.json';
 
 const QUICK_PROMPTS = [
@@ -19,12 +21,14 @@ export default function Index() {
   const [selectedTeam, setSelectedTeam] = useState<string>('');
   const [input, setInput] = useState('');
   const [showHeatmaps, setShowHeatmaps] = useState(false);
+  const [activeTab, setActiveTab] = useState<string>('dashboard');
   const { messages, status, error, analyze, reset } = useOppositionAnalyst();
 
   const currentTeam = teamsData.find(t => t.id === selectedTeam);
 
   const handleSubmit = () => {
     if (!input.trim()) return;
+    setActiveTab('report');
     analyze(input, selectedTeam || undefined);
     setInput('');
   };
@@ -32,6 +36,7 @@ export default function Index() {
   const handleQuickPrompt = (prompt: string, heatmap: boolean) => {
     if (!selectedTeam) return;
     setShowHeatmaps(heatmap);
+    setActiveTab('report');
     analyze(prompt, selectedTeam);
   };
 
@@ -58,7 +63,7 @@ export default function Index() {
       </header>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
-        <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-6 min-h-[calc(100vh-120px)]">
+        <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-6 min-h-[calc(100vh-120px)]">
           
           {/* Left Panel — Controls */}
           <div className="space-y-4">
@@ -82,42 +87,34 @@ export default function Index() {
                   </SelectContent>
                 </Select>
 
-                {selectedTeam && (
-                  <div className="space-y-2 pt-1">
-                    {(() => {
-                      const team = teamsData.find(t => t.id === selectedTeam);
-                      if (!team) return null;
-                      return (
-                        <div className="text-xs space-y-1.5 text-muted-foreground">
-                          <div className="flex justify-between">
-                            <span>Manager</span>
-                            <span className="text-foreground font-medium">{team.manager}</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span>Formation</span>
-                            <span className="text-foreground font-medium">{team.formation}</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span>Style</span>
-                            <span className="text-foreground font-medium text-right max-w-[180px]">{team.style}</span>
-                          </div>
-                          <div className="flex gap-1 pt-1">
-                            {team.recent_form.map((r, i) => (
-                              <span
-                                key={i}
-                                className={`h-5 w-5 rounded text-[10px] font-bold flex items-center justify-center ${
-                                  r === 'W' ? 'bg-primary/20 text-primary' :
-                                  r === 'D' ? 'bg-accent/20 text-accent' :
-                                  'bg-destructive/20 text-destructive'
-                                }`}
-                              >
-                                {r}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      );
-                    })()}
+                {selectedTeam && currentTeam && (
+                  <div className="text-xs space-y-1.5 text-muted-foreground pt-1">
+                    <div className="flex justify-between">
+                      <span>Manager</span>
+                      <span className="text-foreground font-medium">{currentTeam.manager}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Formation</span>
+                      <span className="text-foreground font-medium">{currentTeam.formation}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Style</span>
+                      <span className="text-foreground font-medium text-right max-w-[160px]">{currentTeam.style}</span>
+                    </div>
+                    <div className="flex gap-1 pt-1">
+                      {currentTeam.recent_form.map((r, i) => (
+                        <span
+                          key={i}
+                          className={`h-5 w-5 rounded text-[10px] font-bold flex items-center justify-center ${
+                            r === 'W' ? 'bg-primary/20 text-primary' :
+                            r === 'D' ? 'bg-accent/20 text-accent' :
+                            'bg-destructive/20 text-destructive'
+                          }`}
+                        >
+                          {r}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 )}
               </CardContent>
@@ -154,31 +151,60 @@ export default function Index() {
             )}
           </div>
 
-          {/* Right Panel — Report */}
+          {/* Right Panel — Tabbed View */}
           <div className="flex flex-col gap-4 min-h-0">
-            <Card className="flex-1 border-border/50 bg-card/80 backdrop-blur-sm flex flex-col overflow-hidden">
-              <CardHeader className="pb-3 flex-shrink-0">
-                <CardTitle className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                  Analysis Report
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex-1 overflow-y-auto">
-                <AnalysisReport
-                  messages={messages}
-                  selectedTeamId={selectedTeam}
-                  teamData={currentTeam as any}
-                  showHeatmaps={showHeatmaps && status === 'completed'}
-                />
-              </CardContent>
-            </Card>
+            <Tabs value={activeTab} onValueChange={setActiveTab} className="flex flex-col flex-1 min-h-0">
+              <TabsList className="w-fit bg-card/80 border border-border/50 backdrop-blur-sm">
+                <TabsTrigger value="dashboard" className="gap-1.5 text-xs">
+                  <LayoutDashboard className="h-3.5 w-3.5" />
+                  Dashboard
+                </TabsTrigger>
+                <TabsTrigger value="report" className="gap-1.5 text-xs">
+                  <MessageSquare className="h-3.5 w-3.5" />
+                  AI Report
+                </TabsTrigger>
+              </TabsList>
 
-            {error && (
-              <div className="text-sm text-destructive bg-destructive/10 border border-destructive/20 rounded-lg px-4 py-2.5">
-                {error}
-              </div>
-            )}
+              <TabsContent value="dashboard" className="flex-1 mt-4 overflow-y-auto">
+                {currentTeam ? (
+                  <OppositionDashboard teamData={currentTeam} />
+                ) : (
+                  <Card className="border-border/50 bg-card/80 backdrop-blur-sm h-full flex items-center justify-center min-h-[400px]">
+                    <div className="text-center space-y-3">
+                      <div className="text-5xl">📊</div>
+                      <p className="text-lg font-medium text-foreground">Select a team to view dashboard</p>
+                      <p className="text-sm text-muted-foreground">Analytics and tactical data will appear here</p>
+                    </div>
+                  </Card>
+                )}
+              </TabsContent>
 
-            {/* Input */}
+              <TabsContent value="report" className="flex-1 mt-4 flex flex-col gap-4 min-h-0">
+                <Card className="flex-1 border-border/50 bg-card/80 backdrop-blur-sm flex flex-col overflow-hidden">
+                  <CardHeader className="pb-3 flex-shrink-0">
+                    <CardTitle className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                      Analysis Report
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-1 overflow-y-auto">
+                    <AnalysisReport
+                      messages={messages}
+                      selectedTeamId={selectedTeam}
+                      teamData={currentTeam as any}
+                      showHeatmaps={showHeatmaps && status === 'completed'}
+                    />
+                  </CardContent>
+                </Card>
+
+                {error && (
+                  <div className="text-sm text-destructive bg-destructive/10 border border-destructive/20 rounded-lg px-4 py-2.5">
+                    {error}
+                  </div>
+                )}
+              </TabsContent>
+            </Tabs>
+
+            {/* Input — always visible */}
             <div className="flex gap-2 items-end">
               <Textarea
                 value={input}
