@@ -57,8 +57,7 @@ function SectionHeader({ icon: Icon, title, subtitle }: { icon: React.ElementTyp
 }
 
 export function OppositionDashboard({ teamData }: OppositionDashboardProps) {
-  const reportRef = useRef<HTMLDivElement>(null);
-  const [exporting, setExporting] = useState(false);
+  const [exportingType, setExportingType] = useState<'summary' | 'detailed' | null>(null);
 
   const teamMatches = matchesData.filter(
     m => m.home_team === teamData.id || m.away_team === teamData.id
@@ -81,40 +80,15 @@ export function OppositionDashboard({ teamData }: OppositionDashboardProps) {
       }, 0) / teamMatches.length)
     : 0;
 
-  const handleExportPDF = async () => {
-    if (!reportRef.current) return;
-    setExporting(true);
+  const handleExport = async (type: 'summary' | 'detailed') => {
+    setExportingType(type);
     try {
-      const html2canvas = (await import('html2canvas')).default;
-      const { jsPDF } = await import('jspdf');
-
-      const canvas = await html2canvas(reportRef.current, {
-        scale: 2,
-        useCORS: true,
-        backgroundColor: '#0a0a0f',
-        logging: false,
-      });
-
-      const imgData = canvas.toDataURL('image/png');
-      const imgWidth = 210; // A4 width mm
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-      const pdf = new jsPDF('p', 'mm', 'a4');
-      let yPosition = 0;
-      const pageHeight = 297; // A4 height mm
-
-      // Add pages as needed
-      while (yPosition < imgHeight) {
-        if (yPosition > 0) pdf.addPage();
-        pdf.addImage(imgData, 'PNG', 0, -yPosition, imgWidth, imgHeight);
-        yPosition += pageHeight;
-      }
-
-      pdf.save(`${teamData.name.replace(/\s+/g, '_')}_Opposition_Report.pdf`);
+      await new Promise(resolve => setTimeout(resolve, 100));
+      generateReport(teamData as any, matchesData as any, type);
     } catch (err) {
       console.error('PDF export failed:', err);
     } finally {
-      setExporting(false);
+      setExportingType(null);
     }
   };
 
