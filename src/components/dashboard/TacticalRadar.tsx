@@ -2,6 +2,7 @@ import {
   RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Tooltip,
 } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Target } from 'lucide-react';
 
 interface TacticalRadarProps {
   teamData: {
@@ -38,9 +39,11 @@ export function TacticalRadar({ teamData }: TacticalRadarProps) {
   ];
 
   return (
-    <Card className="border-border/50 bg-card/80 backdrop-blur-sm">
-      <CardHeader className="pb-2">
-        <CardTitle className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+    <Card className="border-border/50 bg-card/80 backdrop-blur-sm overflow-hidden">
+      <div className="h-[2px] bg-primary" />
+      <CardHeader className="pb-2 pt-4">
+        <CardTitle className="text-[11px] font-bold uppercase tracking-[0.15em] text-muted-foreground flex items-center gap-2">
+          <Target className="h-3.5 w-3.5" />
           Tactical Profile
         </CardTitle>
       </CardHeader>
@@ -50,7 +53,7 @@ export function TacticalRadar({ teamData }: TacticalRadarProps) {
             <PolarGrid stroke="hsl(var(--border))" />
             <PolarAngleAxis
               dataKey="dimension"
-              tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 10 }}
+              tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 10, fontWeight: 600 }}
             />
             <PolarRadiusAxis
               angle={30}
@@ -63,7 +66,7 @@ export function TacticalRadar({ teamData }: TacticalRadarProps) {
               dataKey="value"
               stroke="hsl(var(--primary))"
               fill="hsl(var(--primary))"
-              fillOpacity={0.25}
+              fillOpacity={0.2}
               strokeWidth={2}
             />
             <Tooltip
@@ -71,7 +74,7 @@ export function TacticalRadar({ teamData }: TacticalRadarProps) {
                 backgroundColor: 'hsl(var(--card))',
                 border: '1px solid hsl(var(--border))',
                 borderRadius: '8px',
-                fontSize: '12px',
+                fontSize: '11px',
               }}
             />
           </RadarChart>
