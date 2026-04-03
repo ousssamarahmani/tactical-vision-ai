@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { KPICard } from './KPICard';
 import { TacticalRadar } from './TacticalRadar';
 import { MatchStatsChart } from './MatchStatsChart';
@@ -9,8 +9,9 @@ import { PitchHeatmap } from '@/components/PitchHeatmap';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { Users, Swords, TrendingUp, Target, Download, FileText, Loader2 } from 'lucide-react';
+import { Users, Swords, TrendingUp, Target, Download, FileText, Loader2, BookOpen } from 'lucide-react';
 import matchesData from '@/data/matches.json';
+import { generateReport } from '@/lib/generateReport';
 
 interface TeamData {
   id: string;
@@ -56,8 +57,7 @@ function SectionHeader({ icon: Icon, title, subtitle }: { icon: React.ElementTyp
 }
 
 export function OppositionDashboard({ teamData }: OppositionDashboardProps) {
-  const reportRef = useRef<HTMLDivElement>(null);
-  const [exporting, setExporting] = useState(false);
+  const [exportingType, setExportingType] = useState<'summary' | 'detailed' | null>(null);
 
   const teamMatches = matchesData.filter(
     m => m.home_team === teamData.id || m.away_team === teamData.id
@@ -80,40 +80,15 @@ export function OppositionDashboard({ teamData }: OppositionDashboardProps) {
       }, 0) / teamMatches.length)
     : 0;
 
-  const handleExportPDF = async () => {
-    if (!reportRef.current) return;
-    setExporting(true);
+  const handleExport = async (type: 'summary' | 'detailed') => {
+    setExportingType(type);
     try {
-      const html2canvas = (await import('html2canvas')).default;
-      const { jsPDF } = await import('jspdf');
-
-      const canvas = await html2canvas(reportRef.current, {
-        scale: 2,
-        useCORS: true,
-        backgroundColor: '#0a0a0f',
-        logging: false,
-      });
-
-      const imgData = canvas.toDataURL('image/png');
-      const imgWidth = 210; // A4 width mm
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-      const pdf = new jsPDF('p', 'mm', 'a4');
-      let yPosition = 0;
-      const pageHeight = 297; // A4 height mm
-
-      // Add pages as needed
-      while (yPosition < imgHeight) {
-        if (yPosition > 0) pdf.addPage();
-        pdf.addImage(imgData, 'PNG', 0, -yPosition, imgWidth, imgHeight);
-        yPosition += pageHeight;
-      }
-
-      pdf.save(`${teamData.name.replace(/\s+/g, '_')}_Opposition_Report.pdf`);
+      await new Promise(resolve => setTimeout(resolve, 100));
+      generateReport(teamData as any, matchesData as any, type);
     } catch (err) {
       console.error('PDF export failed:', err);
     } finally {
-      setExporting(false);
+      setExportingType(null);
     }
   };
 
@@ -127,16 +102,26 @@ export function OppositionDashboard({ teamData }: OppositionDashboardProps) {
           variant="outline"
           size="sm"
           className="gap-2 text-xs border-primary/30 text-primary hover:bg-primary/10"
-          onClick={handleExportPDF}
-          disabled={exporting}
+          onClick={() => handleExport('summary')}
+          disabled={exportingType !== null}
         >
-          {exporting ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Download className="h-3.5 w-3.5" />}
-          {exporting ? 'Generating PDF…' : 'Download PDF'}
+          {exportingType === 'summary' ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Download className="h-3.5 w-3.5" />}
+          {exportingType === 'summary' ? 'Generating…' : 'Summary PDF'}
+        </Button>
+        <Button
+          variant="outline"
+          size="sm"
+          className="gap-2 text-xs border-accent/30 text-accent hover:bg-accent/10"
+          onClick={() => handleExport('detailed')}
+          disabled={exportingType !== null}
+        >
+          {exportingType === 'detailed' ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <BookOpen className="h-3.5 w-3.5" />}
+          {exportingType === 'detailed' ? 'Generating…' : 'Tactical Report'}
         </Button>
       </div>
 
       {/* Report Body */}
-      <div ref={reportRef} className="space-y-5 bg-background rounded-xl p-5 border border-border/40">
+      <div className="space-y-5 bg-background rounded-xl p-5 border border-border/40">
         {/* Report Header */}
         <div className="space-y-3">
           <div className="flex items-start justify-between">
