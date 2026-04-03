@@ -102,16 +102,26 @@ export function OppositionDashboard({ teamData }: OppositionDashboardProps) {
           variant="outline"
           size="sm"
           className="gap-2 text-xs border-primary/30 text-primary hover:bg-primary/10"
-          onClick={handleExportPDF}
-          disabled={exporting}
+          onClick={() => handleExport('summary')}
+          disabled={exportingType !== null}
         >
-          {exporting ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Download className="h-3.5 w-3.5" />}
-          {exporting ? 'Generating PDF…' : 'Download PDF'}
+          {exportingType === 'summary' ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Download className="h-3.5 w-3.5" />}
+          {exportingType === 'summary' ? 'Generating…' : 'Summary PDF'}
+        </Button>
+        <Button
+          variant="outline"
+          size="sm"
+          className="gap-2 text-xs border-accent/30 text-accent hover:bg-accent/10"
+          onClick={() => handleExport('detailed')}
+          disabled={exportingType !== null}
+        >
+          {exportingType === 'detailed' ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <BookOpen className="h-3.5 w-3.5" />}
+          {exportingType === 'detailed' ? 'Generating…' : 'Tactical Report'}
         </Button>
       </div>
 
       {/* Report Body */}
-      <div ref={reportRef} className="space-y-5 bg-background rounded-xl p-5 border border-border/40">
+      <div className="space-y-5 bg-background rounded-xl p-5 border border-border/40">
         {/* Report Header */}
         <div className="space-y-3">
           <div className="flex items-start justify-between">
