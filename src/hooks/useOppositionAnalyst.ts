@@ -17,14 +17,13 @@ export function useOppositionAnalyst() {
     const userMsg: Msg = { role: 'user', content: input };
     setMessages(prev => [...prev, userMsg]);
 
-    // Find relevant team and match data
+    // Send all teams for cross-team pattern recognition, highlight selected team
     const teamData = selectedTeamId
-      ? teamsData.find(t => t.id === selectedTeamId)
+      ? { selected: teamsData.find(t => t.id === selectedTeamId), all_teams: teamsData }
       : teamsData;
 
-    const matchData = selectedTeamId
-      ? matchesData.filter(m => m.home_team === selectedTeamId || m.away_team === selectedTeamId)
-      : matchesData;
+    // Send all matches for pattern recognition across teams
+    const matchData = matchesData;
 
     let assistantContent = '';
 
