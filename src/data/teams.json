@@ -262,5 +262,49 @@
       "Over-possession can become sterile — xG drops to 1.1 vs organized low blocks"
     ],
     "recent_form": ["W", "W", "D", "W", "W", "W", "L", "W", "D", "W"]
+  },
+  {
+    "id": "bayern_munich",
+    "name": "Bayern Munich",
+    "league": "Bundesliga",
+    "manager": "Vincent Kompany",
+    "formation": "4-2-3-1 / 4-1-4-1",
+    "style": "High-pressing, vertical transitions, wide overloads",
+    "season": "2025-26",
+    "data_sources": ["FBref", "Football-Data.org"],
+    "key_players": [
+      { "name": "Harry Kane", "position": "ST", "number": 9, "strengths": ["Elite finishing", "Link-up play", "Penalty box movement", "Set piece delivery"], "weaknesses": ["Pace in behind", "Defensive pressing intensity"], "fbref_metrics": { "goals": 22, "xG": 19.8, "xAG": 7.2, "progressive_passes": 64, "shot_creating_actions": 72 } },
+      { "name": "Jamal Musiala", "position": "AM/LW", "number": 42, "strengths": ["Dribbling in tight spaces", "Half-space creativity", "Goal threat from midfield"], "weaknesses": ["Defensive tracking", "Aerial duels"], "fbref_metrics": { "goals": 12, "xG": 10.4, "xAG": 8.1, "successful_dribbles": 84, "progressive_carries": 92 } },
+      { "name": "Michael Olise", "position": "RW", "number": 17, "strengths": ["1v1 dribbling", "Crossing", "Set pieces", "Cut-inside finishing"], "weaknesses": ["Defensive work rate", "Consistency under pressing"], "fbref_metrics": { "goals": 9, "xG": 7.8, "xAG": 9.4, "successful_dribbles": 68, "shot_creating_actions": 104 } },
+      { "name": "Leroy Sané", "position": "LW/RW", "number": 10, "strengths": ["Pace", "Direct running", "Counter-attack threat"], "weaknesses": ["Decision-making in final third", "Defensive contribution"], "fbref_metrics": { "goals": 7, "xG": 6.2, "xAG": 5.8, "progressive_carries": 76, "successful_dribbles": 52 } },
+      { "name": "Joshua Kimmich", "position": "CDM/RB", "number": 6, "strengths": ["Long-range passing", "Tactical intelligence", "Set pieces", "Pressing orchestration"], "weaknesses": ["Pace in wide areas", "Physical duels vs powerful forwards"], "fbref_metrics": { "progressive_passes": 198, "pass_completion": 90.8, "interceptions": 48, "shot_creating_actions": 62 } },
+      { "name": "Aleksandar Pavlović", "position": "CM/CDM", "number": 49, "strengths": ["Ball progression", "Press resistance", "Positioning"], "weaknesses": ["Experience in knockout games", "Aerial presence"], "fbref_metrics": { "progressive_passes": 124, "progressive_carries": 48, "interceptions": 34, "pass_completion": 89.2 } },
+      { "name": "Alphonso Davies", "position": "LB", "number": 19, "strengths": ["Explosive pace", "Overlapping runs", "Recovery speed"], "weaknesses": ["Crossing accuracy", "Positional discipline when attacking"], "fbref_metrics": { "progressive_carries": 88, "successful_dribbles": 42, "interceptions": 22, "aerial_won_pct": 48 } },
+      { "name": "Kim Min-jae", "position": "CB", "number": 3, "strengths": ["Pace for a CB", "Aggressive defending", "Ball carrying from back"], "weaknesses": ["Rash challenges", "Positioning in zonal marking"], "fbref_metrics": { "aerial_won_pct": 71, "interceptions": 44, "progressive_carries": 38, "progressive_passes": 86 } },
+      { "name": "Dayot Upamecano", "position": "CB", "number": 2, "strengths": ["Physical power", "Ball progression", "Recovery pace"], "weaknesses": ["Concentration lapses", "Passing under pressure"], "fbref_metrics": { "aerial_won_pct": 68, "interceptions": 38, "progressive_carries": 42, "progressive_passes": 78 } },
+      { "name": "Serge Gnabry", "position": "RW/ST", "number": 7, "strengths": ["Versatility", "Movement off the ball", "Finishing from wide"], "weaknesses": ["Inconsistency", "Link-up under tight marking"], "fbref_metrics": { "goals": 8, "xG": 7.1, "progressive_carries": 44, "shot_creating_actions": 56 } }
+    ],
+    "tactical_patterns": {
+      "build_up": "GK plays short to CBs. Kimmich drops as single pivot between CBs. FBs push high — Davies provides width on left, RB tucks in. Progressive passing rate: 9.1 per 90 (FBref). Kim Min-jae carries ball aggressively from back.",
+      "attacking": "Wide overloads with Davies overlapping and Olise/Sané cutting inside. Musiala operates between the lines in left half-space. Kane drops deep to link play then attacks box. xG per 90: 2.3 (FBref). High crossing volume from wide areas (18.4 per 90).",
+      "defensive": "Aggressive high press — PPDA: 7.2 (FBref, 2nd lowest in Bundesliga). Gegenpressing within 5 seconds of loss. Compact 4-4-2 mid-block when press is bypassed. Vulnerable in transition when FBs are caught high.",
+      "set_pieces": "Kane and Olise as primary delivery. Kim Min-jae and Upamecano as aerial targets. Near-post flick routines. Set piece xG: 0.28 per match (FBref).",
+      "transitions": "Lightning counter-attacks via Davies' pace on left or Sané's direct running. Kane as target man for long transitions. Dangerous in 3v3 / 4v4 fast breaks."
+    },
+    "strengths": [
+      "Elite pressing intensity (PPDA 7.2, FBref — Bundesliga's most aggressive press)",
+      "Individual quality in wide areas — Olise, Sané, Davies create constant 1v1 overloads",
+      "Kane's complete forward play — goals, assists, link-up (22G + 7.2 xAG, FBref)",
+      "Musiala's half-space creativity — unplayable in zone 14 (84 successful dribbles, FBref)",
+      "Transition speed — Davies' recovery and counter-attack pace is elite"
+    ],
+    "weaknesses": [
+      "Defensive transition vulnerability when both FBs are high (conceded 10 transition goals, Football-Data.org)",
+      "CB partnership inconsistency — Upamecano's concentration lapses lead to individual errors (4 errors leading to shots, FBref)",
+      "Set-piece defending — zonal marking system leaves gaps at back post (conceded 7 set-piece goals, Football-Data.org)",
+      "Over-reliance on Kimmich in build-up — pressing him disrupts the entire rhythm",
+      "Struggles against deep compact blocks — xG drops to 1.2 vs low-block teams (FBref)"
+    ],
+    "recent_form": ["W", "W", "W", "D", "W", "L", "W", "W", "W", "D"]
   }
 ]
