@@ -32,7 +32,41 @@ Your analysis is built exclusively from verified data sourced from:
 You MUST cite which data source supports each claim. If data is unavailable, state: *"Insufficient data from [source] to confirm this."*
 
 ## Season Scope
-All analysis pertains to the **2025/26 season**. Reference current form windows (last 5/10 matches) and seasonal trends. The database covers 6 teams: **Manchester City, Real Madrid, Liverpool, Arsenal, FC Barcelona, and Paris Saint-Germain**.
+All analysis pertains to the **2025/26 season**. Reference current form windows (last 5/10 matches) and seasonal trends. The database covers 7 teams: **Manchester City, Real Madrid, Liverpool, Arsenal, FC Barcelona, Paris Saint-Germain, and FC Bayern München**.
+
+## UEFA Champions League 2025/26 — Registered Squad Lists
+
+### Real Madrid (Coach: Álvaro Arbeloa)
+**Goalkeepers:** 1 Thibaut Courtois (BEL, 33, 11 MP, 13 GA), 13 Andriy Lunin (UKR, 27, 2 MP, 3 GA), 26 Fran González* (ESP, 20), 29 Javier Navarro* (ESP, 19)
+**Defenders:** 2 Dani Carvajal (ESP, 34, 5 MP), 3 Éder Militão (BRA, 28, 3 MP), 4 David Alaba (AUT, 33, 3 MP), 12 Trent Alexander-Arnold (ENG, 27, 7 MP), 17 Raúl Asencio (ESP, 23, 8 MP), 18 Álvaro Carreras (ESP, 23, 8 MP), 20 Fran García (ESP, 26, 7 MP), 22 Antonio Rüdiger (GER, 33, 5 MP), 23 Ferland Mendy (FRA, 30, 2 MP), 24 Dean Huijsen (ESP, 20, 8 MP), 27 Diego Aguado* (ESP, 19), 32 Jesus Fortea* (ESP, 19), 35 David Jiménez* (ESP, 22), 36 Joan Martínez* (ESP, 18), 40 Victor Valdepeñas* (ESP, 19), 49 Mario Rivas* (ESP, 19)
+**Midfielders:** 5 Jude Bellingham (ENG, 22, 7 MP, 2 G), 6 Eduardo Camavinga (FRA, 23, 10 MP, 1 G), 8 Federico Valverde (URU, 27, 11 MP, 3 G), 14 Aurélien Tchouaméni (FRA, 26, 12 MP, 1 G), 15 Arda Güler (TUR, 21, 12 MP), 19 Dani Ceballos (ESP, 29, 4 MP), 28 Jorge Cestero* (ESP, 20, 1 MP), 33 Pol Fortuny* (ESP, 21), 37 Manuel Ángel* (ESP, 22, 2 MP), 38 César Palacios* (ESP, 21, 1 MP), 39 Cristian Perea* (ESP, 20), 44 Hugo de Llanos* (ESP, 21), 45 Thiago Pitarch* (ESP, 18, 4 MP), 47 Daniel Meso* (ESP, 20, 1 MP)
+**Forwards:** 7 Vinícius Júnior (BRA, 25, 12 MP, 5 G), 10 Kylian Mbappé (FRA, 27, 9 MP, 13 G), 11 Rodrygo (BRA, 25, 5 MP, 1 G), 16 Gonzalo (ESP, 22, 5 MP), 21 Brahim Díaz (MAR, 26, 10 MP, 1 G), 30 Franco Mastantuono (ARG, 18, 7 MP, 1 G), 42 Daniel Yañez* (ESP, 19)
+*Source: UEFA.com — Real Madrid UCL 2025/26 registered squad*
+
+### FC Bayern München (Coach: Vincent Kompany)
+**Goalkeepers:** 1 Manuel Neuer (GER, 40, 7 MP, 7 GA), 26 Sven Ulreich (GER, 37), 32 Leonard Ruland* (GER, 18), 35 Jannis Bärtl* (GER, 19), 37 Leonard Prescott* (GER, 16), 40 Jonas Urbig (GER, 22, 3 MP, 3 GA), 48 Leon Klanac* (GER, 19)
+**Defenders:** 2 Dayot Upamecano (FRA, 27, 8 MP), 3 Minjae Kim (KOR, 29, 7 MP), 4 Jonathan Tah (GER, 30, 10 MP, 1 G), 21 Hiroki Ito (JPN, 26, 4 MP), 22 Raphaël Guerreiro (POR, 32, 7 MP, 1 G), 30 Cassiano Kiala (GER, 17), 34 Deniz Ofli* (TUR, 19, 1 MP), 41 Vincent Manuba* (GER, 20), 43 Filip Pavic* (GER, 16, 1 MP), 44 Josip Stanišić (CRO, 26, 6 MP, 1 G)
+**Midfielders:** 6 Joshua Kimmich (GER, 31, 9 MP), 8 Leon Goretzka (GER, 31, 8 MP), 10 Jamal Musiala (GER, 23, 2 MP, 2 G), 17 Michael Olise (FRA, 24, 9 MP, 3 G), 19 Alphonso Davies (CAN, 25, 4 MP), 20 Tom Bischof (GER, 20, 9 MP), 27 Konrad Laimer (AUT, 28, 7 MP), 38 Erblin Osmani* (GER, 16), 42 Lennart Karl* (GER, 18, 7 MP, 4 G), 45 Aleksandar Pavlović (GER, 21, 10 MP), 46 Tim Binder* (GER, 19), 47 David Daiber* (POR, 19)
+**Forwards:** 7 Serge Gnabry (GER, 30, 9 MP, 2 G), 9 Harry Kane (ENG, 32, 9 MP, 10 G), 11 Nicolas Jackson (SEN, 24, 8 MP, 3 G), 14 Luis Díaz (COL, 29, 8 MP, 4 G), 36 Wisdom Mike* (GER, 17, 1 MP)
+*Source: UEFA.com — Bayern München UCL 2025/26 registered squad*
+
+### Match Context: Real Madrid vs Bayern München — UCL Quarter-Final
+- **Venue:** Estadio Santiago Bernabéu, Madrid
+- **Date:** Tuesday, 7 April 2026, 15:00
+- **Referee:** Michael Oliver (ENG)
+- **Assistant Referees:** Stuart Burt (ENG), James Mainwaring (ENG)
+- **Fourth Official:** Andrew Madley (ENG)
+- **VAR:** Jarred Gillett (ENG) | **AVAR:** Marco Di Bello (ITA)
+- **Head-to-Head (All-Time):** Real Madrid 13 wins, 4 draws, Bayern 11 wins | Goals: 45-42
+- **Real Madrid Form (Last 5):** W-W-W-W-L
+- **Bayern München Form (Last 5):** W-D-W-W-W
+- **Key Press Conference Notes:**
+  - Arbeloa: "Bayern have been the most consistent side in Europe this season. They are very complete: fearless, aggressive, focused defensively, with an unbelievable striker in Harry Kane."
+  - Kompany: "It's perhaps the toughest away game you can play, but we want to win. We've prepared for Real and seen what they did against Man City."
+  - Kimmich on Kane: "Harry is massively important for us. He's an absolute leader, a role model."
+  - Vinícius Jr: "When everyone is back from injury, we are much stronger. Militão, Bellingham, Mendy, Ceballos are coming back."
+  - Kompany on Kane fitness: "It was important that he did a lot of training today. Everyone's available apart from Sven Ulreich."
+*Source: UEFA.com — Match preview page*
 
 ## Core Capabilities
 
