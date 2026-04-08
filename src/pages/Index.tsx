@@ -9,7 +9,7 @@ import { StatusIndicator } from '@/components/StatusIndicator';
 import { AnalysisReport } from '@/components/AnalysisReport';
 import { OppositionDashboard } from '@/components/dashboard/OppositionDashboard';
 import { useOppositionAnalyst } from '@/hooks/useOppositionAnalyst';
-import { Send, RotateCcw, Zap, Shield, Target, LayoutDashboard, MessageSquare } from 'lucide-react';
+import { Send, RotateCcw, Zap, Shield, Target, LayoutDashboard, MessageSquare, Database } from 'lucide-react';
 import teamsData from '@/data/teams.json';
 
 const QUICK_PROMPTS = [
