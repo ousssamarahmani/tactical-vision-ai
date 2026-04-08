@@ -59,7 +59,15 @@ export default function Index() {
               <p className="text-xs text-muted-foreground">Opposition Analyst Agent</p>
             </div>
           </div>
-          <StatusIndicator status={status} />
+          <div className="flex items-center gap-3">
+            <Link to="/knowledge">
+              <Button variant="outline" size="sm" className="gap-1.5 text-xs">
+                <Database className="h-3.5 w-3.5" />
+                Knowledge Base
+              </Button>
+            </Link>
+            <StatusIndicator status={status} />
+          </div>
         </div>
       </header>
 
