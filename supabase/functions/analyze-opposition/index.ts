@@ -179,6 +179,53 @@ Deno.serve(async (req) => {
       context += `\n## Recent Match Data (Source: FBref / Football-Data.org)\n\`\`\`json\n${JSON.stringify(matchData, null, 2)}\n\`\`\`\n`;
     }
 
+    // RAG: Search knowledge base for relevant context
+    try {
+      const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
+      const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+      const supabase = createClient(supabaseUrl, serviceKey);
+
+      // Extract search query from the latest user message
+      const lastUserMsg = [...messages].reverse().find((m: any) => m.role === 'user');
+      if (lastUserMsg) {
+        const teamName = teamData?.name || '';
+        const searchQuery = `${teamName} ${lastUserMsg.content}`.trim();
+        
+        const { data: ragResults } = await supabase.rpc('search_knowledge', {
+          query_text: searchQuery,
+          match_count: 5,
+          filter_team: teamName ? teamName.toLowerCase() : null,
+          filter_source: null,
+        });
+
+        // Also try without team filter for broader results
+        let allResults = ragResults || [];
+        if (allResults.length < 3 && teamName) {
+          const { data: broadResults } = await supabase.rpc('search_knowledge', {
+            query_text: searchQuery,
+            match_count: 5,
+            filter_team: null,
+            filter_source: null,
+          });
+          if (broadResults) {
+            const existingIds = new Set(allResults.map((r: any) => r.chunk_id));
+            for (const r of broadResults) {
+              if (!existingIds.has(r.chunk_id)) allResults.push(r);
+            }
+          }
+        }
+
+        if (allResults.length > 0) {
+          context += `\n## Knowledge Base (RAG — Ingested Intelligence)\nThe following excerpts are from ingested football documents, videos, and reports in the knowledge base:\n\n`;
+          for (const r of allResults.slice(0, 8)) {
+            context += `### From: ${r.title} (${r.source_type})\n${r.content}\n\n`;
+          }
+        }
+      }
+    } catch (ragErr) {
+      console.error('RAG search failed (non-fatal):', ragErr);
+    }
+
     const systemWithContext = context
       ? `${SYSTEM_PROMPT}\n\n## Available Context\n${context}`
       : SYSTEM_PROMPT;
