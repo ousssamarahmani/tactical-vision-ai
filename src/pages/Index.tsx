@@ -2,13 +2,14 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { StatusIndicator } from '@/components/StatusIndicator';
 import { AnalysisReport } from '@/components/AnalysisReport';
 import { OppositionDashboard } from '@/components/dashboard/OppositionDashboard';
 import { useOppositionAnalyst } from '@/hooks/useOppositionAnalyst';
-import { Send, RotateCcw, Zap, Shield, Target, LayoutDashboard, MessageSquare } from 'lucide-react';
+import { Send, RotateCcw, Zap, Shield, Target, LayoutDashboard, MessageSquare, Database } from 'lucide-react';
 import teamsData from '@/data/teams.json';
 
 const QUICK_PROMPTS = [
@@ -58,7 +59,15 @@ export default function Index() {
               <p className="text-xs text-muted-foreground">Opposition Analyst Agent</p>
             </div>
           </div>
-          <StatusIndicator status={status} />
+          <div className="flex items-center gap-3">
+            <Link to="/knowledge">
+              <Button variant="outline" size="sm" className="gap-1.5 text-xs">
+                <Database className="h-3.5 w-3.5" />
+                Knowledge Base
+              </Button>
+            </Link>
+            <StatusIndicator status={status} />
+          </div>
         </div>
       </header>
 
