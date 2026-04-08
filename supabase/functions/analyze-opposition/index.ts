@@ -1,4 +1,5 @@
 import { corsHeaders } from '../_shared/cors.ts'
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.49.1'
 
 const SYSTEM_PROMPT = `You are the Opposition Analyst Agent developed by Tactivision.
 
