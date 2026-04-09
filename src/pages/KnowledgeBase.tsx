@@ -5,8 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { toast } from 'sonner';
-import { ingestPdf, ingestYoutube, listDocuments, type RagDocument } from '@/lib/rag-api';
-import { Upload, Youtube, FileText, Database, Loader2, CheckCircle, XCircle, ArrowLeft, RefreshCw } from 'lucide-react';
+import { ingestPdf, ingestYoutube, listDocuments, fetchFootballContent, type RagDocument } from '@/lib/rag-api';
+import { Upload, Youtube, FileText, Database, Loader2, CheckCircle, XCircle, ArrowLeft, RefreshCw, Globe, Rss } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function KnowledgeBase() {
@@ -24,6 +24,10 @@ export default function KnowledgeBase() {
   const [ytTitle, setYtTitle] = useState('');
   const [ytTags, setYtTags] = useState('');
   const [ytIngesting, setYtIngesting] = useState(false);
+
+  // Auto-fetch
+  const [autoFetching, setAutoFetching] = useState(false);
+  const [fetchResults, setFetchResults] = useState<{ title: string; source: string; chunks: number }[]>([]);
 
   const fetchDocs = useCallback(async () => {
     try {
@@ -86,10 +90,30 @@ export default function KnowledgeBase() {
     }
   };
 
+  const handleAutoFetch = async () => {
+    setAutoFetching(true);
+    setFetchResults([]);
+    try {
+      const result = await fetchFootballContent(15);
+      if (result.success) {
+        toast.success(`Fetched ${result.articles_ingested} new articles from football sources`);
+        setFetchResults(result.results || []);
+        fetchDocs();
+      } else {
+        toast.error(result.error || 'Auto-fetch failed');
+      }
+    } catch {
+      toast.error('Auto-fetch failed');
+    } finally {
+      setAutoFetching(false);
+    }
+  };
+
   const sourceIcon = (type: string) => {
     switch (type) {
       case 'pdf': return <FileText className="h-4 w-4" />;
       case 'youtube': return <Youtube className="h-4 w-4" />;
+      case 'article': return <Globe className="h-4 w-4" />;
       default: return <Database className="h-4 w-4" />;
     }
   };
@@ -121,7 +145,43 @@ export default function KnowledgeBase() {
       </header>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 space-y-6">
-        {/* Ingestion Forms */}
+        {/* Auto-Fetch Card */}
+        <Card className="border-primary/30 bg-primary/5 backdrop-blur-sm">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-sm flex items-center gap-2">
+              <Rss className="h-4 w-4 text-primary" />
+              Auto-Fetch Football Content
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <p className="text-xs text-muted-foreground">
+              Automatically fetch the latest articles, analysis, and insights from BBC Sport, The Guardian, ESPN, The Athletic, StatsBomb, and more.
+            </p>
+            <Button onClick={handleAutoFetch} disabled={autoFetching} className="w-full">
+              {autoFetching ? (
+                <><Loader2 className="h-4 w-4 mr-2 animate-spin" />Fetching from football sources...</>
+              ) : (
+                <><Rss className="h-4 w-4 mr-2" />Fetch Latest Football Content</>
+              )}
+            </Button>
+            {fetchResults.length > 0 && (
+              <div className="mt-3 space-y-1.5 max-h-48 overflow-y-auto">
+                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Just fetched:</p>
+                {fetchResults.map((r, i) => (
+                  <div key={i} className="text-xs flex items-start gap-2 p-2 rounded bg-background/50 border border-border/30">
+                    <Globe className="h-3 w-3 mt-0.5 text-primary shrink-0" />
+                    <div className="min-w-0">
+                      <p className="font-medium text-foreground truncate">{r.title}</p>
+                      <p className="text-muted-foreground">{r.source} · {r.chunks} chunks</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* Manual Ingestion */}
         <Tabs defaultValue="pdf" className="w-full">
           <TabsList className="bg-card/80 border border-border/50">
             <TabsTrigger value="pdf" className="gap-1.5 text-xs">
@@ -139,24 +199,9 @@ export default function KnowledgeBase() {
               </CardHeader>
               <CardContent>
                 <form onSubmit={handlePdfUpload} className="space-y-3">
-                  <Input
-                    type="file"
-                    accept=".pdf"
-                    onChange={e => setPdfFile(e.target.files?.[0] || null)}
-                    className="bg-background/50 text-sm"
-                  />
-                  <Input
-                    placeholder="Document title (e.g. 'Bayern München Scouting Report')"
-                    value={pdfTitle}
-                    onChange={e => setPdfTitle(e.target.value)}
-                    className="bg-background/50 text-sm"
-                  />
-                  <Input
-                    placeholder="Team tags, comma-separated (e.g. 'bayern münchen, real madrid')"
-                    value={pdfTags}
-                    onChange={e => setPdfTags(e.target.value)}
-                    className="bg-background/50 text-sm"
-                  />
+                  <Input type="file" accept=".pdf" onChange={e => setPdfFile(e.target.files?.[0] || null)} className="bg-background/50 text-sm" />
+                  <Input placeholder="Document title (e.g. 'Bayern München Scouting Report')" value={pdfTitle} onChange={e => setPdfTitle(e.target.value)} className="bg-background/50 text-sm" />
+                  <Input placeholder="Team tags, comma-separated (e.g. 'bayern münchen, real madrid')" value={pdfTags} onChange={e => setPdfTags(e.target.value)} className="bg-background/50 text-sm" />
                   <Button type="submit" disabled={pdfUploading || !pdfFile} className="w-full">
                     {pdfUploading ? <><Loader2 className="h-4 w-4 mr-2 animate-spin" />Processing...</> : <><Upload className="h-4 w-4 mr-2" />Upload & Ingest</>}
                   </Button>
@@ -172,24 +217,9 @@ export default function KnowledgeBase() {
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleYoutubeIngest} className="space-y-3">
-                  <Input
-                    placeholder="YouTube URL (e.g. https://youtube.com/watch?v=...)"
-                    value={ytUrl}
-                    onChange={e => setYtUrl(e.target.value)}
-                    className="bg-background/50 text-sm"
-                  />
-                  <Input
-                    placeholder="Title (optional, auto-detected from video)"
-                    value={ytTitle}
-                    onChange={e => setYtTitle(e.target.value)}
-                    className="bg-background/50 text-sm"
-                  />
-                  <Input
-                    placeholder="Team tags, comma-separated (e.g. 'liverpool, arsenal')"
-                    value={ytTags}
-                    onChange={e => setYtTags(e.target.value)}
-                    className="bg-background/50 text-sm"
-                  />
+                  <Input placeholder="YouTube URL (e.g. https://youtube.com/watch?v=...)" value={ytUrl} onChange={e => setYtUrl(e.target.value)} className="bg-background/50 text-sm" />
+                  <Input placeholder="Title (optional, auto-detected from video)" value={ytTitle} onChange={e => setYtTitle(e.target.value)} className="bg-background/50 text-sm" />
+                  <Input placeholder="Team tags, comma-separated (e.g. 'liverpool, arsenal')" value={ytTags} onChange={e => setYtTags(e.target.value)} className="bg-background/50 text-sm" />
                   <Button type="submit" disabled={ytIngesting || !ytUrl.trim()} className="w-full">
                     {ytIngesting ? <><Loader2 className="h-4 w-4 mr-2 animate-spin" />Extracting...</> : <><Youtube className="h-4 w-4 mr-2" />Ingest Transcript</>}
                   </Button>
@@ -218,10 +248,10 @@ export default function KnowledgeBase() {
               <div className="text-center py-8 text-muted-foreground text-sm">
                 <Database className="h-8 w-8 mx-auto mb-2 opacity-50" />
                 <p>No documents ingested yet</p>
-                <p className="text-xs mt-1">Upload PDFs or YouTube videos to build the knowledge base</p>
+                <p className="text-xs mt-1">Use Auto-Fetch or upload PDFs/YouTube videos to build the knowledge base</p>
               </div>
             ) : (
-              <div className="space-y-2">
+              <div className="space-y-2 max-h-96 overflow-y-auto">
                 {documents.map(doc => (
                   <div key={doc.id} className="flex items-center gap-3 p-3 rounded-lg bg-background/50 border border-border/30">
                     <div className="text-muted-foreground">{sourceIcon(doc.source_type)}</div>
@@ -229,7 +259,7 @@ export default function KnowledgeBase() {
                       <p className="text-sm font-medium text-foreground truncate">{doc.title}</p>
                       <div className="flex items-center gap-2 mt-0.5">
                         <span className="text-xs text-muted-foreground capitalize">{doc.source_type}</span>
-                        {doc.team_tags.length > 0 && (
+                        {doc.team_tags && doc.team_tags.length > 0 && (
                           <span className="text-xs text-muted-foreground">
                             · {doc.team_tags.join(', ')}
                           </span>

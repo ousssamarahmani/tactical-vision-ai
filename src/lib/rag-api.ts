@@ -3,7 +3,7 @@ import { supabase } from '@/integrations/supabase/client';
 export interface RagDocument {
   id: string;
   title: string;
-  source_type: 'pdf' | 'youtube' | 'twitter';
+  source_type: 'pdf' | 'youtube' | 'twitter' | 'article';
   source_url: string | null;
   team_tags: string[];
   metadata: Record<string, any>;
@@ -54,12 +54,14 @@ export async function listDocuments(): Promise<RagDocument[]> {
   return (data || []) as unknown as RagDocument[];
 }
 
-export async function deleteDocument(id: string): Promise<void> {
-  // We can't delete with anon key due to RLS, but we can call through the service
-  // For now, just mark as error (soft delete) — proper delete would need a dedicated edge function
-  const resp = await fetch(`${FUNCTIONS_URL}/search-knowledge`, {
+export async function fetchFootballContent(maxArticles = 10): Promise<{ success: boolean; error?: string; articles_ingested?: number; results?: { title: string; source: string; chunks: number }[] }> {
+  const resp = await fetch(`${FUNCTIONS_URL}/fetch-football-content`, {
     method: 'POST',
     headers: { ...AUTH_HEADER, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ query: 'delete', limit: 0 }), // no-op search
+    body: JSON.stringify({ max_articles: maxArticles }),
   });
+
+  const data = await resp.json();
+  if (!resp.ok) return { success: false, error: data.error || 'Fetch failed' };
+  return { success: true, ...data };
 }
