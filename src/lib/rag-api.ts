@@ -3,7 +3,7 @@ import { supabase } from '@/integrations/supabase/client';
 export interface RagDocument {
   id: string;
   title: string;
-  source_type: 'pdf' | 'youtube' | 'twitter';
+  source_type: 'pdf' | 'youtube' | 'twitter' | 'article';
   source_url: string | null;
   team_tags: string[];
   metadata: Record<string, any>;
