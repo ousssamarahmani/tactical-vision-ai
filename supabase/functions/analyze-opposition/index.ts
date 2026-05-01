@@ -180,47 +180,87 @@ Deno.serve(async (req) => {
     }
 
     // RAG: Search knowledge base for relevant context
+    let ragSources: { title: string; source_type: string; document_id: string }[] = [];
     try {
       const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
       const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
       const supabase = createClient(supabaseUrl, serviceKey);
 
-      // Extract search query from the latest user message
+      // Normalize a team name to the tag format used by ingestion ("bayern munich" etc.)
+      const normalizeTeam = (name: string): string => {
+        return name
+          .toLowerCase()
+          .replace(/^fc\s+/, '')
+          .replace(/\s+fc$/, '')
+          .replace(/münchen/g, 'munich')
+          .replace(/\s+/g, ' ')
+          .trim();
+      };
+
       const lastUserMsg = [...messages].reverse().find((m: any) => m.role === 'user');
       if (lastUserMsg) {
-        const teamName = teamData?.name || '';
+        const teamName = teamData?.selected?.name || teamData?.name || '';
+        const normalizedTeam = teamName ? normalizeTeam(teamName) : '';
         const searchQuery = `${teamName} ${lastUserMsg.content}`.trim();
-        
-        const { data: ragResults } = await supabase.rpc('search_knowledge', {
-          query_text: searchQuery,
-          match_count: 5,
-          filter_team: teamName ? teamName.toLowerCase() : null,
-          filter_source: null,
-        });
 
-        // Also try without team filter for broader results
-        let allResults = ragResults || [];
-        if (allResults.length < 3 && teamName) {
-          const { data: broadResults } = await supabase.rpc('search_knowledge', {
+        // 1) Team-filtered search
+        let allResults: any[] = [];
+        if (normalizedTeam) {
+          const { data, error } = await supabase.rpc('search_knowledge', {
             query_text: searchQuery,
+            match_count: 6,
+            filter_team: normalizedTeam,
+            filter_source: null,
+          });
+          if (error) console.error('RAG team-filtered search error:', error);
+          if (data) allResults = data;
+        }
+
+        // 2) Broad fallback when team-filtered returns few results
+        if (allResults.length < 4) {
+          const { data, error } = await supabase.rpc('search_knowledge', {
+            query_text: searchQuery,
+            match_count: 8,
+            filter_team: null,
+            filter_source: null,
+          });
+          if (error) console.error('RAG broad search error:', error);
+          if (data) {
+            const seen = new Set(allResults.map((r: any) => r.chunk_id));
+            for (const r of data) if (!seen.has(r.chunk_id)) allResults.push(r);
+          }
+        }
+
+        // 3) Last resort: query raw user text only
+        if (allResults.length < 2 && lastUserMsg.content.trim()) {
+          const { data } = await supabase.rpc('search_knowledge', {
+            query_text: lastUserMsg.content,
             match_count: 5,
             filter_team: null,
             filter_source: null,
           });
-          if (broadResults) {
-            const existingIds = new Set(allResults.map((r: any) => r.chunk_id));
-            for (const r of broadResults) {
-              if (!existingIds.has(r.chunk_id)) allResults.push(r);
-            }
+          if (data) {
+            const seen = new Set(allResults.map((r: any) => r.chunk_id));
+            for (const r of data) if (!seen.has(r.chunk_id)) allResults.push(r);
           }
         }
 
-        if (allResults.length > 0) {
-          context += `\n## Knowledge Base (RAG — Ingested Intelligence)\nThe following excerpts are from ingested football documents, videos, and reports in the knowledge base:\n\n`;
-          for (const r of allResults.slice(0, 8)) {
+        const used = allResults.slice(0, 8);
+        if (used.length > 0) {
+          context += `\n## Knowledge Base (RAG — Ingested Intelligence)\nExcerpts from ingested football documents, videos, and articles. Cite them in your answer using the source title.\n\n`;
+          for (const r of used) {
             context += `### From: ${r.title} (${r.source_type})\n${r.content}\n\n`;
           }
+          // Dedupe by document for the UI badge
+          const seenDocs = new Set<string>();
+          for (const r of used) {
+            if (!seenDocs.has(r.document_id)) {
+              seenDocs.add(r.document_id);
+              ragSources.push({ title: r.title, source_type: r.source_type, document_id: r.document_id });
+            }
+          }
         }
+        console.log(`RAG: returning ${used.length} chunks from ${ragSources.length} documents (team="${normalizedTeam}")`);
       }
     } catch (ragErr) {
       console.error('RAG search failed (non-fatal):', ragErr);
