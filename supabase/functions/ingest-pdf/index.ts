@@ -100,21 +100,12 @@ Deno.serve(async (req) => {
       }
     }
 
-    // Fallback: try to find any readable text content
+    // Fallback: ask the AI gateway to recover text from the raw PDF bytes string.
+    // We do NOT touch storage here — the bucket may not exist and we only need text.
     if (text.trim().length < 100) {
-      // Use AI to extract content from the raw bytes description
       const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
       if (LOVABLE_API_KEY) {
-        // Upload to storage first, then use AI to summarize
-        const filePath = `uploads/${crypto.randomUUID()}.pdf`;
-        await supabase.storage.from('rag-documents').upload(filePath, uint8Array, {
-          contentType: 'application/pdf'
-        });
-
-        // If text extraction failed, create a document record with what we have
-        // and ask the user to provide text content
-        if (text.trim().length < 50) {
-          // Use AI to generate a structured extraction from raw content
+        try {
           const resp = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
             method: 'POST',
             headers: {
@@ -124,17 +115,20 @@ Deno.serve(async (req) => {
             body: JSON.stringify({
               model: 'google/gemini-2.5-flash',
               messages: [
-                { role: 'system', content: 'Extract all readable text from this PDF content. Return only the text, no commentary.' },
-                { role: 'user', content: `Extract text from this PDF raw content (first 10000 chars): ${rawText.slice(0, 10000)}` }
+                { role: 'system', content: 'Extract all human-readable text from the provided PDF raw bytes. Return only the extracted text, no commentary, no markdown fences.' },
+                { role: 'user', content: `PDF raw content (first 12000 chars):\n${rawText.slice(0, 12000)}` }
               ],
             }),
           });
-          
           if (resp.ok) {
             const data = await resp.json();
             const extracted = data.choices?.[0]?.message?.content;
-            if (extracted) text = extracted;
+            if (extracted && extracted.trim().length > text.trim().length) text = extracted;
+          } else {
+            console.error('AI fallback failed:', resp.status, await resp.text().catch(() => ''));
           }
+        } catch (e) {
+          console.error('AI fallback threw:', e);
         }
       }
     }

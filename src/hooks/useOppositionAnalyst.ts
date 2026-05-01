@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { streamAnalysis, type Msg } from '@/lib/stream-chat';
+import { streamAnalysis, type Msg, type RagSource } from '@/lib/stream-chat';
 import teamsData from '@/data/teams.json';
 import matchesData from '@/data/matches.json';
 
@@ -9,20 +9,20 @@ export function useOppositionAnalyst() {
   const [messages, setMessages] = useState<Msg[]>([]);
   const [status, setStatus] = useState<AgentStatus>('idle');
   const [error, setError] = useState<string | null>(null);
+  const [ragSources, setRagSources] = useState<RagSource[]>([]);
 
   const analyze = useCallback(async (input: string, selectedTeamId?: string) => {
     setError(null);
     setStatus('thinking');
+    setRagSources([]);
 
     const userMsg: Msg = { role: 'user', content: input };
     setMessages(prev => [...prev, userMsg]);
 
-    // Send all teams for cross-team pattern recognition, highlight selected team
     const teamData = selectedTeamId
       ? { selected: teamsData.find(t => t.id === selectedTeamId), all_teams: teamsData }
       : teamsData;
 
-    // Send all matches for pattern recognition across teams
     const matchData = matchesData;
 
     let assistantContent = '';
@@ -45,6 +45,7 @@ export function useOppositionAnalyst() {
       teamData,
       matchData,
       onDelta: (chunk) => upsertAssistant(chunk),
+      onRagSources: (sources) => setRagSources(sources),
       onDone: () => setStatus('completed'),
       onError: (err) => {
         setError(err);
@@ -57,7 +58,8 @@ export function useOppositionAnalyst() {
     setMessages([]);
     setStatus('idle');
     setError(null);
+    setRagSources([]);
   }, []);
 
-  return { messages, status, error, analyze, reset };
+  return { messages, status, error, analyze, reset, ragSources };
 }

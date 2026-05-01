@@ -1,4 +1,5 @@
 export type Msg = { role: 'user' | 'assistant'; content: string };
+export type RagSource = { title: string; source_type: string; document_id: string };
 
 const ANALYZE_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/analyze-opposition`;
 
@@ -9,6 +10,7 @@ export async function streamAnalysis({
   onDelta,
   onDone,
   onError,
+  onRagSources,
 }: {
   messages: Msg[];
   teamData?: any;
@@ -16,6 +18,7 @@ export async function streamAnalysis({
   onDelta: (text: string) => void;
   onDone: () => void;
   onError: (error: string) => void;
+  onRagSources?: (sources: RagSource[]) => void;
 }) {
   try {
     const resp = await fetch(ANALYZE_URL, {
@@ -65,6 +68,10 @@ export async function streamAnalysis({
 
         try {
           const parsed = JSON.parse(jsonStr);
+          if (parsed.rag_sources && onRagSources) {
+            onRagSources(parsed.rag_sources as RagSource[]);
+            continue;
+          }
           const content = parsed.choices?.[0]?.delta?.content as string | undefined;
           if (content) onDelta(content);
         } catch {
@@ -85,6 +92,10 @@ export async function streamAnalysis({
         if (jsonStr === '[DONE]') continue;
         try {
           const parsed = JSON.parse(jsonStr);
+          if (parsed.rag_sources && onRagSources) {
+            onRagSources(parsed.rag_sources as RagSource[]);
+            continue;
+          }
           const content = parsed.choices?.[0]?.delta?.content as string | undefined;
           if (content) onDelta(content);
         } catch { /* ignore */ }
