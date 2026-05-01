@@ -305,7 +305,32 @@ Deno.serve(async (req) => {
       });
     }
 
-    return new Response(response.body, {
+    // Wrap upstream SSE stream and prepend a custom rag_sources event so the
+    // client can show which knowledge-base documents were used.
+    const upstream = response.body!;
+    const encoder = new TextEncoder();
+    const wrapped = new ReadableStream({
+      async start(controller) {
+        // Prepend the RAG sources event (custom event the client recognizes)
+        controller.enqueue(
+          encoder.encode(`data: ${JSON.stringify({ rag_sources: ragSources })}\n\n`)
+        );
+        const reader = upstream.getReader();
+        try {
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            controller.enqueue(value);
+          }
+        } catch (err) {
+          console.error('Stream forwarding error:', err);
+        } finally {
+          controller.close();
+        }
+      },
+    });
+
+    return new Response(wrapped, {
       headers: { ...corsHeaders, 'Content-Type': 'text/event-stream' },
     });
   } catch (e) {
