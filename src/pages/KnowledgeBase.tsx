@@ -29,13 +29,21 @@ export default function KnowledgeBase() {
   const [autoFetching, setAutoFetching] = useState(false);
   const [fetchResults, setFetchResults] = useState<{ title: string; source: string; chunks: number }[]>([]);
 
+  const [fetchError, setFetchError] = useState<string | null>(null);
+
   const fetchDocs = useCallback(async () => {
     try {
       setLoading(true);
+      setFetchError(null);
       const docs = await listDocuments();
       setDocuments(docs);
-    } catch (e) {
+    } catch (e: any) {
       console.error('Failed to fetch documents:', e);
+      const msg = e?.message?.includes('Failed to fetch')
+        ? 'Backend temporarily unavailable. Please retry in a moment.'
+        : (e?.message || 'Could not load documents.');
+      setFetchError(msg);
+      toast.error(msg);
     } finally {
       setLoading(false);
     }
@@ -243,6 +251,14 @@ export default function KnowledgeBase() {
             {loading && documents.length === 0 ? (
               <div className="flex items-center justify-center py-8 text-muted-foreground text-sm">
                 <Loader2 className="h-4 w-4 animate-spin mr-2" />Loading...
+              </div>
+            ) : fetchError && documents.length === 0 ? (
+              <div className="text-center py-8 text-sm space-y-2">
+                <XCircle className="h-8 w-8 mx-auto mb-2 text-destructive opacity-70" />
+                <p className="text-destructive">{fetchError}</p>
+                <Button variant="outline" size="sm" onClick={fetchDocs}>
+                  <RefreshCw className="h-3.5 w-3.5 mr-1.5" />Retry
+                </Button>
               </div>
             ) : documents.length === 0 ? (
               <div className="text-center py-8 text-muted-foreground text-sm">

@@ -9,7 +9,7 @@ import { StatusIndicator } from '@/components/StatusIndicator';
 import { AnalysisReport } from '@/components/AnalysisReport';
 import { OppositionDashboard } from '@/components/dashboard/OppositionDashboard';
 import { useOppositionAnalyst } from '@/hooks/useOppositionAnalyst';
-import { Send, RotateCcw, Zap, Shield, Target, LayoutDashboard, MessageSquare, Database } from 'lucide-react';
+import { Send, RotateCcw, Zap, Shield, Target, LayoutDashboard, MessageSquare, Database, BookOpen } from 'lucide-react';
 import teamsData from '@/data/teams.json';
 
 const QUICK_PROMPTS = [
@@ -23,7 +23,7 @@ export default function Index() {
   const [input, setInput] = useState('');
   const [showHeatmaps, setShowHeatmaps] = useState(false);
   const [activeTab, setActiveTab] = useState<string>('dashboard');
-  const { messages, status, error, analyze, reset } = useOppositionAnalyst();
+  const { messages, status, error, analyze, reset, ragSources } = useOppositionAnalyst();
 
   const currentTeam = teamsData.find(t => t.id === selectedTeam);
 
@@ -195,7 +195,31 @@ export default function Index() {
                       Analysis Report
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="flex-1 overflow-y-auto">
+                  <CardContent className="flex-1 overflow-y-auto space-y-3">
+                    {ragSources.length > 0 && (
+                      <div className="flex items-start gap-2 p-2.5 rounded-lg bg-primary/5 border border-primary/20">
+                        <BookOpen className="h-3.5 w-3.5 text-primary mt-0.5 shrink-0" />
+                        <div className="min-w-0">
+                          <p className="text-xs font-semibold text-primary mb-1">
+                            Knowledge base · {ragSources.length} source{ragSources.length === 1 ? '' : 's'} used
+                          </p>
+                          <div className="flex flex-wrap gap-1">
+                            {ragSources.slice(0, 6).map((s) => (
+                              <span
+                                key={s.document_id}
+                                title={`${s.title} (${s.source_type})`}
+                                className="text-[10px] px-1.5 py-0.5 rounded bg-background/60 border border-border/40 text-muted-foreground truncate max-w-[220px]"
+                              >
+                                {s.title}
+                              </span>
+                            ))}
+                            {ragSources.length > 6 && (
+                              <span className="text-[10px] text-muted-foreground">+{ragSources.length - 6} more</span>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    )}
                     <AnalysisReport
                       messages={messages}
                       selectedTeamId={selectedTeam}
