@@ -65,3 +65,16 @@ export async function fetchFootballContent(maxArticles = 10): Promise<{ success:
   if (!resp.ok) return { success: false, error: data.error || 'Fetch failed' };
   return { success: true, ...data };
 }
+
+export interface SyncStatsResult { competition: string; status: string; chunks?: number; error?: string; }
+
+export async function syncFootballStats(): Promise<{ success: boolean; error?: string; date?: string; results?: SyncStatsResult[] }> {
+  const resp = await fetch(`${FUNCTIONS_URL}/sync-football-stats`, {
+    method: 'POST',
+    headers: { ...AUTH_HEADER, 'Content-Type': 'application/json' },
+    body: '{}',
+  });
+  const data = await resp.json();
+  if (!resp.ok) return { success: false, error: data.error || 'Sync failed' };
+  return { success: true, ...data };
+}

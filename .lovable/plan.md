@@ -1,72 +1,112 @@
-## Root cause
+## Goal
 
-The "Failed to fetch documents" error on `/knowledge` and the "RAG pipeline not used in my analysis" symptom share the same cause right now:
+Build a daily auto-ingestion pipeline that scrapes football data from two sources, joins them by team name, and feeds the result into the existing RAG knowledge base so the analyst agent can cite live fixtures, results, and standings.
 
-**Your Lovable Cloud database is not accepting connections.**
-Direct SQL probes return:
+## Sources
+
+- **statshub.com** — today's fixtures, team form, betting/stat snippets (free-text scrape)
+- **native-stats.org** — for each competition `CL`, `PL`, `BL1`, `SA`, `PD`, `FL1`:
+  - Recent matches (date, teams, score, odds)
+  - Next matches (date, teams, odds)
+  - Standings (pos, team, matches, points, +/-, goals)
+  - Top scorers (player, team, goals, assists)
+
+## Architecture
+
+```text
+   pg_cron (daily 06:00 UTC)
+            |
+            v
+   sync-football-stats (new edge fn)
+       |          |
+       v          v
+   statshub   native-stats  (Deno fetch + regex)
+       \         /
+        v       v
+   normalize team names (shared helper)
+        |
+        v
+   join: per team -> { fixtures, recent_results, standing, top_scorers }
+        |
+        v
+   one rag_document per competition + one per featured team
+        |
+        v
+   chunkText() -> rag_chunks  (existing RAG flow)
 ```
-FATAL: 57P03: the database system is not accepting connections
-DETAIL: Hot standby mode is disabled.
+
+## Files
+
+**New**
+- `supabase/functions/sync-football-stats/index.ts` — main scraper + ingester. Reuses `chunkText`, `extractTeamTags` patterns from `fetch-football-content`.
+- `supabase/functions/_shared/team-normalize.ts` — shared normalizer (lowercase, strip "FC"/"CF", map "Bayern München" -> "bayern munich", "Atlético" -> "atletico madrid", etc.). Also used by `analyze-opposition` to fix the existing fuzzy-match issue.
+
+**Edited**
+- `src/lib/rag-api.ts` — add `syncFootballStats()` calling the new function.
+- `src/pages/KnowledgeBase.tsx` — add a small "Last sync" indicator + manual "Sync now" button next to Auto-Fetch (cron is the primary trigger; button is for testing).
+- `supabase/functions/analyze-opposition/index.ts` — import the shared `normalizeTeam` helper instead of its inline version, so newly-ingested standings match team filters.
+
+## Cron setup
+
+Enable `pg_cron` + `pg_net` (idempotent), then schedule via `supabase--insert` (not migration — contains anon key):
+
+```sql
+select cron.schedule(
+  'sync-football-stats-daily',
+  '0 6 * * *',  -- 06:00 UTC daily
+  $$ select net.http_post(
+       url := 'https://<project>.supabase.co/functions/v1/sync-football-stats',
+       headers := '{"Content-Type":"application/json","apikey":"<anon>"}'::jsonb,
+       body := '{}'::jsonb
+     ); $$
+);
 ```
-While the DB is in this state:
-- `listDocuments()` (PostgREST query) fails → empty Knowledge Base UI
-- `ingest-pdf` / `ingest-youtube` / `fetch-football-content` cannot insert rows
-- `analyze-opposition` calls `search_knowledge` RPC inside a try/catch that *swallows* the error, so the analyst silently runs with **no** RAG context — exactly what you observed in your Real Madrid analysis (no "Knowledge Base" excerpts cited).
 
-On top of that, two real code bugs would still bite you once the DB recovers:
+## Scrape details
 
-1. **`ingest-pdf` crashes on the fallback path.** It calls `supabase.storage.from('rag-documents').upload(...)`, but no migration ever creates a `rag-documents` storage bucket. Any scanned/image PDF takes this branch and 500s.
-2. **The RAG context is invisible to the user.** Even when retrieval works, `analyze-opposition` injects chunks silently and never tells the UI "I used N knowledge sources", so you can't tell whether RAG fired.
+**native-stats.org** (per competition path `/competition/{code}/`):
+- Page is server-rendered HTML; tables follow `Recent matches:` / `Next matches:` / `Standings:` / `Scorers` headings.
+- Parse with regex over `<table>...</table>` blocks. Each match row has team names visible twice (full + tricode) — take the full name. Score format `N:N`; odds format `a / b / c`.
+- Standings rows: `Pos | crest+name+tricode | matches | points | +/- | goals`.
 
-## Plan
+**statshub.com**:
+- Homepage lists today's fixtures and a "Community Tweets" snapshot. Take only the fixtures block + any tagged team-stat lines. Skip the tip-style tweets to keep content factual.
+- Same regex/HTML strip approach as `fetch-football-content/fetchArticleContent`.
 
-### 1. Wait for Cloud to come back up, then verify
-- Re-run a `SELECT count(*) FROM rag_documents` once the DB is `ACTIVE_HEALTHY`.
-- Confirm `search_knowledge` function and `rag_chunks` rows exist.
+## Document shape
 
-### 2. Fix `ingest-pdf` storage crash
-- Remove the broken `supabase.storage.from('rag-documents').upload(...)` call. We don't need to persist the raw PDF — we only need its text.
-- Keep the AI fallback that asks Gemini to extract text from the raw bytes string, but skip the storage step entirely.
-- Return a clean 400 ("Could not extract text — please use a text-based PDF") if both regex extraction and AI extraction fail.
+Per run, insert into `rag_documents`:
 
-### 3. Make `analyze-opposition` RAG usage observable & robust
-- Stream a small SSE preamble line listing the RAG sources used, e.g.
-  ```
-  data: {"rag_sources":[{"title":"...","source_type":"article"}, ...]}
-  ```
-  before the model tokens start. Frontend can ignore it today; we'll surface it in step 4.
-- Broaden the search query: also try the user's raw question without the team name when the team-filtered + global search both return < 3 hits.
-- Lower the team filter to a `team_tags @> ARRAY[...]` check that's case-insensitive, since auto-fetched articles tag teams like `bayern munich` while `teamData.name` is `FC Bayern München`. Normalize both sides (lowercase, strip "fc"/"münchen"→"munich") before filtering.
-- If the RPC errors (not just returns empty), log the error message into the response so we can see it in edge logs instead of silently continuing.
+- 6 competition docs:
+  - `title`: "UEFA Champions League — daily snapshot 2026-05-02"
+  - `source_type`: `'article'`
+  - `source_url`: `https://native-stats.org/competition/CL/`
+  - `team_tags`: top-8 normalized team names from the standings
+  - Body: human-readable markdown — standings table, recent results, upcoming fixtures, top 10 scorers
+- 1 statshub doc:
+  - `title`: "StatsHub fixtures — 2026-05-02"
+  - `source_url`: `https://www.statshub.com/`
+  - Body: today's fixtures grouped by league
 
-### 4. Show RAG usage in the chat UI
-- In `src/lib/stream-chat.ts`, parse the new `rag_sources` SSE event and forward it via a new `onRagSources` callback.
-- In `useOppositionAnalyst`, store `ragSources` and expose it.
-- In `Index.tsx` (or wherever the assistant message renders), show a small "Sources used: 3 from knowledge base" chip above the answer with a tooltip listing titles. This makes it obvious whether RAG fired.
+**Deduplication**: skip insert if `source_url + DATE(created_at) = today`. Existing snapshots from prior days are kept (gives the agent historical context).
 
-### 5. Fix the Knowledge Base "Failed to fetch" UX
-- In `KnowledgeBase.tsx`, surface the actual error to the user via a `toast.error(...)` + an inline retry banner instead of just `console.error`. So when the DB is briefly down, the user sees "Backend temporarily unavailable — retry" rather than a permanently spinning loader.
+## Team-name join
 
-### 6. Sanity-test end to end
-After deploy:
-- Click **Auto-Fetch Football Content** → expect rows in `rag_documents` with `source_type='article'` and `status='ready'`.
-- Run a Real Madrid analysis → expect to see the new "Sources used" chip with at least one article cited, and the analyst body referencing the new article context.
+The shared `normalizeTeam(name)` produces the same canonical key for both sources, e.g.:
+- "FC Bayern München" / "Bayern" / "FCB" -> `bayern munich`
+- "Club Atlético de Madrid" / "Atleti" / "ATL" -> `atletico madrid`
+- "Paris Saint-Germain FC" / "PSG" -> `psg`
 
-## Technical details
+Used to (a) tag documents with consistent `team_tags`, (b) attach statshub fixture lines to the right competition doc when a team appears in both, (c) fix the analyst's existing team-filter mismatch on `Bayern Munich` vs `FC Bayern München`.
 
-**Files to edit**
-- `supabase/functions/ingest-pdf/index.ts` — drop storage bucket call, simplify fallback.
-- `supabase/functions/analyze-opposition/index.ts` — emit `rag_sources` SSE event, normalize team filter, surface RPC errors in logs.
-- `src/lib/stream-chat.ts` — handle `rag_sources` event, add `onRagSources` callback.
-- `src/hooks/useOppositionAnalyst.ts` — store `ragSources` per assistant message.
-- `src/pages/Index.tsx` (or analysis renderer) — render "Sources used" chip.
-- `src/pages/KnowledgeBase.tsx` — toast + retry on `listDocuments()` failure.
+## Out of scope
 
-**Files NOT touched**
-- DB schema / migrations — current schema is fine; the issue is the DB being temporarily offline plus a missing bucket reference, which we remove rather than create.
-- `ingest-youtube` — already has 3-method fallback chain; leaving as is.
+- No new tables — everything goes into the existing `rag_documents` / `rag_chunks` per the user's choice.
+- No JS rendering / Firecrawl — direct fetch only.
+- No backfill of historical seasons; only current-season pages.
+- No UI changes beyond the small sync indicator.
 
-**What to expect after the fix**
-- Even if the DB hiccups again, the Knowledge Base page tells you so instead of looking empty.
-- PDFs with weird encodings no longer 500 the function.
-- You'll *see* in chat whether the analyst used RAG, with which sources, every time.
+## Risks
+
+- Either site may block `Deno fetch` UA or change layout. Mitigation: realistic browser UA, per-source try/catch, partial success allowed (one failed competition does not abort others), error rows captured in `rag_documents.error_message`.
+- statshub.com may not be reachable / may return JS-only shell — if scrape returns < 200 chars, skip the statshub doc rather than insert noise.

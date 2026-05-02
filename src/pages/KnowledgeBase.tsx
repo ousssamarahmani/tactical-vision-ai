@@ -5,8 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { toast } from 'sonner';
-import { ingestPdf, ingestYoutube, listDocuments, fetchFootballContent, type RagDocument } from '@/lib/rag-api';
-import { Upload, Youtube, FileText, Database, Loader2, CheckCircle, XCircle, ArrowLeft, RefreshCw, Globe, Rss } from 'lucide-react';
+import { ingestPdf, ingestYoutube, listDocuments, fetchFootballContent, syncFootballStats, type RagDocument, type SyncStatsResult } from '@/lib/rag-api';
+import { Upload, Youtube, FileText, Database, Loader2, CheckCircle, XCircle, ArrowLeft, RefreshCw, Globe, Rss, BarChart3 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function KnowledgeBase() {
@@ -28,6 +28,10 @@ export default function KnowledgeBase() {
   // Auto-fetch
   const [autoFetching, setAutoFetching] = useState(false);
   const [fetchResults, setFetchResults] = useState<{ title: string; source: string; chunks: number }[]>([]);
+
+  // Stats sync
+  const [syncing, setSyncing] = useState(false);
+  const [syncResults, setSyncResults] = useState<SyncStatsResult[]>([]);
 
   const [fetchError, setFetchError] = useState<string | null>(null);
 
@@ -117,6 +121,26 @@ export default function KnowledgeBase() {
     }
   };
 
+  const handleStatsSync = async () => {
+    setSyncing(true);
+    setSyncResults([]);
+    try {
+      const result = await syncFootballStats();
+      if (result.success) {
+        const ingested = (result.results || []).filter(r => r.status === 'ingested').length;
+        toast.success(`Stats sync complete: ${ingested} new snapshots`);
+        setSyncResults(result.results || []);
+        fetchDocs();
+      } else {
+        toast.error(result.error || 'Stats sync failed');
+      }
+    } catch {
+      toast.error('Stats sync failed');
+    } finally {
+      setSyncing(false);
+    }
+  };
+
   const sourceIcon = (type: string) => {
     switch (type) {
       case 'pdf': return <FileText className="h-4 w-4" />;
@@ -182,6 +206,41 @@ export default function KnowledgeBase() {
                       <p className="font-medium text-foreground truncate">{r.title}</p>
                       <p className="text-muted-foreground">{r.source} · {r.chunks} chunks</p>
                     </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* Stats Sync Card */}
+        <Card className="border-accent/30 bg-accent/5 backdrop-blur-sm">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-sm flex items-center gap-2">
+              <BarChart3 className="h-4 w-4 text-primary" />
+              Sync Match Stats (StatsHub + native-stats UCL & top-5)
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <p className="text-xs text-muted-foreground">
+              Pulls today's fixtures from statshub.com and standings/results/scorers for CL, PL, BL1, SA, PD, FL1 from native-stats.org. Runs daily at 06:00 UTC; use this button to trigger manually.
+            </p>
+            <Button onClick={handleStatsSync} disabled={syncing} className="w-full" variant="secondary">
+              {syncing ? (
+                <><Loader2 className="h-4 w-4 mr-2 animate-spin" />Scraping & ingesting...</>
+              ) : (
+                <><BarChart3 className="h-4 w-4 mr-2" />Sync Stats Now</>
+              )}
+            </Button>
+            {syncResults.length > 0 && (
+              <div className="mt-3 space-y-1.5 max-h-56 overflow-y-auto">
+                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Sync results:</p>
+                {syncResults.map((r, i) => (
+                  <div key={i} className="text-xs flex items-center justify-between gap-2 p-2 rounded bg-background/50 border border-border/30">
+                    <span className="font-medium text-foreground truncate">{r.competition}</span>
+                    <span className={`text-xs ${r.status === 'ingested' ? 'text-primary' : 'text-muted-foreground'}`}>
+                      {r.status}{r.chunks ? ` · ${r.chunks} chunks` : ''}
+                    </span>
                   </div>
                 ))}
               </div>
