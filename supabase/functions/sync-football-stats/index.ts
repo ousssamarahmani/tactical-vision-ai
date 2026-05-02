@@ -41,8 +41,20 @@ function chunkText(text: string, maxChunkSize = 1500): string[] {
 async function safeFetch(url: string): Promise<string | null> {
   try {
     const r = await fetch(url, {
-      headers: { 'User-Agent': UA, 'Accept': 'text/html,application/xhtml+xml' },
+      headers: {
+        'User-Agent': UA,
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Sec-Fetch-Dest': 'document',
+        'Sec-Fetch-Mode': 'navigate',
+        'Sec-Fetch-Site': 'none',
+        'Sec-Fetch-User': '?1',
+        'Upgrade-Insecure-Requests': '1',
+        'Cache-Control': 'no-cache',
+      },
       signal: AbortSignal.timeout(15000),
+      redirect: 'follow',
     });
     if (!r.ok) {
       console.log(`fetch ${url} -> ${r.status}`);
