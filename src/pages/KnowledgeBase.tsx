@@ -213,6 +213,41 @@ export default function KnowledgeBase() {
           </CardContent>
         </Card>
 
+        {/* Stats Sync Card */}
+        <Card className="border-accent/30 bg-accent/5 backdrop-blur-sm">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-sm flex items-center gap-2">
+              <BarChart3 className="h-4 w-4 text-primary" />
+              Sync Match Stats (StatsHub + native-stats UCL & top-5)
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <p className="text-xs text-muted-foreground">
+              Pulls today's fixtures from statshub.com and standings/results/scorers for CL, PL, BL1, SA, PD, FL1 from native-stats.org. Runs daily at 06:00 UTC; use this button to trigger manually.
+            </p>
+            <Button onClick={handleStatsSync} disabled={syncing} className="w-full" variant="secondary">
+              {syncing ? (
+                <><Loader2 className="h-4 w-4 mr-2 animate-spin" />Scraping & ingesting...</>
+              ) : (
+                <><BarChart3 className="h-4 w-4 mr-2" />Sync Stats Now</>
+              )}
+            </Button>
+            {syncResults.length > 0 && (
+              <div className="mt-3 space-y-1.5 max-h-56 overflow-y-auto">
+                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Sync results:</p>
+                {syncResults.map((r, i) => (
+                  <div key={i} className="text-xs flex items-center justify-between gap-2 p-2 rounded bg-background/50 border border-border/30">
+                    <span className="font-medium text-foreground truncate">{r.competition}</span>
+                    <span className={`text-xs ${r.status === 'ingested' ? 'text-primary' : 'text-muted-foreground'}`}>
+                      {r.status}{r.chunks ? ` · ${r.chunks} chunks` : ''}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
         {/* Manual Ingestion */}
         <Tabs defaultValue="pdf" className="w-full">
           <TabsList className="bg-card/80 border border-border/50">
