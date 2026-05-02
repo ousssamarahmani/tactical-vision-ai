@@ -5,8 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { toast } from 'sonner';
-import { ingestPdf, ingestYoutube, listDocuments, fetchFootballContent, type RagDocument } from '@/lib/rag-api';
-import { Upload, Youtube, FileText, Database, Loader2, CheckCircle, XCircle, ArrowLeft, RefreshCw, Globe, Rss } from 'lucide-react';
+import { ingestPdf, ingestYoutube, listDocuments, fetchFootballContent, syncFootballStats, type RagDocument, type SyncStatsResult } from '@/lib/rag-api';
+import { Upload, Youtube, FileText, Database, Loader2, CheckCircle, XCircle, ArrowLeft, RefreshCw, Globe, Rss, BarChart3 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function KnowledgeBase() {
@@ -28,6 +28,10 @@ export default function KnowledgeBase() {
   // Auto-fetch
   const [autoFetching, setAutoFetching] = useState(false);
   const [fetchResults, setFetchResults] = useState<{ title: string; source: string; chunks: number }[]>([]);
+
+  // Stats sync
+  const [syncing, setSyncing] = useState(false);
+  const [syncResults, setSyncResults] = useState<SyncStatsResult[]>([]);
 
   const [fetchError, setFetchError] = useState<string | null>(null);
 
@@ -114,6 +118,26 @@ export default function KnowledgeBase() {
       toast.error('Auto-fetch failed');
     } finally {
       setAutoFetching(false);
+    }
+  };
+
+  const handleStatsSync = async () => {
+    setSyncing(true);
+    setSyncResults([]);
+    try {
+      const result = await syncFootballStats();
+      if (result.success) {
+        const ingested = (result.results || []).filter(r => r.status === 'ingested').length;
+        toast.success(`Stats sync complete: ${ingested} new snapshots`);
+        setSyncResults(result.results || []);
+        fetchDocs();
+      } else {
+        toast.error(result.error || 'Stats sync failed');
+      }
+    } catch {
+      toast.error('Stats sync failed');
+    } finally {
+      setSyncing(false);
     }
   };
 
