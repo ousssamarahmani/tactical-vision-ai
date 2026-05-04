@@ -4,88 +4,89 @@
     "name": "Manchester City",
     "league": "Premier League",
     "manager": "Pep Guardiola",
-    "formation": "4-3-3 / 3-2-4-1",
-    "style": "Possession-based, positional play",
+    "formation": "4-2-3-1 / 3-2-4-1",
+    "style": "Possession-based positional play, midfield rebuild post-De Bruyne",
     "season": "2025-26",
-    "data_sources": ["FBref", "Football-Data.org"],
+    "data_sources": ["FBref", "Football-Data.org", "StatsHub", "Sofascore"],
     "key_players": [
-      { "name": "Erling Haaland", "position": "ST", "number": 9, "strengths": ["Aerial duels", "Finishing", "Movement in box"], "weaknesses": ["Link-up play under pressure", "Defensive contribution"], "fbref_metrics": { "goals": 18, "xG": 16.2, "xAG": 2.1, "progressive_carries": 12 } },
-      { "name": "Kevin De Bruyne", "position": "CM/AM", "number": 17, "strengths": ["Through balls", "Long-range passing", "Set pieces"], "weaknesses": ["Injury prone", "Defensive transitions"], "fbref_metrics": { "goals": 5, "xG": 4.1, "xAG": 11.3, "progressive_passes": 187 } },
-      { "name": "Rodri", "position": "CDM", "number": 16, "strengths": ["Ball retention", "Pressing resistance", "Positional discipline"], "weaknesses": ["Pace in recovery", "Susceptible to quick counters"], "fbref_metrics": { "goals": 3, "xG": 2.8, "xAG": 4.5, "interceptions": 42 } },
-      { "name": "Phil Foden", "position": "LW/AM", "number": 47, "strengths": ["Dribbling", "Half-space movement", "Finishing"], "weaknesses": ["Physical duels", "Consistency in big matches"], "fbref_metrics": { "goals": 10, "xG": 9.4, "xAG": 6.8, "shot_creating_actions": 98 } },
-      { "name": "Josko Gvardiol", "position": "LB/CB", "number": 24, "strengths": ["Ball carrying", "Overlapping runs", "Aerial presence"], "weaknesses": ["Positioning in 1v1 defending"], "fbref_metrics": { "progressive_carries": 67, "interceptions": 28, "aerial_won_pct": 68 } },
-      { "name": "Bernardo Silva", "position": "RW/CM", "number": 20, "strengths": ["Press resistance", "Ball retention", "Work rate"], "weaknesses": ["Goal output", "Aerial duels"], "fbref_metrics": { "goals": 4, "xG": 3.6, "progressive_passes": 142, "pass_completion": 91.2 } },
-      { "name": "Savinho", "position": "RW", "number": 26, "strengths": ["Dribbling", "1v1 ability", "Pace"], "weaknesses": ["Defensive tracking", "Decision-making in final third"], "fbref_metrics": { "goals": 6, "xG": 5.1, "successful_dribbles": 72, "shot_creating_actions": 84 } },
-      { "name": "Mateo Kovacic", "position": "CM", "number": 8, "strengths": ["Ball progression", "Press resistance", "Dribbling from deep"], "weaknesses": ["Defensive positioning", "Aerial duels"], "fbref_metrics": { "progressive_carries": 58, "progressive_passes": 121, "interceptions": 24 } },
-      { "name": "Ruben Dias", "position": "CB", "number": 3, "strengths": ["Positional defending", "Aerial duels", "Leadership"], "weaknesses": ["Pace against elite forwards"], "fbref_metrics": { "aerial_won_pct": 74, "interceptions": 36, "progressive_passes": 98 } },
-      { "name": "Rico Lewis", "position": "RB/CM", "number": 82, "strengths": ["Inverted fullback role", "Passing in tight spaces", "Positional intelligence"], "weaknesses": ["Physical duels", "1v1 defending in wide areas"], "fbref_metrics": { "progressive_passes": 88, "pass_completion": 90.4, "interceptions": 31 } }
+      { "name": "Erling Haaland", "position": "ST", "number": 9, "strengths": ["Aerial duels", "Finishing", "Movement in box"], "weaknesses": ["Link-up play under pressure", "Defensive contribution"], "fbref_metrics": { "goals": 26, "xG": 22.4, "xAG": 2.6, "progressive_carries": 18 } },
+      { "name": "Tijjani Reijnders", "position": "CM/AM", "number": 4, "strengths": ["Box-to-box runs", "Press resistance", "Late arrivals in box"], "weaknesses": ["Aerial duels", "Defensive discipline vs counters"], "fbref_metrics": { "goals": 9, "xG": 7.4, "xAG": 5.2, "progressive_passes": 168, "progressive_carries": 98 } },
+      { "name": "Rayan Cherki", "position": "AM/RW", "number": 10, "strengths": ["Creative passing", "Dribbling in tight spaces", "Set-piece delivery"], "weaknesses": ["Defensive work rate", "Consistency"], "fbref_metrics": { "goals": 6, "xAG": 8.1, "shot_creating_actions": 121, "successful_dribbles": 76 } },
+      { "name": "Rodri", "position": "CDM", "number": 16, "strengths": ["Ball retention", "Pressing resistance", "Positional discipline"], "weaknesses": ["Pace in recovery", "Susceptible to quick counters"], "fbref_metrics": { "goals": 4, "xG": 3.1, "xAG": 5.0, "interceptions": 51, "pass_completion": 92.4 } },
+      { "name": "Phil Foden", "position": "LW/AM", "number": 47, "strengths": ["Dribbling", "Half-space movement", "Finishing"], "weaknesses": ["Physical duels", "Consistency in big matches"], "fbref_metrics": { "goals": 12, "xG": 10.6, "xAG": 7.4, "shot_creating_actions": 108 } },
+      { "name": "Josko Gvardiol", "position": "LB/CB", "number": 24, "strengths": ["Ball carrying", "Overlapping runs", "Aerial presence"], "weaknesses": ["Positioning in 1v1 defending"], "fbref_metrics": { "progressive_carries": 78, "interceptions": 32, "aerial_won_pct": 69 } },
+      { "name": "Bernardo Silva", "position": "RW/CM", "number": 20, "strengths": ["Press resistance", "Ball retention", "Work rate"], "weaknesses": ["Goal output", "Aerial duels"], "fbref_metrics": { "goals": 5, "xG": 4.2, "progressive_passes": 156, "pass_completion": 91.6 } },
+      { "name": "Savinho", "position": "RW", "number": 26, "strengths": ["Dribbling", "1v1 ability", "Pace"], "weaknesses": ["Defensive tracking", "Decision-making in final third"], "fbref_metrics": { "goals": 7, "xG": 5.9, "successful_dribbles": 81, "shot_creating_actions": 92 } },
+      { "name": "Rayan Aït-Nouri", "position": "LB", "number": 12, "strengths": ["Pace", "Overlapping runs", "1v1 defending"], "weaknesses": ["Crossing accuracy", "Aerial duels"], "fbref_metrics": { "progressive_carries": 64, "interceptions": 28, "tackles_won": 41 } },
+      { "name": "Ruben Dias", "position": "CB", "number": 3, "strengths": ["Positional defending", "Aerial duels", "Leadership"], "weaknesses": ["Pace against elite forwards"], "fbref_metrics": { "aerial_won_pct": 75, "interceptions": 38, "progressive_passes": 112 } }
     ],
     "tactical_patterns": {
-      "build_up": "Short passing from back, GK involved in build-up. FBs invert into midfield zones. Single pivot (Rodri) drops between CBs. Progressive passing rate: 8.2 per 90 (FBref).",
-      "attacking": "Overloads in half-spaces. Width from inverted wingers and overlapping FBs. Late runners into box. High sustained possession (64% avg). xG per 90: 2.1 (FBref).",
-      "defensive": "High press triggered by opponent GK or CB receiving ball. Counter-press immediately on loss. PPDA: 8.4 (FBref). Compact midfield block when settled.",
-      "set_pieces": "Dangerous from corners (near post flicks). De Bruyne delivery from free kicks. Haaland primary aerial target. Set piece xG: 0.31 per match (FBref).",
-      "transitions": "Quick vertical passes on turnover. Haaland stretches defensive line. Vulnerable to fast breaks when FBs are high."
+      "build_up": "Short passing from back, GK involved in build-up. Aït-Nouri overlaps, Gvardiol or Lewis inverts on opposite side. Rodri drops between CBs as single pivot. Reijnders provides dynamic ball progression. Progressive passing rate: 8.0 per 90 (FBref).",
+      "attacking": "Half-space overloads with Foden left and Cherki/Bernardo right. Reijnders late runs replace De Bruyne's role. Width from FBs. Sustained possession (62% avg). xG per 90: 2.0 (FBref).",
+      "defensive": "High press triggered by opponent GK or CB. Counter-press immediately on loss. PPDA: 8.6 (FBref). Compact midfield block when settled.",
+      "set_pieces": "Cherki delivery from corners and free kicks. Haaland and Dias primary aerial targets. Set piece xG: 0.29 per match (FBref).",
+      "transitions": "Quick vertical passes on turnover. Haaland stretches defensive line. Vulnerable to fast breaks when FBs are high — exposed in defeats vs Arsenal and Liverpool."
     },
     "strengths": [
-      "Elite possession control (64%+ average, FBref)",
+      "Restored midfield control post-De Bruyne via Reijnders + Cherki creativity (FBref)",
       "Tactical flexibility — multiple formations mid-game",
-      "Individual quality across all positions",
-      "Set piece threat (top 3 in PL for set piece xG)",
-      "Squad depth and rotation capacity"
+      "Haaland clinical finishing (26 goals, +3.6 vs xG, FBref)",
+      "Squad depth — won EFL Cup, into FA Cup final",
+      "Aït-Nouri left-side dynamism on overlaps"
     ],
     "weaknesses": [
-      "Vulnerable to pace on counter-attacks (conceded 8 transition goals, Football-Data.org)",
+      "Slow start to season (no CL — failed to qualify from league phase)",
+      "Vulnerable to pace on counter-attacks (10 transition goals conceded, Football-Data.org)",
       "Over-reliance on Rodri for midfield control",
       "High defensive line exploitable with long balls behind",
-      "Can struggle against deep compact blocks (xG drops to 1.3 vs low-block teams)",
-      "Fatigue in congested fixture periods"
+      "Cherki defensive work rate creates imbalance vs press-resistant teams"
     ],
-    "recent_form": ["W", "W", "D", "W", "L", "W", "W", "W", "D", "W"]
+    "recent_form": ["W", "W", "D", "W", "W", "L", "W", "W", "W", "D"]
   },
   {
     "id": "real_madrid",
     "name": "Real Madrid",
     "league": "La Liga",
-    "manager": "Carlo Ancelotti",
-    "formation": "4-3-1-2 / 4-4-2",
-    "style": "Direct, transitional, star-driven",
+    "manager": "Álvaro Arbeloa",
+    "formation": "4-3-3 / 4-4-2",
+    "style": "Direct, transitional, star-driven (post-Alonso reset under Arbeloa)",
     "season": "2025-26",
-    "data_sources": ["FBref", "Football-Data.org"],
+    "data_sources": ["FBref", "Football-Data.org", "StatsHub", "Sofascore"],
     "key_players": [
-      { "name": "Kylian Mbappé", "position": "LW/ST", "number": 9, "strengths": ["Pace", "1v1 finishing", "Runs behind defence"], "weaknesses": ["Defensive effort", "Pressing consistency"], "fbref_metrics": { "goals": 21, "xG": 18.7, "progressive_carries": 89, "npxG": 16.1 } },
-      { "name": "Vinícius Jr", "position": "LW", "number": 7, "strengths": ["Dribbling", "Pace", "Big-game mentality"], "weaknesses": ["Decision-making in final third", "Temperament"], "fbref_metrics": { "goals": 12, "xG": 10.8, "successful_dribbles": 94, "shot_creating_actions": 112 } },
-      { "name": "Jude Bellingham", "position": "AM/CM", "number": 5, "strengths": ["Box-to-box runs", "Aerial ability", "Goal threat from midfield"], "weaknesses": ["Positional discipline", "Workrate fluctuation"], "fbref_metrics": { "goals": 9, "xG": 7.2, "progressive_passes": 98, "aerial_won_pct": 62 } },
-      { "name": "Federico Valverde", "position": "CM/RW", "number": 8, "strengths": ["Engine", "Long-range shooting", "Defensive coverage"], "weaknesses": ["Final ball quality"], "fbref_metrics": { "goals": 6, "xG": 4.9, "interceptions": 38, "progressive_carries": 71 } },
-      { "name": "Antonio Rüdiger", "position": "CB", "number": 22, "strengths": ["Aggressive defending", "Pace for a CB", "Leadership"], "weaknesses": ["Rash challenges", "Positioning on crosses"], "fbref_metrics": { "aerial_won_pct": 72, "interceptions": 34, "progressive_passes": 112 } },
-      { "name": "Aurélien Tchouaméni", "position": "CDM", "number": 18, "strengths": ["Ball recovery", "Progressive passing", "Physical presence"], "weaknesses": ["Consistency under high press", "Passing under pressure"], "fbref_metrics": { "interceptions": 48, "progressive_passes": 134, "tackles_won": 56 } },
-      { "name": "Rodrygo", "position": "RW/ST", "number": 11, "strengths": ["Versatility", "Movement off the ball", "Big game performances"], "weaknesses": ["Consistency", "Physical duels"], "fbref_metrics": { "goals": 8, "xG": 7.4, "shot_creating_actions": 76, "progressive_carries": 52 } },
-      { "name": "Eduardo Camavinga", "position": "CM/LB", "number": 12, "strengths": ["Ball carrying", "Defensive duels", "Versatility"], "weaknesses": ["Positioning", "Final third output"], "fbref_metrics": { "progressive_carries": 64, "tackles_won": 48, "interceptions": 29 } },
-      { "name": "Dani Carvajal", "position": "RB", "number": 2, "strengths": ["Experience", "Defensive solidity", "Overlapping runs"], "weaknesses": ["Pace decline", "Recovery against speed"], "fbref_metrics": { "interceptions": 22, "progressive_passes": 67, "aerial_won_pct": 58 } },
-      { "name": "Thibaut Courtois", "position": "GK", "number": 1, "strengths": ["Shot stopping", "1v1 saves", "Command of area"], "weaknesses": ["Distribution under pressure", "Sweeping"], "fbref_metrics": { "save_pct": 76.2, "psxG_minus_GA": 4.8 } }
+      { "name": "Kylian Mbappé", "position": "ST/LW", "number": 10, "strengths": ["Pace", "1v1 finishing", "Runs behind defence"], "weaknesses": ["Defensive effort", "Pressing consistency"], "fbref_metrics": { "goals": 41, "xG": 33.8, "progressive_carries": 124, "npxG": 28.4 } },
+      { "name": "Vinícius Jr", "position": "LW", "number": 7, "strengths": ["Dribbling", "Pace", "Big-game mentality"], "weaknesses": ["Decision-making in final third", "Temperament"], "fbref_metrics": { "goals": 14, "xG": 12.6, "successful_dribbles": 108, "shot_creating_actions": 124 } },
+      { "name": "Jude Bellingham", "position": "AM/CM", "number": 5, "strengths": ["Box-to-box runs", "Aerial ability", "Goal threat from midfield"], "weaknesses": ["Positional discipline", "Workrate fluctuation"], "fbref_metrics": { "goals": 11, "xG": 9.4, "progressive_passes": 112, "aerial_won_pct": 64 } },
+      { "name": "Trent Alexander-Arnold", "position": "RB", "number": 12, "strengths": ["Crossing", "Playmaking from deep", "Set pieces"], "weaknesses": ["1v1 defending", "Recovery pace"], "fbref_metrics": { "progressive_passes": 178, "xAG": 6.8, "key_passes": 58 } },
+      { "name": "Federico Valverde", "position": "CM/RB", "number": 8, "strengths": ["Engine", "Long-range shooting", "Defensive coverage"], "weaknesses": ["Final ball quality"], "fbref_metrics": { "goals": 5, "xG": 4.7, "interceptions": 42, "progressive_carries": 78 } },
+      { "name": "Antonio Rüdiger", "position": "CB", "number": 22, "strengths": ["Aggressive defending", "Pace for a CB", "Leadership"], "weaknesses": ["Rash challenges", "Positioning on crosses"], "fbref_metrics": { "aerial_won_pct": 72, "interceptions": 36, "progressive_passes": 124 } },
+      { "name": "Aurélien Tchouaméni", "position": "CDM/CB", "number": 18, "strengths": ["Ball recovery", "Progressive passing", "Versatility CB-CDM"], "weaknesses": ["Consistency under high press"], "fbref_metrics": { "interceptions": 52, "progressive_passes": 142, "tackles_won": 58 } },
+      { "name": "Rodrygo", "position": "RW/ST", "number": 11, "strengths": ["Versatility", "Movement off the ball", "Big game performances"], "weaknesses": ["Form dip in mid-season", "Physical duels"], "fbref_metrics": { "goals": 6, "xG": 6.8, "shot_creating_actions": 68 } },
+      { "name": "Arda Güler", "position": "AM/CM", "number": 15, "strengths": ["Left-foot delivery", "Vision", "Set pieces"], "weaknesses": ["Pressing intensity", "Physical duels"], "fbref_metrics": { "goals": 8, "xG": 6.2, "xAG": 7.4, "progressive_passes": 124 } },
+      { "name": "Dean Huijsen", "position": "CB", "number": 24, "strengths": ["Ball-playing", "Aerial presence", "Composure"], "weaknesses": ["Pace against quick forwards", "Experience"], "fbref_metrics": { "aerial_won_pct": 70, "interceptions": 32, "progressive_passes": 132, "pass_completion": 92.4 } },
+      { "name": "Thibaut Courtois", "position": "GK", "number": 1, "strengths": ["Shot stopping", "1v1 saves", "Command of area"], "weaknesses": ["Distribution under pressure", "Sweeping"], "fbref_metrics": { "save_pct": 75.8, "psxG_minus_GA": 4.2 } }
     ],
     "tactical_patterns": {
-      "build_up": "Patient build-up through midfield. Ball progression from deep via CBs. FBs provide width. Progressive passing rate: 7.1 per 90 (FBref).",
-      "attacking": "Devastating transitions with Mbappé and Vinícius. Bellingham late arrivals in box. Crosses from wide areas. xG per 90: 1.9 (FBref).",
-      "defensive": "Mid-block with compact shape. Rely on individual brilliance to recover. Press selectively on triggers. PPDA: 12.6 (FBref — low pressing intensity).",
-      "set_pieces": "Strong aerial threat from corners (Rüdiger, Bellingham). Direct free kicks from Mbappé. Set piece xG: 0.28 per match (FBref).",
-      "transitions": "Elite counter-attacking speed. 3-4 seconds goal-to-goal. Mbappé-Vinícius combination lethal on break. 14 transition goals this season (Football-Data.org)."
+      "build_up": "Patient build-up through midfield. CBs split with Tchouaméni dropping. TAA inverts from RB to playmaker zone. Güler floats into half-spaces. Progressive passing rate: 7.4 per 90 (FBref).",
+      "attacking": "Devastating transitions with Mbappé and Vinícius. Bellingham late arrivals in box. TAA crosses and switches from right. xG per 90: 2.1 (FBref).",
+      "defensive": "Mid-block with compact shape (slightly more aggressive under Arbeloa). Press selectively on triggers. PPDA: 11.4 (FBref) — improved vs prior season but still passive.",
+      "set_pieces": "Strong aerial threat from corners (Rüdiger, Bellingham, Huijsen). TAA delivery elite from right. Set piece xG: 0.30 per match (FBref).",
+      "transitions": "Elite counter-attacking speed. Mbappé-Vinícius combination lethal on break. 16 transition goals this season (Football-Data.org)."
     },
     "strengths": [
-      "Devastating pace on transitions (14 transition goals, top in La Liga)",
-      "Individual match-winners across the squad",
+      "Mbappé's historic season (41 goals all comps — top scorer in Europe, FBref)",
+      "Devastating pace on transitions (16 transition goals, top in La Liga)",
       "Champions League pedigree and mentality",
-      "Tactical adaptability under Ancelotti",
+      "TAA transformation of right-side build-up — 178 progressive passes (FBref)",
       "Strong aerial presence from set pieces"
     ],
     "weaknesses": [
-      "Defensive structure without the ball (PPDA 12.6 — passive press)",
+      "Coaching turbulence — Alonso sacked 12 January after poor run",
+      "Defensive structure without the ball (PPDA 11.4 — still passive press)",
       "Over-reliance on individual moments vs organized defenses",
-      "Midfield can be overrun by high-pressing teams",
-      "Right-back area vulnerable to overloads",
-      "Inconsistent pressing — gaps between lines exploitable"
+      "Midfield can be overrun by high-pressing teams (lost 4-1 to Barça, lost CL QF)",
+      "TAA defensive vulnerabilities exposed in transition"
     ],
-    "recent_form": ["W", "W", "W", "D", "W", "L", "W", "W", "W", "W"]
+    "recent_form": ["W", "L", "W", "D", "W", "L", "W", "W", "L", "W"]
   },
   {
     "id": "liverpool",
@@ -93,43 +94,44 @@
     "league": "Premier League",
     "manager": "Arne Slot",
     "formation": "4-2-3-1 / 4-3-3",
-    "style": "High-intensity pressing, vertical transitions",
+    "style": "Possession-leaning press under Slot, Wirtz-led creative rebuild",
     "season": "2025-26",
-    "data_sources": ["FBref", "Football-Data.org"],
+    "data_sources": ["FBref", "Football-Data.org", "StatsHub", "Sofascore"],
     "key_players": [
-      { "name": "Mohamed Salah", "position": "RW", "number": 11, "strengths": ["Cutting inside", "Finishing", "Consistency"], "weaknesses": ["Defensive tracking back", "Predictability of movement"], "fbref_metrics": { "goals": 16, "xG": 14.3, "xAG": 8.7, "shot_creating_actions": 118 } },
-      { "name": "Virgil van Dijk", "position": "CB", "number": 4, "strengths": ["Aerial dominance", "Long passing", "Leadership"], "weaknesses": ["Pace against elite forwards", "Recovery speed"], "fbref_metrics": { "aerial_won_pct": 78, "progressive_passes": 134, "interceptions": 31 } },
-      { "name": "Alexis Mac Allister", "position": "CM", "number": 10, "strengths": ["Ball progression", "Press resistance", "Vision"], "weaknesses": ["Physical duels", "Defensive positioning"], "fbref_metrics": { "progressive_passes": 156, "xAG": 5.2, "pass_completion": 89.1 } },
-      { "name": "Ryan Gravenberch", "position": "CDM", "number": 38, "strengths": ["Ball carrying", "Interceptions", "Tactical intelligence"], "weaknesses": ["Concentration lapses", "Long-range passing"], "fbref_metrics": { "interceptions": 52, "progressive_carries": 78, "tackles_won": 61 } },
-      { "name": "Trent Alexander-Arnold", "position": "RB", "number": 66, "strengths": ["Crossing", "Playmaking from deep", "Set pieces"], "weaknesses": ["1v1 defending", "Positional awareness defensively"], "fbref_metrics": { "progressive_passes": 198, "xAG": 7.1, "key_passes": 67 } },
-      { "name": "Cody Gakpo", "position": "LW/ST", "number": 18, "strengths": ["Versatility", "Left-foot finishing", "Aerial ability"], "weaknesses": ["Consistency", "Dribbling under pressure"], "fbref_metrics": { "goals": 11, "xG": 9.8, "progressive_carries": 54, "shot_creating_actions": 72 } },
-      { "name": "Luis Díaz", "position": "LW", "number": 7, "strengths": ["Dribbling", "Pressing intensity", "Pace"], "weaknesses": ["Final ball quality", "Decision-making"], "fbref_metrics": { "goals": 9, "xG": 8.1, "successful_dribbles": 68, "progressive_carries": 62 } },
-      { "name": "Dominik Szoboszlai", "position": "AM/CM", "number": 8, "strengths": ["Work rate", "Pressing", "Long-range shooting"], "weaknesses": ["Consistency in final third", "Composure under pressure"], "fbref_metrics": { "goals": 6, "xG": 5.4, "progressive_passes": 112, "interceptions": 28 } },
-      { "name": "Andrew Robertson", "position": "LB", "number": 26, "strengths": ["Overlapping runs", "Crossing", "Defensive work rate"], "weaknesses": ["Pace decline", "1v1 against quick wingers"], "fbref_metrics": { "progressive_passes": 124, "key_passes": 42, "interceptions": 26 } },
-      { "name": "Alisson Becker", "position": "GK", "number": 1, "strengths": ["Shot stopping", "Distribution", "Sweeping"], "weaknesses": ["Injury history"], "fbref_metrics": { "save_pct": 78.4, "psxG_minus_GA": 5.2 } }
+      { "name": "Mohamed Salah", "position": "RW", "number": 11, "strengths": ["Cutting inside", "Finishing", "Consistency"], "weaknesses": ["Defensive tracking back", "Form dip mid-season"], "fbref_metrics": { "goals": 9, "xG": 11.2, "xAG": 6.4, "shot_creating_actions": 98 } },
+      { "name": "Hugo Ekitiké", "position": "ST", "number": 22, "strengths": ["Movement in box", "Link-up play", "Aerial ability"], "weaknesses": ["Clinical finishing", "Hold-up vs physical CBs"], "fbref_metrics": { "goals": 17, "xG": 14.8, "progressive_carries": 52, "aerial_won_pct": 58 } },
+      { "name": "Florian Wirtz", "position": "AM", "number": 7, "strengths": ["Creative passing", "Press resistance", "Half-space dribbling"], "weaknesses": ["Adapting to PL physicality", "Goal output dropped from Bundesliga"], "fbref_metrics": { "goals": 5, "xG": 6.4, "xAG": 9.8, "progressive_passes": 162, "shot_creating_actions": 134 } },
+      { "name": "Virgil van Dijk", "position": "CB", "number": 4, "strengths": ["Aerial dominance", "Long passing", "Leadership"], "weaknesses": ["Pace against elite forwards", "Recovery speed"], "fbref_metrics": { "aerial_won_pct": 76, "progressive_passes": 142, "interceptions": 28 } },
+      { "name": "Alexis Mac Allister", "position": "CM", "number": 10, "strengths": ["Ball progression", "Press resistance", "Vision"], "weaknesses": ["Physical duels", "Defensive positioning"], "fbref_metrics": { "progressive_passes": 168, "xAG": 5.8, "pass_completion": 89.4 } },
+      { "name": "Ryan Gravenberch", "position": "CDM", "number": 38, "strengths": ["Ball carrying", "Interceptions", "Tactical intelligence"], "weaknesses": ["Concentration lapses", "Long-range passing"], "fbref_metrics": { "interceptions": 56, "progressive_carries": 84, "tackles_won": 64 } },
+      { "name": "Jeremie Frimpong", "position": "RB/RWB", "number": 30, "strengths": ["Pace", "Overlapping/underlapping runs", "Final-third presence"], "weaknesses": ["1v1 defending", "Crossing consistency"], "fbref_metrics": { "progressive_carries": 72, "key_passes": 38, "interceptions": 22 } },
+      { "name": "Milos Kerkez", "position": "LB", "number": 6, "strengths": ["Stamina", "Overlapping runs", "Defensive work rate"], "weaknesses": ["Discipline", "Final ball quality"], "fbref_metrics": { "progressive_carries": 58, "tackles_won": 52, "interceptions": 28 } },
+      { "name": "Cody Gakpo", "position": "LW/ST", "number": 18, "strengths": ["Versatility", "Left-foot finishing", "Aerial ability"], "weaknesses": ["Consistency", "Dribbling under pressure"], "fbref_metrics": { "goals": 11, "xG": 9.6, "progressive_carries": 56, "shot_creating_actions": 74 } },
+      { "name": "Dominik Szoboszlai", "position": "AM/CM", "number": 8, "strengths": ["Work rate", "Pressing", "Long-range shooting"], "weaknesses": ["Consistency in final third", "Composure under pressure"], "fbref_metrics": { "goals": 6, "xG": 5.8, "progressive_passes": 118, "interceptions": 32 } },
+      { "name": "Alisson Becker", "position": "GK", "number": 1, "strengths": ["Shot stopping", "Distribution", "Sweeping"], "weaknesses": ["Injury history"], "fbref_metrics": { "save_pct": 76.8, "psxG_minus_GA": 3.4 } }
     ],
     "tactical_patterns": {
-      "build_up": "GK distribution to FBs. TAA inverting as playmaker. Quick vertical progression through midfield. Progressive passing rate: 9.1 per 90 (FBref — highest in PL).",
-      "attacking": "Salah cutting inside from right. Robertson overlaps on left. Third-man runs from midfield. Direct passing into channels. xG per 90: 2.3 (FBref).",
-      "defensive": "Aggressive high press in opponent's half. Gegenpressing on loss. PPDA: 7.2 (FBref — most intense press in PL). Compact mid-block when press is beaten.",
-      "set_pieces": "TAA delivery from corners and free kicks. Van Dijk primary aerial target. Near-post routines. Set piece xG: 0.35 per match (FBref — top in PL).",
-      "transitions": "Fast vertical play on turnovers. Salah stretches play. Midfield runners support quickly. 11 transition goals (Football-Data.org)."
+      "build_up": "GK distribution to FBs. Wirtz drops as 10 to receive between the lines. Frimpong inverts late. Gravenberch ball progression. Progressive passing rate: 8.6 per 90 (FBref — down from prior TAA-led season).",
+      "attacking": "Wirtz-Salah right-side combinations. Ekitiké drops to link play. Kerkez overlaps on left. Direct passing into channels. xG per 90: 2.0 (FBref).",
+      "defensive": "Aggressive high press in opponent's half (less intense than 24-25). Gegenpressing on loss. PPDA: 8.4 (FBref). Compact mid-block when press is beaten.",
+      "set_pieces": "Szoboszlai delivery from corners. Van Dijk primary aerial target. Set piece xG: 0.32 per match (FBref).",
+      "transitions": "Wirtz's progressive passing accelerates verticals. Salah and Ekitiké stretch play. Midfield runners support. 9 transition goals (Football-Data.org)."
     },
     "strengths": [
-      "Elite pressing intensity (PPDA 7.2 — best in PL, FBref)",
-      "Strongest set-piece threat in the league (0.35 xG/match)",
-      "Tactical organization and structure under Slot",
-      "Individual quality in attack (Salah: 16G, 8.7 xAG)",
+      "Wirtz creative engine (134 SCA, 9.8 xAG, FBref — Bundesliga form translating)",
+      "Ekitiké breakout season (17 goals all comps, top scorer)",
+      "Strong set-piece threat (0.32 xG/match)",
+      "Tactical organization under Slot",
       "Midfield balance — Gravenberch interceptions + Mac Allister progression"
     ],
     "weaknesses": [
-      "TAA defensive vulnerability (1v1 defending, positional lapses)",
-      "High line exploitable with pace behind (van Dijk recovery speed)",
-      "Squad depth in certain positions",
-      "Can be disrupted by physical, direct midfields",
-      "Transition defending when press is broken (conceded 7 post-press goals)"
+      "Disappointing 4th-place PL position vs defending champions expectations",
+      "Salah goal output dropped sharply (9 league goals vs 16+ prior)",
+      "Defensive transitions struggle with Frimpong + Kerkez both pushing high",
+      "Lost CL QF — knockout exit short of squad ambition",
+      "High line exploitable with pace behind (van Dijk recovery)"
     ],
-    "recent_form": ["W", "W", "W", "W", "D", "W", "W", "L", "W", "W"]
+    "recent_form": ["W", "D", "L", "W", "D", "W", "W", "L", "W", "D"]
   },
   {
     "id": "arsenal",
@@ -137,43 +139,45 @@
     "league": "Premier League",
     "manager": "Mikel Arteta",
     "formation": "4-3-3 / 4-2-3-1",
-    "style": "Structured possession, set-piece mastery, controlled aggression",
+    "style": "Structured possession, set-piece mastery, controlled aggression — leading PL title race",
     "season": "2025-26",
-    "data_sources": ["FBref", "Football-Data.org"],
+    "data_sources": ["FBref", "Football-Data.org", "StatsHub", "Sofascore"],
     "key_players": [
-      { "name": "Bukayo Saka", "position": "RW", "number": 7, "strengths": ["Dribbling", "Crossing", "Big-game delivery"], "weaknesses": ["Injury management", "Over-reliance from team"], "fbref_metrics": { "goals": 14, "xG": 11.8, "xAG": 9.4, "shot_creating_actions": 132 } },
-      { "name": "Martin Ødegaard", "position": "AM", "number": 8, "strengths": ["Creative vision", "Press resistance", "Final-third passing"], "weaknesses": ["Physical duels", "Defensive contribution"], "fbref_metrics": { "goals": 7, "xG": 5.9, "xAG": 10.1, "progressive_passes": 178 } },
-      { "name": "Declan Rice", "position": "CM/CDM", "number": 41, "strengths": ["Ball recovery", "Progressive carrying", "Aerial duels"], "weaknesses": ["Over-committing in press", "Positional discipline when carrying"], "fbref_metrics": { "interceptions": 46, "progressive_carries": 72, "tackles_won": 64, "aerial_won_pct": 66 } },
-      { "name": "Kai Havertz", "position": "ST/AM", "number": 29, "strengths": ["Aerial ability", "Movement in box", "Link-up play"], "weaknesses": ["Clinical finishing", "Consistency"], "fbref_metrics": { "goals": 12, "xG": 14.1, "aerial_won_pct": 64, "progressive_carries": 38 } },
-      { "name": "William Saliba", "position": "CB", "number": 2, "strengths": ["Anticipation", "Ball-playing from back", "1v1 defending"], "weaknesses": ["Aggression in aerial duels", "Handling physical strikers"], "fbref_metrics": { "aerial_won_pct": 68, "interceptions": 42, "progressive_passes": 118, "pass_completion": 92.1 } },
-      { "name": "Gabriel Magalhães", "position": "CB", "number": 6, "strengths": ["Aerial dominance", "Set-piece goal threat", "Physical presence"], "weaknesses": ["Pace against quick forwards", "Ball-playing under pressure"], "fbref_metrics": { "goals": 5, "aerial_won_pct": 76, "interceptions": 34 } },
-      { "name": "Gabriel Martinelli", "position": "LW", "number": 11, "strengths": ["Pace", "Direct running", "Pressing intensity"], "weaknesses": ["Final ball quality", "Decision-making in final third"], "fbref_metrics": { "goals": 8, "xG": 7.2, "progressive_carries": 68, "successful_dribbles": 52 } },
-      { "name": "Jurriën Timber", "position": "RB/CB", "number": 12, "strengths": ["Versatility", "Ball progression", "Defensive intelligence"], "weaknesses": ["Physical duels with powerful wingers"], "fbref_metrics": { "progressive_passes": 96, "interceptions": 38, "progressive_carries": 54 } },
-      { "name": "Thomas Partey", "position": "CDM", "number": 5, "strengths": ["Long-range passing", "Press resistance", "Physicality"], "weaknesses": ["Injury prone", "Pace in recovery"], "fbref_metrics": { "progressive_passes": 108, "interceptions": 32, "pass_completion": 88.6 } },
-      { "name": "David Raya", "position": "GK", "number": 22, "strengths": ["Shot stopping", "Distribution", "Penalty saves"], "weaknesses": ["Commanding area on crosses", "Sweeping range"], "fbref_metrics": { "save_pct": 77.1, "psxG_minus_GA": 4.6 } }
+      { "name": "Bukayo Saka", "position": "RW", "number": 7, "strengths": ["Dribbling", "Crossing", "Big-game delivery"], "weaknesses": ["Injury management", "Over-reliance from team"], "fbref_metrics": { "goals": 12, "xG": 10.4, "xAG": 8.6, "shot_creating_actions": 124 } },
+      { "name": "Viktor Gyökeres", "position": "ST", "number": 14, "strengths": ["Physical presence", "Pace in behind", "Clinical finishing"], "weaknesses": ["Link-up vs deep blocks", "First touch under pressure"], "fbref_metrics": { "goals": 21, "xG": 18.2, "npxG": 16.4, "aerial_won_pct": 64, "progressive_carries": 48 } },
+      { "name": "Martin Ødegaard", "position": "AM", "number": 8, "strengths": ["Creative vision", "Press resistance", "Final-third passing"], "weaknesses": ["Physical duels", "Defensive contribution"], "fbref_metrics": { "goals": 6, "xG": 5.4, "xAG": 9.8, "progressive_passes": 174 } },
+      { "name": "Declan Rice", "position": "CM/CDM", "number": 41, "strengths": ["Ball recovery", "Progressive carrying", "Aerial duels"], "weaknesses": ["Over-committing in press", "Positional discipline when carrying"], "fbref_metrics": { "interceptions": 48, "progressive_carries": 82, "tackles_won": 68, "aerial_won_pct": 67 } },
+      { "name": "Martín Zubimendi", "position": "CDM", "number": 36, "strengths": ["Press resistance", "Positional discipline", "Short passing"], "weaknesses": ["Pace in recovery", "Goal threat"], "fbref_metrics": { "interceptions": 42, "progressive_passes": 162, "pass_completion": 93.1, "tackles_won": 56 } },
+      { "name": "Eberechi Eze", "position": "AM/LW", "number": 11, "strengths": ["Dribbling", "Set-piece delivery", "Half-space creativity"], "weaknesses": ["Defensive work rate", "Decision-making in transition"], "fbref_metrics": { "goals": 9, "xG": 7.4, "xAG": 6.2, "successful_dribbles": 64, "shot_creating_actions": 96 } },
+      { "name": "William Saliba", "position": "CB", "number": 2, "strengths": ["Anticipation", "Ball-playing from back", "1v1 defending"], "weaknesses": ["Aggression in aerial duels", "Handling physical strikers"], "fbref_metrics": { "aerial_won_pct": 69, "interceptions": 44, "progressive_passes": 124, "pass_completion": 92.6 } },
+      { "name": "Gabriel Magalhães", "position": "CB", "number": 6, "strengths": ["Aerial dominance", "Set-piece goal threat", "Physical presence"], "weaknesses": ["Pace against quick forwards", "Ball-playing under pressure"], "fbref_metrics": { "goals": 6, "aerial_won_pct": 78, "interceptions": 36 } },
+      { "name": "Noni Madueke", "position": "RW/LW", "number": 19, "strengths": ["Pace", "1v1 dribbling", "Direct running"], "weaknesses": ["Final ball quality", "Consistency"], "fbref_metrics": { "goals": 7, "xG": 6.4, "successful_dribbles": 58, "progressive_carries": 64 } },
+      { "name": "Jurriën Timber", "position": "RB/CB", "number": 12, "strengths": ["Versatility", "Ball progression", "Defensive intelligence"], "weaknesses": ["Physical duels with powerful wingers"], "fbref_metrics": { "progressive_passes": 102, "interceptions": 40, "progressive_carries": 58 } },
+      { "name": "Cristhian Mosquera", "position": "CB", "number": 16, "strengths": ["Pace for a CB", "Recovery defending", "Composure"], "weaknesses": ["Aerial duels", "Experience"], "fbref_metrics": { "aerial_won_pct": 64, "interceptions": 28, "progressive_passes": 78 } },
+      { "name": "David Raya", "position": "GK", "number": 22, "strengths": ["Shot stopping", "Distribution", "Penalty saves"], "weaknesses": ["Commanding area on crosses", "Sweeping range"], "fbref_metrics": { "save_pct": 78.4, "psxG_minus_GA": 5.2 } }
     ],
     "tactical_patterns": {
-      "build_up": "Structured build-up from back with Saliba/Gabriel split wide. Raya involved in short distribution. Rice drops alongside CBs to create 3v2 overloads. Timber inverts from RB. Progressive passing rate: 8.6 per 90 (FBref).",
-      "attacking": "Saka-Ødegaard combination on right half-space is primary creative axis. Martinelli provides width and pace on left. Havertz makes late runs into box. xG per 90: 2.0 (FBref). Left-back overlaps create crossing opportunities.",
-      "defensive": "Medium-high press with selective triggers. PPDA: 8.8 (FBref). Compact 4-4-2 mid-block out of possession. Rice screens passing lanes. Disciplined zonal marking.",
-      "set_pieces": "Elite set-piece unit — Gabriel and Havertz primary aerial targets. Saka and Ødegaard delivery. 12 goals from set pieces this season (Football-Data.org). Set piece xG: 0.38 per match (FBref — highest in PL).",
-      "transitions": "Controlled transitions — prefer to establish possession rather than direct counter. Saka and Martinelli can stretch on break. Recovery press within 5 seconds of loss."
+      "build_up": "Structured build-up from back with Saliba/Gabriel split wide. Raya involved in short distribution. Zubimendi as deep pivot — best press-resistant midfielder Arsenal have had under Arteta. Timber inverts from RB. Progressive passing rate: 8.8 per 90 (FBref).",
+      "attacking": "Saka-Ødegaard combination on right half-space remains primary creative axis. Eze provides creativity from left and AM. Gyökeres' aggressive runs in behind transformed Arsenal's vertical threat. xG per 90: 2.2 (FBref).",
+      "defensive": "Medium-high press with selective triggers. PPDA: 8.4 (FBref). Compact 4-4-2 mid-block out of possession. Zubimendi screens passing lanes. Disciplined zonal marking.",
+      "set_pieces": "Elite set-piece unit — Gabriel and Gyökeres primary aerial targets. Saka, Ødegaard, Eze delivery. 14 goals from set pieces this season (Football-Data.org). Set piece xG: 0.40 per match (FBref — highest in PL).",
+      "transitions": "Gyökeres' direct running adds counter threat absent in prior seasons. Saka and Madueke can stretch on break. Recovery press within 5 seconds of loss."
     },
     "strengths": [
-      "Premier League's best set-piece unit (0.38 xG/match, 12 goals, FBref)",
-      "Defensive solidity — Saliba-Gabriel partnership (fewest big chances conceded in PL)",
-      "Saka-Ødegaard creative axis (combined 19.5 xAG, FBref)",
-      "Tactical discipline and structural organization under Arteta",
-      "Squad depth across midfield and defense"
+      "Premier League leaders — top of the table heading into final stretch",
+      "Premier League's best set-piece unit (0.40 xG/match, 14 goals, FBref)",
+      "Gyökeres solved the centre-forward problem (21 goals all comps)",
+      "Zubimendi added elite press-resistant pivot (93% pass completion, FBref)",
+      "Saliba-Gabriel partnership (fewest big chances conceded in PL)"
     ],
     "weaknesses": [
-      "Over-reliance on Saka for final-third creativity (team xG drops 34% without him)",
-      "Lack of clinical centre-forward (Havertz underperforming xG by 2.1)",
-      "Can become too structured — predictable in build-up against high press",
-      "Vulnerability on left side when Martinelli doesn't track back",
-      "Struggles to break down deep, compact blocks without set-piece bailout"
+      "Saka-Ødegaard creative axis still essential — 31% xG drop without both",
+      "Lost CL semi-final — squad fatigue from European run a factor",
+      "Lost EFL Cup final — composure in finals questioned",
+      "Vulnerability on left side when Eze doesn't track back",
+      "Can become too structured — predictable in build-up against high press"
     ],
-    "recent_form": ["W", "W", "W", "D", "W", "W", "L", "W", "W", "D"]
+    "recent_form": ["W", "W", "W", "W", "D", "W", "W", "L", "W", "W"]
   },
   {
     "id": "barcelona",
@@ -181,43 +185,45 @@
     "league": "La Liga",
     "manager": "Hansi Flick",
     "formation": "4-2-3-1 / 4-3-3",
-    "style": "High-pressing positional play, youth-driven intensity",
+    "style": "High-pressing positional play, youth-driven intensity — La Liga leaders",
     "season": "2025-26",
-    "data_sources": ["FBref", "Football-Data.org"],
+    "data_sources": ["FBref", "Football-Data.org", "StatsHub", "Sofascore"],
     "key_players": [
-      { "name": "Lamine Yamal", "position": "RW", "number": 19, "strengths": ["Dribbling", "Vision beyond age", "Left-foot delivery"], "weaknesses": ["Physical development", "Defensive contribution"], "fbref_metrics": { "goals": 12, "xG": 9.8, "xAG": 8.4, "shot_creating_actions": 126, "successful_dribbles": 82 } },
-      { "name": "Raphinha", "position": "LW/RW", "number": 11, "strengths": ["Pressing intensity", "Finishing", "Leadership"], "weaknesses": ["Decision-making under fatigue", "Consistency"], "fbref_metrics": { "goals": 15, "xG": 12.6, "progressive_carries": 74, "shot_creating_actions": 108 } },
-      { "name": "Robert Lewandowski", "position": "ST", "number": 9, "strengths": ["Clinical finishing", "Positioning", "Hold-up play"], "weaknesses": ["Pace decline", "Pressing intensity"], "fbref_metrics": { "goals": 19, "xG": 17.4, "npxG": 15.8, "aerial_won_pct": 52 } },
-      { "name": "Pedri", "position": "CM", "number": 8, "strengths": ["Press resistance", "Ball retention", "Third-man runs"], "weaknesses": ["Injury history", "Goal output"], "fbref_metrics": { "progressive_passes": 168, "pass_completion": 92.4, "progressive_carries": 48 } },
-      { "name": "Gavi", "position": "CM", "number": 6, "strengths": ["Intensity", "Ball recovery", "Verticality"], "weaknesses": ["Discipline", "Rash challenges"], "fbref_metrics": { "interceptions": 38, "tackles_won": 52, "progressive_carries": 56 } },
-      { "name": "Marc Casadó", "position": "CDM", "number": 17, "strengths": ["Positional discipline", "Long passing", "Reading the game"], "weaknesses": ["Pace in recovery", "Physical duels"], "fbref_metrics": { "interceptions": 44, "progressive_passes": 148, "pass_completion": 91.8 } },
-      { "name": "Jules Koundé", "position": "RB", "number": 23, "strengths": ["Ball progression", "Defending in space", "Versatility"], "weaknesses": ["Aerial duels", "Crosses from deep"], "fbref_metrics": { "progressive_carries": 62, "interceptions": 32, "progressive_passes": 94 } },
-      { "name": "Pau Cubarsí", "position": "CB", "number": 2, "strengths": ["Reading the game", "Ball-playing", "Composure beyond age"], "weaknesses": ["Physical development", "Aerial duels against power strikers"], "fbref_metrics": { "aerial_won_pct": 62, "interceptions": 40, "progressive_passes": 126, "pass_completion": 93.1 } },
-      { "name": "Ronald Araújo", "position": "CB", "number": 4, "strengths": ["Pace for a CB", "Aerial dominance", "Recovery runs"], "weaknesses": ["Ball-playing under pressure", "Rash challenges"], "fbref_metrics": { "aerial_won_pct": 78, "interceptions": 36, "tackles_won": 42 } },
-      { "name": "Dani Olmo", "position": "AM/LW", "number": 20, "strengths": ["Creativity", "Movement between lines", "Pressing"], "weaknesses": ["Injury prone", "Physicality"], "fbref_metrics": { "goals": 8, "xG": 6.8, "xAG": 7.2, "progressive_passes": 98 } }
+      { "name": "Lamine Yamal", "position": "RW", "number": 10, "strengths": ["Dribbling", "Vision beyond age", "Left-foot delivery"], "weaknesses": ["Physical development", "Defensive contribution"], "fbref_metrics": { "goals": 14, "xG": 11.2, "xAG": 9.8, "shot_creating_actions": 142, "successful_dribbles": 96 } },
+      { "name": "Raphinha", "position": "LW/RW", "number": 11, "strengths": ["Pressing intensity", "Finishing", "Leadership"], "weaknesses": ["Decision-making under fatigue", "Consistency"], "fbref_metrics": { "goals": 16, "xG": 13.4, "progressive_carries": 78, "shot_creating_actions": 118 } },
+      { "name": "Robert Lewandowski", "position": "ST", "number": 9, "strengths": ["Clinical finishing", "Positioning", "Hold-up play"], "weaknesses": ["Pace decline", "Pressing intensity"], "fbref_metrics": { "goals": 18, "xG": 16.8, "npxG": 15.2, "aerial_won_pct": 54 } },
+      { "name": "Marcus Rashford", "position": "LW/ST", "number": 14, "strengths": ["Pace", "Dribbling", "Two-footed finishing"], "weaknesses": ["Consistency", "Defensive work rate"], "fbref_metrics": { "goals": 11, "xG": 8.4, "successful_dribbles": 62, "progressive_carries": 68 } },
+      { "name": "Pedri", "position": "CM", "number": 8, "strengths": ["Press resistance", "Ball retention", "Third-man runs"], "weaknesses": ["Injury history", "Goal output"], "fbref_metrics": { "progressive_passes": 184, "pass_completion": 92.8, "progressive_carries": 56 } },
+      { "name": "Frenkie de Jong", "position": "CM", "number": 21, "strengths": ["Press resistance", "Ball carrying from deep", "Vision"], "weaknesses": ["Goal output", "Defensive intensity"], "fbref_metrics": { "progressive_passes": 156, "progressive_carries": 78, "pass_completion": 91.4 } },
+      { "name": "Marc Casadó", "position": "CDM", "number": 17, "strengths": ["Positional discipline", "Long passing", "Reading the game"], "weaknesses": ["Pace in recovery", "Physical duels"], "fbref_metrics": { "interceptions": 46, "progressive_passes": 152, "pass_completion": 91.8 } },
+      { "name": "Jules Koundé", "position": "RB", "number": 23, "strengths": ["Ball progression", "Defending in space", "Versatility"], "weaknesses": ["Aerial duels", "Crosses from deep"], "fbref_metrics": { "progressive_carries": 68, "interceptions": 36, "progressive_passes": 102 } },
+      { "name": "Pau Cubarsí", "position": "CB", "number": 2, "strengths": ["Reading the game", "Ball-playing", "Composure beyond age"], "weaknesses": ["Physical development", "Aerial duels against power strikers"], "fbref_metrics": { "aerial_won_pct": 64, "interceptions": 42, "progressive_passes": 134, "pass_completion": 93.2 } },
+      { "name": "Ronald Araújo", "position": "CB", "number": 4, "strengths": ["Pace for a CB", "Aerial dominance", "Recovery runs"], "weaknesses": ["Ball-playing under pressure", "Rash challenges"], "fbref_metrics": { "aerial_won_pct": 78, "interceptions": 38, "tackles_won": 44 } },
+      { "name": "Dani Olmo", "position": "AM/LW", "number": 20, "strengths": ["Creativity", "Movement between lines", "Pressing"], "weaknesses": ["Injury prone", "Physicality"], "fbref_metrics": { "goals": 7, "xG": 6.4, "xAG": 7.6, "progressive_passes": 102 } },
+      { "name": "Joan García", "position": "GK", "number": 13, "strengths": ["Shot stopping", "Reflexes", "Distribution under pressure"], "weaknesses": ["Command of area on crosses", "Experience at top level"], "fbref_metrics": { "save_pct": 76.4, "psxG_minus_GA": 3.8 } }
     ],
     "tactical_patterns": {
-      "build_up": "Flick's positional play with high defensive line. CBs split wide, Casadó as single pivot. Koundé inverts from RB. Short progressive passing through midfield triangles. Progressive passing rate: 9.4 per 90 (FBref — highest in La Liga).",
-      "attacking": "Yamal and Raphinha stretch width. Pedri and Olmo occupy half-spaces. Lewandowski holds and combines in zone 14. Overloads right half-space via Yamal-Koundé-Pedri triangle. xG per 90: 2.4 (FBref).",
-      "defensive": "Extremely high press — Flick's signature. PPDA: 6.4 (FBref — most aggressive in La Liga). High defensive line (avg 48m from goal). Immediate counter-press on loss — 4-second recovery rule.",
-      "set_pieces": "Lewandowski and Araújo primary targets. Raphinha and Olmo delivery. Set piece xG: 0.26 per match (FBref). Near-post flick routines from corners.",
-      "transitions": "Ultra-fast vertical transitions on turnover. Yamal's pace stretches defenses immediately. Raphinha makes diagonal counter-runs. 13 transition goals this season (Football-Data.org)."
+      "build_up": "Flick's positional play with high defensive line. CBs split wide, Casadó or de Jong as single pivot. Koundé inverts from RB. Short progressive passing through midfield triangles. Progressive passing rate: 9.6 per 90 (FBref — highest in La Liga).",
+      "attacking": "Yamal and Raphinha stretch width; Rashford rotates with Raphinha on left. Pedri and Olmo occupy half-spaces. Lewandowski holds and combines in zone 14. Overloads right half-space via Yamal-Koundé-Pedri triangle. xG per 90: 2.5 (FBref).",
+      "defensive": "Extremely high press — Flick's signature. PPDA: 6.2 (FBref — most aggressive in La Liga). High defensive line (avg 48m from goal). Immediate counter-press on loss — 4-second recovery rule.",
+      "set_pieces": "Lewandowski and Araújo primary targets. Raphinha and Olmo delivery. Set piece xG: 0.27 per match (FBref). Near-post flick routines from corners.",
+      "transitions": "Ultra-fast vertical transitions on turnover. Yamal's pace stretches defenses immediately. Rashford makes diagonal counter-runs from left. 14 transition goals this season (Football-Data.org)."
     },
     "strengths": [
-      "Most aggressive press in La Liga (PPDA 6.4, FBref)",
-      "Youth-driven energy — Yamal, Cubarsí, Gavi provide relentless intensity",
-      "Highest progressive passing rate in La Liga (9.4 per 90, FBref)",
-      "Tactical flexibility under Flick — can switch between 4-2-3-1 and 4-3-3 mid-game",
-      "Lewandowski's clinical finishing (19 goals, +1.6 vs xG overperformance)"
+      "La Liga and Supercopa winners — domestic dominance under Flick",
+      "Most aggressive press in La Liga (PPDA 6.2, FBref)",
+      "Yamal generational season — 14 goals + 9.8 xAG at 18 years old",
+      "Highest progressive passing rate in La Liga (9.6 per 90, FBref)",
+      "Rashford loan refreshed left flank — added pace and 2-footed threat"
     ],
     "weaknesses": [
-      "Extremely high defensive line exploitable with pace behind (conceded 9 goals on through balls, Football-Data.org)",
-      "Defensive vulnerability from set pieces (conceded 7 set-piece goals, worst in La Liga top 4)",
-      "Injury-prone key players (Pedri, Olmo, Araújo — combined 28 games missed)",
-      "Can be overwhelmed by physical, direct midfields that bypass press",
+      "Extremely high defensive line exploitable with pace behind (10 goals on through balls, Football-Data.org)",
+      "Defensive vulnerability from set pieces (8 set-piece goals conceded — worst in La Liga top 4)",
+      "Injury-prone key players (Pedri, Olmo, Araújo)",
+      "Camp Nou return mid-season disrupted home rhythm",
       "Reliance on individual brilliance when structured play is disrupted"
     ],
-    "recent_form": ["W", "W", "W", "W", "W", "D", "W", "L", "W", "W"]
+    "recent_form": ["W", "W", "W", "D", "W", "W", "W", "L", "W", "W"]
   },
   {
     "id": "psg",
@@ -225,43 +231,45 @@
     "league": "Ligue 1",
     "manager": "Luis Enrique",
     "formation": "4-3-3 / 3-4-3",
-    "style": "Possession-dominant, positional play, high press",
+    "style": "Possession-dominant, positional play, high press — defending European champions",
     "season": "2025-26",
-    "data_sources": ["FBref", "Football-Data.org"],
+    "data_sources": ["FBref", "Football-Data.org", "StatsHub", "Sofascore"],
     "key_players": [
-      { "name": "Ousmane Dembélé", "position": "RW", "number": 10, "strengths": ["Dribbling", "Both-footed", "Pace", "1v1 ability"], "weaknesses": ["Decision-making", "Consistency", "Defensive tracking"], "fbref_metrics": { "goals": 13, "xG": 10.4, "successful_dribbles": 98, "shot_creating_actions": 124, "progressive_carries": 86 } },
-      { "name": "Bradley Barcola", "position": "LW", "number": 29, "strengths": ["Pace", "Direct running", "Movement off the ball"], "weaknesses": ["Clinical finishing", "Physical duels"], "fbref_metrics": { "goals": 10, "xG": 12.1, "progressive_carries": 78, "successful_dribbles": 64 } },
-      { "name": "Gonçalo Ramos", "position": "ST", "number": 9, "strengths": ["Movement in box", "Finishing", "Link-up play"], "weaknesses": ["Aerial duels", "Hold-up play against physical CBs"], "fbref_metrics": { "goals": 14, "xG": 12.8, "shot_creating_actions": 48 } },
-      { "name": "Vitinha", "position": "CM", "number": 17, "strengths": ["Press resistance", "Ball progression", "Vision"], "weaknesses": ["Physicality", "Defensive duels"], "fbref_metrics": { "progressive_passes": 172, "pass_completion": 91.6, "progressive_carries": 58, "xAG": 6.4 } },
-      { "name": "Warren Zaïre-Emery", "position": "CM", "number": 33, "strengths": ["Box-to-box energy", "Ball recovery", "Maturity beyond age"], "weaknesses": ["Final ball quality", "Shooting"], "fbref_metrics": { "interceptions": 42, "progressive_carries": 52, "tackles_won": 48 } },
-      { "name": "Marquinhos", "position": "CB", "number": 5, "strengths": ["Leadership", "Reading the game", "Positional defending"], "weaknesses": ["Pace decline", "Aerial duels against tall strikers"], "fbref_metrics": { "aerial_won_pct": 66, "interceptions": 38, "progressive_passes": 108 } },
-      { "name": "Achraf Hakimi", "position": "RB/RWB", "number": 2, "strengths": ["Pace", "Overlapping/underlapping runs", "Crossing"], "weaknesses": ["1v1 defending", "Positional discipline"], "fbref_metrics": { "progressive_carries": 82, "key_passes": 48, "interceptions": 24 } },
-      { "name": "Nuno Mendes", "position": "LB", "number": 25, "strengths": ["Pace", "Overlapping runs", "Defensive recovery"], "weaknesses": ["Crossing quality", "Final third decisions"], "fbref_metrics": { "progressive_carries": 68, "interceptions": 28, "tackles_won": 38 } },
-      { "name": "Fabian Ruiz", "position": "CM", "number": 8, "strengths": ["Long passing", "Set-piece delivery", "Ball retention"], "weaknesses": ["Defensive intensity", "Pressing consistency"], "fbref_metrics": { "progressive_passes": 146, "pass_completion": 90.2, "xAG": 4.8 } },
-      { "name": "Gianluigi Donnarumma", "position": "GK", "number": 99, "strengths": ["Shot stopping", "Reflexes", "1v1 saves"], "weaknesses": ["Distribution under pressure", "Sweeping"], "fbref_metrics": { "save_pct": 74.8, "psxG_minus_GA": 3.2 } }
+      { "name": "Ousmane Dembélé", "position": "RW/ST", "number": 10, "strengths": ["Dribbling", "Both-footed", "Pace", "1v1 ability"], "weaknesses": ["Decision-making", "Consistency", "Defensive tracking"], "fbref_metrics": { "goals": 28, "xG": 22.6, "successful_dribbles": 112, "shot_creating_actions": 142, "progressive_carries": 98 } },
+      { "name": "Bradley Barcola", "position": "LW", "number": 29, "strengths": ["Pace", "Direct running", "Movement off the ball"], "weaknesses": ["Clinical finishing", "Physical duels"], "fbref_metrics": { "goals": 12, "xG": 13.4, "progressive_carries": 84, "successful_dribbles": 72 } },
+      { "name": "Désiré Doué", "position": "AM/LW", "number": 14, "strengths": ["Dribbling", "Two-footed creativity", "Big-game finishing"], "weaknesses": ["Physicality", "Consistency over 90 minutes"], "fbref_metrics": { "goals": 11, "xG": 9.2, "xAG": 7.4, "successful_dribbles": 78, "shot_creating_actions": 112 } },
+      { "name": "Khvicha Kvaratskhelia", "position": "LW", "number": 7, "strengths": ["Dribbling", "1v1 ability", "Set pieces"], "weaknesses": ["Defensive tracking", "End product variance"], "fbref_metrics": { "goals": 9, "xG": 8.4, "xAG": 6.8, "successful_dribbles": 84, "progressive_carries": 76 } },
+      { "name": "Vitinha", "position": "CM", "number": 17, "strengths": ["Press resistance", "Ball progression", "Vision"], "weaknesses": ["Physicality", "Defensive duels"], "fbref_metrics": { "progressive_passes": 188, "pass_completion": 92.1, "progressive_carries": 64, "xAG": 7.2 } },
+      { "name": "Warren Zaïre-Emery", "position": "CM", "number": 33, "strengths": ["Box-to-box energy", "Ball recovery", "Maturity beyond age"], "weaknesses": ["Final ball quality", "Shooting"], "fbref_metrics": { "interceptions": 46, "progressive_carries": 58, "tackles_won": 52 } },
+      { "name": "Joao Neves", "position": "CM/CDM", "number": 87, "strengths": ["Ball recovery", "Pressing intensity", "Press resistance"], "weaknesses": ["Aerial duels", "Final third decisions"], "fbref_metrics": { "interceptions": 52, "tackles_won": 64, "progressive_passes": 132 } },
+      { "name": "Marquinhos", "position": "CB", "number": 5, "strengths": ["Leadership", "Reading the game", "Positional defending"], "weaknesses": ["Pace decline", "Aerial duels against tall strikers"], "fbref_metrics": { "aerial_won_pct": 67, "interceptions": 42, "progressive_passes": 118 } },
+      { "name": "Willian Pacho", "position": "CB", "number": 51, "strengths": ["Pace", "Aerial duels", "Composure on the ball"], "weaknesses": ["Long passing range", "Aggression in duels"], "fbref_metrics": { "aerial_won_pct": 72, "interceptions": 38, "progressive_passes": 96 } },
+      { "name": "Achraf Hakimi", "position": "RB/RWB", "number": 2, "strengths": ["Pace", "Overlapping/underlapping runs", "Crossing"], "weaknesses": ["1v1 defending", "Positional discipline"], "fbref_metrics": { "progressive_carries": 92, "key_passes": 56, "interceptions": 26 } },
+      { "name": "Nuno Mendes", "position": "LB", "number": 25, "strengths": ["Pace", "Overlapping runs", "Defensive recovery"], "weaknesses": ["Crossing quality", "Final third decisions"], "fbref_metrics": { "progressive_carries": 74, "interceptions": 32, "tackles_won": 42 } },
+      { "name": "Lucas Chevalier", "position": "GK", "number": 30, "strengths": ["Shot stopping", "Distribution with feet", "Reflexes"], "weaknesses": ["Command of area on crosses", "Experience in CL knockouts"], "fbref_metrics": { "save_pct": 76.2, "psxG_minus_GA": 4.1 } }
     ],
     "tactical_patterns": {
-      "build_up": "Luis Enrique's positional play — patient build-up with GK in possession. Hakimi pushes high, Nuno Mendes provides width. Vitinha as primary ball progressor from midfield. 3-2 build-up shape (one FB tucks in). Progressive passing rate: 8.8 per 90 (FBref).",
-      "attacking": "Width from Dembélé (right) and Barcola (left). Vitinha and Zaïre-Emery make third-man runs. Ramos' movement creates space for wide players. Half-space overloads via midfielder rotations. xG per 90: 2.2 (FBref).",
-      "defensive": "High press with aggressive triggers — 70%+ possession reduces defensive exposure. PPDA: 7.6 (FBref). Counter-press immediately on loss. Back four holds high line (avg 46m from goal).",
-      "set_pieces": "Marquinhos primary target from corners. Fabian Ruiz delivery from free kicks. Set piece xG: 0.24 per match (FBref). Zonal marking defensively.",
-      "transitions": "Devastating pace on break through Dembélé, Barcola, and Hakimi. 3v2 counter-attacks frequent. 12 transition goals this season (Football-Data.org). Prefer controlled transition over direct counter."
+      "build_up": "Luis Enrique's positional play — patient build-up with GK in possession. Hakimi pushes high, Nuno Mendes provides width. Vitinha as primary ball progressor from midfield. 3-2 build-up shape (one FB tucks in). Progressive passing rate: 9.0 per 90 (FBref).",
+      "attacking": "Width from Dembélé (right/central) and Kvaratskhelia/Barcola (left). Doué rotates into half-spaces. Vitinha and Joao Neves make third-man runs. Half-space overloads via midfielder rotations. xG per 90: 2.4 (FBref).",
+      "defensive": "High press with aggressive triggers — 70%+ possession reduces defensive exposure. PPDA: 7.4 (FBref). Counter-press immediately on loss. Back four holds high line (avg 46m from goal).",
+      "set_pieces": "Marquinhos and Pacho primary targets from corners. Vitinha and Kvaratskhelia delivery. Set piece xG: 0.26 per match (FBref). Zonal marking defensively.",
+      "transitions": "Devastating pace on break through Dembélé, Barcola, Kvaratskhelia and Hakimi. 3v2 counter-attacks frequent. 15 transition goals this season (Football-Data.org)."
     },
     "strengths": [
-      "Elite ball progression — Vitinha + Hakimi create constant forward momentum (FBref)",
-      "Pace across front line and full-backs — devastating in transition (12 transition goals)",
-      "Luis Enrique's possession control (68% avg — highest in Europe's top 5 leagues)",
-      "Squad depth and tactical flexibility (4-3-3 → 3-4-3 mid-game)",
-      "Youth development pipeline — Zaïre-Emery and Barcola provide energy and intensity"
+      "Defending European champions — won 2024-25 UCL final",
+      "Dembélé Ballon d'Or season (28 goals all comps — career-best)",
+      "Kvaratskhelia + Doué deepened attacking depth post-Mbappé",
+      "Elite ball progression — Vitinha 188 progressive passes (FBref)",
+      "Luis Enrique's possession control (67% avg — top in Europe)"
     ],
     "weaknesses": [
-      "Defensive fragility in high-stakes European matches (conceded 2+ in 4 of 6 CL games)",
-      "Lack of proven goalscorer at elite CL level post-Mbappé",
-      "High line exploitable with direct balls behind (conceded 8 through-ball goals, Football-Data.org)",
-      "Set-piece defending is a liability (conceded 6 set-piece goals, Ligue 1 worst in top 4)",
-      "Over-possession can become sterile — xG drops to 1.1 vs organized low blocks"
+      "High line exploitable with direct balls behind (9 through-ball goals, Football-Data.org)",
+      "Set-piece defending remains a liability (7 set-piece goals conceded)",
+      "Heavy fixture load post-Club World Cup taxed squad freshness",
+      "Over-possession can become sterile vs organized low blocks (xG drops to 1.2)",
+      "Chevalier still adapting to elite knockout pressure"
     ],
-    "recent_form": ["W", "W", "D", "W", "W", "W", "L", "W", "D", "W"]
+    "recent_form": ["W", "W", "D", "W", "W", "W", "L", "W", "W", "W"]
   },
   {
     "id": "bayern_munich",
@@ -269,42 +277,43 @@
     "league": "Bundesliga",
     "manager": "Vincent Kompany",
     "formation": "4-2-3-1 / 4-1-4-1",
-    "style": "High-pressing, vertical transitions, wide overloads",
+    "style": "High-pressing, vertical transitions, wide overloads — Bundesliga champions, CL semi-finalists",
     "season": "2025-26",
-    "data_sources": ["FBref", "Football-Data.org"],
+    "data_sources": ["FBref", "Football-Data.org", "StatsHub", "Sofascore"],
     "key_players": [
-      { "name": "Harry Kane", "position": "ST", "number": 9, "strengths": ["Elite finishing", "Link-up play", "Penalty box movement", "Set piece delivery"], "weaknesses": ["Pace in behind", "Defensive pressing intensity"], "fbref_metrics": { "goals": 22, "xG": 19.8, "xAG": 7.2, "progressive_passes": 64, "shot_creating_actions": 72 } },
-      { "name": "Jamal Musiala", "position": "AM/LW", "number": 42, "strengths": ["Dribbling in tight spaces", "Half-space creativity", "Goal threat from midfield"], "weaknesses": ["Defensive tracking", "Aerial duels"], "fbref_metrics": { "goals": 12, "xG": 10.4, "xAG": 8.1, "successful_dribbles": 84, "progressive_carries": 92 } },
-      { "name": "Michael Olise", "position": "RW", "number": 17, "strengths": ["1v1 dribbling", "Crossing", "Set pieces", "Cut-inside finishing"], "weaknesses": ["Defensive work rate", "Consistency under pressing"], "fbref_metrics": { "goals": 9, "xG": 7.8, "xAG": 9.4, "successful_dribbles": 68, "shot_creating_actions": 104 } },
-      { "name": "Leroy Sané", "position": "LW/RW", "number": 10, "strengths": ["Pace", "Direct running", "Counter-attack threat"], "weaknesses": ["Decision-making in final third", "Defensive contribution"], "fbref_metrics": { "goals": 7, "xG": 6.2, "xAG": 5.8, "progressive_carries": 76, "successful_dribbles": 52 } },
-      { "name": "Joshua Kimmich", "position": "CDM/RB", "number": 6, "strengths": ["Long-range passing", "Tactical intelligence", "Set pieces", "Pressing orchestration"], "weaknesses": ["Pace in wide areas", "Physical duels vs powerful forwards"], "fbref_metrics": { "progressive_passes": 198, "pass_completion": 90.8, "interceptions": 48, "shot_creating_actions": 62 } },
-      { "name": "Aleksandar Pavlović", "position": "CM/CDM", "number": 49, "strengths": ["Ball progression", "Press resistance", "Positioning"], "weaknesses": ["Experience in knockout games", "Aerial presence"], "fbref_metrics": { "progressive_passes": 124, "progressive_carries": 48, "interceptions": 34, "pass_completion": 89.2 } },
-      { "name": "Alphonso Davies", "position": "LB", "number": 19, "strengths": ["Explosive pace", "Overlapping runs", "Recovery speed"], "weaknesses": ["Crossing accuracy", "Positional discipline when attacking"], "fbref_metrics": { "progressive_carries": 88, "successful_dribbles": 42, "interceptions": 22, "aerial_won_pct": 48 } },
-      { "name": "Kim Min-jae", "position": "CB", "number": 3, "strengths": ["Pace for a CB", "Aggressive defending", "Ball carrying from back"], "weaknesses": ["Rash challenges", "Positioning in zonal marking"], "fbref_metrics": { "aerial_won_pct": 71, "interceptions": 44, "progressive_carries": 38, "progressive_passes": 86 } },
-      { "name": "Dayot Upamecano", "position": "CB", "number": 2, "strengths": ["Physical power", "Ball progression", "Recovery pace"], "weaknesses": ["Concentration lapses", "Passing under pressure"], "fbref_metrics": { "aerial_won_pct": 68, "interceptions": 38, "progressive_carries": 42, "progressive_passes": 78 } },
-      { "name": "Serge Gnabry", "position": "RW/ST", "number": 7, "strengths": ["Versatility", "Movement off the ball", "Finishing from wide"], "weaknesses": ["Inconsistency", "Link-up under tight marking"], "fbref_metrics": { "goals": 8, "xG": 7.1, "progressive_carries": 44, "shot_creating_actions": 56 } }
+      { "name": "Harry Kane", "position": "ST", "number": 9, "strengths": ["Elite finishing", "Link-up play", "Penalty box movement", "Set piece delivery"], "weaknesses": ["Pace in behind", "Defensive pressing intensity"], "fbref_metrics": { "goals": 54, "xG": 44.2, "xAG": 9.4, "progressive_passes": 86, "shot_creating_actions": 98 } },
+      { "name": "Michael Olise", "position": "RW", "number": 17, "strengths": ["1v1 dribbling", "Crossing", "Set pieces", "Cut-inside finishing"], "weaknesses": ["Defensive work rate", "Consistency under pressing"], "fbref_metrics": { "goals": 14, "xG": 11.2, "xAG": 12.8, "successful_dribbles": 92, "shot_creating_actions": 138 } },
+      { "name": "Luis Díaz", "position": "LW", "number": 14, "strengths": ["Dribbling", "Pressing intensity", "Pace"], "weaknesses": ["Final ball quality", "Decision-making"], "fbref_metrics": { "goals": 12, "xG": 10.4, "successful_dribbles": 84, "progressive_carries": 78 } },
+      { "name": "Jamal Musiala", "position": "AM/LW", "number": 42, "strengths": ["Dribbling in tight spaces", "Half-space creativity", "Goal threat from midfield"], "weaknesses": ["Defensive tracking", "Aerial duels", "Recovering from injury layoff"], "fbref_metrics": { "goals": 8, "xG": 7.2, "xAG": 6.4, "successful_dribbles": 64, "progressive_carries": 72 } },
+      { "name": "Joshua Kimmich", "position": "CDM/RB", "number": 6, "strengths": ["Long-range passing", "Tactical intelligence", "Set pieces", "Pressing orchestration"], "weaknesses": ["Pace in wide areas", "Physical duels vs powerful forwards"], "fbref_metrics": { "progressive_passes": 212, "pass_completion": 91.2, "interceptions": 52, "shot_creating_actions": 76 } },
+      { "name": "Aleksandar Pavlović", "position": "CM/CDM", "number": 49, "strengths": ["Ball progression", "Press resistance", "Positioning"], "weaknesses": ["Experience in knockout games", "Aerial presence"], "fbref_metrics": { "progressive_passes": 142, "progressive_carries": 56, "interceptions": 38, "pass_completion": 89.6 } },
+      { "name": "Konrad Laimer", "position": "RB/CM", "number": 24, "strengths": ["Engine", "Defensive work rate", "Versatility"], "weaknesses": ["Final ball quality", "Aerial duels"], "fbref_metrics": { "interceptions": 44, "tackles_won": 58, "progressive_carries": 52 } },
+      { "name": "Alphonso Davies", "position": "LB", "number": 19, "strengths": ["Explosive pace", "Overlapping runs", "Recovery speed"], "weaknesses": ["Crossing accuracy", "Positional discipline when attacking"], "fbref_metrics": { "progressive_carries": 92, "successful_dribbles": 48, "interceptions": 24, "aerial_won_pct": 49 } },
+      { "name": "Jonathan Tah", "position": "CB", "number": 4, "strengths": ["Aerial dominance", "Composure on the ball", "Long passing"], "weaknesses": ["Pace against quick forwards", "Recovery defending"], "fbref_metrics": { "aerial_won_pct": 76, "interceptions": 42, "progressive_passes": 124 } },
+      { "name": "Dayot Upamecano", "position": "CB", "number": 2, "strengths": ["Physical power", "Ball progression", "Recovery pace"], "weaknesses": ["Concentration lapses", "Passing under pressure"], "fbref_metrics": { "aerial_won_pct": 70, "interceptions": 40, "progressive_carries": 46, "progressive_passes": 84 } },
+      { "name": "Manuel Neuer", "position": "GK", "number": 1, "strengths": ["Sweeping", "Distribution", "Command of area"], "weaknesses": ["Reflexes age decline", "Recovery pace"], "fbref_metrics": { "save_pct": 73.4, "psxG_minus_GA": 2.6 } }
     ],
     "tactical_patterns": {
-      "build_up": "GK plays short to CBs. Kimmich drops as single pivot between CBs. FBs push high — Davies provides width on left, RB tucks in. Progressive passing rate: 9.1 per 90 (FBref). Kim Min-jae carries ball aggressively from back.",
-      "attacking": "Wide overloads with Davies overlapping and Olise/Sané cutting inside. Musiala operates between the lines in left half-space. Kane drops deep to link play then attacks box. xG per 90: 2.3 (FBref). High crossing volume from wide areas (18.4 per 90).",
-      "defensive": "Aggressive high press — PPDA: 7.2 (FBref, 2nd lowest in Bundesliga). Gegenpressing within 5 seconds of loss. Compact 4-4-2 mid-block when press is bypassed. Vulnerable in transition when FBs are caught high.",
-      "set_pieces": "Kane and Olise as primary delivery. Kim Min-jae and Upamecano as aerial targets. Near-post flick routines. Set piece xG: 0.28 per match (FBref).",
-      "transitions": "Lightning counter-attacks via Davies' pace on left or Sané's direct running. Kane as target man for long transitions. Dangerous in 3v3 / 4v4 fast breaks."
+      "build_up": "GK plays short to CBs. Kimmich drops as single pivot between CBs. FBs push high — Davies provides width on left, Laimer overlaps on right. Progressive passing rate: 9.4 per 90 (FBref). Tah carries ball aggressively from back.",
+      "attacking": "Wide overloads with Davies overlapping and Olise/Díaz cutting inside. Musiala operates between the lines in left half-space when fit. Kane drops deep to link play then attacks box. xG per 90: 2.5 (FBref). High crossing volume from wide areas (19.2 per 90).",
+      "defensive": "Aggressive high press — PPDA: 7.0 (FBref, lowest in Bundesliga). Gegenpressing within 5 seconds of loss. Compact 4-4-2 mid-block when press is bypassed. Vulnerable in transition when FBs are caught high.",
+      "set_pieces": "Kane and Olise as primary delivery. Tah and Upamecano as aerial targets. Near-post flick routines. Set piece xG: 0.30 per match (FBref).",
+      "transitions": "Lightning counter-attacks via Davies' pace on left or Díaz's direct running. Kane as target man for long transitions. Dangerous in 3v3 / 4v4 fast breaks."
     },
     "strengths": [
-      "Elite pressing intensity (PPDA 7.2, FBref — Bundesliga's most aggressive press)",
-      "Individual quality in wide areas — Olise, Sané, Davies create constant 1v1 overloads",
-      "Kane's complete forward play — goals, assists, link-up (22G + 7.2 xAG, FBref)",
-      "Musiala's half-space creativity — unplayable in zone 14 (84 successful dribbles, FBref)",
-      "Transition speed — Davies' recovery and counter-attack pace is elite"
+      "Bundesliga champions — reclaimed title from Leverkusen",
+      "Kane historic season (54 goals all comps — Bundesliga golden boot, FBref)",
+      "Most aggressive press in Bundesliga (PPDA 7.0, FBref)",
+      "Olise creative explosion (138 SCA, 12.8 xAG, FBref)",
+      "Reached CL semi-finals — squad ready for European challenge"
     ],
     "weaknesses": [
-      "Defensive transition vulnerability when both FBs are high (conceded 10 transition goals, Football-Data.org)",
-      "CB partnership inconsistency — Upamecano's concentration lapses lead to individual errors (4 errors leading to shots, FBref)",
-      "Set-piece defending — zonal marking system leaves gaps at back post (conceded 7 set-piece goals, Football-Data.org)",
-      "Over-reliance on Kimmich in build-up — pressing him disrupts the entire rhythm",
-      "Struggles against deep compact blocks — xG drops to 1.2 vs low-block teams (FBref)"
+      "Defensive transition vulnerability when both FBs are high (12 transition goals conceded, Football-Data.org)",
+      "Musiala injury disruption affected creative depth in mid-season",
+      "Set-piece defending — zonal marking leaves gaps at back post",
+      "Over-reliance on Kimmich in build-up — pressing him disrupts rhythm",
+      "Neuer's age-related decline in shot stopping (psxG-GA only +2.6)"
     ],
-    "recent_form": ["W", "W", "W", "D", "W", "L", "W", "W", "W", "D"]
+    "recent_form": ["W", "W", "W", "D", "W", "W", "W", "L", "W", "W"]
   }
 ]
