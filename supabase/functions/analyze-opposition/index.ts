@@ -218,10 +218,12 @@ Deno.serve(async (req) => {
         const teamName = teamData?.selected?.name || teamData?.name || '';
         const normalizedTeam = teamName ? normalizeTeam(teamName) : '';
         const searchQuery = `${teamName} ${lastUserMsg.content}`.trim();
+        trace('Building RAG query', `"${searchQuery.slice(0, 80)}${searchQuery.length > 80 ? '…' : ''}"`);
 
         // 1) Team-filtered search
         let allResults: any[] = [];
         if (normalizedTeam) {
+          trace('Searching knowledge base', `team filter: ${normalizedTeam}`);
           const { data, error } = await supabase.rpc('search_knowledge', {
             query_text: searchQuery,
             match_count: 6,
@@ -230,10 +232,12 @@ Deno.serve(async (req) => {
           });
           if (error) console.error('RAG team-filtered search error:', error);
           if (data) allResults = data;
+          trace('Team-filtered search complete', `${allResults.length} chunk(s)`);
         }
 
         // 2) Broad fallback when team-filtered returns few results
         if (allResults.length < 4) {
+          trace('Expanding search', 'broad fallback (no team filter)');
           const { data, error } = await supabase.rpc('search_knowledge', {
             query_text: searchQuery,
             match_count: 8,
@@ -245,10 +249,12 @@ Deno.serve(async (req) => {
             const seen = new Set(allResults.map((r: any) => r.chunk_id));
             for (const r of data) if (!seen.has(r.chunk_id)) allResults.push(r);
           }
+          trace('Broad search complete', `${allResults.length} total chunk(s)`);
         }
 
         // 3) Last resort: query raw user text only
         if (allResults.length < 2 && lastUserMsg.content.trim()) {
+          trace('Retrying with raw user query', 'last-resort search');
           const { data } = await supabase.rpc('search_knowledge', {
             query_text: lastUserMsg.content,
             match_count: 5,
@@ -275,12 +281,19 @@ Deno.serve(async (req) => {
               ragSources.push({ title: r.title, source_type: r.source_type, document_id: r.document_id });
             }
           }
+          trace('Selected sources', `${used.length} chunk(s) from ${ragSources.length} document(s)`);
+        } else {
+          trace('No RAG matches', 'falling back to provided team & match data only');
         }
         console.log(`RAG: returning ${used.length} chunks from ${ragSources.length} documents (team="${normalizedTeam}")`);
       }
     } catch (ragErr) {
       console.error('RAG search failed (non-fatal):', ragErr);
+      trace('RAG search failed', 'continuing without knowledge base');
     }
+
+    trace('Composing tactical prompt', 'merging team profile, matches, and sources');
+    trace('Calling reasoning model', 'google/gemini-2.5-flash · streaming');
 
     const systemWithContext = context
       ? `${SYSTEM_PROMPT}\n\n## Available Context\n${context}`
