@@ -197,6 +197,10 @@ export default function Index() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="flex-1 overflow-y-auto space-y-3">
+                    <ThinkingTrace
+                      steps={thinking}
+                      active={status === 'thinking' || status === 'analyzing'}
+                    />
                     {ragSources.length > 0 && (
                       <div className="flex items-start gap-2 p-2.5 rounded-lg bg-primary/5 border border-primary/20">
                         <BookOpen className="h-3.5 w-3.5 text-primary mt-0.5 shrink-0" />
