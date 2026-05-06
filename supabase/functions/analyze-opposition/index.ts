@@ -340,7 +340,11 @@ Deno.serve(async (req) => {
     const encoder = new TextEncoder();
     const wrapped = new ReadableStream({
       async start(controller) {
-        // Prepend the RAG sources event (custom event the client recognizes)
+        // Prepend the reasoning trace so the UI can render thinking steps
+        controller.enqueue(
+          encoder.encode(`data: ${JSON.stringify({ thinking: thinkingSteps })}\n\n`)
+        );
+        // Then the RAG sources event (custom event the client recognizes)
         controller.enqueue(
           encoder.encode(`data: ${JSON.stringify({ rag_sources: ragSources })}\n\n`)
         );
