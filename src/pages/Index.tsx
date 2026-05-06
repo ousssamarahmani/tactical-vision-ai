@@ -9,8 +9,9 @@ import { StatusIndicator } from '@/components/StatusIndicator';
 import { AnalysisReport } from '@/components/AnalysisReport';
 import { OppositionDashboard } from '@/components/dashboard/OppositionDashboard';
 import { ThinkingTrace } from '@/components/ThinkingTrace';
+import { Switch } from '@/components/ui/switch';
 import { useOppositionAnalyst } from '@/hooks/useOppositionAnalyst';
-import { Send, RotateCcw, Zap, Shield, Target, LayoutDashboard, MessageSquare, Database, BookOpen } from 'lucide-react';
+import { Send, RotateCcw, Zap, Shield, Target, LayoutDashboard, MessageSquare, Database, BookOpen, Brain } from 'lucide-react';
 import teamsData from '@/data/teams.json';
 
 const QUICK_PROMPTS = [
