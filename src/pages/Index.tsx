@@ -24,7 +24,7 @@ export default function Index() {
   const [input, setInput] = useState('');
   const [showHeatmaps, setShowHeatmaps] = useState(false);
   const [activeTab, setActiveTab] = useState<string>('dashboard');
-  const { messages, status, error, analyze, reset, ragSources } = useOppositionAnalyst();
+  const { messages, status, error, analyze, reset, ragSources, thinking } = useOppositionAnalyst();
 
   const currentTeam = teamsData.find(t => t.id === selectedTeam);
 
