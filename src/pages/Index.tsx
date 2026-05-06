@@ -23,6 +23,7 @@ export default function Index() {
   const [selectedTeam, setSelectedTeam] = useState<string>('');
   const [input, setInput] = useState('');
   const [showHeatmaps, setShowHeatmaps] = useState(false);
+  const [showThinking, setShowThinking] = useState(true);
   const [activeTab, setActiveTab] = useState<string>('dashboard');
   const { messages, status, error, analyze, reset, ragSources, thinking } = useOppositionAnalyst();
 
