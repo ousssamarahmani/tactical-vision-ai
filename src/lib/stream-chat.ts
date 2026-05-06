@@ -1,5 +1,6 @@
 export type Msg = { role: 'user' | 'assistant'; content: string };
 export type RagSource = { title: string; source_type: string; document_id: string };
+export type ThinkingStep = { step: string; detail?: string; ts: number };
 
 const ANALYZE_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/analyze-opposition`;
 
@@ -11,6 +12,7 @@ export async function streamAnalysis({
   onDone,
   onError,
   onRagSources,
+  onThinking,
 }: {
   messages: Msg[];
   teamData?: any;
@@ -19,6 +21,7 @@ export async function streamAnalysis({
   onDone: () => void;
   onError: (error: string) => void;
   onRagSources?: (sources: RagSource[]) => void;
+  onThinking?: (steps: ThinkingStep[]) => void;
 }) {
   try {
     const resp = await fetch(ANALYZE_URL, {
@@ -68,6 +71,10 @@ export async function streamAnalysis({
 
         try {
           const parsed = JSON.parse(jsonStr);
+          if (parsed.thinking && onThinking) {
+            onThinking(parsed.thinking as ThinkingStep[]);
+            continue;
+          }
           if (parsed.rag_sources && onRagSources) {
             onRagSources(parsed.rag_sources as RagSource[]);
             continue;
@@ -92,6 +99,10 @@ export async function streamAnalysis({
         if (jsonStr === '[DONE]') continue;
         try {
           const parsed = JSON.parse(jsonStr);
+          if (parsed.thinking && onThinking) {
+            onThinking(parsed.thinking as ThinkingStep[]);
+            continue;
+          }
           if (parsed.rag_sources && onRagSources) {
             onRagSources(parsed.rag_sources as RagSource[]);
             continue;

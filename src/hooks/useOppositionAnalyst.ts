@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { streamAnalysis, type Msg, type RagSource } from '@/lib/stream-chat';
+import { streamAnalysis, type Msg, type RagSource, type ThinkingStep } from '@/lib/stream-chat';
 import teamsData from '@/data/teams.json';
 import matchesData from '@/data/matches.json';
 
@@ -10,11 +10,13 @@ export function useOppositionAnalyst() {
   const [status, setStatus] = useState<AgentStatus>('idle');
   const [error, setError] = useState<string | null>(null);
   const [ragSources, setRagSources] = useState<RagSource[]>([]);
+  const [thinking, setThinking] = useState<ThinkingStep[]>([]);
 
   const analyze = useCallback(async (input: string, selectedTeamId?: string) => {
     setError(null);
     setStatus('thinking');
     setRagSources([]);
+    setThinking([]);
 
     const userMsg: Msg = { role: 'user', content: input };
     setMessages(prev => [...prev, userMsg]);
@@ -27,10 +29,9 @@ export function useOppositionAnalyst() {
 
     let assistantContent = '';
 
-    setTimeout(() => setStatus('analyzing'), 800);
-
     const upsertAssistant = (chunk: string) => {
       assistantContent += chunk;
+      setStatus('analyzing');
       setMessages(prev => {
         const last = prev[prev.length - 1];
         if (last?.role === 'assistant') {
@@ -46,6 +47,7 @@ export function useOppositionAnalyst() {
       matchData,
       onDelta: (chunk) => upsertAssistant(chunk),
       onRagSources: (sources) => setRagSources(sources),
+      onThinking: (steps) => setThinking(steps),
       onDone: () => setStatus('completed'),
       onError: (err) => {
         setError(err);
@@ -59,7 +61,8 @@ export function useOppositionAnalyst() {
     setStatus('idle');
     setError(null);
     setRagSources([]);
+    setThinking([]);
   }, []);
 
-  return { messages, status, error, analyze, reset, ragSources };
+  return { messages, status, error, analyze, reset, ragSources, thinking };
 }
