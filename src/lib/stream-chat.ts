@@ -12,6 +12,7 @@ export async function streamAnalysis({
   onDone,
   onError,
   onRagSources,
+  onThinking,
 }: {
   messages: Msg[];
   teamData?: any;
@@ -20,6 +21,7 @@ export async function streamAnalysis({
   onDone: () => void;
   onError: (error: string) => void;
   onRagSources?: (sources: RagSource[]) => void;
+  onThinking?: (steps: ThinkingStep[]) => void;
 }) {
   try {
     const resp = await fetch(ANALYZE_URL, {
