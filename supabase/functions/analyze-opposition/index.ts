@@ -179,6 +179,22 @@ Deno.serve(async (req) => {
       context += `\n## Recent Match Data (Source: FBref / Football-Data.org)\n\`\`\`json\n${JSON.stringify(matchData, null, 2)}\n\`\`\`\n`;
     }
 
+    // Reasoning trace — visible "thinking" steps streamed to the client
+    const thinkingSteps: { step: string; detail?: string; ts: number }[] = [];
+    const t0 = Date.now();
+    const trace = (step: string, detail?: string) => {
+      thinkingSteps.push({ step, detail, ts: Date.now() - t0 });
+    };
+
+    trace('Parsing request', `${messages?.length ?? 0} message(s) in conversation`);
+    if (teamData?.selected?.name || teamData?.name) {
+      trace('Identifying opponent', teamData?.selected?.name || teamData?.name);
+    }
+    if (matchData) {
+      const n = Array.isArray(matchData) ? matchData.length : Object.keys(matchData).length;
+      trace('Loading match dataset', `${n} record(s)`);
+    }
+
     // RAG: Search knowledge base for relevant context
     let ragSources: { title: string; source_type: string; document_id: string }[] = [];
     try {
