@@ -99,6 +99,10 @@ export async function streamAnalysis({
         if (jsonStr === '[DONE]') continue;
         try {
           const parsed = JSON.parse(jsonStr);
+          if (parsed.thinking && onThinking) {
+            onThinking(parsed.thinking as ThinkingStep[]);
+            continue;
+          }
           if (parsed.rag_sources && onRagSources) {
             onRagSources(parsed.rag_sources as RagSource[]);
             continue;
