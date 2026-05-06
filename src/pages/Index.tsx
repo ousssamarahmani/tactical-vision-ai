@@ -9,8 +9,9 @@ import { StatusIndicator } from '@/components/StatusIndicator';
 import { AnalysisReport } from '@/components/AnalysisReport';
 import { OppositionDashboard } from '@/components/dashboard/OppositionDashboard';
 import { ThinkingTrace } from '@/components/ThinkingTrace';
+import { Switch } from '@/components/ui/switch';
 import { useOppositionAnalyst } from '@/hooks/useOppositionAnalyst';
-import { Send, RotateCcw, Zap, Shield, Target, LayoutDashboard, MessageSquare, Database, BookOpen } from 'lucide-react';
+import { Send, RotateCcw, Zap, Shield, Target, LayoutDashboard, MessageSquare, Database, BookOpen, Brain } from 'lucide-react';
 import teamsData from '@/data/teams.json';
 
 const QUICK_PROMPTS = [
@@ -23,6 +24,7 @@ export default function Index() {
   const [selectedTeam, setSelectedTeam] = useState<string>('');
   const [input, setInput] = useState('');
   const [showHeatmaps, setShowHeatmaps] = useState(false);
+  const [showThinking, setShowThinking] = useState(true);
   const [activeTab, setActiveTab] = useState<string>('dashboard');
   const { messages, status, error, analyze, reset, ragSources, thinking } = useOppositionAnalyst();
 
@@ -191,16 +193,23 @@ export default function Index() {
 
               <TabsContent value="report" className="flex-1 mt-4 flex flex-col gap-4 min-h-0">
                 <Card className="flex-1 border-border/50 bg-card/80 backdrop-blur-sm flex flex-col overflow-hidden">
-                  <CardHeader className="pb-3 flex-shrink-0">
+                  <CardHeader className="pb-3 flex-shrink-0 flex-row items-center justify-between space-y-0">
                     <CardTitle className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
                       Analysis Report
                     </CardTitle>
+                    <label className="flex items-center gap-2 text-[11px] text-muted-foreground cursor-pointer">
+                      <Brain className="h-3.5 w-3.5" />
+                      <span>Show reasoning</span>
+                      <Switch checked={showThinking} onCheckedChange={setShowThinking} />
+                    </label>
                   </CardHeader>
                   <CardContent className="flex-1 overflow-y-auto space-y-3">
-                    <ThinkingTrace
-                      steps={thinking}
-                      active={status === 'thinking' || status === 'analyzing'}
-                    />
+                    {showThinking && (
+                      <ThinkingTrace
+                        steps={thinking}
+                        active={status === 'thinking' || status === 'analyzing'}
+                      />
+                    )}
                     {ragSources.length > 0 && (
                       <div className="flex items-start gap-2 p-2.5 rounded-lg bg-primary/5 border border-primary/20">
                         <BookOpen className="h-3.5 w-3.5 text-primary mt-0.5 shrink-0" />
