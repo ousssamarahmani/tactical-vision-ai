@@ -1,5 +1,6 @@
 export type Msg = { role: 'user' | 'assistant'; content: string };
 export type RagSource = { title: string; source_type: string; document_id: string };
+export type ThinkingStep = { step: string; detail?: string; ts: number };
 
 const ANALYZE_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/analyze-opposition`;
 
