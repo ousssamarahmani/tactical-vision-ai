@@ -269,19 +269,21 @@ Deno.serve(async (req) => {
 
         const used = allResults.slice(0, 8);
         if (used.length > 0) {
-          context += `\n## Knowledge Base (RAG — Ingested Intelligence)\nExcerpts from ingested football documents, videos, and articles. Cite them in your answer using the source title.\n\n`;
+          context += `\n## Knowledge Base (RAG — Ingested Intelligence)\nExcerpts from ingested football documents, videos, and articles. You MUST ground claims in these excerpts when relevant and cite them inline using the source title in parentheses, e.g. (Source: ${used[0].title}). Do not invent facts beyond these excerpts and the provided team/match data.\n\n`;
           for (const r of used) {
-            context += `### From: ${r.title} (${r.source_type})\n${r.content}\n\n`;
+            context += `### From: ${r.title} (${r.source_type}) — rank ${Number(r.rank ?? 0).toFixed(3)}\n${r.content}\n\n`;
           }
-          // Dedupe by document for the UI badge
+          // Dedupe by document for the UI badge, and surface a short preview per chunk
           const seenDocs = new Set<string>();
           for (const r of used) {
             if (!seenDocs.has(r.document_id)) {
               seenDocs.add(r.document_id);
               ragSources.push({ title: r.title, source_type: r.source_type, document_id: r.document_id });
             }
+            const preview = String(r.content || '').replace(/\s+/g, ' ').slice(0, 180);
+            trace(`📄 ${r.title}`, `${r.source_type} · rank ${Number(r.rank ?? 0).toFixed(3)} · "${preview}${r.content.length > 180 ? '…' : ''}"`);
           }
-          trace('Selected sources', `${used.length} chunk(s) from ${ragSources.length} document(s)`);
+          trace('Grounding ready', `${used.length} chunk(s) from ${ragSources.length} document(s) — model instructed to cite sources`);
         } else {
           trace('No RAG matches', 'falling back to provided team & match data only');
         }
