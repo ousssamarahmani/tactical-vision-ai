@@ -400,6 +400,31 @@
     "tactical_notes": "CL league-phase clash at Emirates. PSG's rotational front three (Dembélé-Doué-Kvaratskhelia) overwhelmed Arsenal's full-backs. Vitinha's 7 progressive passes into the final third was the highest by any midfielder on the night (FBref). Arsenal's 1.0 xG reflected PSG's defensive discipline — Marquinhos had 8 clearances. Note: the two sides did not meet again in the knockout phase — Arsenal's KO run ended in the SF vs Bayern (see match_022)."
   },
   {
+    "id": "match_017",
+    "home_team": "psg",
+    "away_team": "real_madrid",
+    "date": "2025-12-10",
+    "competition": "Champions League",
+    "season": "2025-26",
+    "score": "3-1",
+    "possession": { "home": 56, "away": 44 },
+    "shots": { "home": 18, "away": 11 },
+    "shots_on_target": { "home": 8, "away": 4 },
+    "xg": { "home": 2.6, "away": 1.2 },
+    "corners": { "home": 7, "away": 5 },
+    "fouls": { "home": 9, "away": 17 },
+    "ppda": { "home": 7.4, "away": 13.4 },
+    "data_source": "FBref / Sofascore / UEFA.com",
+    "key_events": [
+      "Mbappé booed throughout — couldn't deliver on return",
+      "Doué goal 22' (cut inside from left, curled into far corner)",
+      "Kvaratskhelia goal 41' (Hakimi cross, first-time finish)",
+      "Bellingham consolation 67' (TAA free kick header)",
+      "Vitinha winner 78' (long-range strike past Courtois)"
+    ],
+    "tactical_notes": "PSG dominated possession and territory (56%, 2.6 xG). Vitinha was PSG's MOTM — 8 progressive passes, 3 key passes, 1 goal. Madrid's PPDA of 13.4 confirmed a passive approach Arbeloa later corrected."
+  },
+  {
     "id": "match_019",
     "home_team": "liverpool",
     "away_team": "psg",
