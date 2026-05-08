@@ -218,12 +218,12 @@ export default function KnowledgeBase() {
           <CardHeader className="pb-3">
             <CardTitle className="text-sm flex items-center gap-2">
               <BarChart3 className="h-4 w-4 text-primary" />
-              Sync Match Stats (StatsHub + native-stats UCL & top-5)
+              Sync Match Stats (Official league sites via Firecrawl)
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
             <p className="text-xs text-muted-foreground">
-              Pulls today's fixtures from statshub.com and standings/results/scorers for CL, PL, BL1, SA, PD, FL1 from native-stats.org. Runs daily at 06:00 UTC; use this button to trigger manually.
+              Pulls live standings, fixtures and results directly from the official sites: uefa.com (UCL), premierleague.com, bundesliga.com, legaseriea.it, laliga.com, ligue1.com. Scraped via Firecrawl (handles JS rendering). Runs daily at 06:00 UTC; use this button to trigger manually.
             </p>
             <Button onClick={handleStatsSync} disabled={syncing} className="w-full" variant="secondary">
               {syncing ? (
