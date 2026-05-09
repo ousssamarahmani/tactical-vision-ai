@@ -139,12 +139,22 @@ export function OppositionDashboard({ teamData }: OppositionDashboardProps) {
                 {teamData.league} · {teamData.formation} · {teamData.style}
               </p>
             </div>
-            <div className="text-right space-y-0.5">
-              <p className="text-[10px] text-muted-foreground font-mono">{today}</p>
-              <p className="text-[10px] text-muted-foreground">Manager: <span className="text-foreground font-medium">{teamData.manager}</span></p>
-              <div className="inline-flex items-center gap-1 bg-primary/10 text-primary text-[9px] font-bold px-2 py-0.5 rounded-full mt-1">
-                <Target className="h-2.5 w-2.5" />
-                TACTIVISION.AI
+            <div className="flex flex-col items-end gap-2">
+              <img
+                src="/analyst-profile.jpg"
+                alt="Opposition Analyst"
+                className="h-14 w-14 rounded-full object-cover border-2 border-primary/30 ring-2 ring-primary/10"
+                loading="lazy"
+                width={56}
+                height={56}
+              />
+              <div className="text-right space-y-0.5">
+                <p className="text-[10px] text-muted-foreground font-mono">{today}</p>
+                <p className="text-[10px] text-muted-foreground">Manager: <span className="text-foreground font-medium">{teamData.manager}</span></p>
+                <div className="inline-flex items-center gap-1 bg-primary/10 text-primary text-[9px] font-bold px-2 py-0.5 rounded-full mt-1">
+                  <Target className="h-2.5 w-2.5" />
+                  TACTIVISION.AI
+                </div>
               </div>
             </div>
           </div>
