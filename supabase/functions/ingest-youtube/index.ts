@@ -65,8 +65,74 @@ function decodeHtmlEntities(text: string): string {
     .replace(/\n/g, ' ');
 }
 
+async function fetchCaptionTracksViaInnertube(videoId: string): Promise<{ tracks: any[]; title: string }> {
+  // Use the ANDROID InnerTube client — it returns captionTracks without consent walls or bot checks
+  const body = {
+    context: {
+      client: {
+        clientName: 'ANDROID',
+        clientVersion: '19.09.37',
+        androidSdkVersion: 30,
+        hl: 'en',
+        gl: 'US',
+        userAgent: 'com.google.android.youtube/19.09.37 (Linux; U; Android 11) gzip',
+      },
+    },
+    videoId,
+  };
+  const resp = await fetch(
+    'https://www.youtube.com/youtubei/v1/player?key=AIzaSyA8eiZmM1FaDVjRy-df2KTyQ_vz_yYM39w',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'User-Agent': 'com.google.android.youtube/19.09.37 (Linux; U; Android 11) gzip',
+        'X-YouTube-Client-Name': '3',
+        'X-YouTube-Client-Version': '19.09.37',
+      },
+      body: JSON.stringify(body),
+    },
+  );
+  const data = await resp.json();
+  const tracks = data?.captions?.playerCaptionsTracklistRenderer?.captionTracks ?? [];
+  const title = data?.videoDetails?.title ?? '';
+  console.log(`InnerTube: found ${tracks.length} caption tracks, title="${title}"`);
+  return { tracks, title };
+}
+
 async function fetchTranscript(videoId: string): Promise<{ transcript: string; title: string }> {
-  // Fetch the YouTube watch page
+  // Primary: InnerTube API (reliable, no consent wall)
+  let title = '';
+  let transcript = '';
+  try {
+    const { tracks, title: itTitle } = await fetchCaptionTracksViaInnertube(videoId);
+    title = itTitle;
+    if (tracks.length > 0) {
+      const track =
+        tracks.find((t: any) => t.languageCode === 'en' && !t.kind) ||
+        tracks.find((t: any) => t.languageCode === 'en') ||
+        tracks.find((t: any) => t.languageCode?.startsWith('en')) ||
+        tracks[0];
+      if (track?.baseUrl) {
+        let url = track.baseUrl.replace(/\\u0026/g, '&');
+        if (!url.includes('fmt=')) url += '&fmt=srv3';
+        const xml = await (await fetch(url)).text();
+        const textRegex = /<text[^>]*>([\s\S]*?)<\/text>/g;
+        const parts: string[] = [];
+        let m;
+        while ((m = textRegex.exec(xml)) !== null) parts.push(decodeHtmlEntities(m[1]));
+        transcript = parts.join(' ');
+        if (transcript.trim().length > 50) {
+          console.log(`Extracted transcript via InnerTube: ${transcript.length} chars`);
+          return { transcript: transcript.replace(/\s+/g, ' ').trim(), title };
+        }
+      }
+    }
+  } catch (e) {
+    console.error('InnerTube fetch failed:', e);
+  }
+
+  // Fallback: scrape watch page
   const pageResp = await fetch(`https://www.youtube.com/watch?v=${videoId}`, {
     headers: {
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
