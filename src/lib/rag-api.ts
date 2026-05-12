@@ -32,7 +32,7 @@ export async function ingestPdf(file: File, title: string, teamTags: string): Pr
   return { success: true, ...data };
 }
 
-export async function ingestYoutube(url: string, title: string, teamTags: string): Promise<{ success: boolean; error?: string; document_id?: string; chunks_created?: number }> {
+export async function ingestYoutube(url: string, title: string, teamTags: string): Promise<{ success: boolean; error?: string; document_id?: string; chunks_created?: number; ingestion_mode?: 'transcript' | 'video_reference'; transcript_available?: boolean }> {
   const resp = await fetch(`${FUNCTIONS_URL}/ingest-youtube`, {
     method: 'POST',
     headers: { ...AUTH_HEADER, 'Content-Type': 'application/json' },
