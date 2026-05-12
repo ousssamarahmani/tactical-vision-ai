@@ -41,11 +41,12 @@ export default function KnowledgeBase() {
       setFetchError(null);
       const docs = await listDocuments();
       setDocuments(docs);
-    } catch (e: any) {
+    } catch (e: unknown) {
       console.error('Failed to fetch documents:', e);
-      const msg = e?.message?.includes('Failed to fetch')
+      const message = e instanceof Error ? e.message : '';
+      const msg = message.includes('Failed to fetch')
         ? 'Backend temporarily unavailable. Please retry in a moment.'
-        : (e?.message || 'Could not load documents.');
+        : (message || 'Could not load documents.');
       setFetchError(msg);
       toast.error(msg);
     } finally {
@@ -87,7 +88,9 @@ export default function KnowledgeBase() {
     try {
       const result = await ingestYoutube(ytUrl, ytTitle, ytTags);
       if (result.success) {
-        toast.success(`Video ingested: ${result.chunks_created} chunks created`);
+        toast.success(result.transcript_available
+          ? `Video transcript ingested: ${result.chunks_created} chunks created`
+          : 'Video saved as a reference because no transcript was available');
         setYtUrl('');
         setYtTitle('');
         setYtTags('');
@@ -285,10 +288,10 @@ export default function KnowledgeBase() {
               <CardContent>
                 <form onSubmit={handleYoutubeIngest} className="space-y-3">
                   <Input placeholder="YouTube URL (e.g. https://youtube.com/watch?v=...)" value={ytUrl} onChange={e => setYtUrl(e.target.value)} className="bg-background/50 text-sm" />
-                  <Input placeholder="Title (optional, auto-detected from video)" value={ytTitle} onChange={e => setYtTitle(e.target.value)} className="bg-background/50 text-sm" />
+                  <Input placeholder="Title (recommended if captions are unavailable)" value={ytTitle} onChange={e => setYtTitle(e.target.value)} className="bg-background/50 text-sm" />
                   <Input placeholder="Team tags, comma-separated (e.g. 'liverpool, arsenal')" value={ytTags} onChange={e => setYtTags(e.target.value)} className="bg-background/50 text-sm" />
                   <Button type="submit" disabled={ytIngesting || !ytUrl.trim()} className="w-full">
-                    {ytIngesting ? <><Loader2 className="h-4 w-4 mr-2 animate-spin" />Extracting...</> : <><Youtube className="h-4 w-4 mr-2" />Ingest Transcript</>}
+                    {ytIngesting ? <><Loader2 className="h-4 w-4 mr-2 animate-spin" />Ingesting...</> : <><Youtube className="h-4 w-4 mr-2" />Ingest Video</>}
                   </Button>
                 </form>
               </CardContent>
