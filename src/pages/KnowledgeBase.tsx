@@ -41,11 +41,12 @@ export default function KnowledgeBase() {
       setFetchError(null);
       const docs = await listDocuments();
       setDocuments(docs);
-    } catch (e: any) {
+    } catch (e: unknown) {
       console.error('Failed to fetch documents:', e);
-      const msg = e?.message?.includes('Failed to fetch')
+      const message = e instanceof Error ? e.message : '';
+      const msg = message.includes('Failed to fetch')
         ? 'Backend temporarily unavailable. Please retry in a moment.'
-        : (e?.message || 'Could not load documents.');
+        : (message || 'Could not load documents.');
       setFetchError(msg);
       toast.error(msg);
     } finally {
