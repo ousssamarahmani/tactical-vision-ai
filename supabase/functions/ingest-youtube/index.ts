@@ -143,7 +143,6 @@ async function fetchTranscript(videoId: string): Promise<{ transcript: string; t
   const pageHtml = await pageResp.text();
 
   // Extract title
-  let title = '';
   const titleMatch = pageHtml.match(/"title":"(.*?)"/);
   if (titleMatch) {
     title = JSON.parse(`"${titleMatch[1]}"`);
@@ -153,8 +152,7 @@ async function fetchTranscript(videoId: string): Promise<{ transcript: string; t
   }
 
   // Method 1: Extract from captionTracks in ytInitialPlayerResponse
-  let transcript = '';
-  
+
   // Try multiple patterns to find caption data
   const captionPatterns = [
     /"captionTracks":\s*(\[.*?\])/s,
@@ -304,40 +302,42 @@ Deno.serve(async (req) => {
     console.log(`Processing YouTube video: ${videoId}`);
     const { transcript, title: autoTitle } = await fetchTranscript(videoId);
     const videoTitle = userTitle || autoTitle || `YouTube Video ${videoId}`;
+    const tags = team_tags ? (Array.isArray(team_tags) ? team_tags : team_tags.split(',').map((t: string) => t.trim().toLowerCase())).filter(Boolean) : [];
+    const hasTranscript = transcript.length >= 100;
+    const fallbackContent = [videoTitle, tags.join(' '), url].join(' ');
 
-    if (transcript.length < 100) {
-      return new Response(JSON.stringify({ 
-        error: 'Could not extract transcript from this video. The video may not have captions/subtitles enabled. Try a video with English captions.' 
-      }), {
-        status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-      });
-    }
-
-    if (!isFootballContent(transcript)) {
+    if (hasTranscript && !isFootballContent(transcript)) {
       return new Response(JSON.stringify({ error: 'Video content does not appear to be football-related. Only football content is accepted.' }), {
         status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       });
     }
 
-    const tags = team_tags ? (Array.isArray(team_tags) ? team_tags : team_tags.split(',').map((t: string) => t.trim().toLowerCase())).filter(Boolean) : [];
+    if (!hasTranscript && tags.length === 0 && !isFootballContent(fallbackContent)) {
+      return new Response(JSON.stringify({ error: 'No transcript was available, so please add football team tags or a football-specific title before ingesting this video.' }), {
+        status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
+    }
 
     const { data: doc, error: docErr } = await supabase.from('rag_documents').insert({
       title: videoTitle,
       source_type: 'youtube',
       source_url: `https://www.youtube.com/watch?v=${videoId}`,
       team_tags: tags,
-      metadata: { videoId, transcriptLength: transcript.length },
+      metadata: { videoId, transcriptLength: transcript.length, transcriptAvailable: hasTranscript, ingestionMode: hasTranscript ? 'transcript' : 'video_reference' },
       status: 'processing',
     }).select().single();
 
     if (docErr) throw docErr;
 
-    const chunks = chunkText(transcript);
+    const ingestibleText = hasTranscript
+      ? transcript
+      : `Video reference: ${videoTitle}. Source URL: https://www.youtube.com/watch?v=${videoId}. Team tags: ${tags.join(', ') || 'not specified'}. Transcript was not available from YouTube captions, so this item is stored as a video reference for the analyst knowledge base. Use the source link for manual video review and tag-based retrieval.`;
+    const chunks = chunkText(ingestibleText);
     const chunkRows = chunks.map((content, i) => ({
       document_id: doc.id,
       chunk_index: i,
       content,
-      metadata: { charCount: content.length },
+      metadata: { charCount: content.length, transcriptAvailable: hasTranscript },
     }));
 
     const { error: chunkErr } = await supabase.from('rag_chunks').insert(chunkRows);
@@ -351,6 +351,8 @@ Deno.serve(async (req) => {
       title: videoTitle,
       chunks_created: chunks.length,
       transcript_length: transcript.length,
+      transcript_available: hasTranscript,
+      ingestion_mode: hasTranscript ? 'transcript' : 'video_reference',
     }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
