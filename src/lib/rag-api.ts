@@ -6,7 +6,7 @@ export interface RagDocument {
   source_type: 'pdf' | 'youtube' | 'twitter' | 'article';
   source_url: string | null;
   team_tags: string[];
-  metadata: Record<string, any>;
+  metadata: Record<string, unknown>;
   status: 'processing' | 'ready' | 'error';
   error_message: string | null;
   created_at: string;
