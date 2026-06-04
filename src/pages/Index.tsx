@@ -13,6 +13,7 @@ import { Switch } from '@/components/ui/switch';
 import { useOppositionAnalyst } from '@/hooks/useOppositionAnalyst';
 import { Send, RotateCcw, Zap, Shield, Target, LayoutDashboard, MessageSquare, Database, BookOpen, Brain } from 'lucide-react';
 import teamsData from '@/data/teams.json';
+import { WorldCupSection } from '@/components/WorldCupSection';
 
 const QUICK_PROMPTS = [
   { label: 'Full Report', icon: Target, prompt: 'Generate a complete opposition analysis report for this team.', heatmap: true },
