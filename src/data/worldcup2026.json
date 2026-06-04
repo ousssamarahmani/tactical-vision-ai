@@ -1,0 +1,5973 @@
+{
+  "tournament": "FIFA World Cup 2026",
+  "host": "United States, Canada & Mexico",
+  "source": "Squad and recent results snapshot via Sofascore",
+  "sourceUrl": "https://www.sofascore.com/football/tournament/world/world-championship/16",
+  "snapshotDate": "2026-06-04",
+  "groups": [
+    {
+      "group": "A",
+      "teams": [
+        {
+          "name": "Mexico",
+          "code": "MEX",
+          "confederation": "CONCACAF",
+          "fifaRank": 17,
+          "manager": "Javier Aguirre",
+          "squad": [
+            {
+              "name": "Guillermo Ochoa",
+              "position": "GK",
+              "club": "AVS"
+            },
+            {
+              "name": "Jorge Sánchez",
+              "position": "DF",
+              "club": "Cruz Azul"
+            },
+            {
+              "name": "César Montes",
+              "position": "DF",
+              "club": "Almería"
+            },
+            {
+              "name": "Johan Vásquez",
+              "position": "DF",
+              "club": "Genoa"
+            },
+            {
+              "name": "Jesús Gallardo",
+              "position": "DF",
+              "club": "Toluca"
+            },
+            {
+              "name": "Edson Álvarez",
+              "position": "MF",
+              "club": "West Ham"
+            },
+            {
+              "name": "Luis Romo",
+              "position": "MF",
+              "club": "Cruz Azul"
+            },
+            {
+              "name": "Orbelín Pineda",
+              "position": "MF",
+              "club": "AEK Athens"
+            },
+            {
+              "name": "Hirving Lozano",
+              "position": "FW",
+              "club": "San Diego"
+            },
+            {
+              "name": "Alexis Vega",
+              "position": "FW",
+              "club": "Toluca"
+            },
+            {
+              "name": "Santiago Giménez",
+              "position": "FW",
+              "club": "AC Milan"
+            },
+            {
+              "name": "Raúl Jiménez",
+              "position": "FW",
+              "club": "Fulham"
+            },
+            {
+              "name": "Julián Quiñones",
+              "position": "FW",
+              "club": "Al-Qadsiah"
+            },
+            {
+              "name": "Uriel Antuna",
+              "position": "MF",
+              "club": "Cruz Azul"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "United States",
+              "competition": "Friendly",
+              "result": "L",
+              "score": "1-2"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Canada",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-11-19",
+              "opponent": "Honduras",
+              "competition": "Nations League",
+              "result": "W",
+              "score": "4-0"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Uruguay",
+              "competition": "Friendly",
+              "result": "D",
+              "score": "0-0"
+            },
+            {
+              "date": "2025-10-15",
+              "opponent": "Paraguay",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-10-12",
+              "opponent": "Ecuador",
+              "competition": "Friendly",
+              "result": "L",
+              "score": "0-1"
+            }
+          ]
+        },
+        {
+          "name": "South Africa",
+          "code": "RSA",
+          "confederation": "CAF",
+          "fifaRank": 60,
+          "manager": "Hugo Broos",
+          "squad": [
+            {
+              "name": "Ronwen Williams",
+              "position": "GK",
+              "club": "Mamelodi Sundowns"
+            },
+            {
+              "name": "Nyiko Mobbie",
+              "position": "DF",
+              "club": "Mamelodi Sundowns"
+            },
+            {
+              "name": "Mothobi Mvala",
+              "position": "DF",
+              "club": "Mamelodi Sundowns"
+            },
+            {
+              "name": "Siyanda Xulu",
+              "position": "DF",
+              "club": "Sekhukhune"
+            },
+            {
+              "name": "Aubrey Modiba",
+              "position": "DF",
+              "club": "Mamelodi Sundowns"
+            },
+            {
+              "name": "Teboho Mokoena",
+              "position": "MF",
+              "club": "Mamelodi Sundowns"
+            },
+            {
+              "name": "Sphephelo Sithole",
+              "position": "MF",
+              "club": "Tondela"
+            },
+            {
+              "name": "Themba Zwane",
+              "position": "MF",
+              "club": "Mamelodi Sundowns"
+            },
+            {
+              "name": "Percy Tau",
+              "position": "FW",
+              "club": "Qatar SC"
+            },
+            {
+              "name": "Lyle Foster",
+              "position": "FW",
+              "club": "Burnley"
+            },
+            {
+              "name": "Iqraam Rayners",
+              "position": "FW",
+              "club": "Mamelodi Sundowns"
+            },
+            {
+              "name": "Relebohile Mofokeng",
+              "position": "FW",
+              "club": "Mamelodi Sundowns"
+            },
+            {
+              "name": "Oswin Appollis",
+              "position": "FW",
+              "club": "Polokwane"
+            },
+            {
+              "name": "Mihlali Mayambela",
+              "position": "FW",
+              "club": "Aris Limassol"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Lesotho",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Benin",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Rwanda",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Nigeria",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "Zimbabwe",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Lesotho",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            }
+          ]
+        },
+        {
+          "name": "South Korea",
+          "code": "KOR",
+          "confederation": "AFC",
+          "fifaRank": 20,
+          "manager": "Hong Myung-bo",
+          "squad": [
+            {
+              "name": "Kim Seung-gyu",
+              "position": "GK",
+              "club": "Al-Shabab"
+            },
+            {
+              "name": "Kim Min-jae",
+              "position": "DF",
+              "club": "Bayern Munich"
+            },
+            {
+              "name": "Kim Young-gwon",
+              "position": "DF",
+              "club": "Ulsan"
+            },
+            {
+              "name": "Kim Tae-hwan",
+              "position": "DF",
+              "club": "Ulsan"
+            },
+            {
+              "name": "Lee Jae-sung",
+              "position": "MF",
+              "club": "Mainz"
+            },
+            {
+              "name": "Hwang In-beom",
+              "position": "MF",
+              "club": "Feyenoord"
+            },
+            {
+              "name": "Park Yong-woo",
+              "position": "MF",
+              "club": "Al-Ain"
+            },
+            {
+              "name": "Lee Kang-in",
+              "position": "MF",
+              "club": "PSG"
+            },
+            {
+              "name": "Son Heung-min",
+              "position": "FW",
+              "club": "LAFC"
+            },
+            {
+              "name": "Hwang Hee-chan",
+              "position": "FW",
+              "club": "Wolves"
+            },
+            {
+              "name": "Oh Hyeon-gyu",
+              "position": "FW",
+              "club": "Genk"
+            },
+            {
+              "name": "Cho Gue-sung",
+              "position": "FW",
+              "club": "Midtjylland"
+            },
+            {
+              "name": "Bae Jun-ho",
+              "position": "MF",
+              "club": "Stoke City"
+            },
+            {
+              "name": "Hong Hyun-seok",
+              "position": "MF",
+              "club": "Mainz"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Iraq",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Oman",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-1"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Kuwait",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "4-0"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Iraq",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "Jordan",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Palestine",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            }
+          ]
+        },
+        {
+          "name": "Norway",
+          "code": "NOR",
+          "confederation": "UEFA",
+          "fifaRank": 24,
+          "manager": "Ståle Solbakken",
+          "squad": [
+            {
+              "name": "Ørjan Nyland",
+              "position": "GK",
+              "club": "Sevilla"
+            },
+            {
+              "name": "Kristoffer Ajer",
+              "position": "DF",
+              "club": "Brentford"
+            },
+            {
+              "name": "Leo Østigård",
+              "position": "DF",
+              "club": "Rennes"
+            },
+            {
+              "name": "Stefan Strandberg",
+              "position": "DF",
+              "club": "Hajduk Split"
+            },
+            {
+              "name": "Birger Meling",
+              "position": "DF",
+              "club": "Rennes"
+            },
+            {
+              "name": "Martin Ødegaard",
+              "position": "MF",
+              "club": "Arsenal"
+            },
+            {
+              "name": "Sander Berge",
+              "position": "MF",
+              "club": "Fulham"
+            },
+            {
+              "name": "Patrick Berg",
+              "position": "MF",
+              "club": "Bodø/Glimt"
+            },
+            {
+              "name": "Antonio Nusa",
+              "position": "FW",
+              "club": "RB Leipzig"
+            },
+            {
+              "name": "Erling Haaland",
+              "position": "FW",
+              "club": "Man City"
+            },
+            {
+              "name": "Alexander Sørloth",
+              "position": "FW",
+              "club": "Atlético Madrid"
+            },
+            {
+              "name": "Oscar Bobb",
+              "position": "FW",
+              "club": "Man City"
+            },
+            {
+              "name": "Jørgen Strand Larsen",
+              "position": "FW",
+              "club": "Wolves"
+            },
+            {
+              "name": "Fredrik Aursnes",
+              "position": "MF",
+              "club": "Benfica"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Sweden",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "3-1"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Israel",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "4-1"
+            },
+            {
+              "date": "2025-11-16",
+              "opponent": "Italy",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-11-13",
+              "opponent": "Estonia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "4-0"
+            },
+            {
+              "date": "2025-10-13",
+              "opponent": "Israel",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "5-0"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Estonia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "1-0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "B",
+      "teams": [
+        {
+          "name": "Canada",
+          "code": "CAN",
+          "confederation": "CONCACAF",
+          "fifaRank": 30,
+          "manager": "Jesse Marsch",
+          "squad": [
+            {
+              "name": "Maxime Crépeau",
+              "position": "GK",
+              "club": "Portland"
+            },
+            {
+              "name": "Alphonso Davies",
+              "position": "DF",
+              "club": "Bayern Munich"
+            },
+            {
+              "name": "Moïse Bombito",
+              "position": "DF",
+              "club": "Nice"
+            },
+            {
+              "name": "Derek Cornelius",
+              "position": "DF",
+              "club": "Marseille"
+            },
+            {
+              "name": "Alistair Johnston",
+              "position": "DF",
+              "club": "Celtic"
+            },
+            {
+              "name": "Stephen Eustáquio",
+              "position": "MF",
+              "club": "Porto"
+            },
+            {
+              "name": "Ismaël Koné",
+              "position": "MF",
+              "club": "Marseille"
+            },
+            {
+              "name": "Jonathan Osorio",
+              "position": "MF",
+              "club": "Toronto"
+            },
+            {
+              "name": "Tajon Buchanan",
+              "position": "MF",
+              "club": "Villarreal"
+            },
+            {
+              "name": "Jonathan David",
+              "position": "FW",
+              "club": "Lille"
+            },
+            {
+              "name": "Cyle Larin",
+              "position": "FW",
+              "club": "Mallorca"
+            },
+            {
+              "name": "Jacob Shaffelburg",
+              "position": "FW",
+              "club": "Nashville"
+            },
+            {
+              "name": "Liam Millar",
+              "position": "MF",
+              "club": "Hull City"
+            },
+            {
+              "name": "Richie Laryea",
+              "position": "DF",
+              "club": "Toronto"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-25",
+              "opponent": "Honduras",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "3-1"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Mexico",
+              "competition": "Friendly",
+              "result": "L",
+              "score": "0-2"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "United States",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-11-12",
+              "opponent": "Panama",
+              "competition": "Friendly",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-10-15",
+              "opponent": "Wales",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Australia",
+              "competition": "Friendly",
+              "result": "D",
+              "score": "1-1"
+            }
+          ]
+        },
+        {
+          "name": "Ecuador",
+          "code": "ECU",
+          "confederation": "CONMEBOL",
+          "fifaRank": 23,
+          "manager": "Sebastián Beccacece",
+          "squad": [
+            {
+              "name": "Hernán Galíndez",
+              "position": "GK",
+              "club": "Huracán"
+            },
+            {
+              "name": "Pervis Estupiñán",
+              "position": "DF",
+              "club": "AC Milan"
+            },
+            {
+              "name": "Piero Hincapié",
+              "position": "DF",
+              "club": "Arsenal"
+            },
+            {
+              "name": "Willian Pacho",
+              "position": "DF",
+              "club": "PSG"
+            },
+            {
+              "name": "Ángelo Preciado",
+              "position": "DF",
+              "club": "Sparta Prague"
+            },
+            {
+              "name": "Moisés Caicedo",
+              "position": "MF",
+              "club": "Chelsea"
+            },
+            {
+              "name": "Alan Franco",
+              "position": "MF",
+              "club": "Charlotte"
+            },
+            {
+              "name": "Kendry Páez",
+              "position": "MF",
+              "club": "Chelsea"
+            },
+            {
+              "name": "Enner Valencia",
+              "position": "FW",
+              "club": "Internacional"
+            },
+            {
+              "name": "Kevin Rodríguez",
+              "position": "FW",
+              "club": "Union SG"
+            },
+            {
+              "name": "Gonzalo Plata",
+              "position": "FW",
+              "club": "Flamengo"
+            },
+            {
+              "name": "John Yeboah",
+              "position": "FW",
+              "club": "Cracovia"
+            },
+            {
+              "name": "Jeremy Sarmiento",
+              "position": "MF",
+              "club": "Burnley"
+            },
+            {
+              "name": "Joao Ortiz",
+              "position": "MF",
+              "club": "Fluminense"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Argentina",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "0-0"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Venezuela",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Chile",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "1-0"
+            },
+            {
+              "date": "2025-11-14",
+              "opponent": "Colombia",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "0-0"
+            },
+            {
+              "date": "2025-10-15",
+              "opponent": "Uruguay",
+              "competition": "WCQ",
+              "result": "L",
+              "score": "1-2"
+            },
+            {
+              "date": "2025-10-10",
+              "opponent": "Bolivia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            }
+          ]
+        },
+        {
+          "name": "Austria",
+          "code": "AUT",
+          "confederation": "UEFA",
+          "fifaRank": 22,
+          "manager": "Ralf Rangnick",
+          "squad": [
+            {
+              "name": "Patrick Pentz",
+              "position": "GK",
+              "club": "Brøndby"
+            },
+            {
+              "name": "Stefan Posch",
+              "position": "DF",
+              "club": "Bologna"
+            },
+            {
+              "name": "Kevin Danso",
+              "position": "DF",
+              "club": "Tottenham"
+            },
+            {
+              "name": "Philipp Lienhart",
+              "position": "DF",
+              "club": "Freiburg"
+            },
+            {
+              "name": "Maximilian Wöber",
+              "position": "DF",
+              "club": "Borussia M."
+            },
+            {
+              "name": "Konrad Laimer",
+              "position": "MF",
+              "club": "Bayern Munich"
+            },
+            {
+              "name": "Nicolas Seiwald",
+              "position": "MF",
+              "club": "RB Leipzig"
+            },
+            {
+              "name": "Christoph Baumgartner",
+              "position": "MF",
+              "club": "RB Leipzig"
+            },
+            {
+              "name": "Marcel Sabitzer",
+              "position": "MF",
+              "club": "Dortmund"
+            },
+            {
+              "name": "Marko Arnautović",
+              "position": "FW",
+              "club": "Belgrade"
+            },
+            {
+              "name": "Michael Gregoritsch",
+              "position": "FW",
+              "club": "Freiburg"
+            },
+            {
+              "name": "Patrick Wimmer",
+              "position": "FW",
+              "club": "Wolfsburg"
+            },
+            {
+              "name": "Romano Schmid",
+              "position": "MF",
+              "club": "Werder Bremen"
+            },
+            {
+              "name": "Alexander Prass",
+              "position": "DF",
+              "club": "Hoffenheim"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Romania",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Slovakia",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Bosnia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Cyprus",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-1"
+            },
+            {
+              "date": "2025-10-12",
+              "opponent": "San Marino",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "5-0"
+            },
+            {
+              "date": "2025-10-09",
+              "opponent": "Romania",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            }
+          ]
+        },
+        {
+          "name": "Jordan",
+          "code": "JOR",
+          "confederation": "AFC",
+          "fifaRank": 62,
+          "manager": "Jamal Sellami",
+          "squad": [
+            {
+              "name": "Yazeed Abulaila",
+              "position": "GK",
+              "club": "Al-Faisaly"
+            },
+            {
+              "name": "Mohammad Abu Hashish",
+              "position": "DF",
+              "club": "Al-Wehdat"
+            },
+            {
+              "name": "Yazan Al-Arab",
+              "position": "DF",
+              "club": "Al-Wehdat"
+            },
+            {
+              "name": "Abdallah Nasib",
+              "position": "DF",
+              "club": "Al-Faisaly"
+            },
+            {
+              "name": "Salem Al-Ajalin",
+              "position": "DF",
+              "club": "Al-Hussein"
+            },
+            {
+              "name": "Noor Al-Rawabdeh",
+              "position": "MF",
+              "club": "Al-Faisaly"
+            },
+            {
+              "name": "Nizar Al-Rashdan",
+              "position": "MF",
+              "club": "Al-Wehdat"
+            },
+            {
+              "name": "Mahmoud Al-Mardi",
+              "position": "MF",
+              "club": "Al-Hussein"
+            },
+            {
+              "name": "Mousa Al-Tamari",
+              "position": "FW",
+              "club": "Rennes"
+            },
+            {
+              "name": "Yazan Al-Naimat",
+              "position": "FW",
+              "club": "Al-Ahli"
+            },
+            {
+              "name": "Ali Olwan",
+              "position": "FW",
+              "club": "Zamalek"
+            },
+            {
+              "name": "Mahmoud Al-Aradi",
+              "position": "MF",
+              "club": "Al-Faisaly"
+            },
+            {
+              "name": "Ihsan Haddad",
+              "position": "DF",
+              "club": "Al-Ramtha"
+            },
+            {
+              "name": "Ehsan Haddad",
+              "position": "FW",
+              "club": "Al-Wehdat"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Oman",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Iraq",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "1-0"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Oman",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Palestine",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "South Korea",
+              "competition": "WCQ",
+              "result": "L",
+              "score": "0-2"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Kuwait",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "C",
+      "teams": [
+        {
+          "name": "United States",
+          "code": "USA",
+          "confederation": "CONCACAF",
+          "fifaRank": 16,
+          "manager": "Mauricio Pochettino",
+          "squad": [
+            {
+              "name": "Matt Turner",
+              "position": "GK",
+              "club": "Crystal Palace"
+            },
+            {
+              "name": "Antonee Robinson",
+              "position": "DF",
+              "club": "Fulham"
+            },
+            {
+              "name": "Sergiño Dest",
+              "position": "DF",
+              "club": "PSV"
+            },
+            {
+              "name": "Chris Richards",
+              "position": "DF",
+              "club": "Crystal Palace"
+            },
+            {
+              "name": "Tim Ream",
+              "position": "DF",
+              "club": "Charlotte"
+            },
+            {
+              "name": "Tyler Adams",
+              "position": "MF",
+              "club": "Bournemouth"
+            },
+            {
+              "name": "Weston McKennie",
+              "position": "MF",
+              "club": "Juventus"
+            },
+            {
+              "name": "Yunus Musah",
+              "position": "MF",
+              "club": "AC Milan"
+            },
+            {
+              "name": "Gio Reyna",
+              "position": "MF",
+              "club": "Borussia M."
+            },
+            {
+              "name": "Christian Pulisic",
+              "position": "FW",
+              "club": "AC Milan"
+            },
+            {
+              "name": "Timothy Weah",
+              "position": "FW",
+              "club": "Juventus"
+            },
+            {
+              "name": "Folarin Balogun",
+              "position": "FW",
+              "club": "Monaco"
+            },
+            {
+              "name": "Ricardo Pepi",
+              "position": "FW",
+              "club": "PSV"
+            },
+            {
+              "name": "Antonee Robinson",
+              "position": "DF",
+              "club": "Fulham"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Mexico",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2026-03-23",
+              "opponent": "Panama",
+              "competition": "Friendly",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Jamaica",
+              "competition": "Nations League",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Canada",
+              "competition": "Friendly",
+              "result": "L",
+              "score": "1-2"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "Australia",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-10-10",
+              "opponent": "Ecuador",
+              "competition": "Friendly",
+              "result": "D",
+              "score": "1-1"
+            }
+          ]
+        },
+        {
+          "name": "Paraguay",
+          "code": "PAR",
+          "confederation": "CONMEBOL",
+          "fifaRank": 40,
+          "manager": "Gustavo Alfaro",
+          "squad": [
+            {
+              "name": "Roberto Fernández",
+              "position": "GK",
+              "club": "Olimpia"
+            },
+            {
+              "name": "Gustavo Velázquez",
+              "position": "DF",
+              "club": "Talleres"
+            },
+            {
+              "name": "Omar Alderete",
+              "position": "DF",
+              "club": "Getafe"
+            },
+            {
+              "name": "Gustavo Gómez",
+              "position": "DF",
+              "club": "Palmeiras"
+            },
+            {
+              "name": "Junior Alonso",
+              "position": "DF",
+              "club": "Krasnodar"
+            },
+            {
+              "name": "Andrés Cubas",
+              "position": "MF",
+              "club": "Vancouver"
+            },
+            {
+              "name": "Damián Bobadilla",
+              "position": "MF",
+              "club": "São Paulo"
+            },
+            {
+              "name": "Diego Gómez",
+              "position": "MF",
+              "club": "Brighton"
+            },
+            {
+              "name": "Miguel Almirón",
+              "position": "FW",
+              "club": "Atlanta"
+            },
+            {
+              "name": "Julio Enciso",
+              "position": "FW",
+              "club": "Brighton"
+            },
+            {
+              "name": "Antonio Sanabria",
+              "position": "FW",
+              "club": "Torino"
+            },
+            {
+              "name": "Adam Bareiro",
+              "position": "FW",
+              "club": "River Plate"
+            },
+            {
+              "name": "Ramón Sosa",
+              "position": "FW",
+              "club": "Nottingham Forest"
+            },
+            {
+              "name": "Matías Galarza",
+              "position": "MF",
+              "club": "Talleres"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Colombia",
+              "competition": "WCQ",
+              "result": "L",
+              "score": "1-2"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Chile",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "1-0"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Argentina",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-11-14",
+              "opponent": "Peru",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-10-15",
+              "opponent": "Venezuela",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-10-10",
+              "opponent": "Brazil",
+              "competition": "WCQ",
+              "result": "L",
+              "score": "0-2"
+            }
+          ]
+        },
+        {
+          "name": "Switzerland",
+          "code": "SUI",
+          "confederation": "UEFA",
+          "fifaRank": 19,
+          "manager": "Murat Yakin",
+          "squad": [
+            {
+              "name": "Yann Sommer",
+              "position": "GK",
+              "club": "Inter"
+            },
+            {
+              "name": "Manuel Akanji",
+              "position": "DF",
+              "club": "Man City"
+            },
+            {
+              "name": "Nico Elvedi",
+              "position": "DF",
+              "club": "Borussia M."
+            },
+            {
+              "name": "Ricardo Rodríguez",
+              "position": "DF",
+              "club": "Real Betis"
+            },
+            {
+              "name": "Silvan Widmer",
+              "position": "DF",
+              "club": "Mainz"
+            },
+            {
+              "name": "Granit Xhaka",
+              "position": "MF",
+              "club": "Sunderland"
+            },
+            {
+              "name": "Remo Freuler",
+              "position": "MF",
+              "club": "Bologna"
+            },
+            {
+              "name": "Michel Aebischer",
+              "position": "MF",
+              "club": "Pisa"
+            },
+            {
+              "name": "Xherdan Shaqiri",
+              "position": "FW",
+              "club": "FC Basel"
+            },
+            {
+              "name": "Breel Embolo",
+              "position": "FW",
+              "club": "Monaco"
+            },
+            {
+              "name": "Dan Ndoye",
+              "position": "FW",
+              "club": "Nottingham Forest"
+            },
+            {
+              "name": "Ruben Vargas",
+              "position": "FW",
+              "club": "Sevilla"
+            },
+            {
+              "name": "Zeki Amdouni",
+              "position": "FW",
+              "club": "Benfica"
+            },
+            {
+              "name": "Fabian Rieder",
+              "position": "MF",
+              "club": "Stuttgart"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Ireland",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Sweden",
+              "competition": "Friendly",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Kosovo",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Sweden",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-10-13",
+              "opponent": "Slovenia",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "0-0"
+            },
+            {
+              "date": "2025-10-10",
+              "opponent": "Sweden",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            }
+          ]
+        },
+        {
+          "name": "Qatar",
+          "code": "QAT",
+          "confederation": "AFC",
+          "fifaRank": 35,
+          "manager": "Julen Lopetegui",
+          "squad": [
+            {
+              "name": "Meshaal Barsham",
+              "position": "GK",
+              "club": "Al-Sadd"
+            },
+            {
+              "name": "Pedro Miguel",
+              "position": "DF",
+              "club": "Al-Sadd"
+            },
+            {
+              "name": "Bassam Al-Rawi",
+              "position": "DF",
+              "club": "Al-Duhail"
+            },
+            {
+              "name": "Tarek Salman",
+              "position": "DF",
+              "club": "Al-Sadd"
+            },
+            {
+              "name": "Homam Ahmed",
+              "position": "DF",
+              "club": "Al-Gharafa"
+            },
+            {
+              "name": "Karim Boudiaf",
+              "position": "MF",
+              "club": "Al-Duhail"
+            },
+            {
+              "name": "Hassan Al-Haydos",
+              "position": "MF",
+              "club": "Al-Sadd"
+            },
+            {
+              "name": "Akram Afif",
+              "position": "FW",
+              "club": "Al-Sadd"
+            },
+            {
+              "name": "Almoez Ali",
+              "position": "FW",
+              "club": "Al-Duhail"
+            },
+            {
+              "name": "Yusuf Abdurisag",
+              "position": "FW",
+              "club": "Al-Sadd"
+            },
+            {
+              "name": "Ahmed Alaaeldin",
+              "position": "FW",
+              "club": "Al-Gharafa"
+            },
+            {
+              "name": "Mostafa Meshaal",
+              "position": "MF",
+              "club": "Al-Sadd"
+            },
+            {
+              "name": "Jassem Gaber",
+              "position": "MF",
+              "club": "Al-Arabi"
+            },
+            {
+              "name": "Abdelkarim Hassan",
+              "position": "DF",
+              "club": "Al-Arabi"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Oman",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Iran",
+              "competition": "WCQ",
+              "result": "L",
+              "score": "0-2"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "UAE",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Kyrgyzstan",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "UAE",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Iran",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "D",
+      "teams": [
+        {
+          "name": "Argentina",
+          "code": "ARG",
+          "confederation": "CONMEBOL",
+          "fifaRank": 1,
+          "manager": "Lionel Scaloni",
+          "squad": [
+            {
+              "name": "Emiliano Martínez",
+              "position": "GK",
+              "club": "Aston Villa"
+            },
+            {
+              "name": "Nahuel Molina",
+              "position": "DF",
+              "club": "Atlético Madrid"
+            },
+            {
+              "name": "Cristian Romero",
+              "position": "DF",
+              "club": "Tottenham"
+            },
+            {
+              "name": "Lisandro Martínez",
+              "position": "DF",
+              "club": "Man United"
+            },
+            {
+              "name": "Nicolás Tagliafico",
+              "position": "DF",
+              "club": "Lyon"
+            },
+            {
+              "name": "Rodrigo De Paul",
+              "position": "MF",
+              "club": "Atlético Madrid"
+            },
+            {
+              "name": "Enzo Fernández",
+              "position": "MF",
+              "club": "Chelsea"
+            },
+            {
+              "name": "Alexis Mac Allister",
+              "position": "MF",
+              "club": "Liverpool"
+            },
+            {
+              "name": "Lionel Messi",
+              "position": "FW",
+              "club": "Inter Miami"
+            },
+            {
+              "name": "Julián Álvarez",
+              "position": "FW",
+              "club": "Atlético Madrid"
+            },
+            {
+              "name": "Lautaro Martínez",
+              "position": "FW",
+              "club": "Inter"
+            },
+            {
+              "name": "Ángel Di María",
+              "position": "FW",
+              "club": "Benfica"
+            },
+            {
+              "name": "Giovani Lo Celso",
+              "position": "MF",
+              "club": "Real Betis"
+            },
+            {
+              "name": "Nicolás Otamendi",
+              "position": "DF",
+              "club": "Benfica"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Brazil",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Uruguay",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "1-0"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Peru",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-11-14",
+              "opponent": "Paraguay",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-10-15",
+              "opponent": "Bolivia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "4-0"
+            },
+            {
+              "date": "2025-10-10",
+              "opponent": "Venezuela",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            }
+          ]
+        },
+        {
+          "name": "Ivory Coast",
+          "code": "CIV",
+          "confederation": "CAF",
+          "fifaRank": 41,
+          "manager": "Emerse Faé",
+          "squad": [
+            {
+              "name": "Yahia Fofana",
+              "position": "GK",
+              "club": "Angers"
+            },
+            {
+              "name": "Serge Aurier",
+              "position": "DF",
+              "club": "Wydad"
+            },
+            {
+              "name": "Odilon Kossounou",
+              "position": "DF",
+              "club": "Atalanta"
+            },
+            {
+              "name": "Evan Ndicka",
+              "position": "DF",
+              "club": "Roma"
+            },
+            {
+              "name": "Ghislain Konan",
+              "position": "DF",
+              "club": "Al-Wakrah"
+            },
+            {
+              "name": "Franck Kessié",
+              "position": "MF",
+              "club": "Al-Ahli"
+            },
+            {
+              "name": "Seko Fofana",
+              "position": "MF",
+              "club": "Rennes"
+            },
+            {
+              "name": "Ibrahim Sangaré",
+              "position": "MF",
+              "club": "Nottingham Forest"
+            },
+            {
+              "name": "Simon Adingra",
+              "position": "FW",
+              "club": "Sunderland"
+            },
+            {
+              "name": "Sébastien Haller",
+              "position": "FW",
+              "club": "Utrecht"
+            },
+            {
+              "name": "Nicolas Pépé",
+              "position": "FW",
+              "club": "Villarreal"
+            },
+            {
+              "name": "Jérémie Boga",
+              "position": "FW",
+              "club": "Nice"
+            },
+            {
+              "name": "Amad Diallo",
+              "position": "FW",
+              "club": "Man United"
+            },
+            {
+              "name": "Yves Bissouma",
+              "position": "MF",
+              "club": "Tottenham"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Cameroon",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Gabon",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Kenya",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Seychelles",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "5-0"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "Gambia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Burundi",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            }
+          ]
+        },
+        {
+          "name": "Poland",
+          "code": "POL",
+          "confederation": "UEFA",
+          "fifaRank": 28,
+          "manager": "Jan Urban",
+          "squad": [
+            {
+              "name": "Łukasz Skorupski",
+              "position": "GK",
+              "club": "Bologna"
+            },
+            {
+              "name": "Jan Bednarek",
+              "position": "DF",
+              "club": "Porto"
+            },
+            {
+              "name": "Jakub Kiwior",
+              "position": "DF",
+              "club": "Arsenal"
+            },
+            {
+              "name": "Paweł Dawidowicz",
+              "position": "DF",
+              "club": "Verona"
+            },
+            {
+              "name": "Bartosz Bereszyński",
+              "position": "DF",
+              "club": "Empoli"
+            },
+            {
+              "name": "Piotr Zieliński",
+              "position": "MF",
+              "club": "Inter"
+            },
+            {
+              "name": "Sebastian Szymański",
+              "position": "MF",
+              "club": "Fenerbahçe"
+            },
+            {
+              "name": "Nicola Zalewski",
+              "position": "MF",
+              "club": "Inter"
+            },
+            {
+              "name": "Jakub Moder",
+              "position": "MF",
+              "club": "Brighton"
+            },
+            {
+              "name": "Robert Lewandowski",
+              "position": "FW",
+              "club": "Barcelona"
+            },
+            {
+              "name": "Karol Świderski",
+              "position": "FW",
+              "club": "Hellas Verona"
+            },
+            {
+              "name": "Krzysztof Piątek",
+              "position": "FW",
+              "club": "Al-Duhail"
+            },
+            {
+              "name": "Kacper Urbański",
+              "position": "MF",
+              "club": "Bologna"
+            },
+            {
+              "name": "Matty Cash",
+              "position": "DF",
+              "club": "Aston Villa"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Scotland",
+              "competition": "Friendly",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Lithuania",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-11-17",
+              "opponent": "Malta",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-11-14",
+              "opponent": "Netherlands",
+              "competition": "WCQ",
+              "result": "L",
+              "score": "0-2"
+            },
+            {
+              "date": "2025-10-12",
+              "opponent": "Lithuania",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-10-09",
+              "opponent": "Finland",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            }
+          ]
+        },
+        {
+          "name": "Uzbekistan",
+          "code": "UZB",
+          "confederation": "AFC",
+          "fifaRank": 54,
+          "manager": "Timur Kapadze",
+          "squad": [
+            {
+              "name": "Utkir Yusupov",
+              "position": "GK",
+              "club": "Pakhtakor"
+            },
+            {
+              "name": "Abdukodir Khusanov",
+              "position": "DF",
+              "club": "Man City"
+            },
+            {
+              "name": "Rustamjon Ashurmatov",
+              "position": "DF",
+              "club": "Gwangju"
+            },
+            {
+              "name": "Farrukh Sayfiev",
+              "position": "DF",
+              "club": "Pakhtakor"
+            },
+            {
+              "name": "Abbosbek Fayzullaev",
+              "position": "MF",
+              "club": "CSKA Moscow"
+            },
+            {
+              "name": "Jaloliddin Masharipov",
+              "position": "MF",
+              "club": "Pakhtakor"
+            },
+            {
+              "name": "Otabek Shukurov",
+              "position": "MF",
+              "club": "Neftçi"
+            },
+            {
+              "name": "Azizbek Turgunboev",
+              "position": "MF",
+              "club": "Pakhtakor"
+            },
+            {
+              "name": "Eldor Shomurodov",
+              "position": "FW",
+              "club": "Roma"
+            },
+            {
+              "name": "Igor Sergeev",
+              "position": "FW",
+              "club": "Pakhtakor"
+            },
+            {
+              "name": "Khojimat Erkinov",
+              "position": "MF",
+              "club": "Pakhtakor"
+            },
+            {
+              "name": "Oston Urunov",
+              "position": "FW",
+              "club": "Khimki"
+            },
+            {
+              "name": "Jasurbek Jaloliddinov",
+              "position": "MF",
+              "club": "Lokomotiv"
+            },
+            {
+              "name": "Sherzod Nasrullaev",
+              "position": "FW",
+              "club": "Pakhtakor"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Iran",
+              "competition": "Friendly",
+              "result": "L",
+              "score": "1-2"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "UAE",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Qatar",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Kyrgyzstan",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-1"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "UAE",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "0-0"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Qatar",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "1-0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "E",
+      "teams": [
+        {
+          "name": "France",
+          "code": "FRA",
+          "confederation": "UEFA",
+          "fifaRank": 2,
+          "manager": "Didier Deschamps",
+          "squad": [
+            {
+              "name": "Mike Maignan",
+              "position": "GK",
+              "club": "AC Milan"
+            },
+            {
+              "name": "Jules Koundé",
+              "position": "DF",
+              "club": "Barcelona"
+            },
+            {
+              "name": "William Saliba",
+              "position": "DF",
+              "club": "Arsenal"
+            },
+            {
+              "name": "Dayot Upamecano",
+              "position": "DF",
+              "club": "Bayern Munich"
+            },
+            {
+              "name": "Theo Hernández",
+              "position": "DF",
+              "club": "Al-Hilal"
+            },
+            {
+              "name": "Aurélien Tchouaméni",
+              "position": "MF",
+              "club": "Real Madrid"
+            },
+            {
+              "name": "Eduardo Camavinga",
+              "position": "MF",
+              "club": "Real Madrid"
+            },
+            {
+              "name": "Adrien Rabiot",
+              "position": "MF",
+              "club": "AC Milan"
+            },
+            {
+              "name": "Kylian Mbappé",
+              "position": "FW",
+              "club": "Real Madrid"
+            },
+            {
+              "name": "Ousmane Dembélé",
+              "position": "FW",
+              "club": "PSG"
+            },
+            {
+              "name": "Bradley Barcola",
+              "position": "FW",
+              "club": "PSG"
+            },
+            {
+              "name": "Marcus Thuram",
+              "position": "FW",
+              "club": "Inter"
+            },
+            {
+              "name": "Michael Olise",
+              "position": "FW",
+              "club": "Bayern Munich"
+            },
+            {
+              "name": "Warren Zaïre-Emery",
+              "position": "MF",
+              "club": "PSG"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Germany",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Croatia",
+              "competition": "Nations League",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-11-17",
+              "opponent": "Israel",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-11-14",
+              "opponent": "Ukraine",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-10-13",
+              "opponent": "Iceland",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-1"
+            },
+            {
+              "date": "2025-10-10",
+              "opponent": "Azerbaijan",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "4-0"
+            }
+          ]
+        },
+        {
+          "name": "Senegal",
+          "code": "SEN",
+          "confederation": "CAF",
+          "fifaRank": 18,
+          "manager": "Pape Thiaw",
+          "squad": [
+            {
+              "name": "Édouard Mendy",
+              "position": "GK",
+              "club": "Al-Ahli"
+            },
+            {
+              "name": "Kalidou Koulibaly",
+              "position": "DF",
+              "club": "Al-Hilal"
+            },
+            {
+              "name": "Abdou Diallo",
+              "position": "DF",
+              "club": "Al-Arabi"
+            },
+            {
+              "name": "Moussa Niakhaté",
+              "position": "DF",
+              "club": "Lyon"
+            },
+            {
+              "name": "Ismail Jakobs",
+              "position": "DF",
+              "club": "Galatasaray"
+            },
+            {
+              "name": "Pape Matar Sarr",
+              "position": "MF",
+              "club": "Tottenham"
+            },
+            {
+              "name": "Idrissa Gueye",
+              "position": "MF",
+              "club": "Everton"
+            },
+            {
+              "name": "Pape Gueye",
+              "position": "MF",
+              "club": "Villarreal"
+            },
+            {
+              "name": "Ismaïla Sarr",
+              "position": "FW",
+              "club": "Crystal Palace"
+            },
+            {
+              "name": "Sadio Mané",
+              "position": "FW",
+              "club": "Al-Nassr"
+            },
+            {
+              "name": "Nicolas Jackson",
+              "position": "FW",
+              "club": "Bayern Munich"
+            },
+            {
+              "name": "Habib Diallo",
+              "position": "FW",
+              "club": "Damac"
+            },
+            {
+              "name": "Iliman Ndiaye",
+              "position": "FW",
+              "club": "Everton"
+            },
+            {
+              "name": "Lamine Camara",
+              "position": "MF",
+              "club": "Monaco"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Nigeria",
+              "competition": "Friendly",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Sudan",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Mauritania",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "4-0"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "South Sudan",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "DR Congo",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Togo",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            }
+          ]
+        },
+        {
+          "name": "Scotland",
+          "code": "SCO",
+          "confederation": "UEFA",
+          "fifaRank": 37,
+          "manager": "Steve Clarke",
+          "squad": [
+            {
+              "name": "Angus Gunn",
+              "position": "GK",
+              "club": "Norwich"
+            },
+            {
+              "name": "Andrew Robertson",
+              "position": "DF",
+              "club": "Liverpool"
+            },
+            {
+              "name": "Jack Hendry",
+              "position": "DF",
+              "club": "Al-Ettifaq"
+            },
+            {
+              "name": "Grant Hanley",
+              "position": "DF",
+              "club": "Birmingham"
+            },
+            {
+              "name": "Anthony Ralston",
+              "position": "DF",
+              "club": "Celtic"
+            },
+            {
+              "name": "Scott McTominay",
+              "position": "MF",
+              "club": "Napoli"
+            },
+            {
+              "name": "Billy Gilmour",
+              "position": "MF",
+              "club": "Napoli"
+            },
+            {
+              "name": "John McGinn",
+              "position": "MF",
+              "club": "Aston Villa"
+            },
+            {
+              "name": "Ryan Christie",
+              "position": "MF",
+              "club": "Bournemouth"
+            },
+            {
+              "name": "Che Adams",
+              "position": "FW",
+              "club": "Torino"
+            },
+            {
+              "name": "Lyndon Dykes",
+              "position": "FW",
+              "club": "Birmingham"
+            },
+            {
+              "name": "Ben Doak",
+              "position": "FW",
+              "club": "Bournemouth"
+            },
+            {
+              "name": "John Souttar",
+              "position": "DF",
+              "club": "Rangers"
+            },
+            {
+              "name": "Lewis Ferguson",
+              "position": "MF",
+              "club": "Bologna"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Poland",
+              "competition": "Friendly",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Greece",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-11-17",
+              "opponent": "Denmark",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-11-14",
+              "opponent": "Greece",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-10-12",
+              "opponent": "Belarus",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-10-09",
+              "opponent": "Denmark",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "0-0"
+            }
+          ]
+        },
+        {
+          "name": "New Zealand",
+          "code": "NZL",
+          "confederation": "OFC",
+          "fifaRank": 86,
+          "manager": "Darren Bazeley",
+          "squad": [
+            {
+              "name": "Max Crocombe",
+              "position": "GK",
+              "club": "Burton Albion"
+            },
+            {
+              "name": "Tyler Bindon",
+              "position": "DF",
+              "club": "Nottingham Forest"
+            },
+            {
+              "name": "Finn Surman",
+              "position": "DF",
+              "club": "Portland"
+            },
+            {
+              "name": "Nando Pijnaker",
+              "position": "DF",
+              "club": "Sligo Rovers"
+            },
+            {
+              "name": "Liberato Cacace",
+              "position": "DF",
+              "club": "Empoli"
+            },
+            {
+              "name": "Joe Bell",
+              "position": "MF",
+              "club": "Viking"
+            },
+            {
+              "name": "Marko Stamenić",
+              "position": "MF",
+              "club": "Olympiacos"
+            },
+            {
+              "name": "Matthew Garbett",
+              "position": "MF",
+              "club": "NAC Breda"
+            },
+            {
+              "name": "Chris Wood",
+              "position": "FW",
+              "club": "Nottingham Forest"
+            },
+            {
+              "name": "Ben Old",
+              "position": "FW",
+              "club": "St-Étienne"
+            },
+            {
+              "name": "Eli Just",
+              "position": "FW",
+              "club": "Odense"
+            },
+            {
+              "name": "Kosta Barbarouses",
+              "position": "FW",
+              "club": "Auckland"
+            },
+            {
+              "name": "Alex Paulsen",
+              "position": "GK",
+              "club": "Bournemouth"
+            },
+            {
+              "name": "Sarpreet Singh",
+              "position": "MF",
+              "club": "Hatayspor"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Fiji",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "New Caledonia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Tahiti",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "4-0"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Solomon Islands",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "Vanuatu",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "5-0"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Fiji",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "F",
+      "teams": [
+        {
+          "name": "Brazil",
+          "code": "BRA",
+          "confederation": "CONMEBOL",
+          "fifaRank": 5,
+          "manager": "Carlo Ancelotti",
+          "squad": [
+            {
+              "name": "Alisson",
+              "position": "GK",
+              "club": "Liverpool"
+            },
+            {
+              "name": "Danilo",
+              "position": "DF",
+              "club": "Flamengo"
+            },
+            {
+              "name": "Marquinhos",
+              "position": "DF",
+              "club": "PSG"
+            },
+            {
+              "name": "Gabriel Magalhães",
+              "position": "DF",
+              "club": "Arsenal"
+            },
+            {
+              "name": "Wendell",
+              "position": "DF",
+              "club": "Porto"
+            },
+            {
+              "name": "Bruno Guimarães",
+              "position": "MF",
+              "club": "Newcastle"
+            },
+            {
+              "name": "Lucas Paquetá",
+              "position": "MF",
+              "club": "West Ham"
+            },
+            {
+              "name": "André",
+              "position": "MF",
+              "club": "Wolves"
+            },
+            {
+              "name": "Vinícius Júnior",
+              "position": "FW",
+              "club": "Real Madrid"
+            },
+            {
+              "name": "Rodrygo",
+              "position": "FW",
+              "club": "Real Madrid"
+            },
+            {
+              "name": "Raphinha",
+              "position": "FW",
+              "club": "Barcelona"
+            },
+            {
+              "name": "Endrick",
+              "position": "FW",
+              "club": "Real Madrid"
+            },
+            {
+              "name": "Estêvão",
+              "position": "FW",
+              "club": "Chelsea"
+            },
+            {
+              "name": "Éder Militão",
+              "position": "DF",
+              "club": "Real Madrid"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Argentina",
+              "competition": "WCQ",
+              "result": "L",
+              "score": "0-2"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Colombia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Uruguay",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-11-14",
+              "opponent": "Venezuela",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-1"
+            },
+            {
+              "date": "2025-10-15",
+              "opponent": "Peru",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-10-10",
+              "opponent": "Chile",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "4-0"
+            }
+          ]
+        },
+        {
+          "name": "Algeria",
+          "code": "ALG",
+          "confederation": "CAF",
+          "fifaRank": 38,
+          "manager": "Vladimir Petković",
+          "squad": [
+            {
+              "name": "Anthony Mandrea",
+              "position": "GK",
+              "club": "Angers"
+            },
+            {
+              "name": "Aïssa Mandi",
+              "position": "DF",
+              "club": "Lille"
+            },
+            {
+              "name": "Ramy Bensebaini",
+              "position": "DF",
+              "club": "Dortmund"
+            },
+            {
+              "name": "Mohamed Amine Tougai",
+              "position": "DF",
+              "club": "Esperance"
+            },
+            {
+              "name": "Youcef Atal",
+              "position": "DF",
+              "club": "Al-Sadd"
+            },
+            {
+              "name": "Nabil Bentaleb",
+              "position": "MF",
+              "club": "Lille"
+            },
+            {
+              "name": "Ismaël Bennacer",
+              "position": "MF",
+              "club": "AC Milan"
+            },
+            {
+              "name": "Houssem Aouar",
+              "position": "MF",
+              "club": "Al-Ittihad"
+            },
+            {
+              "name": "Riyad Mahrez",
+              "position": "FW",
+              "club": "Al-Ahli"
+            },
+            {
+              "name": "Saïd Benrahma",
+              "position": "FW",
+              "club": "Neom"
+            },
+            {
+              "name": "Mohamed Amoura",
+              "position": "FW",
+              "club": "Wolfsburg"
+            },
+            {
+              "name": "Amine Gouiri",
+              "position": "FW",
+              "club": "Marseille"
+            },
+            {
+              "name": "Yacine Brahimi",
+              "position": "MF",
+              "club": "Al-Gharafa"
+            },
+            {
+              "name": "Ramiz Zerrouki",
+              "position": "MF",
+              "club": "Feyenoord"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Mali",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Mozambique",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-1"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Uganda",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Guinea",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "Somalia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "4-0"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Botswana",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            }
+          ]
+        },
+        {
+          "name": "Netherlands",
+          "code": "NED",
+          "confederation": "UEFA",
+          "fifaRank": 7,
+          "manager": "Ronald Koeman",
+          "squad": [
+            {
+              "name": "Bart Verbruggen",
+              "position": "GK",
+              "club": "Brighton"
+            },
+            {
+              "name": "Denzel Dumfries",
+              "position": "DF",
+              "club": "Inter"
+            },
+            {
+              "name": "Virgil van Dijk",
+              "position": "DF",
+              "club": "Liverpool"
+            },
+            {
+              "name": "Stefan de Vrij",
+              "position": "DF",
+              "club": "Inter"
+            },
+            {
+              "name": "Nathan Aké",
+              "position": "DF",
+              "club": "Man City"
+            },
+            {
+              "name": "Frenkie de Jong",
+              "position": "MF",
+              "club": "Barcelona"
+            },
+            {
+              "name": "Tijjani Reijnders",
+              "position": "MF",
+              "club": "Man City"
+            },
+            {
+              "name": "Ryan Gravenberch",
+              "position": "MF",
+              "club": "Liverpool"
+            },
+            {
+              "name": "Cody Gakpo",
+              "position": "FW",
+              "club": "Liverpool"
+            },
+            {
+              "name": "Memphis Depay",
+              "position": "FW",
+              "club": "Corinthians"
+            },
+            {
+              "name": "Xavi Simons",
+              "position": "FW",
+              "club": "Tottenham"
+            },
+            {
+              "name": "Donyell Malen",
+              "position": "FW",
+              "club": "Aston Villa"
+            },
+            {
+              "name": "Brian Brobbey",
+              "position": "FW",
+              "club": "Ajax"
+            },
+            {
+              "name": "Jurriën Timber",
+              "position": "DF",
+              "club": "Arsenal"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Germany",
+              "competition": "Friendly",
+              "result": "D",
+              "score": "2-2"
+            },
+            {
+              "date": "2026-03-23",
+              "opponent": "Spain",
+              "competition": "Nations League",
+              "result": "L",
+              "score": "1-3"
+            },
+            {
+              "date": "2025-11-17",
+              "opponent": "Finland",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "4-0"
+            },
+            {
+              "date": "2025-11-14",
+              "opponent": "Poland",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "Malta",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "5-0"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Finland",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            }
+          ]
+        },
+        {
+          "name": "Panama",
+          "code": "PAN",
+          "confederation": "CONCACAF",
+          "fifaRank": 33,
+          "manager": "Thomas Christiansen",
+          "squad": [
+            {
+              "name": "Orlando Mosquera",
+              "position": "GK",
+              "club": "Pumas"
+            },
+            {
+              "name": "Michael Murillo",
+              "position": "DF",
+              "club": "Marseille"
+            },
+            {
+              "name": "César Blackman",
+              "position": "DF",
+              "club": "Cracovia"
+            },
+            {
+              "name": "Andrés Andrade",
+              "position": "MF",
+              "club": "Atlético San Luis"
+            },
+            {
+              "name": "Adalberto Carrasquilla",
+              "position": "MF",
+              "club": "Pumas"
+            },
+            {
+              "name": "Aníbal Godoy",
+              "position": "MF",
+              "club": "San Jose"
+            },
+            {
+              "name": "Cristian Martínez",
+              "position": "MF",
+              "club": "Atlético Nacional"
+            },
+            {
+              "name": "Ismael Díaz",
+              "position": "FW",
+              "club": "León"
+            },
+            {
+              "name": "José Fajardo",
+              "position": "FW",
+              "club": "Independiente"
+            },
+            {
+              "name": "Cecilio Waterman",
+              "position": "FW",
+              "club": "Coquimbo"
+            },
+            {
+              "name": "Eduardo Guerrero",
+              "position": "FW",
+              "club": "Plaza Amador"
+            },
+            {
+              "name": "Edgar Bárcenas",
+              "position": "MF",
+              "club": "Mazatlán"
+            },
+            {
+              "name": "Fidel Escobar",
+              "position": "DF",
+              "club": "Charlotte"
+            },
+            {
+              "name": "Jorge Gutiérrez",
+              "position": "DF",
+              "club": "Sporting SM"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Costa Rica",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2026-03-23",
+              "opponent": "United States",
+              "competition": "Friendly",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "El Salvador",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Suriname",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "Guatemala",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Suriname",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "G",
+      "teams": [
+        {
+          "name": "Spain",
+          "code": "ESP",
+          "confederation": "UEFA",
+          "fifaRank": 3,
+          "manager": "Luis de la Fuente",
+          "squad": [
+            {
+              "name": "Unai Simón",
+              "position": "GK",
+              "club": "Athletic Club"
+            },
+            {
+              "name": "Dani Carvajal",
+              "position": "DF",
+              "club": "Real Madrid"
+            },
+            {
+              "name": "Robin Le Normand",
+              "position": "DF",
+              "club": "Atlético Madrid"
+            },
+            {
+              "name": "Pau Cubarsí",
+              "position": "DF",
+              "club": "Barcelona"
+            },
+            {
+              "name": "Marc Cucurella",
+              "position": "DF",
+              "club": "Chelsea"
+            },
+            {
+              "name": "Rodri",
+              "position": "MF",
+              "club": "Man City"
+            },
+            {
+              "name": "Pedri",
+              "position": "MF",
+              "club": "Barcelona"
+            },
+            {
+              "name": "Fabián Ruiz",
+              "position": "MF",
+              "club": "PSG"
+            },
+            {
+              "name": "Lamine Yamal",
+              "position": "FW",
+              "club": "Barcelona"
+            },
+            {
+              "name": "Nico Williams",
+              "position": "FW",
+              "club": "Athletic Club"
+            },
+            {
+              "name": "Álvaro Morata",
+              "position": "FW",
+              "club": "Como"
+            },
+            {
+              "name": "Mikel Oyarzabal",
+              "position": "FW",
+              "club": "Real Sociedad"
+            },
+            {
+              "name": "Dani Olmo",
+              "position": "MF",
+              "club": "Barcelona"
+            },
+            {
+              "name": "Martín Zubimendi",
+              "position": "MF",
+              "club": "Arsenal"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "England",
+              "competition": "Friendly",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2026-03-23",
+              "opponent": "Netherlands",
+              "competition": "Nations League",
+              "result": "W",
+              "score": "3-1"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Turkey",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Georgia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "4-0"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "Bulgaria",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Georgia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            }
+          ]
+        },
+        {
+          "name": "Cameroon",
+          "code": "CMR",
+          "confederation": "CAF",
+          "fifaRank": 53,
+          "manager": "Marc Brys",
+          "squad": [
+            {
+              "name": "André Onana",
+              "position": "GK",
+              "club": "Trabzonspor"
+            },
+            {
+              "name": "Nouhou Tolo",
+              "position": "DF",
+              "club": "Seattle"
+            },
+            {
+              "name": "Christopher Wooh",
+              "position": "DF",
+              "club": "Rennes"
+            },
+            {
+              "name": "Enzo Tchato",
+              "position": "DF",
+              "club": "Montpellier"
+            },
+            {
+              "name": "Jean-Charles Castelletto",
+              "position": "DF",
+              "club": "Nantes"
+            },
+            {
+              "name": "André-Frank Zambo Anguissa",
+              "position": "MF",
+              "club": "Napoli"
+            },
+            {
+              "name": "Carlos Baleba",
+              "position": "MF",
+              "club": "Brighton"
+            },
+            {
+              "name": "Martin Hongla",
+              "position": "MF",
+              "club": "Hellas Verona"
+            },
+            {
+              "name": "Bryan Mbeumo",
+              "position": "FW",
+              "club": "Man United"
+            },
+            {
+              "name": "Vincent Aboubakar",
+              "position": "FW",
+              "club": "Hatayspor"
+            },
+            {
+              "name": "Karl Toko Ekambi",
+              "position": "FW",
+              "club": "Abha"
+            },
+            {
+              "name": "Georges-Kévin Nkoudou",
+              "position": "FW",
+              "club": "Damac"
+            },
+            {
+              "name": "Frank Magri",
+              "position": "FW",
+              "club": "Toulouse"
+            },
+            {
+              "name": "Olivier Ntcham",
+              "position": "MF",
+              "club": "Samsunspor"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Ivory Coast",
+              "competition": "Friendly",
+              "result": "L",
+              "score": "1-2"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Eswatini",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Angola",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Libya",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "Cape Verde",
+              "competition": "WCQ",
+              "result": "L",
+              "score": "0-1"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Mauritius",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "4-0"
+            }
+          ]
+        },
+        {
+          "name": "Turkey",
+          "code": "TUR",
+          "confederation": "UEFA",
+          "fifaRank": 26,
+          "manager": "Vincenzo Montella",
+          "squad": [
+            {
+              "name": "Altay Bayındır",
+              "position": "GK",
+              "club": "Man United"
+            },
+            {
+              "name": "Zeki Çelik",
+              "position": "DF",
+              "club": "Roma"
+            },
+            {
+              "name": "Merih Demiral",
+              "position": "DF",
+              "club": "Al-Ahli"
+            },
+            {
+              "name": "Abdülkerim Bardakcı",
+              "position": "DF",
+              "club": "Galatasaray"
+            },
+            {
+              "name": "Ferdi Kadıoğlu",
+              "position": "DF",
+              "club": "Brighton"
+            },
+            {
+              "name": "Hakan Çalhanoğlu",
+              "position": "MF",
+              "club": "Inter"
+            },
+            {
+              "name": "İsmail Yüksek",
+              "position": "MF",
+              "club": "Fenerbahçe"
+            },
+            {
+              "name": "Salih Özcan",
+              "position": "MF",
+              "club": "Dortmund"
+            },
+            {
+              "name": "Arda Güler",
+              "position": "MF",
+              "club": "Real Madrid"
+            },
+            {
+              "name": "Kenan Yıldız",
+              "position": "FW",
+              "club": "Juventus"
+            },
+            {
+              "name": "Barış Alper Yılmaz",
+              "position": "FW",
+              "club": "Galatasaray"
+            },
+            {
+              "name": "Yusuf Yazıcı",
+              "position": "FW",
+              "club": "Trabzonspor"
+            },
+            {
+              "name": "İrfan Can Kahveci",
+              "position": "MF",
+              "club": "Fenerbahçe"
+            },
+            {
+              "name": "Mert Müldür",
+              "position": "DF",
+              "club": "Fenerbahçe"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Romania",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Hungary",
+              "competition": "Friendly",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Spain",
+              "competition": "WCQ",
+              "result": "L",
+              "score": "0-2"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Georgia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-1"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "Bulgaria",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Georgia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "4-1"
+            }
+          ]
+        },
+        {
+          "name": "DR Congo",
+          "code": "COD",
+          "confederation": "CAF",
+          "fifaRank": 56,
+          "manager": "Sébastien Desabre",
+          "squad": [
+            {
+              "name": "Lionel Mpasi",
+              "position": "GK",
+              "club": "Rodez"
+            },
+            {
+              "name": "Chancel Mbemba",
+              "position": "DF",
+              "club": "Lille"
+            },
+            {
+              "name": "Gédéon Kalulu",
+              "position": "DF",
+              "club": "Lorient"
+            },
+            {
+              "name": "Arthur Masuaku",
+              "position": "DF",
+              "club": "Sunderland"
+            },
+            {
+              "name": "Rocky Bushiri",
+              "position": "DF",
+              "club": "Hibernian"
+            },
+            {
+              "name": "Charles Pickel",
+              "position": "MF",
+              "club": "Cremonese"
+            },
+            {
+              "name": "Samuel Moutoussamy",
+              "position": "MF",
+              "club": "Nantes"
+            },
+            {
+              "name": "Aaron Tshibola",
+              "position": "MF",
+              "club": "Beerschot"
+            },
+            {
+              "name": "Cédric Bakambu",
+              "position": "FW",
+              "club": "Real Betis"
+            },
+            {
+              "name": "Yoane Wissa",
+              "position": "FW",
+              "club": "Newcastle"
+            },
+            {
+              "name": "Silas Katompa",
+              "position": "FW",
+              "club": "Stuttgart"
+            },
+            {
+              "name": "Meschack Elia",
+              "position": "FW",
+              "club": "Young Boys"
+            },
+            {
+              "name": "Théo Bongonda",
+              "position": "FW",
+              "club": "Spartak Moscow"
+            },
+            {
+              "name": "Fiston Mayele",
+              "position": "FW",
+              "club": "Pyramids"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Senegal",
+              "competition": "Friendly",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Sudan",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Senegal",
+              "competition": "WCQ",
+              "result": "L",
+              "score": "1-2"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Mauritania",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "Togo",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "South Sudan",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "4-0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "H",
+      "teams": [
+        {
+          "name": "Portugal",
+          "code": "POR",
+          "confederation": "UEFA",
+          "fifaRank": 6,
+          "manager": "Roberto Martínez",
+          "squad": [
+            {
+              "name": "Diogo Costa",
+              "position": "GK",
+              "club": "Porto"
+            },
+            {
+              "name": "João Cancelo",
+              "position": "DF",
+              "club": "Al-Hilal"
+            },
+            {
+              "name": "Rúben Dias",
+              "position": "DF",
+              "club": "Man City"
+            },
+            {
+              "name": "Gonçalo Inácio",
+              "position": "DF",
+              "club": "Sporting"
+            },
+            {
+              "name": "Nuno Mendes",
+              "position": "DF",
+              "club": "PSG"
+            },
+            {
+              "name": "João Palhinha",
+              "position": "MF",
+              "club": "Tottenham"
+            },
+            {
+              "name": "Vitinha",
+              "position": "MF",
+              "club": "PSG"
+            },
+            {
+              "name": "Bruno Fernandes",
+              "position": "MF",
+              "club": "Man United"
+            },
+            {
+              "name": "Bernardo Silva",
+              "position": "FW",
+              "club": "Man City"
+            },
+            {
+              "name": "Cristiano Ronaldo",
+              "position": "FW",
+              "club": "Al-Nassr"
+            },
+            {
+              "name": "Rafael Leão",
+              "position": "FW",
+              "club": "AC Milan"
+            },
+            {
+              "name": "Pedro Neto",
+              "position": "FW",
+              "club": "Chelsea"
+            },
+            {
+              "name": "João Félix",
+              "position": "FW",
+              "club": "Al-Nassr"
+            },
+            {
+              "name": "Rúben Neves",
+              "position": "MF",
+              "club": "Al-Hilal"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Italy",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Denmark",
+              "competition": "Nations League",
+              "result": "W",
+              "score": "3-2"
+            },
+            {
+              "date": "2025-11-16",
+              "opponent": "Armenia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "4-0"
+            },
+            {
+              "date": "2025-11-13",
+              "opponent": "Ireland",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "Hungary",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Ireland",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-1"
+            }
+          ]
+        },
+        {
+          "name": "Egypt",
+          "code": "EGY",
+          "confederation": "CAF",
+          "fifaRank": 32,
+          "manager": "Hossam Hassan",
+          "squad": [
+            {
+              "name": "Mohamed El Shenawy",
+              "position": "GK",
+              "club": "Al Ahly"
+            },
+            {
+              "name": "Mohamed Hany",
+              "position": "DF",
+              "club": "Al Ahly"
+            },
+            {
+              "name": "Mohamed Abdelmonem",
+              "position": "DF",
+              "club": "Nice"
+            },
+            {
+              "name": "Omar Kamal",
+              "position": "DF",
+              "club": "Al Ahly"
+            },
+            {
+              "name": "Ahmed Hegazi",
+              "position": "DF",
+              "club": "Al Ittihad"
+            },
+            {
+              "name": "Mohamed Elneny",
+              "position": "MF",
+              "club": "Al-Jazira"
+            },
+            {
+              "name": "Mohamed El Sayed",
+              "position": "MF",
+              "club": "Pyramids"
+            },
+            {
+              "name": "Marwan Attia",
+              "position": "MF",
+              "club": "Al Ahly"
+            },
+            {
+              "name": "Mohamed Salah",
+              "position": "FW",
+              "club": "Liverpool"
+            },
+            {
+              "name": "Omar Marmoush",
+              "position": "FW",
+              "club": "Man City"
+            },
+            {
+              "name": "Mostafa Mohamed",
+              "position": "FW",
+              "club": "Nantes"
+            },
+            {
+              "name": "Trezeguet",
+              "position": "FW",
+              "club": "Al Ahly"
+            },
+            {
+              "name": "Ibrahim Adel",
+              "position": "MF",
+              "club": "Pyramids"
+            },
+            {
+              "name": "Emam Ashour",
+              "position": "MF",
+              "club": "Al Ahly"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Tunisia",
+              "competition": "Friendly",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Sierra Leone",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Guinea-Bissau",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Djibouti",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "4-0"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "Burkina Faso",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Ethiopia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            }
+          ]
+        },
+        {
+          "name": "Denmark",
+          "code": "DEN",
+          "confederation": "UEFA",
+          "fifaRank": 21,
+          "manager": "Brian Riemer",
+          "squad": [
+            {
+              "name": "Kasper Schmeichel",
+              "position": "GK",
+              "club": "Celtic"
+            },
+            {
+              "name": "Joakim Mæhle",
+              "position": "DF",
+              "club": "Wolfsburg"
+            },
+            {
+              "name": "Andreas Christensen",
+              "position": "DF",
+              "club": "Barcelona"
+            },
+            {
+              "name": "Joachim Andersen",
+              "position": "DF",
+              "club": "Fulham"
+            },
+            {
+              "name": "Victor Kristiansen",
+              "position": "DF",
+              "club": "Bologna"
+            },
+            {
+              "name": "Pierre-Emile Højbjerg",
+              "position": "MF",
+              "club": "Marseille"
+            },
+            {
+              "name": "Morten Hjulmand",
+              "position": "MF",
+              "club": "Sporting"
+            },
+            {
+              "name": "Christian Eriksen",
+              "position": "MF",
+              "club": "Wolfsburg"
+            },
+            {
+              "name": "Mikkel Damsgaard",
+              "position": "MF",
+              "club": "Brentford"
+            },
+            {
+              "name": "Rasmus Højlund",
+              "position": "FW",
+              "club": "Napoli"
+            },
+            {
+              "name": "Jonas Wind",
+              "position": "FW",
+              "club": "Wolfsburg"
+            },
+            {
+              "name": "Andreas Skov Olsen",
+              "position": "FW",
+              "club": "Club Brugge"
+            },
+            {
+              "name": "Gustav Isaksen",
+              "position": "FW",
+              "club": "Lazio"
+            },
+            {
+              "name": "Patrick Dorgu",
+              "position": "DF",
+              "club": "Man United"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Sweden",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Portugal",
+              "competition": "Nations League",
+              "result": "L",
+              "score": "2-3"
+            },
+            {
+              "date": "2025-11-17",
+              "opponent": "Scotland",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-11-14",
+              "opponent": "Belarus",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-10-12",
+              "opponent": "Greece",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-10-09",
+              "opponent": "Scotland",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "0-0"
+            }
+          ]
+        },
+        {
+          "name": "Costa Rica",
+          "code": "CRC",
+          "confederation": "CONCACAF",
+          "fifaRank": 43,
+          "manager": "Miguel Herrera",
+          "squad": [
+            {
+              "name": "Keylor Navas",
+              "position": "GK",
+              "club": "Pumas"
+            },
+            {
+              "name": "Francisco Calvo",
+              "position": "DF",
+              "club": "Al-Wakrah"
+            },
+            {
+              "name": "Juan Pablo Vargas",
+              "position": "DF",
+              "club": "Millonarios"
+            },
+            {
+              "name": "Kendall Waston",
+              "position": "DF",
+              "club": "Saprissa"
+            },
+            {
+              "name": "Carlos Mora",
+              "position": "MF",
+              "club": "Alajuelense"
+            },
+            {
+              "name": "Orlando Galo",
+              "position": "MF",
+              "club": "Riga"
+            },
+            {
+              "name": "Celso Borges",
+              "position": "MF",
+              "club": "Alajuelense"
+            },
+            {
+              "name": "Brandon Aguilera",
+              "position": "MF",
+              "club": "Bristol City"
+            },
+            {
+              "name": "Joel Campbell",
+              "position": "FW",
+              "club": "Alajuelense"
+            },
+            {
+              "name": "Manfred Ugalde",
+              "position": "FW",
+              "club": "Spartak Moscow"
+            },
+            {
+              "name": "Alonso Martínez",
+              "position": "FW",
+              "club": "New York City"
+            },
+            {
+              "name": "Anthony Contreras",
+              "position": "FW",
+              "club": "Cartaginés"
+            },
+            {
+              "name": "Josimar Alcócer",
+              "position": "FW",
+              "club": "Westerlo"
+            },
+            {
+              "name": "Carlos Martínez",
+              "position": "DF",
+              "club": "San Carlos"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Panama",
+              "competition": "Friendly",
+              "result": "L",
+              "score": "1-2"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Honduras",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Haiti",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Nicaragua",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "Honduras",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "0-0"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Haiti",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "I",
+      "teams": [
+        {
+          "name": "England",
+          "code": "ENG",
+          "confederation": "UEFA",
+          "fifaRank": 4,
+          "manager": "Thomas Tuchel",
+          "squad": [
+            {
+              "name": "Jordan Pickford",
+              "position": "GK",
+              "club": "Everton"
+            },
+            {
+              "name": "Kyle Walker",
+              "position": "DF",
+              "club": "Burnley"
+            },
+            {
+              "name": "John Stones",
+              "position": "DF",
+              "club": "Man City"
+            },
+            {
+              "name": "Marc Guéhi",
+              "position": "DF",
+              "club": "Crystal Palace"
+            },
+            {
+              "name": "Levi Colwill",
+              "position": "DF",
+              "club": "Chelsea"
+            },
+            {
+              "name": "Declan Rice",
+              "position": "MF",
+              "club": "Arsenal"
+            },
+            {
+              "name": "Jude Bellingham",
+              "position": "MF",
+              "club": "Real Madrid"
+            },
+            {
+              "name": "Cole Palmer",
+              "position": "MF",
+              "club": "Chelsea"
+            },
+            {
+              "name": "Bukayo Saka",
+              "position": "FW",
+              "club": "Arsenal"
+            },
+            {
+              "name": "Harry Kane",
+              "position": "FW",
+              "club": "Bayern Munich"
+            },
+            {
+              "name": "Phil Foden",
+              "position": "FW",
+              "club": "Man City"
+            },
+            {
+              "name": "Anthony Gordon",
+              "position": "FW",
+              "club": "Newcastle"
+            },
+            {
+              "name": "Morgan Rogers",
+              "position": "MF",
+              "club": "Aston Villa"
+            },
+            {
+              "name": "Ezri Konsa",
+              "position": "DF",
+              "club": "Aston Villa"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Spain",
+              "competition": "Friendly",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2026-03-23",
+              "opponent": "Belgium",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-11-17",
+              "opponent": "Albania",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-11-14",
+              "opponent": "Serbia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "Latvia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "4-0"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Andorra",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            }
+          ]
+        },
+        {
+          "name": "Nigeria",
+          "code": "NGA",
+          "confederation": "CAF",
+          "fifaRank": 36,
+          "manager": "Eric Chelle",
+          "squad": [
+            {
+              "name": "Stanley Nwabali",
+              "position": "GK",
+              "club": "Chippa United"
+            },
+            {
+              "name": "Ola Aina",
+              "position": "DF",
+              "club": "Nottingham Forest"
+            },
+            {
+              "name": "William Troost-Ekong",
+              "position": "DF",
+              "club": "Al-Kholood"
+            },
+            {
+              "name": "Calvin Bassey",
+              "position": "DF",
+              "club": "Fulham"
+            },
+            {
+              "name": "Bright Osayi-Samuel",
+              "position": "DF",
+              "club": "Birmingham"
+            },
+            {
+              "name": "Wilfred Ndidi",
+              "position": "MF",
+              "club": "Besiktas"
+            },
+            {
+              "name": "Alex Iwobi",
+              "position": "MF",
+              "club": "Fulham"
+            },
+            {
+              "name": "Frank Onyeka",
+              "position": "MF",
+              "club": "Brentford"
+            },
+            {
+              "name": "Ademola Lookman",
+              "position": "FW",
+              "club": "Atalanta"
+            },
+            {
+              "name": "Victor Osimhen",
+              "position": "FW",
+              "club": "Galatasaray"
+            },
+            {
+              "name": "Samuel Chukwueze",
+              "position": "FW",
+              "club": "AC Milan"
+            },
+            {
+              "name": "Cyriel Dessers",
+              "position": "FW",
+              "club": "Rangers"
+            },
+            {
+              "name": "Moses Simon",
+              "position": "FW",
+              "club": "Paris FC"
+            },
+            {
+              "name": "Raphael Onyedika",
+              "position": "MF",
+              "club": "Club Brugge"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Ghana",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Rwanda",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Lesotho",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-1"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Benin",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "South Africa",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Zimbabwe",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            }
+          ]
+        },
+        {
+          "name": "Croatia",
+          "code": "CRO",
+          "confederation": "UEFA",
+          "fifaRank": 10,
+          "manager": "Zlatko Dalić",
+          "squad": [
+            {
+              "name": "Dominik Livaković",
+              "position": "GK",
+              "club": "Fenerbahçe"
+            },
+            {
+              "name": "Josip Stanišić",
+              "position": "DF",
+              "club": "Bayern Munich"
+            },
+            {
+              "name": "Joško Gvardiol",
+              "position": "DF",
+              "club": "Man City"
+            },
+            {
+              "name": "Joško Šutalo",
+              "position": "DF",
+              "club": "Ajax"
+            },
+            {
+              "name": "Borna Sosa",
+              "position": "DF",
+              "club": "Ajax"
+            },
+            {
+              "name": "Luka Modrić",
+              "position": "MF",
+              "club": "AC Milan"
+            },
+            {
+              "name": "Mateo Kovačić",
+              "position": "MF",
+              "club": "Man City"
+            },
+            {
+              "name": "Marcelo Brozović",
+              "position": "MF",
+              "club": "Al-Nassr"
+            },
+            {
+              "name": "Luka Sučić",
+              "position": "MF",
+              "club": "Real Sociedad"
+            },
+            {
+              "name": "Andrej Kramarić",
+              "position": "FW",
+              "club": "Hoffenheim"
+            },
+            {
+              "name": "Ante Budimir",
+              "position": "FW",
+              "club": "Osasuna"
+            },
+            {
+              "name": "Igor Matanović",
+              "position": "FW",
+              "club": "Eintracht"
+            },
+            {
+              "name": "Mario Pašalić",
+              "position": "MF",
+              "club": "Atalanta"
+            },
+            {
+              "name": "Petar Sučić",
+              "position": "MF",
+              "club": "Inter"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Slovenia",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "France",
+              "competition": "Nations League",
+              "result": "L",
+              "score": "0-2"
+            },
+            {
+              "date": "2025-11-16",
+              "opponent": "Montenegro",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-1"
+            },
+            {
+              "date": "2025-11-13",
+              "opponent": "Faroe Islands",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "4-0"
+            },
+            {
+              "date": "2025-10-12",
+              "opponent": "Gibraltar",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "5-0"
+            },
+            {
+              "date": "2025-10-09",
+              "opponent": "Czechia",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            }
+          ]
+        },
+        {
+          "name": "Jamaica",
+          "code": "JAM",
+          "confederation": "CONCACAF",
+          "fifaRank": 59,
+          "manager": "Steve McClaren",
+          "squad": [
+            {
+              "name": "Andre Blake",
+              "position": "GK",
+              "club": "Philadelphia"
+            },
+            {
+              "name": "Greg Leigh",
+              "position": "DF",
+              "club": "Hibernian"
+            },
+            {
+              "name": "Ethan Pinnock",
+              "position": "DF",
+              "club": "Brentford"
+            },
+            {
+              "name": "Di'Shon Bernard",
+              "position": "DF",
+              "club": "Sheffield Wednesday"
+            },
+            {
+              "name": "Dexter Lembikisa",
+              "position": "DF",
+              "club": "Heerenveen"
+            },
+            {
+              "name": "Kasey Palmer",
+              "position": "MF",
+              "club": "Coventry"
+            },
+            {
+              "name": "Bobby Decordova-Reid",
+              "position": "MF",
+              "club": "Leicester"
+            },
+            {
+              "name": "Joel Latibeaudiere",
+              "position": "MF",
+              "club": "Coventry"
+            },
+            {
+              "name": "Leon Bailey",
+              "position": "FW",
+              "club": "Roma"
+            },
+            {
+              "name": "Michail Antonio",
+              "position": "FW",
+              "club": "West Ham"
+            },
+            {
+              "name": "Demarai Gray",
+              "position": "FW",
+              "club": "Al-Ettifaq"
+            },
+            {
+              "name": "Shamar Nicholson",
+              "position": "FW",
+              "club": "Samsunspor"
+            },
+            {
+              "name": "Renaldo Cephas",
+              "position": "FW",
+              "club": "Hapoel"
+            },
+            {
+              "name": "Tyreek Magee",
+              "position": "MF",
+              "club": "Cavalier"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Trinidad",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Curaçao",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Bermuda",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "4-0"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Trinidad",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "Curaçao",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "0-0"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Bermuda",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "J",
+      "teams": [
+        {
+          "name": "Germany",
+          "code": "GER",
+          "confederation": "UEFA",
+          "fifaRank": 11,
+          "manager": "Julian Nagelsmann",
+          "squad": [
+            {
+              "name": "Marc-André ter Stegen",
+              "position": "GK",
+              "club": "Barcelona"
+            },
+            {
+              "name": "Joshua Kimmich",
+              "position": "DF",
+              "club": "Bayern Munich"
+            },
+            {
+              "name": "Antonio Rüdiger",
+              "position": "DF",
+              "club": "Real Madrid"
+            },
+            {
+              "name": "Jonathan Tah",
+              "position": "DF",
+              "club": "Bayern Munich"
+            },
+            {
+              "name": "David Raum",
+              "position": "DF",
+              "club": "RB Leipzig"
+            },
+            {
+              "name": "Robert Andrich",
+              "position": "MF",
+              "club": "Leverkusen"
+            },
+            {
+              "name": "Aleksandar Pavlović",
+              "position": "MF",
+              "club": "Bayern Munich"
+            },
+            {
+              "name": "Florian Wirtz",
+              "position": "MF",
+              "club": "Liverpool"
+            },
+            {
+              "name": "Jamal Musiala",
+              "position": "FW",
+              "club": "Bayern Munich"
+            },
+            {
+              "name": "Kai Havertz",
+              "position": "FW",
+              "club": "Arsenal"
+            },
+            {
+              "name": "Serge Gnabry",
+              "position": "FW",
+              "club": "Bayern Munich"
+            },
+            {
+              "name": "Niclas Füllkrug",
+              "position": "FW",
+              "club": "West Ham"
+            },
+            {
+              "name": "Leroy Sané",
+              "position": "FW",
+              "club": "Galatasaray"
+            },
+            {
+              "name": "Nico Schlotterbeck",
+              "position": "DF",
+              "club": "Dortmund"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "France",
+              "competition": "Friendly",
+              "result": "L",
+              "score": "1-2"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Italy",
+              "competition": "Nations League",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-11-17",
+              "opponent": "Slovakia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-1"
+            },
+            {
+              "date": "2025-11-14",
+              "opponent": "Luxembourg",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "4-0"
+            },
+            {
+              "date": "2025-10-13",
+              "opponent": "Northern Ireland",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-10-10",
+              "opponent": "Luxembourg",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            }
+          ]
+        },
+        {
+          "name": "Tunisia",
+          "code": "TUN",
+          "confederation": "CAF",
+          "fifaRank": 45,
+          "manager": "Sami Trabelsi",
+          "squad": [
+            {
+              "name": "Aymen Dahmen",
+              "position": "GK",
+              "club": "CS Sfaxien"
+            },
+            {
+              "name": "Mohamed Dräger",
+              "position": "DF",
+              "club": "Lugano"
+            },
+            {
+              "name": "Montassar Talbi",
+              "position": "DF",
+              "club": "Lorient"
+            },
+            {
+              "name": "Yassine Meriah",
+              "position": "DF",
+              "club": "Esperance"
+            },
+            {
+              "name": "Ali Abdi",
+              "position": "DF",
+              "club": "Nice"
+            },
+            {
+              "name": "Aïssa Laïdouni",
+              "position": "MF",
+              "club": "Wolfsburg"
+            },
+            {
+              "name": "Ellyes Skhiri",
+              "position": "MF",
+              "club": "Eintracht"
+            },
+            {
+              "name": "Hannibal Mejbri",
+              "position": "MF",
+              "club": "Burnley"
+            },
+            {
+              "name": "Youssef Msakni",
+              "position": "FW",
+              "club": "Al-Arabi"
+            },
+            {
+              "name": "Naïm Sliti",
+              "position": "FW",
+              "club": "Al-Ettifaq"
+            },
+            {
+              "name": "Elias Achouri",
+              "position": "FW",
+              "club": "Copenhagen"
+            },
+            {
+              "name": "Seifeddine Jaziri",
+              "position": "FW",
+              "club": "Zamalek"
+            },
+            {
+              "name": "Firas Chaouat",
+              "position": "FW",
+              "club": "Esperance"
+            },
+            {
+              "name": "Ferjani Sassi",
+              "position": "MF",
+              "club": "Al-Duhail"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Morocco",
+              "competition": "Friendly",
+              "result": "L",
+              "score": "0-2"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Egypt",
+              "competition": "Friendly",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Namibia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Liberia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "São Tomé",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "4-0"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Malawi",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            }
+          ]
+        },
+        {
+          "name": "Japan",
+          "code": "JPN",
+          "confederation": "AFC",
+          "fifaRank": 14,
+          "manager": "Hajime Moriyasu",
+          "squad": [
+            {
+              "name": "Zion Suzuki",
+              "position": "GK",
+              "club": "Parma"
+            },
+            {
+              "name": "Hiroki Sakai",
+              "position": "DF",
+              "club": "Urawa"
+            },
+            {
+              "name": "Ko Itakura",
+              "position": "DF",
+              "club": "Ajax"
+            },
+            {
+              "name": "Takehiro Tomiyasu",
+              "position": "DF",
+              "club": "Arsenal"
+            },
+            {
+              "name": "Hiroki Ito",
+              "position": "DF",
+              "club": "Bayern Munich"
+            },
+            {
+              "name": "Wataru Endo",
+              "position": "MF",
+              "club": "Liverpool"
+            },
+            {
+              "name": "Hidemasa Morita",
+              "position": "MF",
+              "club": "Sporting"
+            },
+            {
+              "name": "Takefusa Kubo",
+              "position": "MF",
+              "club": "Real Sociedad"
+            },
+            {
+              "name": "Kaoru Mitoma",
+              "position": "FW",
+              "club": "Brighton"
+            },
+            {
+              "name": "Takumi Minamino",
+              "position": "FW",
+              "club": "Monaco"
+            },
+            {
+              "name": "Daizen Maeda",
+              "position": "FW",
+              "club": "Celtic"
+            },
+            {
+              "name": "Ayase Ueda",
+              "position": "FW",
+              "club": "Feyenoord"
+            },
+            {
+              "name": "Junya Ito",
+              "position": "FW",
+              "club": "Reims"
+            },
+            {
+              "name": "Ritsu Doan",
+              "position": "FW",
+              "club": "Eintracht"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Australia",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Saudi Arabia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Bahrain",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "4-0"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Indonesia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "Australia",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "China",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            }
+          ]
+        },
+        {
+          "name": "Saudi Arabia",
+          "code": "KSA",
+          "confederation": "AFC",
+          "fifaRank": 58,
+          "manager": "Hervé Renard",
+          "squad": [
+            {
+              "name": "Nawaf Al-Aqidi",
+              "position": "GK",
+              "club": "Al-Nassr"
+            },
+            {
+              "name": "Saud Abdulhamid",
+              "position": "DF",
+              "club": "Roma"
+            },
+            {
+              "name": "Ali Al-Bulaihi",
+              "position": "DF",
+              "club": "Al-Hilal"
+            },
+            {
+              "name": "Hassan Tambakti",
+              "position": "DF",
+              "club": "Al-Hilal"
+            },
+            {
+              "name": "Sultan Al-Ghanam",
+              "position": "DF",
+              "club": "Al-Nassr"
+            },
+            {
+              "name": "Mohamed Kanno",
+              "position": "MF",
+              "club": "Al-Hilal"
+            },
+            {
+              "name": "Nasser Al-Dawsari",
+              "position": "MF",
+              "club": "Al-Hilal"
+            },
+            {
+              "name": "Salem Al-Dawsari",
+              "position": "FW",
+              "club": "Al-Hilal"
+            },
+            {
+              "name": "Firas Al-Buraikan",
+              "position": "FW",
+              "club": "Al-Ahli"
+            },
+            {
+              "name": "Saleh Al-Shehri",
+              "position": "FW",
+              "club": "Al-Ittihad"
+            },
+            {
+              "name": "Abdullah Al-Hamdan",
+              "position": "FW",
+              "club": "Al-Hilal"
+            },
+            {
+              "name": "Musab Al-Juwayr",
+              "position": "MF",
+              "club": "Al-Hilal"
+            },
+            {
+              "name": "Abdulrahman Ghareeb",
+              "position": "FW",
+              "club": "Al-Ahli"
+            },
+            {
+              "name": "Ali Lajami",
+              "position": "DF",
+              "club": "Al-Nassr"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Iraq",
+              "competition": "Friendly",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Japan",
+              "competition": "WCQ",
+              "result": "L",
+              "score": "0-3"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Australia",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Indonesia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "Bahrain",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "China",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "K",
+      "teams": [
+        {
+          "name": "Belgium",
+          "code": "BEL",
+          "confederation": "UEFA",
+          "fifaRank": 8,
+          "manager": "Rudi Garcia",
+          "squad": [
+            {
+              "name": "Koen Casteels",
+              "position": "GK",
+              "club": "Al-Qadsiah"
+            },
+            {
+              "name": "Timothy Castagne",
+              "position": "DF",
+              "club": "Fulham"
+            },
+            {
+              "name": "Wout Faes",
+              "position": "DF",
+              "club": "Leicester"
+            },
+            {
+              "name": "Zeno Debast",
+              "position": "DF",
+              "club": "Sporting"
+            },
+            {
+              "name": "Arthur Theate",
+              "position": "DF",
+              "club": "Eintracht"
+            },
+            {
+              "name": "Amadou Onana",
+              "position": "MF",
+              "club": "Aston Villa"
+            },
+            {
+              "name": "Youri Tielemans",
+              "position": "MF",
+              "club": "Aston Villa"
+            },
+            {
+              "name": "Kevin De Bruyne",
+              "position": "MF",
+              "club": "Napoli"
+            },
+            {
+              "name": "Jérémy Doku",
+              "position": "FW",
+              "club": "Man City"
+            },
+            {
+              "name": "Romelu Lukaku",
+              "position": "FW",
+              "club": "Napoli"
+            },
+            {
+              "name": "Leandro Trossard",
+              "position": "FW",
+              "club": "Arsenal"
+            },
+            {
+              "name": "Charles De Ketelaere",
+              "position": "FW",
+              "club": "Atalanta"
+            },
+            {
+              "name": "Dodi Lukebakio",
+              "position": "FW",
+              "club": "Sevilla"
+            },
+            {
+              "name": "Maxim De Cuyper",
+              "position": "DF",
+              "club": "Brighton"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "England",
+              "competition": "Friendly",
+              "result": "L",
+              "score": "0-2"
+            },
+            {
+              "date": "2026-03-23",
+              "opponent": "Ukraine",
+              "competition": "Nations League",
+              "result": "W",
+              "score": "3-1"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Liechtenstein",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "5-0"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Kazakhstan",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-10-13",
+              "opponent": "North Macedonia",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-10-10",
+              "opponent": "Wales",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-2"
+            }
+          ]
+        },
+        {
+          "name": "Morocco",
+          "code": "MAR",
+          "confederation": "CAF",
+          "fifaRank": 12,
+          "manager": "Walid Regragui",
+          "squad": [
+            {
+              "name": "Yassine Bounou",
+              "position": "GK",
+              "club": "Al-Hilal"
+            },
+            {
+              "name": "Achraf Hakimi",
+              "position": "DF",
+              "club": "PSG"
+            },
+            {
+              "name": "Nayef Aguerd",
+              "position": "DF",
+              "club": "Real Sociedad"
+            },
+            {
+              "name": "Noussair Mazraoui",
+              "position": "DF",
+              "club": "Man United"
+            },
+            {
+              "name": "Romain Saïss",
+              "position": "DF",
+              "club": "Al-Shabab"
+            },
+            {
+              "name": "Sofyan Amrabat",
+              "position": "MF",
+              "club": "Fenerbahçe"
+            },
+            {
+              "name": "Azzedine Ounahi",
+              "position": "MF",
+              "club": "Girona"
+            },
+            {
+              "name": "Bilal El Khannouss",
+              "position": "MF",
+              "club": "Stuttgart"
+            },
+            {
+              "name": "Hakim Ziyech",
+              "position": "FW",
+              "club": "Al-Duhail"
+            },
+            {
+              "name": "Brahim Díaz",
+              "position": "FW",
+              "club": "Real Madrid"
+            },
+            {
+              "name": "Youssef En-Nesyri",
+              "position": "FW",
+              "club": "Fenerbahçe"
+            },
+            {
+              "name": "Ayoub El Kaabi",
+              "position": "FW",
+              "club": "Olympiacos"
+            },
+            {
+              "name": "Eliesse Ben Seghir",
+              "position": "FW",
+              "club": "Bayer Leverkusen"
+            },
+            {
+              "name": "Abdessamad Ezzalzouli",
+              "position": "FW",
+              "club": "Real Betis"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Tunisia",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Niger",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "4-0"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Zambia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Tanzania",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "Congo",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Niger",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            }
+          ]
+        },
+        {
+          "name": "Iran",
+          "code": "IRN",
+          "confederation": "AFC",
+          "fifaRank": 25,
+          "manager": "Amir Ghalenoei",
+          "squad": [
+            {
+              "name": "Alireza Beiranvand",
+              "position": "GK",
+              "club": "Tractor"
+            },
+            {
+              "name": "Sadegh Moharrami",
+              "position": "DF",
+              "club": "Dinamo Zagreb"
+            },
+            {
+              "name": "Shojae Khalilzadeh",
+              "position": "DF",
+              "club": "Al-Ahli"
+            },
+            {
+              "name": "Majid Hosseini",
+              "position": "DF",
+              "club": "Kayserispor"
+            },
+            {
+              "name": "Milad Mohammadi",
+              "position": "DF",
+              "club": "AEK Athens"
+            },
+            {
+              "name": "Saeid Ezatolahi",
+              "position": "MF",
+              "club": "Esteghlal"
+            },
+            {
+              "name": "Ali Gholizadeh",
+              "position": "MF",
+              "club": "Lech Poznań"
+            },
+            {
+              "name": "Alireza Jahanbakhsh",
+              "position": "MF",
+              "club": "Heerenveen"
+            },
+            {
+              "name": "Mehdi Taremi",
+              "position": "FW",
+              "club": "Inter"
+            },
+            {
+              "name": "Sardar Azmoun",
+              "position": "FW",
+              "club": "Shabab Al-Ahli"
+            },
+            {
+              "name": "Karim Ansarifard",
+              "position": "FW",
+              "club": "Esteghlal"
+            },
+            {
+              "name": "Saman Ghoddos",
+              "position": "FW",
+              "club": "Brentford"
+            },
+            {
+              "name": "Mehdi Ghayedi",
+              "position": "FW",
+              "club": "Ittihad Kalba"
+            },
+            {
+              "name": "Ahmad Nourollahi",
+              "position": "MF",
+              "club": "Shabab Al-Ahli"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Uzbekistan",
+              "competition": "Friendly",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Qatar",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Kyrgyzstan",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "UAE",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "North Korea",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-1"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Qatar",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            }
+          ]
+        },
+        {
+          "name": "Australia",
+          "code": "AUS",
+          "confederation": "AFC",
+          "fifaRank": 27,
+          "manager": "Tony Popovic",
+          "squad": [
+            {
+              "name": "Mathew Ryan",
+              "position": "GK",
+              "club": "Roma"
+            },
+            {
+              "name": "Milos Degenek",
+              "position": "DF",
+              "club": "Al-Ittihad"
+            },
+            {
+              "name": "Harry Souttar",
+              "position": "DF",
+              "club": "Sheffield United"
+            },
+            {
+              "name": "Cameron Burgess",
+              "position": "DF",
+              "club": "Ipswich"
+            },
+            {
+              "name": "Aziz Behich",
+              "position": "DF",
+              "club": "Melbourne City"
+            },
+            {
+              "name": "Aiden O'Neill",
+              "position": "MF",
+              "club": "Standard Liège"
+            },
+            {
+              "name": "Connor Metcalfe",
+              "position": "MF",
+              "club": "St. Pauli"
+            },
+            {
+              "name": "Riley McGree",
+              "position": "MF",
+              "club": "Middlesbrough"
+            },
+            {
+              "name": "Martin Boyle",
+              "position": "FW",
+              "club": "Hibernian"
+            },
+            {
+              "name": "Mitchell Duke",
+              "position": "FW",
+              "club": "Machida Zelvia"
+            },
+            {
+              "name": "Kusini Yengi",
+              "position": "FW",
+              "club": "Portsmouth"
+            },
+            {
+              "name": "Nestory Irankunda",
+              "position": "FW",
+              "club": "Bayern Munich"
+            },
+            {
+              "name": "Jackson Irvine",
+              "position": "MF",
+              "club": "St. Pauli"
+            },
+            {
+              "name": "Craig Goodwin",
+              "position": "FW",
+              "club": "Al-Wehda"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Japan",
+              "competition": "Friendly",
+              "result": "L",
+              "score": "0-2"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Indonesia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Saudi Arabia",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Bahrain",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "Japan",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "China",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "L",
+      "teams": [
+        {
+          "name": "Italy",
+          "code": "ITA",
+          "confederation": "UEFA",
+          "fifaRank": 9,
+          "manager": "Gennaro Gattuso",
+          "squad": [
+            {
+              "name": "Gianluigi Donnarumma",
+              "position": "GK",
+              "club": "PSG"
+            },
+            {
+              "name": "Giovanni Di Lorenzo",
+              "position": "DF",
+              "club": "Napoli"
+            },
+            {
+              "name": "Alessandro Bastoni",
+              "position": "DF",
+              "club": "Inter"
+            },
+            {
+              "name": "Riccardo Calafiori",
+              "position": "DF",
+              "club": "Arsenal"
+            },
+            {
+              "name": "Federico Dimarco",
+              "position": "DF",
+              "club": "Inter"
+            },
+            {
+              "name": "Nicolò Barella",
+              "position": "MF",
+              "club": "Inter"
+            },
+            {
+              "name": "Sandro Tonali",
+              "position": "MF",
+              "club": "Newcastle"
+            },
+            {
+              "name": "Davide Frattesi",
+              "position": "MF",
+              "club": "Inter"
+            },
+            {
+              "name": "Federico Chiesa",
+              "position": "FW",
+              "club": "Liverpool"
+            },
+            {
+              "name": "Mateo Retegui",
+              "position": "FW",
+              "club": "Al-Qadsiah"
+            },
+            {
+              "name": "Moise Kean",
+              "position": "FW",
+              "club": "Fiorentina"
+            },
+            {
+              "name": "Giacomo Raspadori",
+              "position": "FW",
+              "club": "Atlético Madrid"
+            },
+            {
+              "name": "Nicolò Fagioli",
+              "position": "MF",
+              "club": "Fiorentina"
+            },
+            {
+              "name": "Andrea Cambiaso",
+              "position": "DF",
+              "club": "Juventus"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Portugal",
+              "competition": "Friendly",
+              "result": "L",
+              "score": "1-2"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Germany",
+              "competition": "Nations League",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-11-16",
+              "opponent": "Norway",
+              "competition": "WCQ",
+              "result": "L",
+              "score": "1-2"
+            },
+            {
+              "date": "2025-11-13",
+              "opponent": "Moldova",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "Israel",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Estonia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "4-0"
+            }
+          ]
+        },
+        {
+          "name": "Ghana",
+          "code": "GHA",
+          "confederation": "CAF",
+          "fifaRank": 70,
+          "manager": "Otto Addo",
+          "squad": [
+            {
+              "name": "Lawrence Ati-Zigi",
+              "position": "GK",
+              "club": "St. Gallen"
+            },
+            {
+              "name": "Alexander Djiku",
+              "position": "DF",
+              "club": "Fenerbahçe"
+            },
+            {
+              "name": "Mohammed Salisu",
+              "position": "DF",
+              "club": "Monaco"
+            },
+            {
+              "name": "Alidu Seidu",
+              "position": "DF",
+              "club": "Rennes"
+            },
+            {
+              "name": "Gideon Mensah",
+              "position": "DF",
+              "club": "Auxerre"
+            },
+            {
+              "name": "Thomas Partey",
+              "position": "MF",
+              "club": "Villarreal"
+            },
+            {
+              "name": "Mohammed Kudus",
+              "position": "FW",
+              "club": "Tottenham"
+            },
+            {
+              "name": "Elisha Owusu",
+              "position": "MF",
+              "club": "Auxerre"
+            },
+            {
+              "name": "Jordan Ayew",
+              "position": "FW",
+              "club": "Leicester"
+            },
+            {
+              "name": "Iñaki Williams",
+              "position": "FW",
+              "club": "Athletic Club"
+            },
+            {
+              "name": "Antoine Semenyo",
+              "position": "FW",
+              "club": "Bournemouth"
+            },
+            {
+              "name": "Ernest Nuamah",
+              "position": "FW",
+              "club": "Lyon"
+            },
+            {
+              "name": "Kamaldeen Sulemana",
+              "position": "FW",
+              "club": "Atalanta"
+            },
+            {
+              "name": "Abdul Fatawu Issahaku",
+              "position": "FW",
+              "club": "Leicester"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Nigeria",
+              "competition": "Friendly",
+              "result": "L",
+              "score": "1-2"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Chad",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "5-0"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Comoros",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2025-11-15",
+              "opponent": "Mali",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-10-14",
+              "opponent": "Central African Rep.",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-1"
+            },
+            {
+              "date": "2025-10-11",
+              "opponent": "Madagascar",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            }
+          ]
+        },
+        {
+          "name": "Uruguay",
+          "code": "URU",
+          "confederation": "CONMEBOL",
+          "fifaRank": 15,
+          "manager": "Marcelo Bielsa",
+          "squad": [
+            {
+              "name": "Sergio Rochet",
+              "position": "GK",
+              "club": "Internacional"
+            },
+            {
+              "name": "Nahitan Nández",
+              "position": "DF",
+              "club": "Al-Qadsiah"
+            },
+            {
+              "name": "Ronald Araújo",
+              "position": "DF",
+              "club": "Barcelona"
+            },
+            {
+              "name": "José María Giménez",
+              "position": "DF",
+              "club": "Atlético Madrid"
+            },
+            {
+              "name": "Mathías Olivera",
+              "position": "DF",
+              "club": "Napoli"
+            },
+            {
+              "name": "Federico Valverde",
+              "position": "MF",
+              "club": "Real Madrid"
+            },
+            {
+              "name": "Manuel Ugarte",
+              "position": "MF",
+              "club": "Man United"
+            },
+            {
+              "name": "Rodrigo Bentancur",
+              "position": "MF",
+              "club": "Tottenham"
+            },
+            {
+              "name": "Facundo Pellistri",
+              "position": "MF",
+              "club": "Panathinaikos"
+            },
+            {
+              "name": "Darwin Núñez",
+              "position": "FW",
+              "club": "Al-Hilal"
+            },
+            {
+              "name": "Federico Viñas",
+              "position": "FW",
+              "club": "León"
+            },
+            {
+              "name": "Maxi Araújo",
+              "position": "FW",
+              "club": "Sporting"
+            },
+            {
+              "name": "Brian Rodríguez",
+              "position": "FW",
+              "club": "América"
+            },
+            {
+              "name": "Giorgian de Arrascaeta",
+              "position": "MF",
+              "club": "Flamengo"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Bolivia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Argentina",
+              "competition": "WCQ",
+              "result": "L",
+              "score": "0-1"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Colombia",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-11-14",
+              "opponent": "Brazil",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-10-15",
+              "opponent": "Ecuador",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2025-10-10",
+              "opponent": "Peru",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "0-0"
+            }
+          ]
+        },
+        {
+          "name": "Colombia",
+          "code": "COL",
+          "confederation": "CONMEBOL",
+          "fifaRank": 13,
+          "manager": "Néstor Lorenzo",
+          "squad": [
+            {
+              "name": "Camilo Vargas",
+              "position": "GK",
+              "club": "Atlas"
+            },
+            {
+              "name": "Daniel Muñoz",
+              "position": "DF",
+              "club": "Crystal Palace"
+            },
+            {
+              "name": "Davinson Sánchez",
+              "position": "DF",
+              "club": "Galatasaray"
+            },
+            {
+              "name": "Yerry Mina",
+              "position": "DF",
+              "club": "Cagliari"
+            },
+            {
+              "name": "Johan Mojica",
+              "position": "DF",
+              "club": "Mallorca"
+            },
+            {
+              "name": "Richard Ríos",
+              "position": "MF",
+              "club": "Benfica"
+            },
+            {
+              "name": "Jefferson Lerma",
+              "position": "MF",
+              "club": "Crystal Palace"
+            },
+            {
+              "name": "James Rodríguez",
+              "position": "MF",
+              "club": "León"
+            },
+            {
+              "name": "Luis Díaz",
+              "position": "FW",
+              "club": "Bayern Munich"
+            },
+            {
+              "name": "Jhon Durán",
+              "position": "FW",
+              "club": "Al-Nassr"
+            },
+            {
+              "name": "Rafael Santos Borré",
+              "position": "FW",
+              "club": "Internacional"
+            },
+            {
+              "name": "Jhon Córdoba",
+              "position": "FW",
+              "club": "Krasnodar"
+            },
+            {
+              "name": "Juan Fernando Quintero",
+              "position": "MF",
+              "club": "River Plate"
+            },
+            {
+              "name": "Santiago Arias",
+              "position": "DF",
+              "club": "Bahia"
+            }
+          ],
+          "lastMatches": [
+            {
+              "date": "2026-03-26",
+              "opponent": "Paraguay",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-1"
+            },
+            {
+              "date": "2026-03-22",
+              "opponent": "Brazil",
+              "competition": "WCQ",
+              "result": "L",
+              "score": "1-2"
+            },
+            {
+              "date": "2025-11-18",
+              "opponent": "Uruguay",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "1-1"
+            },
+            {
+              "date": "2025-11-14",
+              "opponent": "Ecuador",
+              "competition": "WCQ",
+              "result": "D",
+              "score": "0-0"
+            },
+            {
+              "date": "2025-10-15",
+              "opponent": "Bolivia",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "3-0"
+            },
+            {
+              "date": "2025-10-10",
+              "opponent": "Peru",
+              "competition": "WCQ",
+              "result": "W",
+              "score": "2-0"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
