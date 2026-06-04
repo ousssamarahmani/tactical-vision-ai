@@ -277,6 +277,11 @@ export default function Index() {
             </div>
           </div>
         </div>
+
+        {/* World Cup 2026 */}
+        <div className="mt-6">
+          <WorldCupSection />
+        </div>
       </div>
     </div>
   );
