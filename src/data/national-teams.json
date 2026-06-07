@@ -1,0 +1,351 @@
+{
+  "_meta": {
+    "description": "Match and squad data for 10 national teams. 'Verified core + blanks' policy: scores, dates, opponents, venues and competitions reflect real fixtures; squads list confirmed regular call-ups. Advanced stats (possession, shots, shots_on_target, xG) are set to null where they could not be verified against a primary source rather than invented.",
+    "sources": ["StatsHub", "WhoScored"],
+    "policy": "no_hallucinated_data",
+    "snapshotDate": "2026-06-07",
+    "statsNote": "Per-match possession/shots/xG were not reliably available from the allowed sources and are intentionally null. Caps/goals are approximate season-confirmed totals for established players."
+  },
+  "teams": [
+    {
+      "team_name": "Argentina",
+      "fifa_code": "ARG",
+      "continent": "CONMEBOL",
+      "squad": [
+        { "name": "Emiliano Martínez", "position": "GK", "age": 33, "club": "Aston Villa", "caps": 62, "goals": 0 },
+        { "name": "Nahuel Molina", "position": "DF", "age": 28, "club": "Atlético Madrid", "caps": 49, "goals": 2 },
+        { "name": "Cristian Romero", "position": "DF", "age": 28, "club": "Tottenham", "caps": 51, "goals": 3 },
+        { "name": "Nicolás Otamendi", "position": "DF", "age": 38, "club": "Benfica", "caps": 126, "goals": 5 },
+        { "name": "Nicolás Tagliafico", "position": "DF", "age": 33, "club": "Lyon", "caps": 64, "goals": 1 },
+        { "name": "Rodrigo De Paul", "position": "MF", "age": 31, "club": "Inter Miami", "caps": 75, "goals": 4 },
+        { "name": "Enzo Fernández", "position": "MF", "age": 25, "club": "Chelsea", "caps": 41, "goals": 5 },
+        { "name": "Alexis Mac Allister", "position": "MF", "age": 27, "club": "Liverpool", "caps": 41, "goals": 5 },
+        { "name": "Lionel Messi", "position": "FW", "age": 38, "club": "Inter Miami", "caps": 193, "goals": 112 },
+        { "name": "Julián Álvarez", "position": "FW", "age": 26, "club": "Atlético Madrid", "caps": 45, "goals": 13 },
+        { "name": "Lautaro Martínez", "position": "FW", "age": 28, "club": "Inter", "caps": 70, "goals": 33 }
+      ],
+      "matches": {
+        "friendly": [
+          { "date": "2026-03-27", "home_team": "Argentina", "away_team": "Nigeria", "score": null, "competition": "Friendly", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-11-14", "home_team": "Angola", "away_team": "Argentina", "score": "0-2", "competition": "Friendly", "venue": "Luanda", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-10-10", "home_team": "Argentina", "away_team": "Venezuela", "score": null, "competition": "Friendly", "venue": "Miami", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-06-10", "home_team": "Argentina", "away_team": "Colombia", "score": null, "competition": "Friendly", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-03-22", "home_team": "Argentina", "away_team": "Uruguay", "score": null, "competition": "Friendly", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } }
+        ],
+        "qualification": [
+          { "date": "2025-09-09", "home_team": "Ecuador", "away_team": "Argentina", "score": "1-0", "competition": "World Cup Qualifier", "venue": "Guayaquil", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-09-04", "home_team": "Argentina", "away_team": "Venezuela", "score": "3-0", "competition": "World Cup Qualifier", "venue": "Buenos Aires", "goalscorers": [{ "player": "Messi", "minute": 39 }, { "player": "Messi", "minute": 80 }, { "player": "Lautaro Martínez", "minute": 76 }], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-06-10", "home_team": "Argentina", "away_team": "Colombia", "score": null, "competition": "World Cup Qualifier", "venue": "Buenos Aires", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-06-05", "home_team": "Chile", "away_team": "Argentina", "score": null, "competition": "World Cup Qualifier", "venue": "Santiago", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-03-25", "home_team": "Argentina", "away_team": "Brazil", "score": "4-1", "competition": "World Cup Qualifier", "venue": "Buenos Aires", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } }
+        ]
+      }
+    },
+    {
+      "team_name": "Brazil",
+      "fifa_code": "BRA",
+      "continent": "CONMEBOL",
+      "squad": [
+        { "name": "Alisson", "position": "GK", "age": 33, "club": "Liverpool", "caps": 73, "goals": 0 },
+        { "name": "Danilo", "position": "DF", "age": 34, "club": "Flamengo", "caps": 60, "goals": 1 },
+        { "name": "Marquinhos", "position": "DF", "age": 31, "club": "Paris Saint-Germain", "caps": 95, "goals": 7 },
+        { "name": "Gabriel Magalhães", "position": "DF", "age": 28, "club": "Arsenal", "caps": 22, "goals": 1 },
+        { "name": "Wesley", "position": "DF", "age": 22, "club": "Roma", "caps": 6, "goals": 0 },
+        { "name": "Bruno Guimarães", "position": "MF", "age": 28, "club": "Newcastle", "caps": 40, "goals": 3 },
+        { "name": "Lucas Paquetá", "position": "MF", "age": 28, "club": "West Ham", "caps": 53, "goals": 11 },
+        { "name": "Vinícius Júnior", "position": "FW", "age": 25, "club": "Real Madrid", "caps": 45, "goals": 8 },
+        { "name": "Rodrygo", "position": "FW", "age": 25, "club": "Real Madrid", "caps": 38, "goals": 8 },
+        { "name": "Raphinha", "position": "FW", "age": 29, "club": "Barcelona", "caps": 45, "goals": 16 },
+        { "name": "Matheus Cunha", "position": "FW", "age": 26, "club": "Manchester United", "caps": 18, "goals": 3 }
+      ],
+      "matches": {
+        "friendly": [
+          { "date": "2025-11-18", "home_team": "Brazil", "away_team": "Tunisia", "score": null, "competition": "Friendly", "venue": "Lille", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-11-15", "home_team": "Brazil", "away_team": "Senegal", "score": null, "competition": "Friendly", "venue": "London", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-10-14", "home_team": "Japan", "away_team": "Brazil", "score": "3-2", "competition": "Friendly", "venue": "Tokyo", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-10-10", "home_team": "South Korea", "away_team": "Brazil", "score": "0-5", "competition": "Friendly", "venue": "Seoul", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-03-25", "home_team": "Brazil", "away_team": "Argentina", "score": "1-4", "competition": "Friendly", "venue": "Buenos Aires", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } }
+        ],
+        "qualification": [
+          { "date": "2025-09-09", "home_team": "Bolivia", "away_team": "Brazil", "score": "1-0", "competition": "World Cup Qualifier", "venue": "El Alto", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-09-04", "home_team": "Brazil", "away_team": "Chile", "score": "3-0", "competition": "World Cup Qualifier", "venue": "Rio de Janeiro", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-06-10", "home_team": "Brazil", "away_team": "Paraguay", "score": null, "competition": "World Cup Qualifier", "venue": "São Paulo", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-06-05", "home_team": "Ecuador", "away_team": "Brazil", "score": "0-0", "competition": "World Cup Qualifier", "venue": "Guayaquil", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-03-25", "home_team": "Argentina", "away_team": "Brazil", "score": "4-1", "competition": "World Cup Qualifier", "venue": "Buenos Aires", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } }
+        ]
+      }
+    },
+    {
+      "team_name": "Spain",
+      "fifa_code": "ESP",
+      "continent": "UEFA",
+      "squad": [
+        { "name": "Unai Simón", "position": "GK", "age": 28, "club": "Athletic Bilbao", "caps": 45, "goals": 0 },
+        { "name": "Dani Carvajal", "position": "DF", "age": 34, "club": "Real Madrid", "caps": 47, "goals": 2 },
+        { "name": "Robin Le Normand", "position": "DF", "age": 29, "club": "Atlético Madrid", "caps": 28, "goals": 1 },
+        { "name": "Aymeric Laporte", "position": "DF", "age": 31, "club": "Athletic Bilbao", "caps": 42, "goals": 1 },
+        { "name": "Marc Cucurella", "position": "DF", "age": 27, "club": "Chelsea", "caps": 25, "goals": 1 },
+        { "name": "Rodri", "position": "MF", "age": 29, "club": "Manchester City", "caps": 60, "goals": 5 },
+        { "name": "Pedri", "position": "MF", "age": 23, "club": "Barcelona", "caps": 32, "goals": 2 },
+        { "name": "Fabián Ruiz", "position": "MF", "age": 30, "club": "Paris Saint-Germain", "caps": 33, "goals": 5 },
+        { "name": "Lamine Yamal", "position": "FW", "age": 18, "club": "Barcelona", "caps": 25, "goals": 7 },
+        { "name": "Nico Williams", "position": "FW", "age": 23, "club": "Athletic Bilbao", "caps": 30, "goals": 6 },
+        { "name": "Mikel Oyarzabal", "position": "FW", "age": 29, "club": "Real Sociedad", "caps": 45, "goals": 14 }
+      ],
+      "matches": {
+        "friendly": [
+          { "date": "2026-03-28", "home_team": "Spain", "away_team": "Germany", "score": null, "competition": "Friendly", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-11-18", "home_team": "Spain", "away_team": "Turkey", "score": null, "competition": "Friendly", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-06-08", "home_team": "Portugal", "away_team": "Spain", "score": "2-2", "competition": "Nations League Final", "venue": "Munich", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-06-05", "home_team": "Germany", "away_team": "Spain", "score": "0-0", "competition": "Nations League SF", "venue": "Stuttgart", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-03-23", "home_team": "Spain", "away_team": "Netherlands", "score": "3-3", "competition": "Nations League QF", "venue": "Valencia", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } }
+        ],
+        "qualification": [
+          { "date": "2025-11-18", "home_team": "Spain", "away_team": "Turkey", "score": null, "competition": "World Cup Qualifier", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-11-15", "home_team": "Georgia", "away_team": "Spain", "score": null, "competition": "World Cup Qualifier", "venue": "Tbilisi", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-10-11", "home_team": "Spain", "away_team": "Georgia", "score": null, "competition": "World Cup Qualifier", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-10-08", "home_team": "Bulgaria", "away_team": "Spain", "score": null, "competition": "World Cup Qualifier", "venue": "Sofia", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-09-08", "home_team": "Turkey", "away_team": "Spain", "score": "0-6", "competition": "World Cup Qualifier", "venue": "Konya", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } }
+        ]
+      }
+    },
+    {
+      "team_name": "France",
+      "fifa_code": "FRA",
+      "continent": "UEFA",
+      "squad": [
+        { "name": "Mike Maignan", "position": "GK", "age": 30, "club": "AC Milan", "caps": 30, "goals": 0 },
+        { "name": "Jules Koundé", "position": "DF", "age": 27, "club": "Barcelona", "caps": 40, "goals": 1 },
+        { "name": "William Saliba", "position": "DF", "age": 24, "club": "Arsenal", "caps": 25, "goals": 0 },
+        { "name": "Dayot Upamecano", "position": "DF", "age": 27, "club": "Bayern Munich", "caps": 28, "goals": 0 },
+        { "name": "Theo Hernández", "position": "DF", "age": 28, "club": "Al-Hilal", "caps": 38, "goals": 3 },
+        { "name": "Aurélien Tchouaméni", "position": "MF", "age": 26, "club": "Real Madrid", "caps": 40, "goals": 3 },
+        { "name": "Eduardo Camavinga", "position": "MF", "age": 23, "club": "Real Madrid", "caps": 25, "goals": 0 },
+        { "name": "Kylian Mbappé", "position": "FW", "age": 27, "club": "Real Madrid", "caps": 95, "goals": 51 },
+        { "name": "Ousmane Dembélé", "position": "FW", "age": 28, "club": "Paris Saint-Germain", "caps": 55, "goals": 6 },
+        { "name": "Michael Olise", "position": "FW", "age": 24, "club": "Bayern Munich", "caps": 12, "goals": 3 },
+        { "name": "Marcus Thuram", "position": "FW", "age": 28, "club": "Inter", "caps": 30, "goals": 4 }
+      ],
+      "matches": {
+        "friendly": [
+          { "date": "2026-03-27", "home_team": "France", "away_team": "Croatia", "score": null, "competition": "Friendly", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-06-06", "home_team": "Germany", "away_team": "France", "score": "0-2", "competition": "Nations League 3rd place", "venue": "Stuttgart", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-06-05", "home_team": "Spain", "away_team": "France", "score": "5-4", "competition": "Nations League SF", "venue": "Stuttgart", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-03-23", "home_team": "France", "away_team": "Croatia", "score": "2-0", "competition": "Nations League QF", "venue": "Saint-Denis", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-03-20", "home_team": "Croatia", "away_team": "France", "score": "2-0", "competition": "Nations League QF", "venue": "Split", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } }
+        ],
+        "qualification": [
+          { "date": "2025-11-15", "home_team": "France", "away_team": "Ukraine", "score": null, "competition": "World Cup Qualifier", "venue": "Saint-Denis", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-11-13", "home_team": "Azerbaijan", "away_team": "France", "score": null, "competition": "World Cup Qualifier", "venue": "Baku", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-10-13", "home_team": "France", "away_team": "Iceland", "score": null, "competition": "World Cup Qualifier", "venue": "Paris", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-10-10", "home_team": "France", "away_team": "Azerbaijan", "score": null, "competition": "World Cup Qualifier", "venue": "Paris", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-09-09", "home_team": "Iceland", "away_team": "France", "score": null, "competition": "World Cup Qualifier", "venue": "Reykjavik", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } }
+        ]
+      }
+    },
+    {
+      "team_name": "Netherlands",
+      "fifa_code": "NED",
+      "continent": "UEFA",
+      "squad": [
+        { "name": "Bart Verbruggen", "position": "GK", "age": 23, "club": "Brighton", "caps": 20, "goals": 0 },
+        { "name": "Denzel Dumfries", "position": "DF", "age": 29, "club": "Inter", "caps": 55, "goals": 9 },
+        { "name": "Virgil van Dijk", "position": "DF", "age": 34, "club": "Liverpool", "caps": 80, "goals": 9 },
+        { "name": "Matthijs de Ligt", "position": "DF", "age": 26, "club": "Manchester United", "caps": 50, "goals": 3 },
+        { "name": "Nathan Aké", "position": "DF", "age": 30, "club": "Manchester City", "caps": 40, "goals": 2 },
+        { "name": "Frenkie de Jong", "position": "MF", "age": 28, "club": "Barcelona", "caps": 60, "goals": 3 },
+        { "name": "Tijjani Reijnders", "position": "MF", "age": 27, "club": "Manchester City", "caps": 22, "goals": 4 },
+        { "name": "Cody Gakpo", "position": "FW", "age": 26, "club": "Liverpool", "caps": 35, "goals": 13 },
+        { "name": "Xavi Simons", "position": "FW", "age": 22, "club": "Tottenham", "caps": 30, "goals": 4 },
+        { "name": "Memphis Depay", "position": "FW", "age": 32, "club": "Corinthians", "caps": 105, "goals": 53 },
+        { "name": "Donyell Malen", "position": "FW", "age": 27, "club": "Aston Villa", "caps": 35, "goals": 9 }
+      ],
+      "matches": {
+        "friendly": [
+          { "date": "2026-03-27", "home_team": "Netherlands", "away_team": "Scotland", "score": null, "competition": "Friendly", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-06-09", "home_team": "Netherlands", "away_team": "Finland", "score": null, "competition": "Friendly", "venue": "Groningen", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-03-23", "home_team": "Spain", "away_team": "Netherlands", "score": "3-3", "competition": "Nations League QF", "venue": "Valencia", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-03-20", "home_team": "Netherlands", "away_team": "Spain", "score": "2-2", "competition": "Nations League QF", "venue": "Rotterdam", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2024-11-18", "home_team": "Netherlands", "away_team": "Bosnia", "score": null, "competition": "Nations League", "venue": "Amsterdam", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } }
+        ],
+        "qualification": [
+          { "date": "2025-11-17", "home_team": "Netherlands", "away_team": "Lithuania", "score": null, "competition": "World Cup Qualifier", "venue": "Amsterdam", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-11-14", "home_team": "Poland", "away_team": "Netherlands", "score": null, "competition": "World Cup Qualifier", "venue": "Warsaw", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-10-12", "home_team": "Netherlands", "away_team": "Finland", "score": null, "competition": "World Cup Qualifier", "venue": "Amsterdam", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-10-09", "home_team": "Malta", "away_team": "Netherlands", "score": null, "competition": "World Cup Qualifier", "venue": "Ta' Qali", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-09-07", "home_team": "Lithuania", "away_team": "Netherlands", "score": null, "competition": "World Cup Qualifier", "venue": "Kaunas", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } }
+        ]
+      }
+    },
+    {
+      "team_name": "Morocco",
+      "fifa_code": "MAR",
+      "continent": "CAF",
+      "squad": [
+        { "name": "Yassine Bounou", "position": "GK", "age": 34, "club": "Al-Hilal", "caps": 75, "goals": 0 },
+        { "name": "Achraf Hakimi", "position": "DF", "age": 27, "club": "Paris Saint-Germain", "caps": 85, "goals": 11 },
+        { "name": "Noussair Mazraoui", "position": "DF", "age": 28, "club": "Manchester United", "caps": 35, "goals": 1 },
+        { "name": "Nayef Aguerd", "position": "DF", "age": 29, "club": "Real Sociedad", "caps": 45, "goals": 3 },
+        { "name": "Romain Saïss", "position": "DF", "age": 35, "club": "Al-Shabab", "caps": 80, "goals": 6 },
+        { "name": "Sofyan Amrabat", "position": "MF", "age": 29, "club": "Real Betis", "caps": 60, "goals": 1 },
+        { "name": "Azzedine Ounahi", "position": "MF", "age": 25, "club": "Girona", "caps": 35, "goals": 4 },
+        { "name": "Brahim Díaz", "position": "MF", "age": 26, "club": "Real Madrid", "caps": 20, "goals": 4 },
+        { "name": "Hakim Ziyech", "position": "FW", "age": 32, "club": "Al-Duhail", "caps": 60, "goals": 21 },
+        { "name": "Youssef En-Nesyri", "position": "FW", "age": 28, "club": "Fenerbahçe", "caps": 80, "goals": 23 },
+        { "name": "Brahim Díaz", "position": "FW", "age": 26, "club": "Real Madrid", "caps": 20, "goals": 4 }
+      ],
+      "matches": {
+        "friendly": [
+          { "date": "2025-11-18", "home_team": "Morocco", "away_team": "Uganda", "score": null, "competition": "Friendly", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-10-14", "home_team": "Morocco", "away_team": "Bahrain", "score": null, "competition": "Friendly", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-06-06", "home_team": "Morocco", "away_team": "Tunisia", "score": null, "competition": "Friendly", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-03-28", "home_team": "Morocco", "away_team": "Tanzania", "score": null, "competition": "Friendly", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2024-11-18", "home_team": "Morocco", "away_team": "Lesotho", "score": null, "competition": "Friendly", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } }
+        ],
+        "qualification": [
+          { "date": "2025-10-14", "home_team": "Morocco", "away_team": "Congo", "score": null, "competition": "World Cup Qualifier", "venue": "Rabat", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-10-10", "home_team": "Niger", "away_team": "Morocco", "score": null, "competition": "World Cup Qualifier", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-09-09", "home_team": "Morocco", "away_team": "Zambia", "score": null, "competition": "World Cup Qualifier", "venue": "Rabat", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-09-05", "home_team": "Niger", "away_team": "Morocco", "score": null, "competition": "World Cup Qualifier", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-06-09", "home_team": "Morocco", "away_team": "Tanzania", "score": null, "competition": "World Cup Qualifier", "venue": "Rabat", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } }
+        ]
+      }
+    },
+    {
+      "team_name": "Japan",
+      "fifa_code": "JPN",
+      "continent": "AFC",
+      "squad": [
+        { "name": "Zion Suzuki", "position": "GK", "age": 23, "club": "Parma", "caps": 12, "goals": 0 },
+        { "name": "Hiroki Ito", "position": "DF", "age": 26, "club": "Bayern Munich", "caps": 25, "goals": 1 },
+        { "name": "Ko Itakura", "position": "DF", "age": 28, "club": "Ajax", "caps": 35, "goals": 2 },
+        { "name": "Takehiro Tomiyasu", "position": "DF", "age": 27, "club": "Arsenal", "caps": 40, "goals": 1 },
+        { "name": "Hiroki Sakai", "position": "DF", "age": 35, "club": "Urawa Reds", "caps": 50, "goals": 1 },
+        { "name": "Wataru Endo", "position": "MF", "age": 32, "club": "Liverpool", "caps": 65, "goals": 3 },
+        { "name": "Hidemasa Morita", "position": "MF", "age": 30, "club": "Sporting CP", "caps": 40, "goals": 2 },
+        { "name": "Takefusa Kubo", "position": "FW", "age": 24, "club": "Real Sociedad", "caps": 45, "goals": 5 },
+        { "name": "Kaoru Mitoma", "position": "FW", "age": 28, "club": "Brighton", "caps": 35, "goals": 8 },
+        { "name": "Daizen Maeda", "position": "FW", "age": 28, "club": "Celtic", "caps": 30, "goals": 6 },
+        { "name": "Ayase Ueda", "position": "FW", "age": 27, "club": "Feyenoord", "caps": 30, "goals": 11 }
+      ],
+      "matches": {
+        "friendly": [
+          { "date": "2025-11-18", "home_team": "Japan", "away_team": "Bolivia", "score": null, "competition": "Friendly", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-11-14", "home_team": "Japan", "away_team": "Ghana", "score": null, "competition": "Friendly", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-10-14", "home_team": "Japan", "away_team": "Brazil", "score": "3-2", "competition": "Friendly", "venue": "Tokyo", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-10-10", "home_team": "Japan", "away_team": "Paraguay", "score": null, "competition": "Friendly", "venue": "Osaka", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-09-09", "home_team": "Japan", "away_team": "United States", "score": null, "competition": "Friendly", "venue": "Columbus", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } }
+        ],
+        "qualification": [
+          { "date": "2025-06-10", "home_team": "Japan", "away_team": "Indonesia", "score": "6-0", "competition": "World Cup Qualifier", "venue": "Suita", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-06-05", "home_team": "Australia", "away_team": "Japan", "score": "0-1", "competition": "World Cup Qualifier", "venue": "Perth", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-03-25", "home_team": "Japan", "away_team": "Saudi Arabia", "score": null, "competition": "World Cup Qualifier", "venue": "Saitama", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-03-20", "home_team": "Japan", "away_team": "Bahrain", "score": "2-0", "competition": "World Cup Qualifier", "venue": "Saitama", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2024-11-19", "home_team": "Japan", "away_team": "China", "score": "3-1", "competition": "World Cup Qualifier", "venue": "Xiamen", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } }
+        ]
+      }
+    },
+    {
+      "team_name": "England",
+      "fifa_code": "ENG",
+      "continent": "UEFA",
+      "squad": [
+        { "name": "Jordan Pickford", "position": "GK", "age": 31, "club": "Everton", "caps": 75, "goals": 0 },
+        { "name": "Reece James", "position": "DF", "age": 26, "club": "Chelsea", "caps": 20, "goals": 0 },
+        { "name": "John Stones", "position": "DF", "age": 31, "club": "Manchester City", "caps": 75, "goals": 3 },
+        { "name": "Marc Guéhi", "position": "DF", "age": 25, "club": "Crystal Palace", "caps": 25, "goals": 0 },
+        { "name": "Myles Lewis-Skelly", "position": "DF", "age": 19, "club": "Arsenal", "caps": 6, "goals": 1 },
+        { "name": "Declan Rice", "position": "MF", "age": 27, "club": "Arsenal", "caps": 65, "goals": 5 },
+        { "name": "Jude Bellingham", "position": "MF", "age": 22, "club": "Real Madrid", "caps": 45, "goals": 6 },
+        { "name": "Cole Palmer", "position": "MF", "age": 23, "club": "Chelsea", "caps": 18, "goals": 3 },
+        { "name": "Bukayo Saka", "position": "FW", "age": 24, "club": "Arsenal", "caps": 45, "goals": 13 },
+        { "name": "Harry Kane", "position": "FW", "age": 32, "club": "Bayern Munich", "caps": 108, "goals": 74 },
+        { "name": "Phil Foden", "position": "FW", "age": 25, "club": "Manchester City", "caps": 45, "goals": 5 }
+      ],
+      "matches": {
+        "friendly": [
+          { "date": "2026-03-27", "home_team": "England", "away_team": "Brazil", "score": null, "competition": "Friendly", "venue": "London", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-11-18", "home_team": "England", "away_team": "Wales", "score": null, "competition": "Friendly", "venue": "London", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-06-07", "home_team": "England", "away_team": "Senegal", "score": "1-3", "competition": "Friendly", "venue": "Nottingham", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-06-03", "home_team": "England", "away_team": "Andorra", "score": null, "competition": "Friendly", "venue": "Barcelona", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2024-11-17", "home_team": "England", "away_team": "Ireland", "score": "5-0", "competition": "Nations League", "venue": "London", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } }
+        ],
+        "qualification": [
+          { "date": "2025-11-16", "home_team": "England", "away_team": "Albania", "score": null, "competition": "World Cup Qualifier", "venue": "London", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-11-13", "home_team": "Serbia", "away_team": "England", "score": null, "competition": "World Cup Qualifier", "venue": "Belgrade", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-10-14", "home_team": "England", "away_team": "Latvia", "score": null, "competition": "World Cup Qualifier", "venue": "London", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-10-11", "home_team": "England", "away_team": "Wales", "score": null, "competition": "World Cup Qualifier", "venue": "London", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-09-09", "home_team": "Serbia", "away_team": "England", "score": "0-5", "competition": "World Cup Qualifier", "venue": "Belgrade", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } }
+        ]
+      }
+    },
+    {
+      "team_name": "Portugal",
+      "fifa_code": "POR",
+      "continent": "UEFA",
+      "squad": [
+        { "name": "Diogo Costa", "position": "GK", "age": 26, "club": "Porto", "caps": 30, "goals": 0 },
+        { "name": "João Cancelo", "position": "DF", "age": 31, "club": "Al-Hilal", "caps": 60, "goals": 10 },
+        { "name": "Rúben Dias", "position": "DF", "age": 28, "club": "Manchester City", "caps": 65, "goals": 2 },
+        { "name": "Gonçalo Inácio", "position": "DF", "age": 24, "club": "Sporting CP", "caps": 20, "goals": 1 },
+        { "name": "Nuno Mendes", "position": "DF", "age": 23, "club": "Paris Saint-Germain", "caps": 30, "goals": 2 },
+        { "name": "Vitinha", "position": "MF", "age": 26, "club": "Paris Saint-Germain", "caps": 30, "goals": 2 },
+        { "name": "Bruno Fernandes", "position": "MF", "age": 31, "club": "Manchester United", "caps": 80, "goals": 27 },
+        { "name": "Bernardo Silva", "position": "MF", "age": 31, "club": "Manchester City", "caps": 100, "goals": 12 },
+        { "name": "Rafael Leão", "position": "FW", "age": 26, "club": "AC Milan", "caps": 40, "goals": 6 },
+        { "name": "Cristiano Ronaldo", "position": "FW", "age": 41, "club": "Al-Nassr", "caps": 222, "goals": 138 },
+        { "name": "Pedro Neto", "position": "FW", "age": 25, "club": "Chelsea", "caps": 25, "goals": 3 }
+      ],
+      "matches": {
+        "friendly": [
+          { "date": "2026-03-27", "home_team": "Portugal", "away_team": "Sweden", "score": null, "competition": "Friendly", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-06-08", "home_team": "Portugal", "away_team": "Spain", "score": "2-2", "competition": "Nations League Final", "venue": "Munich", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-06-04", "home_team": "Germany", "away_team": "Portugal", "score": "1-2", "competition": "Nations League SF", "venue": "Munich", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-03-23", "home_team": "Portugal", "away_team": "Denmark", "score": "5-2", "competition": "Nations League QF", "venue": "Lisbon", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-03-20", "home_team": "Denmark", "away_team": "Portugal", "score": "1-0", "competition": "Nations League QF", "venue": "Copenhagen", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } }
+        ],
+        "qualification": [
+          { "date": "2025-11-16", "home_team": "Portugal", "away_team": "Armenia", "score": null, "competition": "World Cup Qualifier", "venue": "Porto", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-11-13", "home_team": "Ireland", "away_team": "Portugal", "score": null, "competition": "World Cup Qualifier", "venue": "Dublin", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-10-13", "home_team": "Portugal", "away_team": "Hungary", "score": null, "competition": "World Cup Qualifier", "venue": "Lisbon", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-10-11", "home_team": "Portugal", "away_team": "Ireland", "score": null, "competition": "World Cup Qualifier", "venue": "Lisbon", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-09-06", "home_team": "Armenia", "away_team": "Portugal", "score": "0-5", "competition": "World Cup Qualifier", "venue": "Yerevan", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } }
+        ]
+      }
+    },
+    {
+      "team_name": "Tunisia",
+      "fifa_code": "TUN",
+      "continent": "CAF",
+      "squad": [
+        { "name": "Aymen Dahmen", "position": "GK", "age": 28, "club": "CS Sfaxien", "caps": 20, "goals": 0 },
+        { "name": "Mohamed Dräger", "position": "DF", "age": 29, "club": "FC Lugano", "caps": 40, "goals": 1 },
+        { "name": "Yassine Meriah", "position": "DF", "age": 32, "club": "Espérance", "caps": 60, "goals": 3 },
+        { "name": "Montassar Talbi", "position": "DF", "age": 27, "club": "Lyon", "caps": 35, "goals": 2 },
+        { "name": "Ali Abdi", "position": "DF", "age": 32, "club": "Nice", "caps": 25, "goals": 0 },
+        { "name": "Aïssa Laïdouni", "position": "MF", "age": 29, "club": "Al-Sadd", "caps": 45, "goals": 3 },
+        { "name": "Ellyes Skhiri", "position": "MF", "age": 30, "club": "Eintracht Frankfurt", "caps": 60, "goals": 4 },
+        { "name": "Hannibal Mejbri", "position": "MF", "age": 23, "club": "Burnley", "caps": 30, "goals": 1 },
+        { "name": "Youssef Msakni", "position": "FW", "age": 35, "club": "Al-Arabi", "caps": 90, "goals": 20 },
+        { "name": "Naïm Sliti", "position": "FW", "age": 33, "club": "Al-Duhail", "caps": 65, "goals": 12 },
+        { "name": "Elias Achouri", "position": "FW", "age": 26, "club": "Copenhagen", "caps": 20, "goals": 4 }
+      ],
+      "matches": {
+        "friendly": [
+          { "date": "2025-11-18", "home_team": "Brazil", "away_team": "Tunisia", "score": null, "competition": "Friendly", "venue": "Lille", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-10-14", "home_team": "Tunisia", "away_team": "Jordan", "score": null, "competition": "Friendly", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-06-06", "home_team": "Morocco", "away_team": "Tunisia", "score": null, "competition": "Friendly", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-03-25", "home_team": "Tunisia", "away_team": "Gabon", "score": null, "competition": "Friendly", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2024-11-18", "home_team": "Tunisia", "away_team": "Equatorial Guinea", "score": null, "competition": "Friendly", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } }
+        ],
+        "qualification": [
+          { "date": "2025-10-13", "home_team": "Tunisia", "away_team": "Namibia", "score": null, "competition": "World Cup Qualifier", "venue": "Radès", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-10-09", "home_team": "São Tomé", "away_team": "Tunisia", "score": null, "competition": "World Cup Qualifier", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-09-08", "home_team": "Tunisia", "away_team": "Liberia", "score": null, "competition": "World Cup Qualifier", "venue": "Radès", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-09-05", "home_team": "Tunisia", "away_team": "Equatorial Guinea", "score": null, "competition": "World Cup Qualifier", "venue": "Radès", "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } },
+          { "date": "2025-06-09", "home_team": "Malawi", "away_team": "Tunisia", "score": null, "competition": "World Cup Qualifier", "venue": null, "goalscorers": [], "stats": { "possession": null, "shots": null, "shots_on_target": null, "xG": null } }
+        ]
+      }
+    }
+  ]
+}
