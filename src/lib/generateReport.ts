@@ -1,5 +1,6 @@
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
+import { BRAND_LOGO_PNG } from './brandLogo';
 
 interface TeamData {
   id: string;
@@ -64,16 +65,26 @@ const PAGE_HEIGHT = 297;
 const MARGIN = 20;
 const CONTENT_WIDTH = PAGE_WIDTH - MARGIN * 2;
 
+function safeAddLogo(doc: jsPDF, x: number, y: number, w: number, h: number) {
+  try {
+    doc.addImage(BRAND_LOGO_PNG, 'PNG', x, y, w, h);
+  } catch (e) {
+    console.error('Logo render failed:', e);
+  }
+}
+
 function addFooter(doc: jsPDF, date: string) {
   const pageCount = doc.getNumberOfPages();
   for (let i = 1; i <= pageCount; i++) {
     doc.setPage(i);
+    if (i === 1) continue; // cover page has its own branding
     doc.setDrawColor(...COLORS.primary);
     doc.setLineWidth(0.3);
     doc.line(MARGIN, PAGE_HEIGHT - 15, PAGE_WIDTH - MARGIN, PAGE_HEIGHT - 15);
+    safeAddLogo(doc, MARGIN, PAGE_HEIGHT - 13.5, 5, 5);
     doc.setFontSize(7);
     doc.setTextColor(...COLORS.muted);
-    doc.text('Confidential — Tactivision.ai', MARGIN, PAGE_HEIGHT - 10);
+    doc.text('Confidential — Tactivision.ai', MARGIN + 7, PAGE_HEIGHT - 10);
     doc.text(date, PAGE_WIDTH / 2, PAGE_HEIGHT - 10, { align: 'center' });
     doc.text(`Page ${i} of ${pageCount}`, PAGE_WIDTH - MARGIN, PAGE_HEIGHT - 10, { align: 'right' });
   }
@@ -88,36 +99,38 @@ function addCoverPage(doc: jsPDF, teamData: TeamData, date: string) {
   doc.setFillColor(...COLORS.primary);
   doc.rect(0, 0, PAGE_WIDTH, 4, 'F');
 
-  // Branding
-  doc.setFontSize(10);
+  // Brand logo + wordmark
+  safeAddLogo(doc, MARGIN, 30, 16, 16);
+
+  doc.setFontSize(13);
   doc.setTextColor(...COLORS.primary);
   doc.setFont('helvetica', 'bold');
-  doc.text('TACTIVISION.AI', MARGIN, 40);
+  doc.text('TACTIVISION.AI', MARGIN + 20, 38);
 
   doc.setFontSize(8);
   doc.setTextColor(...COLORS.muted);
   doc.setFont('helvetica', 'normal');
-  doc.text('OPPOSITION ANALYSIS REPORT', MARGIN, 48);
+  doc.text('OPPOSITION ANALYSIS REPORT', MARGIN + 20, 44);
 
   // Divider
   doc.setDrawColor(...COLORS.primary);
   doc.setLineWidth(0.8);
-  doc.line(MARGIN, 55, MARGIN + 50, 55);
+  doc.line(MARGIN, 56, MARGIN + 50, 56);
 
   // Team name
   doc.setFontSize(36);
   doc.setTextColor(...COLORS.white);
   doc.setFont('helvetica', 'bold');
-  doc.text(teamData.name.toUpperCase(), MARGIN, 85);
+  doc.text(teamData.name.toUpperCase(), MARGIN, 88);
 
   // Details
   doc.setFontSize(14);
   doc.setTextColor(...COLORS.muted);
   doc.setFont('helvetica', 'normal');
-  doc.text(teamData.league, MARGIN, 98);
+  doc.text(teamData.league, MARGIN, 101);
 
   doc.setFontSize(11);
-  let y = 115;
+  let y = 118;
   const details = [
     ['Formation', teamData.formation],
     ['Style', teamData.style],
@@ -131,10 +144,27 @@ function addCoverPage(doc: jsPDF, teamData: TeamData, date: string) {
     y += 8;
   });
 
-  // Date
+  // Prepared-by credit block
+  doc.setDrawColor(...COLORS.primary);
+  doc.setLineWidth(0.4);
+  doc.line(MARGIN, PAGE_HEIGHT - 52, MARGIN + 50, PAGE_HEIGHT - 52);
+
+  doc.setFontSize(8);
+  doc.setTextColor(...COLORS.muted);
+  doc.setFont('helvetica', 'normal');
+  doc.text('PREPARED BY', MARGIN, PAGE_HEIGHT - 46);
+  doc.setFontSize(11);
+  doc.setTextColor(...COLORS.white);
+  doc.setFont('helvetica', 'bold');
+  doc.text('Operations Analyst — Tactivision.ai', MARGIN, PAGE_HEIGHT - 40);
+
   doc.setFontSize(10);
   doc.setTextColor(...COLORS.muted);
-  doc.text(`Report Generated: ${date}`, MARGIN, PAGE_HEIGHT - 40);
+  doc.setFont('helvetica', 'normal');
+  doc.text(`Report Generated: ${date}`, MARGIN, PAGE_HEIGHT - 33);
+
+  // Watermark logo (bottom-right, subtle)
+  safeAddLogo(doc, PAGE_WIDTH - MARGIN - 55, PAGE_HEIGHT - 95, 55, 55);
 
   // Bottom accent
   doc.setFillColor(...COLORS.primary);
