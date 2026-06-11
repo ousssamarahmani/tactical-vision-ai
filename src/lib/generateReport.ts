@@ -65,16 +65,26 @@ const PAGE_HEIGHT = 297;
 const MARGIN = 20;
 const CONTENT_WIDTH = PAGE_WIDTH - MARGIN * 2;
 
+function safeAddLogo(doc: jsPDF, x: number, y: number, w: number, h: number) {
+  try {
+    doc.addImage(BRAND_LOGO_PNG, 'PNG', x, y, w, h);
+  } catch (e) {
+    console.error('Logo render failed:', e);
+  }
+}
+
 function addFooter(doc: jsPDF, date: string) {
   const pageCount = doc.getNumberOfPages();
   for (let i = 1; i <= pageCount; i++) {
     doc.setPage(i);
+    if (i === 1) continue; // cover page has its own branding
     doc.setDrawColor(...COLORS.primary);
     doc.setLineWidth(0.3);
     doc.line(MARGIN, PAGE_HEIGHT - 15, PAGE_WIDTH - MARGIN, PAGE_HEIGHT - 15);
+    safeAddLogo(doc, MARGIN, PAGE_HEIGHT - 13.5, 5, 5);
     doc.setFontSize(7);
     doc.setTextColor(...COLORS.muted);
-    doc.text('Confidential — Tactivision.ai', MARGIN, PAGE_HEIGHT - 10);
+    doc.text('Confidential — Tactivision.ai', MARGIN + 7, PAGE_HEIGHT - 10);
     doc.text(date, PAGE_WIDTH / 2, PAGE_HEIGHT - 10, { align: 'center' });
     doc.text(`Page ${i} of ${pageCount}`, PAGE_WIDTH - MARGIN, PAGE_HEIGHT - 10, { align: 'right' });
   }
