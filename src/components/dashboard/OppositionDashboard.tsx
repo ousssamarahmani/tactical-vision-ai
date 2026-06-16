@@ -11,7 +11,10 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Users, Swords, TrendingUp, Target, Download, FileText, Loader2, BookOpen } from 'lucide-react';
 import matchesData from '@/data/matches.json';
+import { internationalMatches } from '@/lib/internationalTeams';
 import { generateReport } from '@/lib/generateReport';
+
+const allMatches = [...matchesData, ...internationalMatches];
 
 interface TeamData {
   id: string;
