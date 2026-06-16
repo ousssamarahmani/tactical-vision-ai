@@ -95,7 +95,14 @@ export default function Index() {
                     <SelectValue placeholder="Choose opponent..." />
                   </SelectTrigger>
                   <SelectContent>
+                    <div className="px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Clubs</div>
                     {teamsData.map(team => (
+                      <SelectItem key={team.id} value={team.id}>
+                        {team.name} — {team.league}
+                      </SelectItem>
+                    ))}
+                    <div className="px-2 py-1 mt-1 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">International Teams</div>
+                    {internationalTeams.map(team => (
                       <SelectItem key={team.id} value={team.id}>
                         {team.name} — {team.league}
                       </SelectItem>
