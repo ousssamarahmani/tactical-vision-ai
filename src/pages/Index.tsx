@@ -32,7 +32,7 @@ export default function Index() {
   const [activeTab, setActiveTab] = useState<string>('dashboard');
   const { messages, status, error, analyze, reset, ragSources, thinking } = useOppositionAnalyst();
 
-  const currentTeam = teamsData.find(t => t.id === selectedTeam);
+  const currentTeam = allTeams.find(t => t.id === selectedTeam);
 
   const handleSubmit = () => {
     if (!input.trim()) return;
