@@ -62,7 +62,7 @@ function SectionHeader({ icon: Icon, title, subtitle }: { icon: React.ElementTyp
 export function OppositionDashboard({ teamData }: OppositionDashboardProps) {
   const [exportingType, setExportingType] = useState<'summary' | 'detailed' | null>(null);
 
-  const teamMatches = matchesData.filter(
+  const teamMatches = allMatches.filter(
     m => m.home_team === teamData.id || m.away_team === teamData.id
   );
 
