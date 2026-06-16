@@ -11,7 +11,10 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Users, Swords, TrendingUp, Target, Download, FileText, Loader2, BookOpen } from 'lucide-react';
 import matchesData from '@/data/matches.json';
+import { internationalMatches } from '@/lib/internationalTeams';
 import { generateReport } from '@/lib/generateReport';
+
+const allMatches = [...matchesData, ...internationalMatches];
 
 interface TeamData {
   id: string;
@@ -59,7 +62,7 @@ function SectionHeader({ icon: Icon, title, subtitle }: { icon: React.ElementTyp
 export function OppositionDashboard({ teamData }: OppositionDashboardProps) {
   const [exportingType, setExportingType] = useState<'summary' | 'detailed' | null>(null);
 
-  const teamMatches = matchesData.filter(
+  const teamMatches = allMatches.filter(
     m => m.home_team === teamData.id || m.away_team === teamData.id
   );
 
@@ -84,7 +87,7 @@ export function OppositionDashboard({ teamData }: OppositionDashboardProps) {
     setExportingType(type);
     try {
       await new Promise(resolve => setTimeout(resolve, 100));
-      generateReport(teamData as any, matchesData as any, type);
+      generateReport(teamData as any, allMatches as any, type);
     } catch (err) {
       console.error('PDF export failed:', err);
     } finally {
