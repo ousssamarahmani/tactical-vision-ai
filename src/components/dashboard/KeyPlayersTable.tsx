@@ -8,6 +8,7 @@ interface KeyPlayersTableProps {
     name: string;
     position: string;
     number: number;
+    club?: string;
     strengths: string[];
     weaknesses: string[];
   }>;
