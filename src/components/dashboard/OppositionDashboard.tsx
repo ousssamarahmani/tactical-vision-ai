@@ -87,7 +87,7 @@ export function OppositionDashboard({ teamData }: OppositionDashboardProps) {
     setExportingType(type);
     try {
       await new Promise(resolve => setTimeout(resolve, 100));
-      generateReport(teamData as any, matchesData as any, type);
+      generateReport(teamData as any, allMatches as any, type);
     } catch (err) {
       console.error('PDF export failed:', err);
     } finally {
