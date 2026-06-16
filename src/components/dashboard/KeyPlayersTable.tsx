@@ -31,6 +31,7 @@ export function KeyPlayersTable({ players }: KeyPlayersTableProps) {
               <TableHead className="text-[10px] uppercase tracking-wider w-10 font-bold">#</TableHead>
               <TableHead className="text-[10px] uppercase tracking-wider font-bold">Player</TableHead>
               <TableHead className="text-[10px] uppercase tracking-wider font-bold">Position</TableHead>
+              <TableHead className="text-[10px] uppercase tracking-wider hidden md:table-cell font-bold">Club</TableHead>
               <TableHead className="text-[10px] uppercase tracking-wider hidden sm:table-cell font-bold">Strengths</TableHead>
               <TableHead className="text-[10px] uppercase tracking-wider hidden sm:table-cell font-bold">Weaknesses</TableHead>
             </TableRow>
