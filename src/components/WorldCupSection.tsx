@@ -3,21 +3,30 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Globe, Trophy, Search, Users, CalendarDays, ExternalLink } from 'lucide-react';
+import { Globe, Trophy, Search, Users, CalendarDays, ExternalLink, MapPin, ListOrdered } from 'lucide-react';
 import worldCup from '@/data/worldcup2026.json';
 
 type Player = { name: string; position: string; club: string };
-type Match = { date: string; opponent: string; competition: string; result: string; score: string };
+type Match = { date: string; opponent: string; competition: string; result: string; score: string; venue?: string };
+type Standing = { mp: number; w: number; d: number; l: number; gf: number; ga: number; gd: number; pts: number };
 type Team = {
-  name: string; code: string; confederation: string; fifaRank: number;
-  manager: string; squad: Player[]; lastMatches: Match[];
+  id: string; name: string; code: string; flag?: string; iso2?: string;
+  confederation: string; fifaRank: number | null; manager: string;
+  standing: Standing; squad: Player[]; lastMatches: Match[];
 };
 type Group = { group: string; teams: Team[] };
+type Fixture = {
+  id: string; home: string; away: string; homeScore: number | null; awayScore: number | null;
+  group: string; matchday: string; date: string; stadium: string; city: string;
+  finished: boolean; type: string; homeScorers: string[]; awayScorers: string[];
+};
+type Stadium = { id: string; name: string; city: string; country: string; capacity: number; region: string };
 
 const data = worldCup as unknown as {
   tournament: string; host: string; source: string; sourceUrl: string;
-  snapshotDate: string; groups: Group[];
+  snapshotDate: string; stadiums: Stadium[]; groups: Group[]; matches: Fixture[];
 };
 
 const resultColor = (r: string) =>
@@ -42,42 +51,45 @@ function TeamDialog({ team, onClose }: { team: Team | null; onClose: () => void 
           <>
             <DialogHeader>
               <DialogTitle className="flex items-center gap-2 text-base">
+                {team.flag && <img src={team.flag} alt={team.name} className="h-4 w-6 rounded-sm object-cover" />}
                 <span className="font-mono text-primary">{team.code}</span>
                 {team.name}
-                <Badge variant="secondary" className="text-[10px]">FIFA #{team.fifaRank}</Badge>
+                {team.fifaRank ? <Badge variant="secondary" className="text-[10px]">FIFA #{team.fifaRank}</Badge> : null}
               </DialogTitle>
               <p className="text-xs text-muted-foreground">
-                {team.confederation} · Manager: <span className="text-foreground font-medium">{team.manager}</span>
+                {team.confederation || 'FIFA'} · Manager: <span className="text-foreground font-medium">{team.manager}</span>
               </p>
             </DialogHeader>
 
-            {/* Last 6 matches */}
             <div className="space-y-2">
               <h3 className="text-[11px] font-bold uppercase tracking-[0.15em] text-muted-foreground flex items-center gap-1.5">
-                <CalendarDays className="h-3.5 w-3.5" /> Last 6 Matches
+                <CalendarDays className="h-3.5 w-3.5" /> Last {team.lastMatches.length || 0} Matches
               </h3>
-              <div className="rounded-lg border border-border/50 overflow-hidden">
-                <Table>
-                  <TableBody>
-                    {team.lastMatches.map((m, i) => (
-                      <TableRow key={i} className="border-border/20">
-                        <TableCell className="py-2 text-[11px] font-mono text-muted-foreground w-24">{m.date}</TableCell>
-                        <TableCell className="py-2 text-xs font-medium text-foreground">vs {m.opponent}</TableCell>
-                        <TableCell className="py-2 text-[10px] text-muted-foreground hidden sm:table-cell">{m.competition}</TableCell>
-                        <TableCell className="py-2 text-xs font-mono text-right">{m.score}</TableCell>
-                        <TableCell className="py-2 w-10 text-right">
-                          <span className={`inline-flex h-5 w-5 rounded text-[10px] font-bold items-center justify-center ${resultColor(m.result)}`}>
-                            {m.result}
-                          </span>
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </div>
+              {team.lastMatches.length ? (
+                <div className="rounded-lg border border-border/50 overflow-hidden">
+                  <Table>
+                    <TableBody>
+                      {team.lastMatches.map((m, i) => (
+                        <TableRow key={i} className="border-border/20">
+                          <TableCell className="py-2 text-[11px] font-mono text-muted-foreground w-24">{m.date}</TableCell>
+                          <TableCell className="py-2 text-xs font-medium text-foreground">vs {m.opponent}</TableCell>
+                          <TableCell className="py-2 text-[10px] text-muted-foreground hidden sm:table-cell">{m.competition}</TableCell>
+                          <TableCell className="py-2 text-xs font-mono text-right">{m.score}</TableCell>
+                          <TableCell className="py-2 w-10 text-right">
+                            <span className={`inline-flex h-5 w-5 rounded text-[10px] font-bold items-center justify-center ${resultColor(m.result)}`}>
+                              {m.result}
+                            </span>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+              ) : (
+                <p className="text-xs text-muted-foreground">No matches played yet.</p>
+              )}
             </div>
 
-            {/* Squad */}
             <div className="space-y-2 mt-2">
               <h3 className="text-[11px] font-bold uppercase tracking-[0.15em] text-muted-foreground flex items-center gap-1.5">
                 <Users className="h-3.5 w-3.5" /> Current Squad ({team.squad.length})
@@ -105,6 +117,97 @@ function TeamDialog({ team, onClose }: { team: Team | null; onClose: () => void 
   );
 }
 
+function GroupsView({ groups, onSelect }: { groups: Group[]; onSelect: (t: Team) => void }) {
+  return (
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {groups.map((g) => (
+        <div key={g.group} className="rounded-lg border border-border/40 bg-background/30 overflow-hidden">
+          <div className="px-3 py-2 bg-muted/30 border-b border-border/40 flex items-center justify-between">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">Group {g.group}</span>
+            <span className="text-[9px] font-mono text-muted-foreground/60">P W D L · Pts</span>
+          </div>
+          <ul className="divide-y divide-border/20">
+            {g.teams.map((t) => (
+              <li key={t.code}>
+                <button
+                  onClick={() => onSelect(t)}
+                  className="w-full flex items-center justify-between gap-2 px-3 py-2 text-left hover:bg-muted/30 transition-colors"
+                >
+                  <span className="flex items-center gap-2 min-w-0">
+                    {t.flag && <img src={t.flag} alt="" className="h-3 w-5 rounded-[2px] object-cover shrink-0" />}
+                    <span className="text-[10px] font-mono text-primary w-9">{t.code}</span>
+                    <span className="text-xs font-medium text-foreground truncate">{t.name}</span>
+                  </span>
+                  <span className="flex items-center gap-1.5 shrink-0 font-mono text-[10px] text-muted-foreground">
+                    <span>{t.standing.w}-{t.standing.d}-{t.standing.l}</span>
+                    <span className="text-foreground font-bold w-4 text-right">{t.standing.pts}</span>
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function FixturesView({ matches }: { matches: Fixture[] }) {
+  const byDate = useMemo(() => {
+    const map = new Map<string, Fixture[]>();
+    for (const m of matches) {
+      const d = m.date.split(' ')[0];
+      if (!map.has(d)) map.set(d, []);
+      map.get(d)!.push(m);
+    }
+    return Array.from(map.entries()).sort((a, b) => new Date(a[0]).getTime() - new Date(b[0]).getTime());
+  }, [matches]);
+
+  return (
+    <div className="space-y-4 max-h-[480px] overflow-y-auto pr-1">
+      {byDate.map(([date, list]) => (
+        <div key={date}>
+          <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-1.5">{date}</p>
+          <div className="rounded-lg border border-border/40 overflow-hidden divide-y divide-border/20">
+            {list.map((m) => (
+              <div key={m.id} className="flex items-center gap-2 px-3 py-2 text-xs">
+                <span className="text-[9px] font-mono text-muted-foreground w-12 shrink-0">{m.type === 'group' ? `Grp ${m.group}` : m.type}</span>
+                <span className="flex-1 text-right font-medium text-foreground truncate">{m.home}</span>
+                <span className="font-mono font-bold w-12 text-center">
+                  {m.finished ? `${m.homeScore}-${m.awayScore}` : <span className="text-muted-foreground font-normal">vs</span>}
+                </span>
+                <span className="flex-1 font-medium text-foreground truncate">{m.away}</span>
+                <span className="hidden md:flex items-center gap-1 text-[9px] text-muted-foreground w-28 shrink-0 truncate">
+                  <MapPin className="h-2.5 w-2.5" />{m.city}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function StadiumsView({ stadiums }: { stadiums: Stadium[] }) {
+  return (
+    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      {stadiums.map((s) => (
+        <div key={s.id} className="rounded-lg border border-border/40 bg-background/30 p-3">
+          <p className="text-sm font-bold text-foreground">{s.name}</p>
+          <p className="text-xs text-muted-foreground flex items-center gap-1 mt-0.5">
+            <MapPin className="h-3 w-3" />{s.city}, {s.country}
+          </p>
+          <div className="flex items-center justify-between mt-2 text-[10px]">
+            <Badge variant="secondary" className="text-[9px]">{s.region}</Badge>
+            <span className="font-mono text-muted-foreground">{s.capacity.toLocaleString()} cap</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export function WorldCupSection() {
   const [query, setQuery] = useState('');
   const [active, setActive] = useState<Team | null>(null);
@@ -128,7 +231,7 @@ export function WorldCupSection() {
               {data.tournament}
             </CardTitle>
             <p className="text-xs text-muted-foreground mt-1 flex items-center gap-1.5">
-              <Globe className="h-3 w-3" /> {data.host} · 48 teams · 12 groups
+              <Globe className="h-3 w-3" /> {data.host} · 48 teams · 12 groups · {data.stadiums.length} stadiums
             </p>
           </div>
           <div className="relative w-full sm:w-56">
@@ -143,43 +246,29 @@ export function WorldCupSection() {
         </div>
       </CardHeader>
       <CardContent className="space-y-4">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredGroups.map((g) => (
-            <div key={g.group} className="rounded-lg border border-border/40 bg-background/30 overflow-hidden">
-              <div className="px-3 py-2 bg-muted/30 border-b border-border/40">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">Group {g.group}</span>
-              </div>
-              <ul className="divide-y divide-border/20">
-                {g.teams.map((t) => (
-                  <li key={t.code}>
-                    <button
-                      onClick={() => setActive(t)}
-                      className="w-full flex items-center justify-between gap-2 px-3 py-2 text-left hover:bg-muted/30 transition-colors"
-                    >
-                      <span className="flex items-center gap-2 min-w-0">
-                        <span className="text-[10px] font-mono text-primary w-8">{t.code}</span>
-                        <span className="text-xs font-medium text-foreground truncate">{t.name}</span>
-                      </span>
-                      <div className="flex items-center gap-1 shrink-0">
-                        {t.lastMatches.slice(0, 5).map((m, i) => (
-                          <span key={i} className={`h-3.5 w-3.5 rounded-sm text-[8px] font-bold flex items-center justify-center ${resultColor(m.result)}`}>
-                            {m.result}
-                          </span>
-                        ))}
-                      </div>
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+        <Tabs defaultValue="groups">
+          <TabsList className="grid w-full grid-cols-3 max-w-md">
+            <TabsTrigger value="groups" className="text-xs gap-1.5"><ListOrdered className="h-3.5 w-3.5" />Groups</TabsTrigger>
+            <TabsTrigger value="fixtures" className="text-xs gap-1.5"><CalendarDays className="h-3.5 w-3.5" />Fixtures</TabsTrigger>
+            <TabsTrigger value="stadiums" className="text-xs gap-1.5"><MapPin className="h-3.5 w-3.5" />Stadiums</TabsTrigger>
+          </TabsList>
+          <TabsContent value="groups" className="mt-4">
+            <GroupsView groups={filteredGroups} onSelect={setActive} />
+          </TabsContent>
+          <TabsContent value="fixtures" className="mt-4">
+            <FixturesView matches={data.matches} />
+          </TabsContent>
+          <TabsContent value="stadiums" className="mt-4">
+            <StadiumsView stadiums={data.stadiums} />
+          </TabsContent>
+        </Tabs>
         <p className="text-[10px] text-muted-foreground flex items-center gap-1.5 pt-1">
           <ExternalLink className="h-3 w-3" />
           {data.source} · snapshot {data.snapshotDate} ·{' '}
-          <a href={data.sourceUrl} target="_blank" rel="noreferrer" className="text-primary hover:underline">Sofascore</a>
+          <a href={data.sourceUrl} target="_blank" rel="noreferrer" className="text-primary hover:underline">worldcup26.ir</a>
         </p>
       </CardContent>
+      <TeamDialog team={active} onClose={() => setActive(null)} />
     </Card>
   );
 }
