@@ -44,6 +44,7 @@ export function KeyPlayersTable({ players }: KeyPlayersTableProps) {
                 <TableCell className="py-2.5">
                   <Badge variant="secondary" className="text-[10px] px-2 py-0.5 font-semibold">{p.position}</Badge>
                 </TableCell>
+                <TableCell className="hidden md:table-cell py-2.5 text-xs text-muted-foreground">{p.club ?? '—'}</TableCell>
                 <TableCell className="hidden sm:table-cell py-2.5">
                   <div className="flex flex-wrap gap-1">
                     {p.strengths.slice(0, 2).map((s, i) => (
