@@ -26,10 +26,10 @@ export function useOppositionAnalyst() {
     setMessages(prev => [...prev, userMsg]);
 
     const teamData = selectedTeamId
-      ? { selected: teamsData.find(t => t.id === selectedTeamId), all_teams: teamsData }
-      : teamsData;
+      ? { selected: allTeamsData.find(t => t.id === selectedTeamId), all_teams: allTeamsData }
+      : allTeamsData;
 
-    const matchData = matchesData;
+    const matchData = allMatchesData;
 
     let assistantContent = '';
 
