@@ -2,6 +2,10 @@ import { useState, useCallback } from 'react';
 import { streamAnalysis, type Msg, type RagSource, type ThinkingStep } from '@/lib/stream-chat';
 import teamsData from '@/data/teams.json';
 import matchesData from '@/data/matches.json';
+import { internationalTeams, internationalMatches } from '@/lib/internationalTeams';
+
+const allTeamsData = [...teamsData, ...internationalTeams];
+const allMatchesData = [...matchesData, ...internationalMatches];
 
 export type AgentStatus = 'idle' | 'thinking' | 'analyzing' | 'completed' | 'error';
 
