@@ -170,13 +170,47 @@ Deno.serve(async (req) => {
     const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
     if (!LOVABLE_API_KEY) throw new Error('LOVABLE_API_KEY is not configured');
 
+    // Detect whether the selected/analysed team is an international (national) side.
+    const selected = teamData?.selected ?? (teamData && !Array.isArray(teamData) ? teamData : null);
+    const isInternational = !!(
+      selected?.isInternational ||
+      (typeof selected?.id === 'string' && selected.id.startsWith('intl_')) ||
+      (typeof selected?.league === 'string' && /international/i.test(selected.league))
+    );
+
     // Build context from provided data
     let context = '';
-    if (teamData) {
-      context += `\n## Team Data (Source: Club scouting profiles)\n\`\`\`json\n${JSON.stringify(teamData, null, 2)}\n\`\`\`\n`;
-    }
-    if (matchData) {
-      context += `\n## Recent Match Data (Source: FBref / Football-Data.org)\n\`\`\`json\n${JSON.stringify(matchData, null, 2)}\n\`\`\`\n`;
+
+    if (isInternational) {
+      // For national teams, scope the analysis ONLY to international data.
+      // Strip club datasets so the model cannot leak club content.
+      const intlTeam = selected;
+      const intlMatches = Array.isArray(matchData)
+        ? matchData.filter((m: any) =>
+            m.home_team === intlTeam?.id || m.away_team === intlTeam?.id
+          )
+        : matchData;
+
+      context += `\n## INTERNATIONAL TEAM MODE — STRICT SCOPE\n` +
+        `You are analysing **${intlTeam?.name ?? 'a national team'}**, an INTERNATIONAL (national) side. ` +
+        `Base your analysis EXCLUSIVELY on the international team data and international fixtures below ` +
+        `(FIFA World Cup 2026 qualification and international friendlies). ` +
+        `Do NOT reference, name, compare to, or borrow patterns from any club team ` +
+        `(e.g. Manchester City, Real Madrid, Bayern, PSG, Liverpool, Arsenal, Barcelona) or any club competition. ` +
+        `You may mention a player's club ONLY to identify where a national-team player plies his trade — never to analyse the club itself. ` +
+        `If a metric is not present in the international data, state: "Insufficient international-match data to confirm this." Never fabricate club-derived numbers.\n`;
+
+      context += `\n## National Team Profile (Source: verified international squad & FIFA records)\n\`\`\`json\n${JSON.stringify(intlTeam, null, 2)}\n\`\`\`\n`;
+      if (intlMatches) {
+        context += `\n## International Match Data (Source: FIFA / UEFA — WC2026 qualifiers & friendlies)\n\`\`\`json\n${JSON.stringify(intlMatches, null, 2)}\n\`\`\`\n`;
+      }
+    } else {
+      if (teamData) {
+        context += `\n## Team Data (Source: Club scouting profiles)\n\`\`\`json\n${JSON.stringify(teamData, null, 2)}\n\`\`\`\n`;
+      }
+      if (matchData) {
+        context += `\n## Recent Match Data (Source: FBref / Football-Data.org)\n\`\`\`json\n${JSON.stringify(matchData, null, 2)}\n\`\`\`\n`;
+      }
     }
 
     // Reasoning trace — visible "thinking" steps streamed to the client
