@@ -331,8 +331,10 @@ Deno.serve(async (req) => {
     trace('Composing tactical prompt', 'merging team profile, matches, and sources');
     trace('Calling reasoning model', 'google/gemini-2.5-flash · streaming');
 
+    const INTERNATIONAL_DIRECTIVE = `\n\n## ACTIVE MODE: INTERNATIONAL OPPOSITION ANALYSIS\nThe selected opponent is a NATIONAL TEAM. Override any club-specific scope above. Specifically:\n- Ignore the "database covers 7 teams" club list and the Real Madrid / Bayern registered-squad sections — those are for club analysis only and MUST NOT appear in this report.\n- Use ONLY the international squad and international fixtures provided in Available Context.\n- Build the report from real match examples in the data: cite specific fixtures by opponent, scoreline, competition (WC2026 qualifier / friendly) and date.\n- Replace generic FBref/club citations with international sources (FIFA / UEFA match records). Only cite metrics that actually exist in the provided data.\n\n### Required report structure (international):\n1. **🎯 Tactical Summary** — national-team identity, likely formation, coaching philosophy, current form.\n2. **🧬 Tactical DNA** — the team's core identity distilled into 4–6 defining traits (build-up identity, pressing identity, transition identity, attacking width/penetration, set-piece identity, defensive block). Each trait must be grounded in the provided international fixtures.\n3. **📈 Match Examples** — walk through the most recent international matches in the data, what each revealed tactically, and recurring patterns across them.\n4. **💪 Strengths** and **🔓 Weaknesses & Exploitable Zones** — phase-based, from international data only.\n5. **⭐ Key Personnel — Threat Analysis** — squad players (club named only for identification), caps/goals where provided, neutralization plans.\n6. **🛡️ Recommended Match Strategy** — formation, pressing triggers, key matchups, phase plan.\n\nNever mention or analyse any club team. If you lack data for a section, say so explicitly rather than inventing it.`;
+
     const systemWithContext = context
-      ? `${SYSTEM_PROMPT}\n\n## Available Context\n${context}`
+      ? `${SYSTEM_PROMPT}\n\n## Available Context\n${context}${isInternational ? INTERNATIONAL_DIRECTIVE : ''}`
       : SYSTEM_PROMPT;
 
     const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
