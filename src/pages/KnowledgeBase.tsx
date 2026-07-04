@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { toast } from 'sonner';
-import { ingestPdf, ingestYoutube, listDocuments, fetchFootballContent, syncFootballStats, type RagDocument, type SyncStatsResult } from '@/lib/rag-api';
+import { ingestPdf, ingestYoutube, listDocuments, fetchFootballContent, syncFootballStats, ingestKaggleKernel, type RagDocument, type SyncStatsResult, type KaggleIngestResult } from '@/lib/rag-api';
 import { Upload, Youtube, FileText, Database, Loader2, CheckCircle, XCircle, ArrowLeft, RefreshCw, Globe, Rss, BarChart3 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -32,6 +32,11 @@ export default function KnowledgeBase() {
   // Stats sync
   const [syncing, setSyncing] = useState(false);
   const [syncResults, setSyncResults] = useState<SyncStatsResult[]>([]);
+
+  // Kaggle ingest
+  const [kaggleRef, setKaggleRef] = useState('devraai/fifa-wc-2026-match-analysis-outcome-prediction');
+  const [kaggleIngesting, setKaggleIngesting] = useState(false);
+  const [kaggleResults, setKaggleResults] = useState<KaggleIngestResult[]>([]);
 
   const [fetchError, setFetchError] = useState<string | null>(null);
 
@@ -144,6 +149,26 @@ export default function KnowledgeBase() {
     }
   };
 
+  const handleKaggleIngest = async () => {
+    setKaggleIngesting(true);
+    setKaggleResults([]);
+    try {
+      const result = await ingestKaggleKernel(kaggleRef.trim() || undefined, true);
+      if (result.success) {
+        const ingested = (result.results || []).filter(r => r.status === 'ingested').length;
+        toast.success(`Kaggle ingest complete: ${ingested} document(s)`);
+        setKaggleResults(result.results || []);
+        fetchDocs();
+      } else {
+        toast.error(result.error || 'Kaggle ingest failed');
+      }
+    } catch {
+      toast.error('Kaggle ingest failed');
+    } finally {
+      setKaggleIngesting(false);
+    }
+  };
+
   const sourceIcon = (type: string) => {
     switch (type) {
       case 'pdf': return <FileText className="h-4 w-4" />;
@@ -250,6 +275,48 @@ export default function KnowledgeBase() {
             )}
           </CardContent>
         </Card>
+
+        {/* Kaggle Ingest Card */}
+        <Card className="border-primary/30 bg-primary/5 backdrop-blur-sm">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-sm flex items-center gap-2">
+              <Database className="h-4 w-4 text-primary" />
+              Import Kaggle Analysis (kernel + dataset)
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <p className="text-xs text-muted-foreground">
+              Pulls a Kaggle notebook's analysis narrative, code, and any input/output datasets, then ingests them into the knowledge base. Enter a kernel ref as <code className="font-mono">owner/kernel-slug</code>.
+            </p>
+            <Input
+              value={kaggleRef}
+              onChange={(e) => setKaggleRef(e.target.value)}
+              placeholder="owner/kernel-slug"
+              className="font-mono text-xs"
+            />
+            <Button onClick={handleKaggleIngest} disabled={kaggleIngesting || !kaggleRef.trim()} className="w-full" variant="secondary">
+              {kaggleIngesting ? (
+                <><Loader2 className="h-4 w-4 mr-2 animate-spin" />Pulling & ingesting...</>
+              ) : (
+                <><Database className="h-4 w-4 mr-2" />Import from Kaggle</>
+              )}
+            </Button>
+            {kaggleResults.length > 0 && (
+              <div className="mt-3 space-y-1.5 max-h-56 overflow-y-auto">
+                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Import results:</p>
+                {kaggleResults.map((r, i) => (
+                  <div key={i} className="text-xs flex items-center justify-between gap-2 p-2 rounded bg-background/50 border border-border/30">
+                    <span className="font-medium text-foreground truncate">{r.part}</span>
+                    <span className={`text-xs ${r.status === 'ingested' ? 'text-primary' : 'text-muted-foreground'}`}>
+                      {r.status}{r.chunks ? ` · ${r.chunks} chunks` : ''}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
 
         {/* Manual Ingestion */}
         <Tabs defaultValue="pdf" className="w-full">

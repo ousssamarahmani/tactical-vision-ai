@@ -78,3 +78,16 @@ export async function syncFootballStats(): Promise<{ success: boolean; error?: s
   if (!resp.ok) return { success: false, error: data.error || 'Sync failed' };
   return { success: true, ...data };
 }
+
+export interface KaggleIngestResult { part: string; status: string; chunks?: number; error?: string; }
+
+export async function ingestKaggleKernel(ref?: string, force = false): Promise<{ success: boolean; error?: string; ref?: string; results?: KaggleIngestResult[] }> {
+  const resp = await fetch(`${FUNCTIONS_URL}/ingest-kaggle`, {
+    method: 'POST',
+    headers: { ...AUTH_HEADER, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ ...(ref ? { ref } : {}), force }),
+  });
+  const data = await resp.json();
+  if (!resp.ok) return { success: false, error: data.error || 'Kaggle ingest failed' };
+  return { success: true, ...data };
+}
