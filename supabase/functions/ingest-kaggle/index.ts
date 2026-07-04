@@ -81,10 +81,12 @@ Deno.serve(async (req) => {
 
   let userName = DEFAULT_USER;
   let kernelSlug = DEFAULT_SLUG;
+  let force = false;
   try {
     const body = await req.json().catch(() => ({}));
     if (body?.user_name) userName = String(body.user_name);
     if (body?.kernel_slug) kernelSlug = String(body.kernel_slug);
+    if (body?.force) force = true;
     if (body?.ref && String(body.ref).includes('/')) {
       const [u, s] = String(body.ref).split('/');
       userName = u; kernelSlug = s;
