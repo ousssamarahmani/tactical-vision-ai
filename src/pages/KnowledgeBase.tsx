@@ -33,6 +33,11 @@ export default function KnowledgeBase() {
   const [syncing, setSyncing] = useState(false);
   const [syncResults, setSyncResults] = useState<SyncStatsResult[]>([]);
 
+  // Kaggle ingest
+  const [kaggleRef, setKaggleRef] = useState('devraai/fifa-wc-2026-match-analysis-outcome-prediction');
+  const [kaggleIngesting, setKaggleIngesting] = useState(false);
+  const [kaggleResults, setKaggleResults] = useState<KaggleIngestResult[]>([]);
+
   const [fetchError, setFetchError] = useState<string | null>(null);
 
   const fetchDocs = useCallback(async () => {
