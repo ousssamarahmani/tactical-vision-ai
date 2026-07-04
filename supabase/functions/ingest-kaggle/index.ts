@@ -156,10 +156,44 @@ Deno.serve(async (req) => {
         const narrative = stripNotebook(data?.blob?.source ?? '');
         const title = `Kaggle: ${meta?.title ?? kernelSlug} — analysis`;
         const body = `# ${meta?.title ?? kernelSlug}\nAuthor: ${userName}\nSource: ${kernelUrl}\n\n${narrative.slice(0, 40000)}`;
-        await ingestDoc(title, kernelUrl, body, { part: 'notebook', kernel_title: meta?.title });
+        await ingestDoc(title, kernelUrl, body, { part: 'notebook', kernel_title: meta?.title, input_sources: inputSources });
       }
     } catch (e) {
       results.push({ part: 'notebook', status: 'error', error: e instanceof Error ? e.message : String(e) });
+    }
+
+    // 1b) Input dataset files referenced by the kernel (the source data)
+    for (const dref of datasetRefsFromNotebook) {
+      const [dOwner, dSlug] = dref.split('/');
+      if (!dOwner || !dSlug) continue;
+      try {
+        const listResp = await fetch(`${KAGGLE_API}/datasets/list/files/${dOwner}/${dSlug}`, { headers: kHeaders });
+        const listData = listResp.ok ? await listResp.json() : null;
+        const dsFiles: { name?: string; nameNullable?: string }[] = listData?.datasetFiles ?? listData?.files ?? [];
+        const sections: string[] = [];
+        for (const df of dsFiles.slice(0, 20)) {
+          const name = df.name ?? df.nameNullable;
+          if (!name) continue;
+          try {
+            const dl = await fetch(`${KAGGLE_API}/datasets/download/${dOwner}/${dSlug}?file_name=${encodeURIComponent(name)}`, { headers: kHeaders });
+            if (!dl.ok) { sections.push(`### ${name}\n_(download failed: ${dl.status})_`); continue; }
+            if (/\.csv$/i.test(name)) sections.push(csvToMarkdown(name, await dl.text()));
+            else if (/\.(json|txt|md)$/i.test(name)) sections.push(`### ${name}\n${(await dl.text()).slice(0, 8000)}`);
+            else sections.push(`### ${name}\n_(binary file — skipped)_`);
+          } catch (e) {
+            sections.push(`### ${name}\n_(error: ${e instanceof Error ? e.message : String(e)})_`);
+          }
+        }
+        if (sections.length) {
+          const dUrl = `https://www.kaggle.com/datasets/${dref}`;
+          const body = `# Input dataset ${dref} (${today})\nSource: ${dUrl}\n\n${sections.join('\n\n---\n\n')}`;
+          await ingestDoc(`Kaggle dataset: ${dref}`, dUrl, body, { part: 'input_dataset', dataset_ref: dref });
+        } else {
+          results.push({ part: `dataset ${dref}`, status: 'no readable files' });
+        }
+      } catch (e) {
+        results.push({ part: `dataset ${dref}`, status: 'error', error: e instanceof Error ? e.message : String(e) });
+      }
     }
 
     // 2) Kernel output files (data + results)
