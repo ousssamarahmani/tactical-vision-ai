@@ -135,7 +135,7 @@ Deno.serve(async (req) => {
     const { data: existing } = await supabase
       .from('rag_documents').select('id').eq('source_url', kernelUrl)
       .gte('created_at', today + 'T00:00:00Z').limit(1);
-    if (existing?.length) {
+    if (existing?.length && !force) {
       return new Response(JSON.stringify({ success: true, ref, status: 'skipped (already today)', results }), {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       });
