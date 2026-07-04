@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { toast } from 'sonner';
-import { ingestPdf, ingestYoutube, listDocuments, fetchFootballContent, syncFootballStats, type RagDocument, type SyncStatsResult } from '@/lib/rag-api';
+import { ingestPdf, ingestYoutube, listDocuments, fetchFootballContent, syncFootballStats, ingestKaggleKernel, type RagDocument, type SyncStatsResult, type KaggleIngestResult } from '@/lib/rag-api';
 import { Upload, Youtube, FileText, Database, Loader2, CheckCircle, XCircle, ArrowLeft, RefreshCw, Globe, Rss, BarChart3 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
