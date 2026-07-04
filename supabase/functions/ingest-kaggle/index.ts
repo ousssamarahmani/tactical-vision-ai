@@ -142,6 +142,7 @@ Deno.serve(async (req) => {
     }
 
     // 1) Notebook narrative + code (kernels pull)
+    let datasetRefsFromNotebook: string[] = [];
     try {
       const pull = await fetch(`${KAGGLE_API}/kernels/pull?user_name=${userName}&kernel_slug=${kernelSlug}`, { headers: kHeaders });
       if (!pull.ok) {
@@ -153,6 +154,7 @@ Deno.serve(async (req) => {
           ...(meta?.datasetDataSources ?? []),
           ...(meta?.competitionDataSources ?? []),
         ].filter((s: string) => s && s.trim().length > 0);
+        datasetRefsFromNotebook = inputSources;
         const narrative = stripNotebook(data?.blob?.source ?? '');
         const title = `Kaggle: ${meta?.title ?? kernelSlug} — analysis`;
         const body = `# ${meta?.title ?? kernelSlug}\nAuthor: ${userName}\nSource: ${kernelUrl}\n\n${narrative.slice(0, 40000)}`;
