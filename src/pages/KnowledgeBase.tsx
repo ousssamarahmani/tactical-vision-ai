@@ -144,6 +144,26 @@ export default function KnowledgeBase() {
     }
   };
 
+  const handleKaggleIngest = async () => {
+    setKaggleIngesting(true);
+    setKaggleResults([]);
+    try {
+      const result = await ingestKaggleKernel(kaggleRef.trim() || undefined, true);
+      if (result.success) {
+        const ingested = (result.results || []).filter(r => r.status === 'ingested').length;
+        toast.success(`Kaggle ingest complete: ${ingested} document(s)`);
+        setKaggleResults(result.results || []);
+        fetchDocs();
+      } else {
+        toast.error(result.error || 'Kaggle ingest failed');
+      }
+    } catch {
+      toast.error('Kaggle ingest failed');
+    } finally {
+      setKaggleIngesting(false);
+    }
+  };
+
   const sourceIcon = (type: string) => {
     switch (type) {
       case 'pdf': return <FileText className="h-4 w-4" />;
