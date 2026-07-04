@@ -147,6 +147,7 @@ Deno.serve(async (req) => {
       } else {
         const data = await pull.json();
         const meta = data?.metadata ?? {};
+        console.log('kernel meta keys:', JSON.stringify(Object.keys(meta ?? {})), 'datasetSources:', JSON.stringify(meta?.datasetSources ?? meta?.dataset_sources ?? []));
         const narrative = stripNotebook(data?.blob?.source ?? '');
         const title = `Kaggle: ${meta?.title ?? kernelSlug} — analysis`;
         const body = `# ${meta?.title ?? kernelSlug}\nAuthor: ${userName}\nSource: ${kernelUrl}\n\n${narrative.slice(0, 40000)}`;
