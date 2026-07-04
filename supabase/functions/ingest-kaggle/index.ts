@@ -205,7 +205,7 @@ Deno.serve(async (req) => {
         results.push({ part: 'output', status: 'fetch failed', error: `${out.status} ${await out.text().catch(() => '')}`.slice(0, 300) });
       } else {
         const data = await out.json();
-        console.log('kaggle output keys:', JSON.stringify(Object.keys(data ?? {})), 'files:', JSON.stringify((data?.files ?? []).map((f: { fileName?: string; url?: string }) => f.fileName)));
+        
         const files: { fileName?: string; url?: string }[] = data?.files ?? [];
         const dataSections: string[] = [];
         for (const f of files.slice(0, 20)) {
