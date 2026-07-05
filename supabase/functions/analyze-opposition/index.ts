@@ -1,5 +1,6 @@
 import { corsHeaders } from '../_shared/cors.ts'
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.49.1'
+import { normalizeTeam } from '../_shared/team-normalize.ts'
 
 const SYSTEM_PROMPT = `You are the Opposition Analyst Agent developed by Tactivision.
 
@@ -28,12 +29,15 @@ You hold a **UEFA Pro Licence** in coaching methodology and tactical periodizati
 Your analysis is built exclusively from verified data sourced from:
 - **FBref** (fbref.com) — Advanced metrics: xG, xAG, progressive passes/carries, shot-creating actions, pressing stats (PPDA), defensive actions, aerial duels
 - **Football‑Data.org** — Match results, league standings, historical head-to-head records, transition goals
+- **FIFA Training Centre** — FIFA World Cup 2026 post-match summary reports, phase-of-play metrics, team and individual match metrics
+- **International match datasets** — FIFA World Cup 2026 qualification, World Cup group-stage reports, and international friendly records provided in context
+- **Kaggle World Cup notebooks/datasets** — only when ingested into the knowledge base and cited as Kaggle context
 - **Provided team profiles** — Tactical patterns, personnel data, FBref metrics, and scouting notes supplied in context
 
 You MUST cite which data source supports each claim. If data is unavailable, state: *"Insufficient data from [source] to confirm this."*
 
 ## Season Scope
-All analysis pertains to the **2025/26 season**. Reference current form windows (last 5/10 matches) and seasonal trends. The database covers 7 teams: **Manchester City, Real Madrid, Liverpool, Arsenal, FC Barcelona, Paris Saint-Germain, and FC Bayern München**.
+Club analysis pertains to the **2025/26 season**. International-team analysis pertains to **FIFA World Cup 2026 qualification, FIFA World Cup 2026 match reports, and recent international friendlies**. Reference current form windows (last 5/10 matches) and seasonal trends. The club database covers 7 teams: **Manchester City, Real Madrid, Liverpool, Arsenal, FC Barcelona, Paris Saint-Germain, and FC Bayern München**; this club list is irrelevant in international mode.
 
 ## UEFA Champions League 2025/26 — Registered Squad Lists
 
@@ -170,8 +174,31 @@ Deno.serve(async (req) => {
     const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
     if (!LOVABLE_API_KEY) throw new Error('LOVABLE_API_KEY is not configured');
 
+    const conversationText = Array.isArray(messages)
+      ? messages.map((m: any) => String(m?.content ?? '')).join(' ')
+      : '';
+    const teamCandidates = Array.isArray(teamData)
+      ? teamData
+      : Array.isArray(teamData?.all_teams)
+        ? teamData.all_teams
+        : [];
+
     // Detect whether the selected/analysed team is an international (national) side.
-    const selected = teamData?.selected ?? (teamData && !Array.isArray(teamData) ? teamData : null);
+    // If the user types "analyse France" without using the selector, infer the
+    // national team from the provided all-team list so the agent does not fall
+    // back to club mode.
+    let selected = teamData?.selected ?? (teamData && !Array.isArray(teamData) && !Array.isArray(teamData?.all_teams) ? teamData : null);
+    if (!selected && teamCandidates.length && conversationText.trim()) {
+      const normalizedConversation = normalizeTeam(conversationText);
+      const lowerConversation = conversationText.toLowerCase();
+      selected = teamCandidates.find((t: any) => {
+        if (!t?.isInternational) return false;
+        const normalizedName = normalizeTeam(t.name);
+        return normalizedConversation === normalizedName ||
+          lowerConversation.includes(String(t.name ?? '').toLowerCase()) ||
+          (normalizedName.length >= 4 && lowerConversation.includes(normalizedName));
+      }) ?? null;
+    }
     const isInternational = !!(
       selected?.isInternational ||
       (typeof selected?.id === 'string' && selected.id.startsWith('intl_')) ||
@@ -236,20 +263,9 @@ Deno.serve(async (req) => {
       const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
       const supabase = createClient(supabaseUrl, serviceKey);
 
-      // Normalize a team name to the tag format used by ingestion ("bayern munich" etc.)
-      const normalizeTeam = (name: string): string => {
-        return name
-          .toLowerCase()
-          .replace(/^fc\s+/, '')
-          .replace(/\s+fc$/, '')
-          .replace(/münchen/g, 'munich')
-          .replace(/\s+/g, ' ')
-          .trim();
-      };
-
       const lastUserMsg = [...messages].reverse().find((m: any) => m.role === 'user');
       if (lastUserMsg) {
-        const teamName = teamData?.selected?.name || teamData?.name || '';
+        const teamName = selected?.name || teamData?.selected?.name || teamData?.name || '';
         const normalizedTeam = teamName ? normalizeTeam(teamName) : '';
         const searchQuery = `${teamName} ${lastUserMsg.content}`.trim();
         trace('Building RAG query', `"${searchQuery.slice(0, 80)}${searchQuery.length > 80 ? '…' : ''}"`);
@@ -331,7 +347,7 @@ Deno.serve(async (req) => {
     trace('Composing tactical prompt', 'merging team profile, matches, and sources');
     trace('Calling reasoning model', 'google/gemini-2.5-flash · streaming');
 
-    const INTERNATIONAL_DIRECTIVE = `\n\n## ACTIVE MODE: INTERNATIONAL OPPOSITION ANALYSIS\nThe selected opponent is a NATIONAL TEAM. Override any club-specific scope above. Specifically:\n- Ignore the "database covers 7 teams" club list and the Real Madrid / Bayern registered-squad sections — those are for club analysis only and MUST NOT appear in this report.\n- Use ONLY the international squad and international fixtures provided in Available Context.\n- Build the report from real match examples in the data: cite specific fixtures by opponent, scoreline, competition (WC2026 qualifier / friendly) and date.\n- Replace generic FBref/club citations with international sources (FIFA / UEFA match records). Only cite metrics that actually exist in the provided data.\n\n### Required report structure (international):\n1. **🎯 Tactical Summary** — national-team identity, likely formation, coaching philosophy, current form.\n2. **🧬 Tactical DNA** — the team's core identity distilled into 4–6 defining traits (build-up identity, pressing identity, transition identity, attacking width/penetration, set-piece identity, defensive block). Each trait must be grounded in the provided international fixtures.\n3. **📈 Match Examples** — walk through the most recent international matches in the data, what each revealed tactically, and recurring patterns across them.\n4. **💪 Strengths** and **🔓 Weaknesses & Exploitable Zones** — phase-based, from international data only.\n5. **⭐ Key Personnel — Threat Analysis** — squad players (club named only for identification), caps/goals where provided, neutralization plans.\n6. **🛡️ Recommended Match Strategy** — formation, pressing triggers, key matchups, phase plan.\n\nNever mention or analyse any club team. If you lack data for a section, say so explicitly rather than inventing it.`;
+    const INTERNATIONAL_DIRECTIVE = `\n\n## ACTIVE MODE: INTERNATIONAL OPPOSITION ANALYSIS\nThe selected opponent is a NATIONAL TEAM. Override any club-specific scope above. Specifically:\n- Ignore the "database covers 7 teams" club list and the Real Madrid / Bayern registered-squad sections — those are for club analysis only and MUST NOT appear in this report.\n- Use ONLY international-team context: the national squad, international fixtures/friendlies, FIFA Training Centre World Cup match reports, and Kaggle World Cup data excerpts supplied in Available Context.\n- Build the report from real match examples in the data: cite specific fixtures by opponent, scoreline, competition (World Cup / WC2026 qualifier / friendly) and date when available.\n- Replace generic FBref/club citations with international sources (FIFA Training Centre, FIFA / UEFA match records, Kaggle World Cup dataset). Only cite metrics that actually exist in the provided data.\n- Club names may appear only as player identifiers in squad lists; never analyse club-team tactics, form, players as club units, or club competitions.\n\n### Required report structure (international):\n1. **🎯 Tactical Summary** — national-team identity, likely formation, coaching philosophy, current form.\n2. **🧬 Tactical DNA** — the team's core identity distilled into 4–6 defining traits (build-up identity, pressing identity, transition identity, attacking width/penetration, set-piece identity, defensive block). Each trait must be grounded in international fixtures or FIFA/Kaggle World Cup excerpts.\n3. **📈 Match Examples** — walk through the most recent international matches and friendly matches in the data, what each revealed tactically, and recurring patterns across them.\n4. **💪 Strengths** and **🔓 Weaknesses & Exploitable Zones** — phase-based, from international data only.\n5. **⭐ Key Personnel — Threat Analysis** — squad players (club named only for identification), caps/goals where provided, neutralization plans.\n6. **🛡️ Recommended Match Strategy** — formation, pressing triggers, key matchups, phase plan.\n\nNever mention or analyse any club team. If you lack data for a section, say so explicitly rather than inventing it.`;
 
     const systemWithContext = context
       ? `${SYSTEM_PROMPT}\n\n## Available Context\n${context}${isInternational ? INTERNATIONAL_DIRECTIVE : ''}`

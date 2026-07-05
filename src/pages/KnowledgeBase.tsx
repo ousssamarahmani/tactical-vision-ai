@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { toast } from 'sonner';
-import { ingestPdf, ingestYoutube, listDocuments, fetchFootballContent, syncFootballStats, ingestKaggleKernel, type RagDocument, type SyncStatsResult, type KaggleIngestResult } from '@/lib/rag-api';
+import { ingestPdf, ingestYoutube, listDocuments, fetchFootballContent, syncFootballStats, ingestKaggleKernel, ingestFifaReports, type RagDocument, type SyncStatsResult, type KaggleIngestResult, type FifaReportIngestResult } from '@/lib/rag-api';
 import { Upload, Youtube, FileText, Database, Loader2, CheckCircle, XCircle, ArrowLeft, RefreshCw, Globe, Rss, BarChart3 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -34,9 +34,14 @@ export default function KnowledgeBase() {
   const [syncResults, setSyncResults] = useState<SyncStatsResult[]>([]);
 
   // Kaggle ingest
-  const [kaggleRef, setKaggleRef] = useState('devraai/fifa-wc-2026-match-analysis-outcome-prediction');
+  const [kaggleRef, setKaggleRef] = useState('swaptr/fifa-world-cup-2026-exploratory-data-analysis');
   const [kaggleIngesting, setKaggleIngesting] = useState(false);
   const [kaggleResults, setKaggleResults] = useState<KaggleIngestResult[]>([]);
+
+  // FIFA report ingest
+  const [fifaTeam, setFifaTeam] = useState('France');
+  const [fifaIngesting, setFifaIngesting] = useState(false);
+  const [fifaResults, setFifaResults] = useState<FifaReportIngestResult[]>([]);
 
   const [fetchError, setFetchError] = useState<string | null>(null);
 
@@ -166,6 +171,26 @@ export default function KnowledgeBase() {
       toast.error('Kaggle ingest failed');
     } finally {
       setKaggleIngesting(false);
+    }
+  };
+
+  const handleFifaReportIngest = async () => {
+    setFifaIngesting(true);
+    setFifaResults([]);
+    try {
+      const result = await ingestFifaReports({ team: fifaTeam.trim() || undefined, maxReports: fifaTeam.trim() ? 8 : 16, force: false });
+      if (result.success) {
+        const ingested = (result.results || []).filter(r => r.status === 'ingested').length;
+        toast.success(`FIFA reports imported: ${ingested} document(s)`);
+        setFifaResults(result.results || []);
+        fetchDocs();
+      } else {
+        toast.error(result.error || 'FIFA report import failed');
+      }
+    } catch {
+      toast.error('FIFA report import failed');
+    } finally {
+      setFifaIngesting(false);
     }
   };
 
@@ -307,6 +332,47 @@ export default function KnowledgeBase() {
                 {kaggleResults.map((r, i) => (
                   <div key={i} className="text-xs flex items-center justify-between gap-2 p-2 rounded bg-background/50 border border-border/30">
                     <span className="font-medium text-foreground truncate">{r.part}</span>
+                    <span className={`text-xs ${r.status === 'ingested' ? 'text-primary' : 'text-muted-foreground'}`}>
+                      {r.status}{r.chunks ? ` · ${r.chunks} chunks` : ''}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* FIFA Report Ingest Card */}
+        <Card className="border-accent/30 bg-accent/5 backdrop-blur-sm">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-sm flex items-center gap-2">
+              <FileText className="h-4 w-4 text-primary" />
+              Import FIFA World Cup Match Reports
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <p className="text-xs text-muted-foreground">
+              Pulls FIFA Training Centre group-stage post-match summary reports and stores team-tagged match examples for international-team analysis. Leave the team empty to import the first batch.
+            </p>
+            <Input
+              value={fifaTeam}
+              onChange={(e) => setFifaTeam(e.target.value)}
+              placeholder="Team name (e.g. France)"
+              className="text-xs"
+            />
+            <Button onClick={handleFifaReportIngest} disabled={fifaIngesting} className="w-full" variant="secondary">
+              {fifaIngesting ? (
+                <><Loader2 className="h-4 w-4 mr-2 animate-spin" />Pulling FIFA reports...</>
+              ) : (
+                <><FileText className="h-4 w-4 mr-2" />Import FIFA Reports</>
+              )}
+            </Button>
+            {fifaResults.length > 0 && (
+              <div className="mt-3 space-y-1.5 max-h-56 overflow-y-auto">
+                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">FIFA import results:</p>
+                {fifaResults.map((r, i) => (
+                  <div key={i} className="text-xs flex items-center justify-between gap-2 p-2 rounded bg-background/50 border border-border/30">
+                    <span className="font-medium text-foreground truncate">{r.report}</span>
                     <span className={`text-xs ${r.status === 'ingested' ? 'text-primary' : 'text-muted-foreground'}`}>
                       {r.status}{r.chunks ? ` · ${r.chunks} chunks` : ''}
                     </span>

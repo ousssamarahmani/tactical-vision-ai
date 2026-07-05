@@ -5,12 +5,12 @@ import { extractTeamTags } from '../_shared/team-normalize.ts';
 // Ingests a Kaggle kernel (notebook narrative + its output files) into the RAG
 // knowledge base, mirroring the sync-football-stats ingestion flow.
 //
-// Default target: `devraai/fifa-wc-2026-match-analysis-outcome-prediction`
-// (equivalent to `kaggle kernels pull devraai/fifa-wc-2026-...`).
+// Default target: `swaptr/fifa-world-cup-2026-exploratory-data-analysis`
+// (equivalent to `kaggle kernels pull swaptr/fifa-world-cup-2026-...`).
 
 const KAGGLE_API = 'https://www.kaggle.com/api/v1';
-const DEFAULT_USER = 'devraai';
-const DEFAULT_SLUG = 'fifa-wc-2026-match-analysis-outcome-prediction';
+const DEFAULT_USER = 'swaptr';
+const DEFAULT_SLUG = 'fifa-world-cup-2026-exploratory-data-analysis';
 
 function chunkText(text: string, maxChunkSize = 1500): string[] {
   const chunks: string[] = [];

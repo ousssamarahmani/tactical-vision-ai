@@ -91,3 +91,21 @@ export async function ingestKaggleKernel(ref?: string, force = false): Promise<{
   if (!resp.ok) return { success: false, error: data.error || 'Kaggle ingest failed' };
   return { success: true, ...data };
 }
+
+export interface FifaReportIngestResult { report: string; status: string; chunks?: number; error?: string; }
+
+export async function ingestFifaReports(options: { team?: string; maxReports?: number; force?: boolean } = {}): Promise<{ success: boolean; error?: string; date?: string; total_reports?: number; imported_reports?: number; results?: FifaReportIngestResult[] }> {
+  const resp = await fetch(`${FUNCTIONS_URL}/ingest-fifa-reports`, {
+    method: 'POST',
+    headers: { ...AUTH_HEADER, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      stages: ['group'],
+      ...(options.team ? { team: options.team } : {}),
+      max_reports: options.maxReports ?? 16,
+      force: options.force ?? false,
+    }),
+  });
+  const data = await resp.json();
+  if (!resp.ok) return { success: false, error: data.error || 'FIFA report ingest failed' };
+  return { success: true, ...data };
+}
