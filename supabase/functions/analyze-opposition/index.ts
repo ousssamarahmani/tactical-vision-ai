@@ -174,8 +174,31 @@ Deno.serve(async (req) => {
     const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
     if (!LOVABLE_API_KEY) throw new Error('LOVABLE_API_KEY is not configured');
 
+    const conversationText = Array.isArray(messages)
+      ? messages.map((m: any) => String(m?.content ?? '')).join(' ')
+      : '';
+    const teamCandidates = Array.isArray(teamData)
+      ? teamData
+      : Array.isArray(teamData?.all_teams)
+        ? teamData.all_teams
+        : [];
+
     // Detect whether the selected/analysed team is an international (national) side.
-    const selected = teamData?.selected ?? (teamData && !Array.isArray(teamData) ? teamData : null);
+    // If the user types "analyse France" without using the selector, infer the
+    // national team from the provided all-team list so the agent does not fall
+    // back to club mode.
+    let selected = teamData?.selected ?? (teamData && !Array.isArray(teamData) ? teamData : null);
+    if (!selected && teamCandidates.length && conversationText.trim()) {
+      const normalizedConversation = normalizeTeam(conversationText);
+      const lowerConversation = conversationText.toLowerCase();
+      selected = teamCandidates.find((t: any) => {
+        if (!t?.isInternational) return false;
+        const normalizedName = normalizeTeam(t.name);
+        return normalizedConversation === normalizedName ||
+          lowerConversation.includes(String(t.name ?? '').toLowerCase()) ||
+          (normalizedName.length >= 4 && lowerConversation.includes(normalizedName));
+      }) ?? null;
+    }
     const isInternational = !!(
       selected?.isInternational ||
       (typeof selected?.id === 'string' && selected.id.startsWith('intl_')) ||
