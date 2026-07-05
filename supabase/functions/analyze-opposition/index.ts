@@ -187,7 +187,7 @@ Deno.serve(async (req) => {
     // If the user types "analyse France" without using the selector, infer the
     // national team from the provided all-team list so the agent does not fall
     // back to club mode.
-    let selected = teamData?.selected ?? (teamData && !Array.isArray(teamData) ? teamData : null);
+    let selected = teamData?.selected ?? (teamData && !Array.isArray(teamData) && !Array.isArray(teamData?.all_teams) ? teamData : null);
     if (!selected && teamCandidates.length && conversationText.trim()) {
       const normalizedConversation = normalizeTeam(conversationText);
       const lowerConversation = conversationText.toLowerCase();
@@ -263,20 +263,9 @@ Deno.serve(async (req) => {
       const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
       const supabase = createClient(supabaseUrl, serviceKey);
 
-      // Normalize a team name to the tag format used by ingestion ("bayern munich" etc.)
-      const normalizeTeam = (name: string): string => {
-        return name
-          .toLowerCase()
-          .replace(/^fc\s+/, '')
-          .replace(/\s+fc$/, '')
-          .replace(/münchen/g, 'munich')
-          .replace(/\s+/g, ' ')
-          .trim();
-      };
-
       const lastUserMsg = [...messages].reverse().find((m: any) => m.role === 'user');
       if (lastUserMsg) {
-        const teamName = teamData?.selected?.name || teamData?.name || '';
+        const teamName = selected?.name || teamData?.selected?.name || teamData?.name || '';
         const normalizedTeam = teamName ? normalizeTeam(teamName) : '';
         const searchQuery = `${teamName} ${lastUserMsg.content}`.trim();
         trace('Building RAG query', `"${searchQuery.slice(0, 80)}${searchQuery.length > 80 ? '…' : ''}"`);
