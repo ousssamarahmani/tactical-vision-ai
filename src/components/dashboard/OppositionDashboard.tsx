@@ -136,6 +136,18 @@ export function OppositionDashboard({ teamData }: OppositionDashboardProps) {
           {exportingType === 'detailed' ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <BookOpen className="h-3.5 w-3.5" />}
           {exportingType === 'detailed' ? 'Generating…' : 'Tactical Report'}
         </Button>
+        {fifaProfile && (
+          <Button
+            variant="default"
+            size="sm"
+            className="gap-2 text-xs"
+            onClick={handleFifaExport}
+            disabled={exportingType !== null}
+          >
+            {exportingType === 'detailed' ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <ShieldCheck className="h-3.5 w-3.5" />}
+            PFSA Report
+          </Button>
+        )}
       </div>
 
       {/* Report Body */}
