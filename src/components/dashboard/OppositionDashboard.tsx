@@ -97,6 +97,19 @@ export function OppositionDashboard({ teamData }: OppositionDashboardProps) {
     }
   };
 
+  const fifaProfile = getFifaProfile(teamData.id);
+  const handleFifaExport = async () => {
+    setExportingType('detailed');
+    try {
+      await new Promise(resolve => setTimeout(resolve, 100));
+      if (fifaProfile) generateFifaReport(fifaProfile);
+    } catch (err) {
+      console.error('PFSA report export failed:', err);
+    } finally {
+      setExportingType(null);
+    }
+  };
+
   const today = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 
   return (
