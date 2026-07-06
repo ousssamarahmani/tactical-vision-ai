@@ -9,10 +9,12 @@ import { PitchHeatmap } from '@/components/PitchHeatmap';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { Users, Swords, TrendingUp, Target, Download, FileText, Loader2, BookOpen } from 'lucide-react';
+import { Users, Swords, TrendingUp, Target, Download, FileText, Loader2, BookOpen, ShieldCheck } from 'lucide-react';
 import matchesData from '@/data/matches.json';
 import { internationalMatches } from '@/lib/internationalTeams';
 import { generateReport } from '@/lib/generateReport';
+import { getFifaProfile } from '@/data/fifaTacticalProfiles';
+import { generateFifaReport } from '@/lib/generateFifaReport';
 
 const allMatches = [...matchesData, ...internationalMatches];
 
@@ -95,6 +97,19 @@ export function OppositionDashboard({ teamData }: OppositionDashboardProps) {
     }
   };
 
+  const fifaProfile = getFifaProfile(teamData.id);
+  const handleFifaExport = async () => {
+    setExportingType('detailed');
+    try {
+      await new Promise(resolve => setTimeout(resolve, 100));
+      if (fifaProfile) generateFifaReport(fifaProfile);
+    } catch (err) {
+      console.error('PFSA report export failed:', err);
+    } finally {
+      setExportingType(null);
+    }
+  };
+
   const today = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 
   return (
@@ -121,6 +136,18 @@ export function OppositionDashboard({ teamData }: OppositionDashboardProps) {
           {exportingType === 'detailed' ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <BookOpen className="h-3.5 w-3.5" />}
           {exportingType === 'detailed' ? 'Generating…' : 'Tactical Report'}
         </Button>
+        {fifaProfile && (
+          <Button
+            variant="default"
+            size="sm"
+            className="gap-2 text-xs"
+            onClick={handleFifaExport}
+            disabled={exportingType !== null}
+          >
+            {exportingType === 'detailed' ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <ShieldCheck className="h-3.5 w-3.5" />}
+            PFSA Report
+          </Button>
+        )}
       </div>
 
       {/* Report Body */}
