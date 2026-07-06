@@ -9,10 +9,12 @@ import { PitchHeatmap } from '@/components/PitchHeatmap';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { Users, Swords, TrendingUp, Target, Download, FileText, Loader2, BookOpen } from 'lucide-react';
+import { Users, Swords, TrendingUp, Target, Download, FileText, Loader2, BookOpen, ShieldCheck } from 'lucide-react';
 import matchesData from '@/data/matches.json';
 import { internationalMatches } from '@/lib/internationalTeams';
 import { generateReport } from '@/lib/generateReport';
+import { getFifaProfile } from '@/data/fifaTacticalProfiles';
+import { generateFifaReport } from '@/lib/generateFifaReport';
 
 const allMatches = [...matchesData, ...internationalMatches];
 
