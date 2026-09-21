@@ -130,6 +130,8 @@ A clean backend setup still needs verification.
 
 ## Development
 
+[Task backlog](./docs/tactilens/TASKS.md) · [Validation plan](./docs/tactilens/VALIDATION_PLAN.md)
+
 ```bash
 npm run test
 npm run build

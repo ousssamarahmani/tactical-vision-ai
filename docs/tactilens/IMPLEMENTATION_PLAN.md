@@ -4,6 +4,8 @@ Foundation deliverable: documentation only. Every implementation task below is *
 
 ## Protected behavior
 
+Detailed execution tracking lives in [TASKS.md](TASKS.md); test methods, budgets and release gates live in [VALIDATION_PLAN.md](VALIDATION_PLAN.md). Fire TV is the primary track and AWS Builder is the intended mini challenge. Bedrock reasoning with AgentCore hosting is the proposed AWS implementation, still NOT STARTED.
+
 Keep `/`, `/knowledge`, opponent selection, club/international context, analyst streaming/source badges, ingestion, dashboard and both report export paths working. Preserve source datasets and legacy identifiers; do not duplicate the app for television. Never promote existing keyword heatmaps, radar scores or generated prose to verified footage evidence.
 
 ## Sequenced gates
@@ -20,8 +22,8 @@ Keep `/`, `/knowledge`, opponent selection, club/international context, analyst 
 | TL-08 / 4 | Persisted briefing read API using shared services | TL-03, TL-04, TL-07 | Versioned payloads, authorization, stale/missing states; web endpoint remains compatible | P0 / M | Second source of domain truth | NOT STARTED |
 | TL-09 / 5 | TV shell, overview, detail and briefing mode | TL-05, TL-08 | Complete primary journey by remote only; stable initial/restored focus; no copied datasets or analyst logic | P0 / L | Focus traps and excessive density | NOT STARTED |
 | TL-10 / 5 | Evidence player and adapted pitch presentation | TL-07, TL-09 | SELECT/pause/seek/BACK; clip bounds correct; expired/missing media recoverable; geometry fixtures align | P0 / M | Codec, clock and coordinate differences | NOT STARTED |
-| TL-11 / 6 | Documented AWS integration | TL-08; service/region/budget ADR | Working integration demonstrated; server secrets isolated; fallback available; Bedrock cannot modify evidence fields | P1 / M | Cloud latency/cost or invented evidence | NOT STARTED |
-| TL-12 / 7 | Demo hardening and submission evidence | TL-09, TL-10; TL-11 if AWS claimed | Cold-start and network-loss rehearsal on target, measured load/playback timings, footage rights, change log and real product feedback | P0 / M | Demo success depends on live analysis | NOT STARTED |
+| TL-11 / 6 | Bedrock/AgentCore agent workflow and documented AWS integration (subtasks in TASKS.md) | TL-08; service/region/budget ADR | Actual workflow invocation and scoped tools; deterministic evidence gate; server secrets isolated; stored-briefing fallback | P0 / L | Cloud latency/cost or invented evidence | NOT STARTED |
+| TL-12 / 7 | Demo hardening and submission evidence for both intended entries | TL-09, TL-10, TL-11 | Cold-start and network-loss rehearsal on target, measured load/playback timings, footage rights, change log and real product feedback | P0 / M | Demo success depends on live analysis | NOT STARTED |
 
 Complexity: M = focused multi-file work; L = subsystem work with experimentation. These are relative estimates, not delivery promises. The owner reviews each phase's evidence before progression. Phase 0 is this audit/plan/architecture/change-log deliverable only.
 

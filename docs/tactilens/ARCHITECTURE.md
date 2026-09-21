@@ -96,4 +96,6 @@ Proposed AWS responsibilities: S3 for protected originals/normalized media/clips
 
 ## Decisions to record before implementation
 
+Planning update: the intended AWS Builder path is Bedrock reasoning plus AgentCore Runtime hosting for a scoped opposition orchestrator. Retrieval tools return evidence-owned values; a deterministic gate controls VERIFIED status; game-plan synthesis produces recommendations and a briefing director prioritizes validated findings. Begin with one orchestrator, evaluating specialist agents only after measuring benefit. Direct clip retrieval must not require generation. This is planned work, NOT STARTED; see [tasks](TASKS.md) and [validation](VALIDATION_PLAN.md). Earlier optional-AWS language describes the reusable platform boundary, not a completed integration.
+
 TV target/framework and player; stable identity/missing-value migration; schema versioning; coordinate orientation; rights-cleared evaluation footage; CV runtime/models/compute; quality/abstention thresholds; media authorization; persistence ownership; Bedrock/provider boundary. Each decision needs alternatives, measured evidence where applicable, compatibility impact and rollback strategy.

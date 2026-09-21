@@ -18,6 +18,8 @@ The foundation PR records proposed changes; this log does not imply it has been 
 
 ## Implementation status
 
+Planning follow-up, 2026-09-22: added `VALIDATION_PLAN.md` and `TASKS.md`, with traceable acceptance checks, proposed performance budgets, Bedrock/AgentCore subtasks, and Fire TV plus AWS Builder submission evidence. Updated roadmap links and planning scope. Documentation only; validation execution and all implementation tasks remain NOT STARTED.
+
 Presentation follow-up, 2026-09-22: replaced the original orange artwork with the owner's green logo, simplified the repository landing page, added contribution guidance and a PR template, and corrected the setup prerequisite to Node.js 22+. This is documentation/branding work; no product capability added.
 
 Shared-core extraction, new Opposition API, CV, evidence validation/player, Fire TV shell, remote navigation, briefing mode, Vega validation and AWS integration: **NOT STARTED**.
