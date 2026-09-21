@@ -223,6 +223,13 @@ public/              Application-facing static assets
 
 ## Roadmap
 
+Start with the source-backed TactiLens foundation:
+
+- [Foundation audit](docs/tactilens/FOUNDATION_AUDIT.md) — existing capabilities, reuse, changes and gaps
+- [Implementation plan](docs/tactilens/IMPLEMENTATION_PLAN.md) — ordered tasks, regression gates and approval boundary
+- [Architecture](docs/tactilens/ARCHITECTURE.md) — shared intelligence and data, with a television interaction model
+- [Hackathon changes](docs/tactilens/HACKATHON_CHANGES.md) — pre-existing baseline and actual contributions
+
 - [x] Preserve and identify pre-existing TactiVision capabilities
 - [ ] Complete repository audit and implementation plan
 - [ ] Define evidence, provenance, and system-boundary contracts
