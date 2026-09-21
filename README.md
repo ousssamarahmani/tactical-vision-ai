@@ -1,265 +1,193 @@
-<div align="center">
-  <img src="./docs/assets/tactilens-logo.png" alt="TactiLens" width="440" />
+<p align="center">
+  <img src="./docs/assets/tactilens-logo.png" alt="TactiLens — football intelligence for the coaching room" width="720" />
+</p>
 
-  # Fire TV opposition intelligence, powered by TactiVision AI
+<h1 align="center">See the pattern. Prepare the team.</h1>
 
-  TactiLens brings evidence-led football preparation to the coaching room: verified
-  tactical findings, match context, and video evidence designed for a focused
-  ten-foot viewing experience.
+<p align="center">
+  Opposition intelligence for the coaching room.<br />
+  Powered by TactiVision AI. Designed for Amazon Fire TV.
+</p>
 
-  [![Hackathon](https://img.shields.io/badge/Build%2C%20Ship%2C%20Shape-Amazon%20Developer%20Hackathon%202026-FF9900?style=flat-square)](https://amazonappdev2026.devpost.com/)
-  [![Primary track](https://img.shields.io/badge/primary%20track-Fire%20TV-FF9900?style=flat-square)](https://amazonappdev2026.devpost.com/)
-  [![AWS Builder](https://img.shields.io/badge/AWS%20Builder-planned-232F3E?style=flat-square)](#hackathon-scope)
-  [![Status](https://img.shields.io/badge/status-foundation%20%2F%20architecture-8B949E?style=flat-square)](#project-status)
-  [![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=111111)](https://react.dev/)
-  [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+<p align="center">
+  <a href="#status"><img src="https://img.shields.io/badge/Stage-Foundation-79F52B?style=flat-square&labelColor=161B22" alt="Stage: Foundation" /></a>
+  <a href="#hackathon"><img src="https://img.shields.io/badge/Track-Fire_TV-79F52B?style=flat-square&labelColor=161B22" alt="Track: Fire TV" /></a>
+  <a href="./docs/tactilens/ARCHITECTURE.md"><img src="https://img.shields.io/badge/AWS-Planned-8B949E?style=flat-square&labelColor=161B22" alt="AWS: Planned" /></a>
+</p>
 
-  [Product vision](#what-is-tactilens) · [What exists](#what-works-today) · [Hackathon scope](#hackathon-scope) · [Run locally](#run-locally) · [Architecture](#architecture-direction)
-</div>
+<p align="center">
+  <a href="#why-tactilens">Why TactiLens</a> ·
+  <a href="#status">Status</a> ·
+  <a href="#quick-start">Quick start</a> ·
+  <a href="./docs/tactilens/ARCHITECTURE.md">Architecture</a> ·
+  <a href="./docs/tactilens/IMPLEMENTATION_PLAN.md">Roadmap</a>
+</p>
 
 ---
 
-> [!IMPORTANT]
-> TactiLens is currently in its foundation and architecture phase. The repository
-> contains a pre-existing TactiVision Opposition Analyst web application. The Fire
-> TV/Vega client, computer-vision evidence pipeline, and AWS integration described
-> below are planned hackathon work and are not yet implemented.
+## Why TactiLens
 
-## What is TactiLens?
+A coaching room needs a clear answer to three questions: **What does the opponent
+do? Where is the evidence? What should we prepare for?**
 
-**TactiLens** is the Fire TV coaching-room experience for **TactiVision AI**. It is
-designed to turn validated match evidence into opposition intelligence that a
-coaching team can explore together with a remote control, from the tactical overview
-down to the exact match occurrence that supports a finding.
+TactiLens is being designed to put those answers on the television: concise
+opposition briefings, tactical context and the match clips behind each finding,
+navigated with a remote.
 
-The product direction is built around one rule: a tactical claim should not be
-presented as verified unless it is backed by traceable evidence. Computer vision
-will describe what the video contains, deterministic analysis will derive football
-events and geometry, and language models may explain verified findings. They will
-not invent timestamps, occurrence counts, detections, or confidence.
+It builds on the existing TactiVision Opposition Analyst. The intelligence and data
+stay shared; the interaction model is designed for the room.
 
-| Evidence first | Built for the room | Demo resilient |
+| Understand the opponent | Inspect the evidence | Brief the team |
 | --- | --- | --- |
-| Findings trace back to clips, events, tracks, detections, and source video. | A ten-foot interface will use clear focus states, D-pad navigation, and readable tactical visuals. | Precomputed analysis keeps the Fire TV experience fast and reliable during a live demonstration. |
+| Start with strengths, weaknesses and tactical context. | Move from a finding to its supporting match occurrences. | Present a focused sequence without a laptop-driven workflow. |
 
-## Project status
+*Evidence playback and the television experience are planned capabilities.*
 
-| Area | Status |
+## Status
+
+**Foundation / architecture.** The existing web analyst is implemented in this
+repository. The TactiLens TV client, computer-vision pipeline and AWS integration
+are **not started**.
+
+| In the existing codebase | Planned for TactiLens |
 | --- | --- |
-| Existing TactiVision web application | Available before the hackathon |
-| Opposition Analyst and tactical dashboard | Available before the hackathon |
-| RAG knowledge base and report generation | Available before the hackathon |
-| TactiLens foundation and architecture | In progress |
-| Fire TV / Vega application | Not started |
-| Computer-vision evidence pipeline | Not started |
-| AWS runtime integration | Not started |
+| Club and international opponent selection | Fire TV / Vega delivery surface |
+| Streaming Opposition Analyst and document citations | Validated findings with clip-level provenance |
+| Tactical dashboard, pitch maps and charts | Remote navigation and ten-foot layouts |
+| Knowledge ingestion and full-text retrieval | Offline computer vision and evidence validation |
+| Opposition and FIFA-style PDF exports | Briefing mode and evidence playback |
 
-This status boundary is intentional. It preserves a clear record of the existing
-project and the work completed during the hackathon submission period.
+The current pitch heatmaps and radar scores use text heuristics. They are not
+measured tracking data. Existing report cards contain narrative analysis, not
+verified video findings. The [foundation audit](./docs/tactilens/FOUNDATION_AUDIT.md)
+documents these boundaries and identifies what can be reused.
 
-## What works today
-
-The current repository already provides the following TactiVision capabilities:
-
-| Capability | Current implementation |
-| --- | --- |
-| Opposition analysis | Streaming analyst workflow backed by a Supabase Edge Function |
-| Tactical interface | React dashboard with opponent selection, strengths, weaknesses, form, match metrics, and tactical phases |
-| Football data | Club, international-team, match, squad, and FIFA World Cup 2026 datasets |
-| Knowledge retrieval | Supabase/pgvector search with PDF, YouTube, FIFA report, and football-content ingestion functions |
-| Visual analysis | Pitch heatmaps, tactical radar, KPI cards, form strips, and match-stat charts |
-| Reports | Downloadable opposition-analysis and FIFA-style PDF reports |
-| Quality tooling | ESLint, Vitest, Testing Library, and Playwright configuration |
-
-These capabilities are pre-existing TactiVision work. They are not presented as
-features created during the 2026 hackathon.
-
-## Hackathon scope
-
-TactiLens is being prepared for **Build, Ship, Shape: Amazon Developer Hackathon
-2026**.
-
-- **Primary track:** Fire TV
-- **Priority categories:** sports, AI-enhanced viewing, and computer vision
-- **Target platforms:** Fire OS or Vega OS
-- **Mini challenge:** AWS Builder, planned pending a documented runtime integration
-- **Submission deadline:** October 23, 2026 at 12:00 PM Pacific Time
-
-The planned submission must include a demo-ready application running on Fire OS or
-Vega OS, a public demonstration video under three minutes showing the target device
-or simulator, complete setup and run instructions, source code and assets, product
-feedback, and a clear record of significant changes made during the submission
-window. AWS Builder eligibility will only be claimed after the repository contains
-and documents a working AWS integration.
-
-The authoritative requirements are the [official hackathon rules](https://amazonappdev2026.devpost.com/rules)
-and [resource hub](https://amazonappdev2026.devpost.com/resources).
-
-## Product direction
+## One foundation. Two experiences.
 
 ```text
-Match video
-    │
-    ▼
-Offline computer vision
-    │  detections, tracks, pitch coordinates
-    ▼
-Deterministic football events and spatial features
-    │
-    ▼
-Candidate tactical patterns
-    │
-    ▼
-Evidence validation ── insufficient evidence → abstain
-    │
-    ▼
-Verified findings and evidence clips
-    │
-    ▼
-Opposition Analyst explanation
-    │
-    ▼
-TactiLens on Fire TV / Vega
+                         TactiVision AI
+                 Shared intelligence and data
+                            /      \
+                           /        \
+               Opposition Analyst   TactiLens
+               Web analysis         Fire TV briefings
+               Knowledge management Remote navigation
+               PDF reports          Evidence playback
+               [existing]           [planned]
 ```
 
-Computer vision owns observations from the footage. The tactical engine owns their
-football meaning. A future Amazon Bedrock integration may explain verified findings
-and recommendations using structured evidence.
+The proposed evidence pipeline keeps observations, tactical reasoning and
+explanation separate:
 
-## Architecture direction
+**Video → offline CV → structured events → validated evidence → briefing → TV**
 
-The current application is a Vite and React single-page application with a Supabase
-backend. The minimum-change direction for TactiLens is:
+A finding must be traceable to its source. Insufficient evidence should produce
+an abstention. Language models may explain verified evidence; they must not invent
+timestamps, occurrence counts or confidence.
 
-```text
-TactiLens TV client
-  └── Opposition briefing and evidence playback
+See the [architecture](./docs/tactilens/ARCHITECTURE.md) for system boundaries,
+contracts and platform decisions.
 
-TactiVision application
-  ├── Existing Opposition Analyst
-  ├── Existing dashboards and report generation
-  └── Existing knowledge-base workflows
+## Quick start
 
-Evidence platform (planned)
-  ├── Offline video/CV processing
-  ├── Deterministic event and pattern extraction
-  ├── Provenance and validation
-  └── Persisted briefings and evidence clips
+Run the **existing web application** locally. TV setup will be documented once the
+target client exists.
 
-AWS integration (planned)
-  ├── Media and artifact storage
-  ├── Opposition briefing API
-  └── Bedrock explanation over verified evidence
-```
-
-Specific CV models, tracking libraries, TV framework, and AWS compute services will
-be selected after technical spikes and benchmarks. No candidate is treated as an
-architectural commitment yet.
-
-## Run locally
-
-### Prerequisites
-
-- Node.js 20 or later
-- npm 10 or later
-- A Supabase project for connected knowledge-base and analyst features
-
-### Install and start
+Prerequisites: Node.js 22+ and npm. Connected analysis and knowledge features also
+require a configured Supabase backend and server-side provider credentials.
 
 ```bash
 git clone https://github.com/ousssamarahmani/TactiLens.git
 cd TactiLens
-npm install
-Copy-Item .env.example .env.local # Windows PowerShell
-npm run dev
+npm ci
 ```
 
-For macOS or Linux, replace the `Copy-Item` command with:
+Create your local configuration:
+
+```powershell
+# Windows PowerShell
+Copy-Item .env.example .env.local
+```
 
 ```bash
+# macOS / Linux
 cp .env.example .env.local
 ```
 
-Open [http://localhost:8080](http://localhost:8080).
-
-### Environment
-
-```dotenv
-VITE_SUPABASE_URL=https://your-project.supabase.co
-VITE_SUPABASE_PUBLISHABLE_KEY=your-anon-key
-```
-
-Only use the public Supabase anonymous key in the browser. Keep service-role keys
-and external provider credentials in server-side secrets.
-
-## Verify the repository
+Set `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` in `.env.local` to your
+project URL and public key, then start the app:
 
 ```bash
-npm run lint
+npm run dev
+```
+
+Open [localhost:8080](http://localhost:8080). The two browser variables alone do not
+deploy the backend. Existing migrations and Edge Functions live in
+[`supabase/`](./supabase); the analyst uses server-side `LOVABLE_API_KEY`,
+`SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`. Some ingestion functions require
+additional provider configuration. Never put server secrets in `VITE_*` variables.
+A clean backend setup still needs verification.
+
+## Development
+
+```bash
 npm run test
 npm run build
+npm run lint
 ```
 
-These commands validate the existing web application. Device and remote-navigation
-verification will be added when the Fire TV/Vega client exists.
+The prior foundation validation passed the production build and one placeholder
+unit test. Lint has 25 existing errors and 7 warnings. These checks do not establish
+backend or TV readiness. See the [validation plan](./docs/tactilens/IMPLEMENTATION_PLAN.md).
 
-## Repository map
+| Path | Responsibility |
+| --- | --- |
+| [`src/pages/`](./src/pages) | Analyst and knowledge-base experiences |
+| [`src/components/`](./src/components) | Dashboard, tactical visuals and UI |
+| [`src/data/`](./src/data) | Existing football datasets |
+| [`src/hooks/`](./src/hooks) · [`src/lib/`](./src/lib) | Analyst workflow, retrieval and reports |
+| [`supabase/`](./supabase) | Backend functions and database migrations |
+| [`docs/tactilens/`](./docs/tactilens) | Audit, architecture, plan and change record |
 
-```text
-src/
-  components/        Tactical dashboard, visualizations, and UI primitives
-  data/              Club, international, match, and World Cup data
-  hooks/             Opposition Analyst client workflow
-  integrations/      Generated Supabase client and types
-  lib/               Retrieval, report generation, and domain helpers
-  pages/             Analyst and knowledge-base screens
-supabase/
-  functions/         Analyst, search, and ingestion Edge Functions
-  migrations/        Database, storage, and vector-search schema
-docs/
-  assets/            TactiLens repository artwork
-public/              Application-facing static assets
-```
+## Hackathon
 
-## Roadmap
+Prepared for [**Build, Ship, Shape: Amazon Developer Hackathon 2026**](https://amazonappdev2026.devpost.com/).
 
-Start with the source-backed TactiLens foundation:
+| | Project direction |
+| --- | --- |
+| Primary track | Fire TV |
+| Target | Fire OS or Vega OS; platform validation pending |
+| AWS Builder | Planned; integration evidence pending |
+| Deadline | October 23, 2026, 12:00 PM Pacific Time |
 
-- [Foundation audit](docs/tactilens/FOUNDATION_AUDIT.md) — existing capabilities, reuse, changes and gaps
-- [Implementation plan](docs/tactilens/IMPLEMENTATION_PLAN.md) — ordered tasks, regression gates and approval boundary
-- [Architecture](docs/tactilens/ARCHITECTURE.md) — shared intelligence and data, with a television interaction model
-- [Hackathon changes](docs/tactilens/HACKATHON_CHANGES.md) — pre-existing baseline and actual contributions
+Submission preparation must include a working device/simulator demo, a public
+video under three minutes, reproducible setup, product feedback and an accurate
+record of changes made during the event. The existing TactiVision application is
+the baseline, not new hackathon work.
 
-- [x] Preserve and identify pre-existing TactiVision capabilities
-- [ ] Complete repository audit and implementation plan
-- [ ] Define evidence, provenance, and system-boundary contracts
-- [ ] Benchmark the offline computer-vision pipeline
-- [ ] Connect structured observations to validated tactical findings
-- [ ] Build and test the ten-foot Fire TV/Vega experience
-- [ ] Add and document working AWS services
-- [ ] Validate the demo on a Fire TV device or Vega simulator
-- [ ] Record the sub-three-minute demonstration and complete product feedback
+[Official rules](https://amazonappdev2026.devpost.com/rules) ·
+[Developer resources](https://amazonappdev2026.devpost.com/resources) ·
+[Contribution record](./docs/tactilens/HACKATHON_CHANGES.md)
 
-## Brand
+## Build with us
 
-TactiLens is a product within the TactiVision AI family.
+Start with the [foundation audit](./docs/tactilens/FOUNDATION_AUDIT.md) and
+[implementation plan](./docs/tactilens/IMPLEMENTATION_PLAN.md). Propose focused
+changes through [issues](https://github.com/ousssamarahmani/TactiLens/issues)
+and read the [contribution guide](./CONTRIBUTING.md) before opening a pull request.
 
-```text
-TactiVision AI
-    └── Opposition Analyst
-            └── TactiLens — Fire TV / Vega coaching-room experience
-```
+The next proposed milestone is to characterize the existing analyst behavior,
+then extract reusable contracts without breaking the web experience.
 
-The TactiLens name, logo, and original project assets are reserved by the project
-owner. Third-party football data, reports, footage, trademarks, and services remain
-subject to their respective licenses and terms.
+## License and assets
 
-## License
+An open-source license has not yet been selected. A license decision is required
+before using the public repository for hackathon submission. Football datasets,
+reports and footage need their own provenance and usage-rights review.
 
-No open-source license has been selected yet. All rights are reserved until a
-license file is added. Because the repository is public, an approved open-source
-license must be added before using it as the public hackathon submission repository.
+The supplied TactiLens artwork lives in [docs/assets](./docs/assets).
+Platform names identify intended integrations, not sponsorship or endorsement.
 
-<div align="center">
-  <strong>See the pattern. Trust the evidence. Prepare the room.</strong>
-</div>
+---
+
+<p align="center"><strong>TactiLens</strong><br />Reuse the intelligence. Design for the room.</p>
